@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DairyerpModelStoreContainer" CdmEntityContainer="DairyerpEntities">
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="DairyerpModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderDetailsId" ColumnName="OrderDetailsId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderMasters">
+      <EntityTypeMapping TypeName="DairyerpModel.OrderMaster">
+        <MappingFragment StoreEntitySet="OrderMaster">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="SelesEmployeeId" ColumnName="SelesEmployeeId" />
+          <ScalarProperty Name="ShcemheApplied" ColumnName="ShcemheApplied" />
+          <ScalarProperty Name="TotalBill" ColumnName="TotalBill" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+          <ScalarProperty Name="custom4" ColumnName="custom4" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Orderstatus" ColumnName="Orderstatus" />
+          <ScalarProperty Name="OrdeDispatchby" ColumnName="OrdeDispatchby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="test_sp_GenrateBIll" FunctionName="DairyerpModel.Store.test_sp_GenrateBIll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DairyerpModel.test_sp_GenrateBIll_Result">
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+          <ScalarProperty Name="orderCode" ColumnName="orderCode" />
+          <ScalarProperty Name="totalBill" ColumnName="totalBill" />
+          <ScalarProperty Name="agentName" ColumnName="agentName" />
+          <ScalarProperty Name="agentCode" ColumnName="agentCode" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="routeCode" ColumnName="routeCode" />
+          <ScalarProperty Name="employeeCode" ColumnName="employeeCode" />
+          <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="SECode" ColumnName="SECode" />
+          <ScalarProperty Name="SEName" ColumnName="SEName" />
+          <ScalarProperty Name="SEMobile" ColumnName="SEMobile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

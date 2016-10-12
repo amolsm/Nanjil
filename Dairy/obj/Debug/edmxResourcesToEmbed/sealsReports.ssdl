@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DairyerpModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DairyerpModelStoreContainer">
+    <EntitySet Name="OrderDetails" EntityType="DairyerpModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderMaster" EntityType="DairyerpModel.Store.OrderMaster" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="bigint" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="UnitCost" Type="money" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Dispatched" Type="bit" />
+  </EntityType>
+  <EntityType Name="OrderMaster">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCode" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDate" Type="varchar" MaxLength="20" />
+    <Property Name="AgentID" Type="int" />
+    <Property Name="SelesEmployeeId" Type="int" />
+    <Property Name="ShcemheApplied" Type="bit" />
+    <Property Name="TotalBill" Type="money" />
+    <Property Name="OrderType" Type="int" />
+    <Property Name="RouteID" Type="int" />
+    <Property Name="EmployeeID" Type="varchar" MaxLength="250" />
+    <Property Name="Custom5" Type="varchar" MaxLength="250" />
+    <Property Name="custom4" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+    <Property Name="Orderstatus" Type="bit" />
+    <Property Name="OrdeDispatchby" Type="int" />
+  </EntityType>
+  <Function Name="test_sp_GenrateBIll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

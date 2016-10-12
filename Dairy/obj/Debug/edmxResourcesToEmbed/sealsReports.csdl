@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DairyerpModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DairyerpEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OrderDetails" EntityType="DairyerpModel.OrderDetail" />
+    <EntitySet Name="OrderMasters" EntityType="DairyerpModel.OrderMaster" />
+    <FunctionImport Name="test_sp_GenrateBIll" ReturnType="Collection(DairyerpModel.test_sp_GenrateBIll_Result)" />
+  </EntityContainer>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int64" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dispatched" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="OrderMaster">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OrderDate" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AgentID" Type="Int32" />
+    <Property Name="SelesEmployeeId" Type="Int32" />
+    <Property Name="ShcemheApplied" Type="Boolean" />
+    <Property Name="TotalBill" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrderType" Type="Int32" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="EmployeeID" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Custom5" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="custom4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Orderstatus" Type="Boolean" />
+    <Property Name="OrdeDispatchby" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="test_sp_GenrateBIll_Result">
+    <Property Type="Int64" Name="orderID" Nullable="false" />
+    <Property Type="String" Name="orderdate" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="orderCode" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="totalBill" Nullable="true" Precision="19" />
+    <Property Type="String" Name="agentName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="agentCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PaymentMode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="routeCode" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="employeeCode" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="employeeName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="mobile" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SECode" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SEName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="SEMobile" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>
