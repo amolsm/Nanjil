@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='2' style='text-align:center'>");
-                sb.Append("<u>ItemWise Purchase Agent List</u> <br/>");
+                sb.Append("<u>Amountwise IceCream Purchase Agents</u> <br/>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
                 sb.Append("TIN:330761667331<br>");
@@ -95,10 +95,10 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td colspan='2' style='text-align:left'>");
-                sb.Append(txtStartAmt.Text.ToString());
+                sb.Append(" Start Amount : " + txtStartAmt.Text.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2' style='text-align:right'>");
-                sb.Append(txtEndAmt.Text.ToString());
+                sb.Append(" End Amount : "+ txtEndAmt.Text.ToString());
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");

@@ -433,3 +433,8 @@ D:\CurrentProjectWorking\Oct05_nan\Model\bin\Model.pdb
 D:\CurrentProjectWorking\Oct05_nan\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\CurrentProjectWorking\Oct05_nan\Model\obj\Debug\Model.dll
 D:\CurrentProjectWorking\Oct05_nan\Model\obj\Debug\Model.pdb
+D:\NanjilCode\Nanjil\Model\bin\Model.dll
+D:\NanjilCode\Nanjil\Model\bin\Model.pdb
+D:\NanjilCode\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Nanjil\Model\obj\Debug\Model.dll
+D:\NanjilCode\Nanjil\Model\obj\Debug\Model.pdb
