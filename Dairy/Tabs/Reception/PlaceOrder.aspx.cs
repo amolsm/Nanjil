@@ -131,13 +131,13 @@ namespace Dairy.Tabs.Reception
             pnlEmployee.Visible = false;
 
             upMain.Update();
-
+            pnlError.Update();
             RemoveAllEmployeeItam();
 
             divDanger.Visible = false;
             divwarning.Visible = false;
             divSusccess.Visible = false;
-            pnlError.Update();
+           
         }
         public void rbEmployee_chamged(object sender, EventArgs e)
         {
@@ -145,7 +145,12 @@ namespace Dairy.Tabs.Reception
             pnlEmployee.Visible = true;
 
             upMain.Update();
+            pnlError.Update();
             RemoveAllItam();
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+           
         }
         public void rbCustomer_chamged(object sender, EventArgs e)
         {

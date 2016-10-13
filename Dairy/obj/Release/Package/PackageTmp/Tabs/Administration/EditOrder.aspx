@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrder.aspx.cs" Inherits="Dairy.Tabs.Administration.EditOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+ 
+     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+ 
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       <section class="content-header">
@@ -291,7 +294,7 @@
       <div class="modal-footer">
         <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
        <asp:Button ID="btnCloseModal" class="btn btn-default" runat="server" ValidationGroup="none" OnClick="btnCloseModal_Click" Text="Close" UseSubmitBehavior="false"  data-dismiss="modal"/>       
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="false" OnClientClick = "Confirm()"/>       
+          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true" OnClientClick = "Confirm()"/>       
                 
       </div>
     </div>

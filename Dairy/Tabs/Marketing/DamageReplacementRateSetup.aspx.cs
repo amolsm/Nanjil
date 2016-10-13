@@ -80,7 +80,7 @@ namespace Dairy.Tabs.Marketing
             {
                 dpCommodity.DataSource = DS;
                 dpCommodity.DataBind();
-                dpCommodity.Items.Insert(0, new ListItem("All Commodity", "0"));
+                dpCommodity.Items.Insert(0, new ListItem("Select Commodity", "0"));
 
             }
 

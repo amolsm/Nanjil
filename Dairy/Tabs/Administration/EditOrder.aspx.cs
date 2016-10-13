@@ -106,6 +106,7 @@ namespace Dairy.Tabs.Administration
                 txtProductName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ProductName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ProductName"].ToString();
                 txtPrvQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Qty"].ToString();
                 //txtIfsc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCcode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCcode"].ToString();
+                txtNewQuantity.Text = string.Empty;
 
 
             }

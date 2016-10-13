@@ -261,3 +261,8 @@ D:\CurrentProjectWorking\Oct05_nan\Comman\bin\Comman.pdb
 D:\CurrentProjectWorking\Oct05_nan\Comman\obj\Release\Comman.csprojResolveAssemblyReference.cache
 D:\CurrentProjectWorking\Oct05_nan\Comman\obj\Release\Comman.dll
 D:\CurrentProjectWorking\Oct05_nan\Comman\obj\Release\Comman.pdb
+D:\NanjilCode\Nanjil\Comman\bin\Comman.dll
+D:\NanjilCode\Nanjil\Comman\bin\Comman.pdb
+D:\NanjilCode\Nanjil\Comman\obj\Release\Comman.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Nanjil\Comman\obj\Release\Comman.dll
+D:\NanjilCode\Nanjil\Comman\obj\Release\Comman.pdb

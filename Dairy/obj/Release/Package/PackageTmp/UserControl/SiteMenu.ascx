@@ -202,6 +202,7 @@
                    <li><a href="/Tabs/Marketing/DeactivateAgentList.aspx"><i class="fa fa-circle-o"></i>Deactivate Agent List  </a></li>
                     <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>
                    <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
+                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
               
               </ul>
             </li> 

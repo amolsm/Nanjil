@@ -216,6 +216,7 @@
     <Content Include="Tabs\TransportModule\TransportReports\InternalReportofVehicleSection.aspx" />
     <Content Include="Tabs\TransportModule\TransportReports\MilkSupplyVehicleReportRoutewise.aspx" />
     <Content Include="Tabs\TransportModule\TransportReports\VehicleRouteOperationSummary.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx" />
     <Content Include="Tabs\TransportModule\VehicleInOperation.aspx" />
     <Content Include="Tabs\TransportModule\VehicleMaintenance.aspx" />
     <Content Include="Tabs\TransportModule\VehicleOperations.aspx" />
@@ -1969,6 +1970,13 @@
     </Compile>
     <Compile Include="Tabs\TransportModule\TransportReports\VehicleRouteOperationSummary.aspx.designer.cs">
       <DependentUpon>VehicleRouteOperationSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx.cs">
+      <DependentUpon>VehicleWiseSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx.designer.cs">
+      <DependentUpon>VehicleWiseSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\TransportModule\VehicleInOperation.aspx.cs">
       <DependentUpon>VehicleInOperation.aspx</DependentUpon>

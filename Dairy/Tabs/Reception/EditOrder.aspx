@@ -294,7 +294,7 @@
       <div class="modal-footer">
         <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
        <asp:Button ID="btnCloseModal" class="btn btn-default" runat="server" ValidationGroup="none" OnClick="btnCloseModal_Click" Text="Close" UseSubmitBehavior="false"  data-dismiss="modal"/>       
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="false"  OnClientClick = "Confirm()" />       
+          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true"  OnClientClick = "Confirm()" />       
                 
       </div>
     </div>
