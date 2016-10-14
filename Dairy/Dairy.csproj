@@ -149,6 +149,24 @@
     <Content Include="Tabs\Marketing\SchemeRefund.aspx" />
     <Content Include="Tabs\Marketing\SpotDamageComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\StaffAccountSalesSummary.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkCollectionCenter.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkCollectionRoute.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierBankDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierLoanDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierRDInfo.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx" />
+    <Content Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx" />
+    <Content Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx" />
+    <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
+    <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
+    <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkTariff.aspx" />
+    <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
+    <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
+    <Content Include="Tabs\Procurement\VehicleTeriff.aspx" />
     <Content Include="Tabs\Reception\EditOrder.aspx" />
     <Content Include="Tabs\Reception\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Reception\OrderQuantity.aspx" />
@@ -1522,6 +1540,132 @@
     </Compile>
     <Compile Include="Tabs\Marketing\StaffAccountSalesSummary.aspx.designer.cs">
       <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionCenter.aspx.cs">
+      <DependentUpon>AddMilkCollectionCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionCenter.aspx.designer.cs">
+      <DependentUpon>AddMilkCollectionCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionRoute.aspx.cs">
+      <DependentUpon>AddMilkCollectionRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionRoute.aspx.designer.cs">
+      <DependentUpon>AddMilkCollectionRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx.cs">
+      <DependentUpon>AddMilkSuppliersProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx.designer.cs">
+      <DependentUpon>AddMilkSuppliersProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx.cs">
+      <DependentUpon>AddSupplierAdvanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierAdvanceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierBankDetails.aspx.cs">
+      <DependentUpon>AddSupplierBankDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierBankDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierBankDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierLoanDetails.aspx.cs">
+      <DependentUpon>AddSupplierLoanDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierLoanDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierLoanDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierRDInfo.aspx.cs">
+      <DependentUpon>AddSupplierRDInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierRDInfo.aspx.designer.cs">
+      <DependentUpon>AddSupplierRDInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx.cs">
+      <DependentUpon>AddSupplierSchemeBonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx.designer.cs">
+      <DependentUpon>AddSupplierSchemeBonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx.cs">
+      <DependentUpon>AddSuppliersLoanInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx.designer.cs">
+      <DependentUpon>AddSuppliersLoanInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx.cs">
+      <DependentUpon>CalulateRawMilkPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx.designer.cs">
+      <DependentUpon>CalulateRawMilkPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.cs">
+      <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.designer.cs">
+      <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionDetails.aspx.cs">
+      <DependentUpon>MilkCollectionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionDetails.aspx.designer.cs">
+      <DependentUpon>MilkCollectionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.cs">
+      <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.designer.cs">
+      <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.cs">
+      <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.designer.cs">
+      <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.cs">
+      <DependentUpon>RawMilkTariff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.designer.cs">
+      <DependentUpon>RawMilkTariff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.cs">
+      <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.designer.cs">
+      <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleMaster.aspx.cs">
+      <DependentUpon>VehicleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleMaster.aspx.designer.cs">
+      <DependentUpon>VehicleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleTeriff.aspx.cs">
+      <DependentUpon>VehicleTeriff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleTeriff.aspx.designer.cs">
+      <DependentUpon>VehicleTeriff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Reception\EditOrder.aspx.cs">
       <DependentUpon>EditOrder.aspx</DependentUpon>

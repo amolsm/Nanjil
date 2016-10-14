@@ -26,7 +26,22 @@ namespace Bussiness
 
             return dbroute.GetRouteDetailsbyID(RouteID);
         }
-         
+
+        public int InsertMilkCollectionRoute(Route route)
+        {
+
+            return dbroute.InsertMilkCollectionRoute(route);
+        }
+        public DataSet GetAllMilkCollectionRouteDetails()
+        {
+
+            return dbroute.GetAllMilkCollectionRouteDetails();
+        }
+        public DataSet GetMilkCollectionRouteDetailsbyID(int RouteID)
+        {
+
+            return dbroute.GetMilkCollectionRouteDetailsbyID(RouteID);
+        }
 
     }
 }

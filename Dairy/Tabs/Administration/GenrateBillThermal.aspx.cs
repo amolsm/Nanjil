@@ -54,7 +54,6 @@ namespace Dairy.Tabs.Administration
 
                     int count = 0;
                     double qty = 0;
-
                     sb.Append("<style type='text / css'>");
                     sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
                     sb.Append(".tg .tg-yw4l{vertical-align:top}");
@@ -62,12 +61,13 @@ namespace Dairy.Tabs.Administration
                     sb.Append("</style>");
                     sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
                     sb.Append("<colgroup>");
+                    sb.Append("<col style = 'width:90px'>");
+                    sb.Append("<col style = 'width:200px'>");
+                    sb.Append("<col style = 'width:100px'>");
+                    sb.Append("<col style = 'width:120px'>");
                     sb.Append("<col style = 'width:100px'>");
                     sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
+
                     sb.Append("</colgroup>");
 
                     sb.Append("<tr>");
@@ -75,11 +75,11 @@ namespace Dairy.Tabs.Administration
                     sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='80px' hight='80px'>");
                     sb.Append("</th>");
 
-                    sb.Append("<th class='tg-baqh' colspan='3' style='text-align:center; font-size: 100%;'>");
+                    sb.Append("<th class='tg-baqh' colspan='3' style='text-align:center; font-size: 80%;'>");
                     sb.Append("<u> Cash/Credit Bill </u> <br/>");
                     sb.Append("</th>");
 
-                    sb.Append("<th class='tg-yw4l' colspan='2' style='text-align:right; font-size: 100%;'>");
+                    sb.Append("<th class='tg-yw4l' colspan='2' style='text-align:right; font-size: 80%;'>");
 
                     sb.Append("TIN:330761667331<br>");
                     sb.Append("</th>");
@@ -92,7 +92,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append("</td>");
 
 
-                    //sb.Append("<td class='tg-yw4l'  colspan='2' style='text-align:right; font-size: 100%;'>");
+                    //sb.Append("<td class='tg-yw4l'  colspan='2' style='text-align:right; font-size: 80%;'>");
 
                     //sb.Append("PH:248370,248605");
 
@@ -102,12 +102,12 @@ namespace Dairy.Tabs.Administration
                     sb.Append("<tr>");
 
 
-                    sb.Append("<td colspan='3' style='font-size: 150%;'>");
+                    sb.Append("<td colspan='3'>");
 
                     sb.Append(row["orderDate"].ToString());
 
                     sb.Append("</td>");
-                    sb.Append("<td colspan='3' style='text-align:right; font-size: 100%;'>");
+                    sb.Append("<td colspan='3' style='text-align:right; font-size: 80%;'>");
 
                     sb.Append("<b>" + row["BillNo"].ToString() + "</b>");
 
@@ -116,7 +116,7 @@ namespace Dairy.Tabs.Administration
 
                     sb.Append("</tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td colspan='3' style='font-size: 150%;'>");
+                    sb.Append("<td colspan='3'>");
 
                     if (row["OrderType"].ToString() == "1")
                     {
@@ -132,7 +132,7 @@ namespace Dairy.Tabs.Administration
                     }
 
 
-                    sb.Append("<td colspan='3'style='text-align:right;font-size: 150%;' >");
+                    sb.Append("<td colspan='3'style='text-align:right' >");
 
                     sb.Append(row["routeCode"].ToString());
                     sb.Append("&nbsp;");
@@ -166,7 +166,7 @@ namespace Dairy.Tabs.Administration
                         ////  sb.Append("</div>");
                         //sb.Append("</td>");
 
-                        sb.Append("<td colspan='2'style='text-align:left;font-size: 150%;'>");
+                        sb.Append("<td colspan='2'style='text-align:left'>");
                         //sb.Append("<div class='col-md-3'>");
                         sb.Append("Items");
                         // sb.Append("</div>");
@@ -174,25 +174,25 @@ namespace Dairy.Tabs.Administration
 
 
 
-                        sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                        sb.Append("<td style='text-align:right'>");
                         //  sb.Append("<div class='col-md-2'>");
                         sb.Append("Qty.");
                         //  sb.Append("</div>");
                         sb.Append("</td>");
 
-                        sb.Append("<td style='text-align:left;font-size: 150%;'>");
+                        sb.Append("<td style='text-align:left'>");
                         //  sb.Append("<div class='col-md-2'>");
                         sb.Append("&nbsp;");
                         //  sb.Append("</div>");
                         sb.Append("</td>");
 
-                        sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                        sb.Append("<td style='text-align:right'>");
                         // sb.Append("<div class='col-md-2'>");
                         sb.Append("Price");
                         // sb.Append("</div>");
                         sb.Append("</td>");
 
-                        sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                        sb.Append("<td style='text-align:right'>");
                         // sb.Append("<div class='col-md-2'>");
                         sb.Append("Amount");
                         // sb.Append("</div>");
@@ -233,7 +233,7 @@ namespace Dairy.Tabs.Administration
                             if (row1["total"].ToString() != "0.0000")
                             {
                                 count = count + 1;
-                                sb.Append("<td colspan='2' style='text-align:left;font-size: 150%;' >");
+                                sb.Append("<td colspan='2' style='text-align:left' >");
                                 if (row1["itam"].ToString() == "")
                                 {
                                     sb.Append("Scheme");
@@ -249,17 +249,17 @@ namespace Dairy.Tabs.Administration
                                 if (row1["qty"].ToString() == "0")
                                 {
 
-                                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:right'>");
                                     sb.Append("&nbsp;");
 
                                     sb.Append("</td>");
 
-                                    sb.Append("<td style='text-align:left;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:left'>");
                                     sb.Append("&nbsp;");
 
                                     sb.Append("</td>");
 
-                                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:right'>");
                                     sb.Append("&nbsp;");
                                     sb.Append("</td>");
 
@@ -267,20 +267,19 @@ namespace Dairy.Tabs.Administration
                                 }
                                 else
                                 {
-                                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:right'>");
                                     sb.Append(row1["qty"].ToString());
-                                    //sb.Append(row1["UnitName"].ToString());
                                     sb.Append("</td>");
-                                    sb.Append("<td style='text-align:left;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:left'>");
                                     sb.Append(row1["UnitName"].ToString());
                                     sb.Append("</td>");
                                     qty = qty + Convert.ToDouble(row1["qty"].ToString());
-                                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                                    sb.Append("<td style='text-align:right'>");
                                     sb.Append((Convert.ToDecimal(row1["unitcost"]).ToString("#.00")));
                                     sb.Append("</td>");
                                 }
 
-                                sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                                sb.Append("<td style='text-align:right'>");
                                 sb.Append((Convert.ToDecimal(row1["total"]).ToString("#.00")));
                                 sb.Append("</td>");
                             }
@@ -292,16 +291,16 @@ namespace Dairy.Tabs.Administration
                     sb.Append("</tr>");
 
 
-                    sb.Append("<tr style='border-bottom:1px solid; border-top: 1px solid;'>");
+                    sb.Append("<tr style='border-bottom:1px solid; border-top: 1px solid'>");
 
-                    sb.Append("<td style='font-size: 150%;'>");
+                    sb.Append("<td>");
                     sb.Append("S.M.ID ");
                     sb.Append(DS.Tables[1].Rows[0]["employeeCode"]);
                     sb.Append("</td>");
 
 
 
-                    sb.Append("<td style='font-size: 150%;' >");
+                    sb.Append("<td >");
                     sb.Append("Receipt  <b>");
                     if (row["PaymentMode"].ToString() == "Monthly")
                     {
@@ -318,20 +317,20 @@ namespace Dairy.Tabs.Administration
                     }
                     sb.Append("</td>");
 
-                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                    sb.Append("<td style='text-align:right'>");
                     sb.Append(qty);
 
                     sb.Append("</td>");
-                    sb.Append("<td style='text-align:left;font-size: 150%;'>");
+                    sb.Append("<td style='text-align:left'>");
                     sb.Append("&nbsp;");
 
                     sb.Append("</td>");
 
-                    sb.Append("<td style='text-align:right;font-size: 150%;'>");
+                    sb.Append("<td style='text-align:right'>");
                     sb.Append("Total");
                     sb.Append("</td>");
 
-                    sb.Append("<td style='text-align: right;font-size: 150%;'>");
+                    sb.Append("<td style='text-align: right'>");
                     sb.Append("<b>" + (Convert.ToDecimal(row["totalBill"]).ToString("#.00") + "</b>"));
                     sb.Append("</td>");
 
@@ -343,19 +342,19 @@ namespace Dairy.Tabs.Administration
 
 
 
-                    sb.Append("<td colspan='3' style='font-size: 150%;'>");
+                    sb.Append("<td colspan='3'>");
                     sb.Append(DS.Tables[1].Rows[0]["employeeName"]);
                     sb.Append("</td>");
 
 
-                    sb.Append("<td style='font-size: 150%;' >");
+                    sb.Append("<td >");
                     sb.Append(DS.Tables[1].Rows[0]["mobile"]);
                     sb.Append("</td>");
 
 
 
 
-                    sb.Append("<td colspan='2' style='text-align:right;font-size: 100%;'>");
+                    sb.Append("<td colspan='2' style='text-align:right;font-size: 80%;'>");
                     sb.Append(DateTime.Now.ToString("dd/MM/yyyy hh:mm"));
                     sb.Append("</td>");
 
@@ -363,7 +362,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append("</tr>");
 
                     sb.Append("<tr>");
-                    sb.Append("<td colspan = '6'style='text-align:center;font-size: 150%;'> ");
+                    sb.Append("<td colspan = '6'style='text-align:center'> ");
                     sb.Append("Thanks, Visit Again...!!");
                     sb.Append("</td>");
 
@@ -374,22 +373,13 @@ namespace Dairy.Tabs.Administration
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("</tr >");
-                    sb.Append("<tr >");
-                    sb.Append("<td colspan = '6' style='text-align:center'> ");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr >");
-                    sb.Append("<tr >");
-                    sb.Append("<td colspan = '6' style='text-align:center'> ");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr >");
+                  
+                 
                     sb.Append("<tr style='border-bottom:1px solid;'>");
                     sb.Append("<td colspan = '6' style='text-align:center'> ");
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("</tr >");
-
 
                 }
 

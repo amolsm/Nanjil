@@ -69,6 +69,7 @@
     <Compile Include="DBInsertAgentInfo.cs" />
     <Compile Include="DBInvoice.cs" />
     <Compile Include="DBMarketing.cs" />
+    <Compile Include="DBProcurement.cs" />
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBRoute.cs" />
     <Compile Include="DBTransport.cs" />

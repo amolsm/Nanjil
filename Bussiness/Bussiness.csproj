@@ -69,6 +69,7 @@
     <Compile Include="EmployeeData.cs" />
     <Compile Include="InvoiceData.cs" />
     <Compile Include="MarketingData.cs" />
+    <Compile Include="ProcurementData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteData.cs" />

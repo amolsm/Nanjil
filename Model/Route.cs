@@ -15,6 +15,31 @@ namespace Model
         private string _RouteCode;
         private string _Discription;
         private bool _IsArchive;
+        private int _Category;
+        private int _CenterID;
+
+        public int CenterID
+        {
+            get
+            {
+                return _CenterID;
+            }
+            set
+            {
+                _CenterID = value;
+            }
+        }
+        public int Category
+        {
+            get
+            {
+                return _Category;
+            }
+            set
+            {
+                _Category = value;
+            }
+        }
 
         public bool IsArchive
         {
