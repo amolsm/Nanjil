@@ -124,7 +124,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-           
+
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
                 sb.Append("TIN:330761667331<br>");
@@ -186,16 +186,16 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
                 int srno = 0;
                 double qty = 0.00;
-          
+
                 double totalqty = 0.00;
-           
+
                 double totalinsamt = 0.00;
                 double totalamt = 0.00;
 
-            
-                foreach (DataRow rows in DS.Tables[1].Rows)
+
+                foreach (DataRow rows in DS.Tables[1].Rows )
                 {
-                  
+
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
                         if (rows["AgentID"].ToString() == row["AgentID"].ToString())
@@ -246,7 +246,24 @@ namespace Dairy.Tabs.Marketing
 
                                 try
                                 {
-                                    totalinsamt = (Convert.ToDouble(qty) * (Convert.ToDouble(rows["Damagereplacementrate"])/100));
+                                    if (dpType.SelectedItem.Value.ToString() == "1")
+                                    {
+                                       
+                                         DataRow[] dr = DS.Tables[2].Select("AgentID = " + row["AgentID"]);
+
+                                         double price = 0;
+                                        if (dr.Length > 0)
+                                        {
+                                           price = Convert.ToDouble(dr[0]["Prize"]);  
+                                        }
+
+                                        totalinsamt = (Convert.ToDouble(qty) * (Convert.ToDouble(rows["Damagereplacementrate"]) / 100) * price);
+                                       
+                                    }
+                                    else
+                                    {
+                                        totalinsamt = (Convert.ToDouble(qty) * (Convert.ToDouble(rows["Damagereplacementrate"]) / 100));
+                                    }
                                     sb.Append(Convert.ToDecimal(totalinsamt).ToString("#0.00"));
                                     totalamt += totalinsamt;
                                 }
@@ -258,32 +275,33 @@ namespace Dairy.Tabs.Marketing
 
 
                     }
+                    }
+
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='7'></td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan = '4'>");
+                    sb.Append("<b>Total</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td  style='text-align:center' >");
+                    sb.Append("<b>" + totalqty + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:center'>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>" + (Convert.ToDecimal(totalamt).ToString("#0.00")) + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+
+
+                    result = sb.ToString();
+                    genratedBIll.Text = result;
+                    //Session["ctrl"] = sb.ToString();
+                    Session["ctrl"] = pnlBill;
+                    //Response.Redirect("/print.aspx", true);
+
                 }
-                sb.Append("</td>");
-                sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'><td colspan='7'></td></tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td colspan = '4'>");
-                sb.Append("<b>Total</b>");
-                sb.Append("</td>");
-                sb.Append("<td  style='text-align:center' >");
-                sb.Append("<b>"+totalqty+"</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:center'>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + (Convert.ToDecimal(totalamt).ToString("#0.00"))+ "</b>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
-
-
-                result = sb.ToString();
-                genratedBIll.Text = result;
-                //Session["ctrl"] = sb.ToString();
-                Session["ctrl"] = pnlBill;
-                //Response.Redirect("/print.aspx", true);
-
-            }
 
 
             else
