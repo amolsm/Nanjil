@@ -70,7 +70,9 @@
                          <asp:DropDownList ID="dpRoute" data-live-search="true" class="selectpicker form-control" data-toggle="dropdown" DataTextField="Name" DataValueField="RouteID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpRoute_SelectedIndexChanged" ToolTip="Please Select Route" > 
                        </asp:DropDownList>
                     </div><!-- /.input group -->
-
+                           <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="dpRoute"
+        ErrorMessage="Route is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -88,6 +90,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                           <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="dpBrand"
+        ErrorMessage="Brand is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>
                   </div><!-- /.form group -->
                          </div>
 
@@ -100,6 +105,9 @@
                          <asp:DropDownList ID="dpType" class="form-control" DataTextField="Name" DataValueField="TypeID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpType_SelectedIndexChanged" ToolTip="Please Select Product Type" > 
                        </asp:DropDownList>
                     </div><!-- /.input group -->
+                           <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="dpType"
+        ErrorMessage="Product Type is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>
 
                   </div><!-- /.form group -->
 
@@ -117,6 +125,9 @@
                       </div>
                          <asp:DropDownList ID="dpCommodity" class="form-control" DataTextField="Name" DataValueField="CommodityID" runat="server" ToolTip="Please Select Commodity" > 
                        </asp:DropDownList>
+                             <asp:CompareValidator ID="CompareValidator4" runat="server" ControlToValidate="dpCommodity"
+        ErrorMessage="Commodity is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -129,11 +140,13 @@
                   <div class="form-group">
                     <div class="input-group">
                      
-                       <asp:TextBox ID="txtDamageReplacementRate" runat="server" class="form-control" placeholder="Damage Replacement Rate Percentage" ToolTip="Enter Damage Replace Rate Percentage"></asp:TextBox>
+                       <asp:TextBox ID="txtDamageReplacementRate" runat="server" class="form-control" placeholder="Damage Replacement Rate Percentage" ToolTip="Enter Damage Replace Rate Percentage" type="number" step="0.01"></asp:TextBox>
                       <div class="input-group-addon">
                          <i class="fa fa-percent" ></i><span style="color:red">&nbsp;%</span>
                       </div>
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDamageReplacementRate"
+        ErrorMessage="Damage Replacement Rate is Required" ValidationGroup="Save" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
 
                   </div><!-- /.form group -->
 
@@ -141,7 +154,8 @@
                        
                           
                       </div> 
-           
+             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+        ShowSummary="False" ValidationGroup="Save" />
              <div class="col-lg-3 pull-right">
                   <div class="form-group">
                     <div class="input-group">

@@ -104,20 +104,23 @@ namespace Dairy.Tabs.Administration
         }
         protected void btnClick_btnShow(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            DispatchData dispatchdata = new DispatchData();
-            int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
-            int BrandID = Convert.ToInt32(dpBrand.SelectedItem.Value);
-            int typeid = Convert.ToInt32(dpType.SelectedItem.Value);
-            int commodity = Convert.ToInt32(dpCommodity.SelectedItem.Value);
-            ds = dispatchdata.GetAgentforDReplacementSetup(RouteID, BrandID, typeid, commodity);
-            if (!Comman.Comman.IsDataSetEmpty(ds))
+            if (Page.IsValid)
             {
+                DataSet ds = new DataSet();
+                DispatchData dispatchdata = new DispatchData();
+                int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                int BrandID = Convert.ToInt32(dpBrand.SelectedItem.Value);
+                int typeid = Convert.ToInt32(dpType.SelectedItem.Value);
+                int commodity = Convert.ToInt32(dpCommodity.SelectedItem.Value);
+                ds = dispatchdata.GetAgentforDReplacementSetup(RouteID, BrandID, typeid, commodity);
+                if (!Comman.Comman.IsDataSetEmpty(ds))
+                {
 
-                rpBrandInfo.DataSource = ds;
-                rpBrandInfo.DataBind();
-                //rpBrandInfo.Visible = true;
-                uprouteList.Update();
+                    rpBrandInfo.DataSource = ds;
+                    rpBrandInfo.DataBind();
+                    //rpBrandInfo.Visible = true;
+                    uprouteList.Update();
+                }
             }
         }
 

@@ -61,13 +61,12 @@ namespace Dairy.Tabs.Reception
                     sb.Append("</style>");
                     sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
                     sb.Append("<colgroup>");
-                    sb.Append("<col style = 'width:15px'>");
-                    sb.Append("<col style = 'width:15px'>");
-                    sb.Append("<col style = 'width:10px'>");
-                    sb.Append("<col style = 'width:5px'>");
-                    sb.Append("<col style = 'width:15px'>");
-                    sb.Append("<col style = 'width:15px'>");
-               
+                    sb.Append("<col style = 'width:90px'>");
+                    sb.Append("<col style = 'width:200px'>");
+                    sb.Append("<col style = 'width:100px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:100px'>");
+                    sb.Append("<col style = 'width:100px'>");
 
                     sb.Append("</colgroup>");
 
@@ -384,12 +383,12 @@ namespace Dairy.Tabs.Reception
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("</tr >");
+
                     sb.Append("<tr style='border-bottom:1px solid;'>");
                     sb.Append("<td colspan = '6' style='text-align:center'> ");
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("</tr >");
-
 
                 }
 

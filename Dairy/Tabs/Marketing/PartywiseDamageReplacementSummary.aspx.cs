@@ -249,12 +249,15 @@ namespace Dairy.Tabs.Marketing
                                     if (dpType.SelectedItem.Value.ToString() == "1")
                                     {
                                        
-                                         DataRow[] dr = DS.Tables[2].Select("AgentID = " + row["AgentID"]);
-
+                                        
+                                       
                                          double price = 0;
-                                        if (dr.Length > 0)
+                                         foreach (DataRow filter in DS.Tables[2].Rows)
                                         {
-                                           price = Convert.ToDouble(dr[0]["Prize"]);  
+                                            if (filter["AgentID"].ToString() == row["AgentID"].ToString())
+                                            {
+                                                price = Convert.ToDouble(filter["Prize"]);
+                                            }
                                         }
 
                                         totalinsamt = (Convert.ToDouble(qty) * (Convert.ToDouble(rows["Damagereplacementrate"]) / 100) * price);

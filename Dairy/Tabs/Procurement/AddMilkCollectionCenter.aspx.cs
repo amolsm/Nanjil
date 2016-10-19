@@ -378,10 +378,30 @@ namespace Dairy.Tabs.Procurement
                 txtMobile.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MobileNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MobileNo"].ToString();
                 txtTelephone.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["PhoneNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["PhoneNo"].ToString();
                 txtEmail.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Email"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Email"].ToString();
-                dpCity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["City"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["City"].ToString();
-                dpDistrict.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["District"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["District"].ToString();
-                dpState.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["State"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["State"].ToString();
-                dpCountry.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Country"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Country"].ToString();
+                dpCity.ClearSelection();
+                if (dpCity.Items.FindByText(DS.Tables[0].Rows[0]["City"].ToString()) != null)
+                {
+                    dpCity.Items.FindByText(DS.Tables[0].Rows[0]["City"].ToString()).Selected = true;
+                }
+                dpDistrict.ClearSelection();
+                if (dpDistrict.Items.FindByText(DS.Tables[0].Rows[0]["District"].ToString()) != null)
+                {
+                    dpDistrict.Items.FindByText(DS.Tables[0].Rows[0]["District"].ToString()).Selected = true;
+                }
+                dpState.ClearSelection();
+                if (dpState.Items.FindByText(DS.Tables[0].Rows[0]["State"].ToString()) != null)
+                {
+                    dpState.Items.FindByText(DS.Tables[0].Rows[0]["State"].ToString()).Selected = true;
+                }
+                dpCountry.ClearSelection();
+                if (dpCountry.Items.FindByText(DS.Tables[0].Rows[0]["Country"].ToString()) != null)
+                {
+                    dpCountry.Items.FindByText(DS.Tables[0].Rows[0]["Country"].ToString()).Selected = true;
+                }
+                //dpCity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["City"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["City"].ToString();
+                //dpDistrict.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["District"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["District"].ToString();
+                //dpState.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["State"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["State"].ToString();
+                //dpCountry.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Country"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Country"].ToString();
                 dpContactPerson.ClearSelection();
                 if (dpContactPerson.Items.FindByValue(DS.Tables[0].Rows[0]["ContactPerson"].ToString()) != null)
                 {
