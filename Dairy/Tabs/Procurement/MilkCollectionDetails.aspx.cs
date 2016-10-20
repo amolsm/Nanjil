@@ -23,6 +23,7 @@ namespace Dairy.Tabs.Procurement
                 BindDropDown();
                 btnAddMilkCollection.Visible = true;
                 btnupdateMilkCollection.Visible = false;
+         
             }
         }
 
@@ -48,14 +49,19 @@ namespace Dairy.Tabs.Procurement
 
         protected void txtMilkInKG_TextChanged(object sender, EventArgs e)
         {
-            txtMilkInLtr.Text = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.031),2).ToString();
+            double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.031),2);
+            txtMilkInLtr.Text = milkInLtr.ToString();
+            txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
+           MidpointRounding.ToEven).ToString(); // Rounds to even
+           
+           
         }
 
         protected void txtCLRReading_TextChanged(object sender, EventArgs e)
         {
             //txtSNF.Text = (Convert.ToDouble(txtCLRReading.Text) + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.036).ToString();
             txtFATInKG.Text = ((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100).ToString();
-            txtSNFPercentage.Text = (Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 36).ToString();
+            txtSNFPercentage.Text = (Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36).ToString();
             txtSNFInKG.Text = ((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100).ToString();
             txtTSPercentage.Text = (Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)).ToString();
             txtTSKG.Text = (Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)).ToString();
@@ -74,7 +80,8 @@ namespace Dairy.Tabs.Procurement
             p.MilkCollectionID = 0;
             p.Batch = txtBatch.Text;
             p.Session = dpSession.SelectedItem.Text;
-            p.Date =Convert.ToDateTime(txtDate.Text);
+         
+            p.Date = Convert.ToDateTime(txtDate.Text.ToString());
             p.MilkInKG =Convert.ToDecimal(txtMilkInKG.Text);
             p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.RouteID =Convert.ToInt32( dpRoute.SelectedItem.Value);
@@ -221,7 +228,8 @@ namespace Dairy.Tabs.Procurement
                     dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()).Selected = true;
                 }
                 txtBatch.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Batch"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Batch"].ToString();
-                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["_Date"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["_Date"].ToString();
+                txtDate.Text = Convert.ToDateTime(DS.Tables[0].Rows[0]["_Date"]).ToString("yyyy-MM-dd").ToString();
+              
                 dpSession.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["_Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["_Session"].ToString();
                 txtMilkCan.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Can"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Can"].ToString();
                 txtTSKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSInKg"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSInKg"].ToString();

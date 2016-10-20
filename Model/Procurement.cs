@@ -403,12 +403,7 @@ namespace Model
         }
         private string _Session;
 
-        public DateTime Date
-        {
-            get { return _Date; }
-            set { _Date = value; }
-        }
-        private DateTime _Date;
+        public DateTime Date { get; set; }
 
         public int VehicleMasterID
         {

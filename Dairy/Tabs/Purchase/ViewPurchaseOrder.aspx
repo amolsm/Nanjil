@@ -4,7 +4,7 @@
     <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
 
-   
+    <%--<script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>--%>
     <style type="text/css">
         .dispnone {display:none;}
 

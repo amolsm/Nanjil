@@ -1,16 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MilkCollectionDetails.aspx.cs" Inherits="Dairy.Tabs.Procurement.MilkCollectionDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
 
-        $(function () {
-            $("#MainContent_txtDate").datepicker({ format: 'dd-MM-yyyy' });
-
-        })
+    
     </script>
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
@@ -95,9 +90,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" required ToolTip="Collection Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" type="date" required ToolTip="Collection Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -107,7 +102,8 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                           
+                  Route
                       </div>
                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"> 
                        </asp:DropDownList>
@@ -123,7 +119,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                Shift
                       </div>
                         <asp:DropDownList ID="dpSession" class="form-control"  runat="server" selected ToolTip="Select Session"> 
                             <asp:ListItem Value="0">Morning</asp:ListItem>
@@ -138,7 +134,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                   Batch
                       </div>
                        <asp:TextBox ID="txtBatch" class="form-control" placeholder="Batch" runat="server" required ToolTip="Batch"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -153,7 +149,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                  Supplier
                       </div>
                         <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select Supplier"> 
                        </asp:DropDownList>                          
@@ -166,9 +162,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                No of Milk Can
                       </div>
-                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="No Of Cans" runat="server" required ToolTip="No Of Cans"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="No Of Cans" runat="server" required ToolTip="No Of Cans" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -176,9 +172,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                 Milk Kg.
                       </div>
-                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" ToolTip="Milk In KG" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" ToolTip="Milk In KG" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" required Type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -189,18 +185,29 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                   Milk Ltr.
                       </div>
-                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server" required ToolTip="Milk In Liter"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server" required ToolTip="Milk In Liter" readonly ></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
-             
+
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                  Actual Milk Ltr.
+                      </div>
+                       <asp:TextBox ID="txtActualMilkInLtr" class="form-control" placeholder="Actual Milk In Liter" runat="server" required ToolTip="Actual Milk In Liter" readonly ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->                   
+                  </div>  
+        
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                   Fat Perc.
                       </div>
                        <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" type="text" runat="server" required ToolTip="FAT %"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -215,7 +222,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                      CLR Reading
                       </div>
                        <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading" type="text" runat="server" ToolTip="CLR Reading" AutoPostBack="true" required OnTextChanged="txtCLRReading_TextChanged"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -242,15 +249,15 @@
                           
                       </div>  --%>
 
-            
-
+             <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
+                     <ContentTemplate>
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                    SNF %
                       </div>
-                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %" type="text" runat="server" ToolTip="SNF %" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %" type="text" runat="server" ToolTip="SNF %" required readonly></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -263,9 +270,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                    TS %
                       </div>
-                       <asp:TextBox ID="txtTSPercentage" class="form-control" placeholder="TS %" type="text" runat="server" required ToolTip="TS Percentage"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTSPercentage" class="form-control" placeholder="TS %" type="text" runat="server" required ToolTip="TS Percentage" readonly></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -279,9 +286,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                 Fat In Kg.
                       </div>
-                       <asp:TextBox ID="txtFATInKG" class="form-control" placeholder="FAT In Kg" type="text" runat="server" required ToolTip="FAT In KG"></asp:TextBox>                        
+                       <asp:TextBox ID="txtFATInKG" class="form-control" placeholder="FAT In Kg" type="text" runat="server" required ToolTip="FAT In KG" readonly></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -294,9 +301,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtSNFInKG" class="form-control" placeholder="SNF in KG" type="text" runat="server" required ToolTip="SNF In KG"></asp:TextBox>                        
+                    SNF In Kg.
+                      </div> 
+                       <asp:TextBox ID="txtSNFInKG" class="form-control" placeholder="SNF in KG" type="text" runat="server" required ToolTip="SNF In KG" readonly></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -309,9 +316,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                   TS In Kg.
                       </div>
-                       <asp:TextBox ID="txtTSKG" class="form-control" placeholder="TS in KG" type="text" runat="server" required ToolTip="TS In KG"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTSKG" class="form-control" placeholder="TS in KG" type="text" runat="server" required ToolTip="TS In KG" readonly></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -320,7 +327,17 @@
                        
                           
                       </div>  
-            
+                             </ContentTemplate>
+            </asp:UpdatePanel>
+             <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>    
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -464,4 +481,5 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
+      
 </asp:Content>
