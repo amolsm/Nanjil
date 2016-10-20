@@ -197,9 +197,11 @@ namespace Dairy.Tabs.Purchase
                 lblSuccess.Text = "Vendor Added  Successfully";
 
                 ClearTextBox();
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "rem1", "$('.modal-backdrop').remove();", true);
                 GetList();
                 pnlError.Update();
                 uprouteList.Update();
+                
             }
             else
             {

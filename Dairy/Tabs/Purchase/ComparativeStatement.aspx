@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ComparativeStatement.aspx.cs" Inherits="Dairy.Tabs.Purchase.ComparativeStatement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+
     <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
 

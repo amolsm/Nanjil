@@ -26,7 +26,7 @@ namespace Dairy.Tabs.Purchase
 
         private void BindDropDown()
         {
-             DS = new DataSet();
+            DataSet DS = new DataSet();
 
 
             DS = BindCommanData.BindCommanDropDwon("VendorId as Id", "VendorCode +' '+ VendorName as Name", "Prchs_Vendor", "IsActive = 1");
@@ -35,15 +35,17 @@ namespace Dairy.Tabs.Purchase
                 dpVendor.DataSource = DS;
                 dpVendor.DataBind();
                 dpVendor.Items.Insert(0, new ListItem("--Select Vendor--", "0"));
-            }
 
-            DS = BindCommanData.BindCommanDropDwon("VendorId as Id", "VendorCode +' '+ VendorName as Name", "Prchs_Vendor", "IsActive = 1");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
                 dpVendor1.DataSource = DS;
                 dpVendor1.DataBind();
                 dpVendor1.Items.Insert(0, new ListItem("--Select Vendor--", "0"));
             }
+
+            //DS = BindCommanData.BindCommanDropDwon("VendorId as Id", "VendorCode +' '+ VendorName as Name", "Prchs_Vendor", "IsActive = 1");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+                
+            //}
 
             DS = BindCommanData.BindCommanDropDwon("ItemId as Id", "ItemName as Name", "Prchs_Items", "IsActive = 1");
             if (!Comman.Comman.IsDataSetEmpty(DS))
@@ -68,7 +70,7 @@ namespace Dairy.Tabs.Purchase
             divDanger.Visible = false;
             divwarning.Visible = false;
             divSusccess.Visible = false;
-            pnlError.Update();
+            //pnlError.Update();
             int ItemRateId = 0;
             ItemRateId = Convert.ToInt32(e.CommandArgument);
             switch (e.CommandName)
@@ -79,16 +81,11 @@ namespace Dairy.Tabs.Purchase
                         hfItemRatesId.Value = ItemRateId.ToString();
                         ItemRateId = Convert.ToInt32(hfItemRatesId.Value);
                         GetDetailsById(ItemRateId);
-
-                        //uprouteList.Update();
+                        upModal.Update();
+                       // ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                         break;
                     }
-                case ("delete"):
-                    {
-
-                       
-                        break;
-                    }
+               
 
 
             }
@@ -138,7 +135,9 @@ namespace Dairy.Tabs.Purchase
             }
             btnSubmit.Visible = false;
             btnUpdate.Visible = true;
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            
+            
+            
         }
 
         protected void dpVendor_SelectedIndexChanged(object sender, EventArgs e)
@@ -349,5 +348,7 @@ namespace Dairy.Tabs.Purchase
             CalculateTotalPrice();
         }
         #endregion
+
+
     }
 }

@@ -7,18 +7,19 @@
     <!-- jQuery 2.1.4 -->
    <%-- <script src="/Theme/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
     <!-- Bootstrap 3.3.5 -->
-    <script src="/Theme/bootstrap/js/bootstrap.min.js"></script>
+    <%--<script src="/Theme/bootstrap/js/bootstrap.min.js"></script>--%>
+    <script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
     <!-- DataTables -->
-    <script src="/Theme/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/Theme/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../../Theme/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../Theme/plugins/datatables/dataTables.bootstrap.min.js"></script>
     <!-- SlimScroll -->
-    <script src="/Theme/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="../../Theme/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="/Theme/plugins/fastclick/fastclick.min.js"></script>
+    <script src="../../Theme/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="/Theme/dist/js/app.min.js"></script>
+    <script src="../../Theme/dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="/Theme/dist/js/demo.js"></script>
+    <script src="../../Theme/dist/js/demo.js"></script>
     <!-- page script --> 
 
 

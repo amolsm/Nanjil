@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ItemRates.aspx.cs" Inherits="Dairy.Tabs.Purchase.ItemRates" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+    
     <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
-
+    
      <style type="text/css">
         .listboxl {
             height:100px !important;
@@ -140,7 +140,7 @@
                             
                          <td>   <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Edit" runat="server" CommandArgument='<%#Eval("ItemRateId") %>'
-                                                                    CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
+                                                                    CommandName="Edit" OnClientClick="showmodal();"><i class="fa fa-edit"></i></asp:LinkButton>
 </td>
 
                       
@@ -461,7 +461,10 @@
        
 
       <script type="text/javascript">
-          
+          //function showmodal() {
+          //    $('#myModal').modal();
+          //};
+
            $(document).ready(function () {
                $("#<% =dpVendor.ClientID %>").addClass("selectpicker");
                $("#dpVendor").selectpicker();
@@ -489,4 +492,6 @@
             });
         }
     </script>
+
+    
 </asp:Content>
