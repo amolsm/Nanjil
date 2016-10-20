@@ -121,11 +121,16 @@ namespace Dairy.Authentication
                                 Response.Redirect("/Tabs/Administration/CashierSettlement.aspx");
                                 break;
                             }
-                case "Transport":
-                    {
-                        Response.Redirect("/Tabs/TransportModule/TransportBrandMaster.aspx");
-                        break;
-                    }
+                        case "Transport":
+                            {
+                                Response.Redirect("/Tabs/TransportModule/TransportBrandMaster.aspx");
+                                break;
+                            }
+                        case "Purchase":
+                            {
+                                Response.Redirect("/Tabs/Purchase/Dashboard.aspx");
+                                break;
+                            }
             }               
 
             }

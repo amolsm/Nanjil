@@ -167,6 +167,20 @@
     <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
     <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
     <Content Include="Tabs\Procurement\VehicleTeriff.aspx" />
+    <Content Include="Tabs\PurchaseM\Dashboard.aspx" />
+    <Content Include="Tabs\PurchaseM\ViewPrchsRequest.aspx" />
+    <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
+    <Content Include="Tabs\Purchase\Categories.aspx" />
+    <Content Include="Tabs\Purchase\ComparativeStatement.aspx" />
+    <Content Include="Tabs\Purchase\Dashboard.aspx" />
+    <Content Include="Tabs\Purchase\IndentMaterial.aspx" />
+    <Content Include="Tabs\Purchase\ItemRates.aspx" />
+    <Content Include="Tabs\Purchase\Items.aspx" />
+    <Content Include="Tabs\Purchase\PurchaseOrder.aspx" />
+    <Content Include="Tabs\Purchase\PurchaseRequests.aspx" />
+    <Content Include="Tabs\Purchase\RackSections.aspx" />
+    <Content Include="Tabs\Purchase\VendorRegistration.aspx" />
+    <Content Include="Tabs\Purchase\ViewPurchaseOrder.aspx" />
     <Content Include="Tabs\Reception\EditOrder.aspx" />
     <Content Include="Tabs\Reception\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Reception\OrderQuantity.aspx" />
@@ -1666,6 +1680,104 @@
     </Compile>
     <Compile Include="Tabs\Procurement\VehicleTeriff.aspx.designer.cs">
       <DependentUpon>VehicleTeriff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\ViewPrchsRequest.aspx.cs">
+      <DependentUpon>ViewPrchsRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\ViewPrchsRequest.aspx.designer.cs">
+      <DependentUpon>ViewPrchsRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ApprovedRequestItems.aspx.cs">
+      <DependentUpon>ApprovedRequestItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ApprovedRequestItems.aspx.designer.cs">
+      <DependentUpon>ApprovedRequestItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ComparativeStatement.aspx.cs">
+      <DependentUpon>ComparativeStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ComparativeStatement.aspx.designer.cs">
+      <DependentUpon>ComparativeStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\IndentMaterial.aspx.cs">
+      <DependentUpon>IndentMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\IndentMaterial.aspx.designer.cs">
+      <DependentUpon>IndentMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ItemRates.aspx.cs">
+      <DependentUpon>ItemRates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ItemRates.aspx.designer.cs">
+      <DependentUpon>ItemRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Items.aspx.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Items.aspx.designer.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseOrder.aspx.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseOrder.aspx.designer.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseRequests.aspx.cs">
+      <DependentUpon>PurchaseRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseRequests.aspx.designer.cs">
+      <DependentUpon>PurchaseRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\RackSections.aspx.cs">
+      <DependentUpon>RackSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\RackSections.aspx.designer.cs">
+      <DependentUpon>RackSections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\VendorRegistration.aspx.cs">
+      <DependentUpon>VendorRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\VendorRegistration.aspx.designer.cs">
+      <DependentUpon>VendorRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.cs">
+      <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.designer.cs">
+      <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Reception\EditOrder.aspx.cs">
       <DependentUpon>EditOrder.aspx</DependentUpon>

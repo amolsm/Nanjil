@@ -71,6 +71,7 @@
     <Compile Include="DBMarketing.cs" />
     <Compile Include="DBProcurement.cs" />
     <Compile Include="DBProduct.cs" />
+    <Compile Include="DBPurchase.cs" />
     <Compile Include="DBRoute.cs" />
     <Compile Include="DBTransport.cs" />
     <Compile Include="DBUser.cs" />
