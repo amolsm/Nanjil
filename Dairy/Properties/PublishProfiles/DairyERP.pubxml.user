@@ -24,16 +24,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:42</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
+<<<<<<< HEAD
       <publishTime>10/21/2016 14:02:50</publishTime>
+=======
+      <publishTime>10/21/2016 11:44:20</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>10/20/2016 10:56:10</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
+<<<<<<< HEAD
       <publishTime>10/21/2016 14:02:52</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>10/21/2016 14:02:50</publishTime>
+=======
+      <publishTime>10/21/2016 16:27:08</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>10/21/2016 11:44:19</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -60,7 +71,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
+<<<<<<< HEAD
       <publishTime>10/21/2016 14:02:50</publishTime>
+=======
+      <publishTime>10/21/2016 11:44:18</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -225,7 +240,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:42</publishTime>
     </File>
     <File Include="Tabs/Administration/CreateUser.aspx">
+<<<<<<< HEAD
       <publishTime>10/20/2016 10:56:10</publishTime>
+=======
+      <publishTime>10/20/2016 10:27:17</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Administration/DamageRateSetup.aspx">
       <publishTime>10/17/2016 13:38:10</publishTime>
@@ -252,7 +271,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:42</publishTime>
     </File>
     <File Include="Tabs/Administration/GenrateBillThermal.aspx">
+<<<<<<< HEAD
       <publishTime>10/20/2016 11:06:43</publishTime>
+=======
+      <publishTime>10/20/2016 19:04:06</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Administration/IncentiveSetup.aspx">
       <publishTime>10/12/2016 15:37:42</publishTime>
@@ -465,7 +488,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/14/2016 10:59:42</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
+<<<<<<< HEAD
       <publishTime>10/21/2016 13:27:52</publishTime>
+=======
+      <publishTime>10/20/2016 19:04:06</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>10/14/2016 10:59:42</publishTime>
@@ -527,6 +554,48 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Tabs/PurchaseM/ViewPrchsRequest.aspx">
       <publishTime>10/20/2016 10:56:10</publishTime>
     </File>
+    <File Include="Tabs/Purchase/ApprovedRequestItems.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/Categories.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/ComparativeStatement.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/Dashboard.aspx">
+      <publishTime>09/09/2016 17:41:32</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/IndentMaterial.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/ItemRates.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/Items.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/PurchaseOrder.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/PurchaseRequests.aspx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/RackSections.aspx">
+      <publishTime>10/19/2016 17:03:22</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/VendorRegistration.aspx">
+      <publishTime>10/03/2016 18:14:01</publishTime>
+    </File>
+    <File Include="Tabs/Purchase/ViewPurchaseOrder.aspx">
+      <publishTime>10/20/2016 19:10:30</publishTime>
+    </File>
+    <File Include="Tabs/PurchaseM/Dashboard.aspx">
+      <publishTime>10/08/2016 17:29:49</publishTime>
+    </File>
+    <File Include="Tabs/PurchaseM/ViewPrchsRequest.aspx">
+      <publishTime>10/13/2016 18:24:49</publishTime>
+    </File>
     <File Include="Tabs/Reception/DuplicateBillForAgent.aspx">
       <publishTime>10/12/2016 15:37:42</publishTime>
     </File>
@@ -537,7 +606,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:42</publishTime>
     </File>
     <File Include="Tabs/Reception/GenrateBillThermal.aspx">
+<<<<<<< HEAD
       <publishTime>10/17/2016 17:03:29</publishTime>
+=======
+      <publishTime>10/21/2016 15:48:53</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/ItemwiseOrderSummary.aspx">
       <publishTime>10/12/2016 15:37:42</publishTime>
@@ -701,7 +774,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/bootstrap/css/bootstrap.css.map">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/bootstrap/css/bootstrap.css.map">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
     <File Include="Theme/bootstrap/css/bootstrap.min.css">
+<<<<<<< HEAD
       <publishTime>10/20/2016 19:12:26</publishTime>
     </File>
     <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.eot">
@@ -718,6 +795,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.woff2">
       <publishTime>10/12/2016 15:37:43</publishTime>
+=======
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Theme/bootstrap/js/bootstrap-select.min.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -980,6 +1075,255 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/build/less/variables.less">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/build/bootstrap-less/mixins.less">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/alerts.less">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/background-variant.less">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/border-radius.less">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/buttons.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/center-block.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/clearfix.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/forms.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/gradients.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/grid-framework.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/grid.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/hide-text.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/image.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/labels.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/list-group.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/nav-divider.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/nav-vertical-align.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/opacity.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/pagination.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/panels.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/progress-bar.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/reset-filter.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/resize.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/responsive-visibility.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/size.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/tab-focus.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/table-row.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/text-emphasis.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/text-overflow.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/mixins/vendor-prefixes.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/bootstrap-less/variables.less">
+      <publishTime>03/10/2016 22:32:12</publishTime>
+    </File>
+    <File Include="Theme/build/less/.csslintrc">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/404_500_errors.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/AdminLTE.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/alerts.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/bootstrap-social.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/boxes.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/buttons.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/callout.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/carousel.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/control-sidebar.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/core.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/direct-chat.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/dropdown.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/forms.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/fullcalendar.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/header.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/info-box.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/invoice.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/labels.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/lockscreen.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/login_and_register.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/mailbox.less">
+      <publishTime>03/10/2016 22:32:14</publishTime>
+    </File>
+    <File Include="Theme/build/less/miscellaneous.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/mixins.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/modal.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/navs.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/print.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/products.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/profile.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/progress-bars.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/select2.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/sidebar-mini.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/sidebar.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-black-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-black.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-blue-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-blue.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-green-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-green.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-purple-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-purple.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-red-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-red.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-yellow-light.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/skin-yellow.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/skins/_all-skins.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/small-box.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/social-widgets.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/table.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/timeline.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/users-list.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
+    <File Include="Theme/build/less/variables.less">
+      <publishTime>03/10/2016 22:32:16</publishTime>
+    </File>
     <File Include="Theme/Custom/Custom.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -1199,6 +1543,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache">
+      <publishTime>03/10/2016 22:32:18</publishTime>
+    </File>
     <File Include="Theme/plugins/bootstrap-slider/bootstrap-slider.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -1231,6 +1578,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/ckeditor/CHANGES.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/CHANGES.md">
+      <publishTime>03/10/2016 22:32:20</publishTime>
     </File>
     <File Include="Theme/plugins/ckeditor/ckeditor.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -1438,6 +1788,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/ckeditor/LICENSE.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/LICENSE.md">
+      <publishTime>03/10/2016 22:32:20</publishTime>
     </File>
     <File Include="Theme/plugins/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -1670,6 +2023,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/ckeditor/plugins/scayt/README.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/ckeditor/plugins/scayt/LICENSE.md">
+      <publishTime>03/10/2016 22:32:28</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/plugins/scayt/README.md">
+      <publishTime>03/10/2016 22:32:28</publishTime>
+    </File>
     <File Include="Theme/plugins/ckeditor/plugins/specialchar/dialogs/lang/ar.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -1841,6 +2200,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/ckeditor/README.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/ckeditor/plugins/wsc/LICENSE.md">
+      <publishTime>03/10/2016 22:32:30</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/plugins/wsc/README.md">
+      <publishTime>03/10/2016 22:32:30</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/README.md">
+      <publishTime>03/10/2016 22:32:20</publishTime>
+    </File>
     <File Include="Theme/plugins/ckeditor/skins/moono/dialog.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -1912,6 +2280,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/ckeditor/skins/moono/readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/ckeditor/skins/moono/readme.md">
+      <publishTime>03/10/2016 22:32:32</publishTime>
     </File>
     <File Include="Theme/plugins/ckeditor/styles.js">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -2060,6 +2431,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/datatables/extensions/ColReorder/Readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/datatables/extensions/ColReorder/Readme.md">
+      <publishTime>03/10/2016 22:32:34</publishTime>
+    </File>
     <File Include="Theme/plugins/datatables/extensions/ColVis/css/dataTables.colVis.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -2120,6 +2494,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/datatables/extensions/ColVis/Readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/datatables/extensions/ColVis/Readme.md">
+      <publishTime>03/10/2016 22:32:34</publishTime>
+    </File>
     <File Include="Theme/plugins/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -2179,6 +2556,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/datatables/extensions/FixedColumns/Readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/FixedColumns/Readme.md">
+      <publishTime>03/10/2016 22:32:36</publishTime>
     </File>
     <File Include="Theme/plugins/datatables/extensions/FixedHeader/css/dataTables.fixedHeader.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -2248,6 +2628,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/datatables/extensions/Responsive/css/dataTables.responsive.scss">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/Responsive/css/dataTables.responsive.scss">
+      <publishTime>03/10/2016 22:32:38</publishTime>
     </File>
     <File Include="Theme/plugins/datatables/extensions/Responsive/examples/child-rows/column-control.html">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -2333,6 +2716,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/datatables/extensions/Responsive/Readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/datatables/extensions/Responsive/Readme.md">
+      <publishTime>03/10/2016 22:32:38</publishTime>
+    </File>
     <File Include="Theme/plugins/datatables/extensions/Scroller/css/dataTables.scroller.css">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -2347,6 +2733,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/datatables/extensions/Scroller/examples/data/ssp.php">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/Scroller/examples/data/ssp.php">
+      <publishTime>03/10/2016 22:32:40</publishTime>
     </File>
     <File Include="Theme/plugins/datatables/extensions/Scroller/examples/index.html">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -2480,6 +2869,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/datatables/extensions/TableTools/images/psd/printer.psd">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/datatables/extensions/TableTools/images/psd/collection.psd">
+      <publishTime>03/10/2016 22:32:42</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/TableTools/images/psd/copy document.psd">
+      <publishTime>03/10/2016 22:32:42</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/TableTools/images/psd/file_types.psd">
+      <publishTime>03/10/2016 22:32:42</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/TableTools/images/psd/printer.psd">
+      <publishTime>03/10/2016 22:32:42</publishTime>
+    </File>
     <File Include="Theme/plugins/datatables/extensions/TableTools/images/xls.png">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -2494,6 +2895,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/datatables/extensions/TableTools/Readme.md">
       <publishTime>10/12/2016 15:37:43</publishTime>
+    </File>
+    <File Include="Theme/plugins/datatables/extensions/TableTools/Readme.md">
+      <publishTime>03/10/2016 22:32:40</publishTime>
     </File>
     <File Include="Theme/plugins/datatables/extensions/TableTools/swf/copy_csv_xls.swf">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -3194,6 +3598,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Theme/plugins/input-mask/phone-codes/phone-codes.json">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
+    <File Include="Theme/plugins/input-mask/phone-codes/phone-be.json">
+      <publishTime>03/10/2016 22:32:52</publishTime>
+    </File>
+    <File Include="Theme/plugins/input-mask/phone-codes/phone-codes.json">
+      <publishTime>03/10/2016 22:32:52</publishTime>
+    </File>
     <File Include="Theme/plugins/input-mask/phone-codes/readme.txt">
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
@@ -3414,7 +3824,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
     <File Include="UserControl/Footer.ascx">
+<<<<<<< HEAD
       <publishTime>10/20/2016 19:12:26</publishTime>
+=======
+      <publishTime>10/20/2016 19:03:59</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/Head.ascx">
       <publishTime>10/12/2016 15:37:43</publishTime>
@@ -3423,6 +3837,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/12/2016 15:37:43</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
+<<<<<<< HEAD
       <publishTime>10/20/2016 11:42:58</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
@@ -3430,6 +3845,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Web.config">
       <publishTime>10/21/2016 13:29:42</publishTime>
+=======
+      <publishTime>10/20/2016 19:04:06</publishTime>
+    </File>
+    <File Include="UserControl/ThemesSetting.ascx">
+      <publishTime>10/20/2016 19:03:59</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/21/2016 11:44:29</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>10/12/2016 15:37:43</publishTime>
