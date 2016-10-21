@@ -809,6 +809,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@MilkInKG", p.MilkInKG));
                 paramCollection.Add(new DBParameter("@MilkInLtr", p.MilkInLtr));
+                paramCollection.Add(new DBParameter("@ActualMilkInLtr", p.ActualMilkInLtr));
                 paramCollection.Add(new DBParameter("@FATPercentage", p.FATPercentage));
                 paramCollection.Add(new DBParameter("@CLRReading", p.CLRReading));
                 paramCollection.Add(new DBParameter("@FATInKG", p.FATInKG));
@@ -881,8 +882,9 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@CenterID", p.CollectionID));
                 paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
-                paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
+                //paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@FromDate", p.FomDate));
                 paramCollection.Add(new DBParameter("@ToDate", p.ToDate));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));
@@ -890,9 +892,9 @@ namespace DataAccess
                 DS = _DBHelper.ExecuteDataSet("Proc_SP_CalculateBill", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.ToString();
 
             }
             return DS;
@@ -914,7 +916,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@MilkType", p.MilkType));
                 paramCollection.Add(new DBParameter("@CenterID", p.CenterID));
                 paramCollection.Add(new DBParameter("@MilkInKG", p.MilkInKG));
-                paramCollection.Add(new DBParameter("@MilkInLtr", p.MilkInLtr));
+                paramCollection.Add(new DBParameter("@MilkInLtr", p.ActualMilkInLtr));
                 paramCollection.Add(new DBParameter("@VehicalNo", p.VehicleNo));
                 paramCollection.Add(new DBParameter("@Temp", p.Temp));
                 paramCollection.Add(new DBParameter("@Acidity", p.Acidity));

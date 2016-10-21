@@ -209,7 +209,7 @@
                       <div class="input-group-addon">
                    Fat Perc.
                       </div>
-                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" type="text" runat="server" required ToolTip="FAT %"></asp:TextBox>                        
+                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" runat="server" required ToolTip="FAT %" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -224,7 +224,7 @@
                       <div class="input-group-addon">
                       CLR Reading
                       </div>
-                       <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading" type="text" runat="server" ToolTip="CLR Reading" AutoPostBack="true" required OnTextChanged="txtCLRReading_TextChanged"></asp:TextBox>                        
+                       <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading"  runat="server" ToolTip="CLR Reading" AutoPostBack="true" required OnTextChanged="txtCLRReading_TextChanged" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

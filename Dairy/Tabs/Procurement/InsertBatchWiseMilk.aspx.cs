@@ -70,7 +70,7 @@ namespace Dairy.Tabs.Procurement
             p.Session = dpSession.SelectedItem.Text;
             p.Date = Convert.ToDateTime(txtDate.Text);
             p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
-            p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
+            p.ActualMilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.Temp = Convert.ToDecimal(txtTEmp.Text);
@@ -91,11 +91,11 @@ namespace Dairy.Tabs.Procurement
                 decimal ClosingBal = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
                 if (rdRecieving.Checked)
                 {
-                    p.ClosingBalance = ClosingBal + p.MilkInLtr;
+                    p.ClosingBalance = ClosingBal + p.ActualMilkInLtr;
                 }
                 else
                 {
-                    p.ClosingBalance = ClosingBal - p.MilkInLtr;
+                    p.ClosingBalance = ClosingBal - p.ActualMilkInLtr;
                 }
                 p.flag2 = "Update";
             }
@@ -108,19 +108,19 @@ namespace Dairy.Tabs.Procurement
                     if (rdRecieving.Checked)
                     {
                         p.OpeningBalance = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
-                        p.ClosingBalance = p.OpeningBalance + p.MilkInLtr;
+                        p.ClosingBalance = p.OpeningBalance + p.ActualMilkInLtr;
                     }
                     else
                     {
                         p.OpeningBalance = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
-                        p.ClosingBalance = p.OpeningBalance - p.MilkInLtr;
+                        p.ClosingBalance = p.OpeningBalance - p.ActualMilkInLtr;
                     }
                     
                 }
                 else
                 {
                     p.OpeningBalance = 0;
-                    p.ClosingBalance = p.MilkInLtr;
+                    p.ClosingBalance = p.ActualMilkInLtr;
                 }
                 p.BalanceID = 0;
                 p.flag2 = "insert";
@@ -327,7 +327,7 @@ namespace Dairy.Tabs.Procurement
             p.Session = dpSession.SelectedItem.Text;
             p.Date = Convert.ToDateTime(txtDate.Text);
             p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
-            p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
+            p.ActualMilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.Temp = Convert.ToDecimal(txtTEmp.Text);

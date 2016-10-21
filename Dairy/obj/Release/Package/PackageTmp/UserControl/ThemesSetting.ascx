@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="themes.ascx.cs" Inherits="Dairy.UserControl.themes" %>
-   <!-- Control Sidebar -->
+  <div id="Sidebars">
+ <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
         <!-- Create the tabs -->
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
@@ -36,4 +37,5 @@
         </div>
       </aside><!-- /.control-sidebar -->
        <div class="control-sidebar-bg"></div>
+
     </div><!-- ./wrapper -->

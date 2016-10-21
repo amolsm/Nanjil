@@ -51,28 +51,43 @@ namespace Dairy.Tabs.Procurement
         {
             double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.031),2);
             txtMilkInLtr.Text = milkInLtr.ToString();
-            txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
-           MidpointRounding.ToEven).ToString(); // Rounds to even
+            string num = milkInLtr.ToString();
+           string outnum= BreakUpSingleDecimalPlace(num);
+           txtActualMilkInLtr.Text = outnum;
+           // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
+           //MidpointRounding.ToEven).ToString(); // Rounds to even
            
            
+        }
+
+        public string BreakUpSingleDecimalPlace(string num)
+        {
+            string s = num;
+            string[] parts = s.Split('.');
+            int i1 = int.Parse(parts[0]);
+            int i2 = int.Parse(parts[1]);
+            string shortnum = i2.ToString();
+            if (shortnum.Length > 1)
+            {
+                num = num.Remove(num.Length - 1, 1);
+            }
+            return num;
+
         }
 
         protected void txtCLRReading_TextChanged(object sender, EventArgs e)
         {
-            //txtSNF.Text = (Convert.ToDouble(txtCLRReading.Text) + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.036).ToString();
-            txtFATInKG.Text = ((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100).ToString();
-            txtSNFPercentage.Text = (Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36).ToString();
-            txtSNFInKG.Text = ((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100).ToString();
-            txtTSPercentage.Text = (Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)).ToString();
-            txtTSKG.Text = (Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)).ToString();
+           
+            txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100),2).ToString();
+            txtSNFPercentage.Text = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36),2).ToString();
+            txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100),2).ToString();
+            string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)),2).ToString();
+            string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
+            txtTSPercentage.Text = outtspercent;
+            txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)),2).ToString();
         }
 
-        //protected void txtSNFPercentage_TextChanged(object sender, EventArgs e)
-        //{
-        //    txtSNFInKG.Text = ((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text))/100).ToString();
-        //    txtTSPercentage.Text = (Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)).ToString();
-        //    txtTSKG.Text = (Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)).ToString();
-        //}
+      
         protected void btnAddMilkCollection_Click(object sender, EventArgs e)
         {
             Model.Procurement p = new Model.Procurement();
@@ -84,6 +99,7 @@ namespace Dairy.Tabs.Procurement
             p.Date = Convert.ToDateTime(txtDate.Text.ToString());
             p.MilkInKG =Convert.ToDecimal(txtMilkInKG.Text);
             p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
+            p.ActualMilkInLtr = Convert.ToDecimal(txtActualMilkInLtr.Text);
             p.RouteID =Convert.ToInt32( dpRoute.SelectedItem.Value);
             p.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
@@ -137,6 +153,7 @@ namespace Dairy.Tabs.Procurement
             txtSNFInKG.Text = string.Empty;
             //txtSNF.Text = string.Empty;
             txtMilkInLtr.Text = string.Empty;
+            txtActualMilkInLtr.Text = string.Empty;
             txtMilkInKG.Text = string.Empty;
             txtFATPercentage.Text = string.Empty;
             txtFATInKG.Text = string.Empty;
@@ -213,6 +230,7 @@ namespace Dairy.Tabs.Procurement
                 txtFATPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["FATPercentage"].ToString();
                 txtMilkInKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkInKG"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkInKG"].ToString();
                 txtMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkInLtr"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkInLtr"].ToString();
+                txtActualMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ActualMilkInLtr"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ActualMilkInLtr"].ToString();
                 //txtSNF.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNF"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNF"].ToString();
                 txtSNFInKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFInKG"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFInKG"].ToString();
                 txtSNFPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFPercentage"].ToString();
@@ -295,6 +313,7 @@ namespace Dairy.Tabs.Procurement
             p.Date = Convert.ToDateTime(txtDate.Text);
             p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
             p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
+            p.ActualMilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);

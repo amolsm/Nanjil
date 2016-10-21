@@ -329,6 +329,12 @@ namespace Model
         }
         private decimal _MilkInLtr;
 
+        public decimal ActualMilkInLtr
+        {
+            get { return _ActualMilkInLtr; }
+            set { _ActualMilkInLtr = value; }
+        }
+        private decimal _ActualMilkInLtr;
 
 
         public decimal FATPercentage

@@ -1229,6 +1229,7 @@
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.designer.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>
@@ -1277,6 +1278,7 @@
     </Compile>
     <Compile Include="Tabs\Administration\UserLog.aspx.cs">
       <DependentUpon>UserLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Administration\UserLog.aspx.designer.cs">
       <DependentUpon>UserLog.aspx</DependentUpon>
