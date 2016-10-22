@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Items.aspx.cs" Inherits="Dairy.Tabs.Purchase.Items" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     
+      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
     
    <style type="text/css">
         .listboxl {

@@ -306,6 +306,7 @@
                 <li><a href="/Tabs/Reception/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Employee Order</a></li>
                 <li><a href="/Tabs/Reception/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Order</a></li>
                 <li><a href="/Tabs/Reception/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
+                  <li><a href="/Tabs/Reception/CancelOrder.aspx"><i class="fa fa-circle-o"></i>Cancel Order</a></li>
                 <li><a href="/Tabs/Reception/OrderQuantity.aspx"><i class="fa fa-circle-o"></i>Order Summary</a></li>
                 <li><a href="/Tabs/Reception/GenrateBillThermal.aspx"><i class="fa fa-circle-o"></i>Generate Bill</a></li>
              <%--   <li><a href="/Tabs/Reception/GenrateBill.aspx"><i class="fa fa-circle-o"></i> Generate Bill</a></li>--%>
@@ -448,7 +449,7 @@
                   <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent</a></li>
                   <li><a href="/Tabs/Purchase/ComparativeStatement.aspx"><i class="fa fa-circle-o"></i>Comparative Statement</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseRequests.aspx"><i class="fa fa-circle-o"></i>Purchase Request</a></li>
-                  <li><a href="/Tabs/PurchaseM/ViewPrchsRequests.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
+                  <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
                   <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
               </ul>

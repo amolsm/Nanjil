@@ -181,6 +181,7 @@
     <Content Include="Tabs\Purchase\RackSections.aspx" />
     <Content Include="Tabs\Purchase\VendorRegistration.aspx" />
     <Content Include="Tabs\Purchase\ViewPurchaseOrder.aspx" />
+    <Content Include="Tabs\Reception\CancelOrder.aspx" />
     <Content Include="Tabs\Reception\EditOrder.aspx" />
     <Content Include="Tabs\Reception\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Reception\OrderQuantity.aspx" />
@@ -1779,6 +1780,13 @@
     </Compile>
     <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.designer.cs">
       <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\CancelOrder.aspx.cs">
+      <DependentUpon>CancelOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\CancelOrder.aspx.designer.cs">
+      <DependentUpon>CancelOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Reception\EditOrder.aspx.cs">
       <DependentUpon>EditOrder.aspx</DependentUpon>
