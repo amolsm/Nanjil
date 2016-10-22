@@ -5,13 +5,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtFromDate").datepicker({ format: 'dd-MM-yyyy' });
-            $("#MainContent_txtToDate").datepicker({ format: 'dd-MM-yyyy' });
-        })
-    </script>
+     
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -29,6 +23,22 @@
                  });
              });
          }
+    </script>
+
+      <script type = "text/javascript">
+          function PrintPanel() {
+              var panel = document.getElementById("<%=pnlBill.ClientID %>");
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(panel.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return true;
+        }
     </script>
     <section class="content-header">
           <h1>
@@ -89,6 +99,24 @@
           <h3 class="box-title"> Raw Milk Rate Calculation</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center"> 
+                       </asp:DropDownList>  
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -106,26 +134,14 @@
                           
                       </div>  
 
+           
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                        <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select Supplier"> 
-                       </asp:DropDownList>                          
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div> 
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtFromDate" class="form-control" placeholder="From Date" runat="server" required ToolTip="From Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtFromDate" class="form-control" placeholder="From Date" runat="server" required ToolTip="From Date" type="date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -138,7 +154,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtToDate" class="form-control" placeholder="TO Date" runat="server" required ToolTip="To Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtToDate" class="form-control" placeholder="TO Date" runat="server" required ToolTip="To Date"  type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -188,7 +204,9 @@
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
               </div>
+
             </div>
+                 
             <div class="box-body" id="datalist">
                    
                 
@@ -196,16 +214,43 @@
 
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
+                       <asp:Panel runat="server" ID="pnlBill">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Font-Names="Arial"
+    Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B" HeaderStyle-BackColor="#33cccc"
+    AllowPaging="false">
+                             <Columns>
+        <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="MilkInLtr" HeaderText="MilkInLtr" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FatPercentage" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="SNFPercentage" HeaderText="SNFPercentage" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="TSPercentage" HeaderText="TSPercentage" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="RPL" HeaderText="RPL" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Amount" HeaderText="Amount" />
+    </Columns>
+                        </asp:GridView>
+               </asp:Panel>
+                <br />
+                         <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="return PrintPanel(); return true;"    Text="Print"   />   
+            
+                             </div><!-- /.input group -->
 
-                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-               
-                
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+
                         </ContentTemplate>
                 </asp:UpdatePanel>
   
 
 
             </div><!-- /.box-body --> 
-                               
+                             
           </div><!-- /.box -->
 </asp:Content>

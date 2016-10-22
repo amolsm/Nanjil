@@ -306,6 +306,7 @@
                 <li><a href="/Tabs/Reception/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Employee Order</a></li>
                 <li><a href="/Tabs/Reception/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Order</a></li>
                 <li><a href="/Tabs/Reception/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
+                  <li><a href="/Tabs/Reception/CancelOrder.aspx"><i class="fa fa-circle-o"></i>Cancel Order</a></li>
                 <li><a href="/Tabs/Reception/OrderQuantity.aspx"><i class="fa fa-circle-o"></i>Order Summary</a></li>
                 <li><a href="/Tabs/Reception/GenrateBillThermal.aspx"><i class="fa fa-circle-o"></i>Generate Bill</a></li>
              <%--   <li><a href="/Tabs/Reception/GenrateBill.aspx"><i class="fa fa-circle-o"></i> Generate Bill</a></li>--%>

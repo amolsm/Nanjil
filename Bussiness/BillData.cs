@@ -184,6 +184,10 @@ namespace Bussiness
         {
             return dbbill.GetOrdersForEdit(Date, routeID, BrandID);
         }
+        public DataSet GetOrdersForCancel(string Date, int routeID)
+        {
+            return dbbill.GetOrdersForCancel(Date, routeID);
+        }
         public DataSet GetOrdersbyOrderDetailsId(int id, int flag, double quantity)
         {
             return dbbill.GetOrdersbyOrderDetailsId(id, flag, quantity);
@@ -195,6 +199,23 @@ namespace Bussiness
             try
             {
                 Result = dbbill.EditOrders(id, flag, quantity);
+                return Result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+        public int CancelOrderById(int id, int flag, int CancelBy)
+        {
+
+            int Result = 0;
+            try
+            {
+                Result = dbbill.CancelOrderById(id, flag, CancelBy);
                 return Result;
             }
             catch (Exception)

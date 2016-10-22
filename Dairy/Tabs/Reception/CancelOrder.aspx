@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrder.aspx.cs" Inherits="Dairy.Tabs.Reception.EditOrder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CancelOrder.aspx.cs" Inherits="Dairy.Tabs.Reception.CancelOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       <section class="content-header">
           <h1>
-             Edit Orders
+             Cancel Orders
             <small>Reception</small> 
 
           </h1> <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
-            <li class="active">Edit Orders</li>
+            <li class="active">Cancel Orders</li>
           </ol>
         </section>
 
@@ -68,19 +68,7 @@
                        
                           
                       </div> 
-               <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:DropDownList ID="dpBrand" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server" > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>
-
+              
                                   
            <div class="col-lg-3">
                   <div class="form-group">
@@ -99,7 +87,7 @@
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btnViewDetails" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnViewDetails_Click"  Text="View Details"    />     
-                       <%-- &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();"   Text="Print"    />     --%>
+                     
                              
                     </div><!-- /.input group -->
 
@@ -131,10 +119,8 @@
                       <tr>
                           <th>Route</th>              
                           <th>Agent/Employee</th>
-                                        <th>Product</th>
-                           <th>Type</th>             
-                                        <th>Quantity</th>
-                                        <th>Edit</th>
+                          <th>Total Bill</th>
+                          <th>Cancel</th>
                                         <%--<th>Delete</th>--%>
                           
                       </tr>
@@ -149,19 +135,13 @@
 
                                 <td><%# Eval("RouteName")%></td>
                                 <td><%# (String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeCode") +" "+ Eval("EmployeeName") : Eval("AgentCode") +" "+  Eval("AgentName"))%></td>
-                                <td><%# (String.IsNullOrEmpty(Eval("ProductName").ToString()) ? "Scheme" : Eval("ProductName"))%></td>
-                                <td><%# Eval("TypeName")%></td>
-                                <td><%# ((Eval("Qty").ToString()=="0") ? "-" : Eval("Qty"))%></td>
-                                       
-                                        
-                                        
-                                        
-                         
+                                <td><%# Eval("TotalBill")%></td>
+                                
                          <td>
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#Eval("OrderDetailsId") %>'
-                                                                    CommandName="Edit">
-                                 <%#  (String.IsNullOrEmpty(Eval("ProductName").ToString()) ? "Remove" : "Edit" ) %> 
+                                                                    ToolTip="Cancel" runat="server" CommandArgument='<%#Eval("OrderID") %>'
+                                                                    CommandName="Edit" OnClientClick="return confirm('Are you sure??');">
+                                Cancel
                                  
                              </asp:LinkButton>
 
@@ -183,11 +163,8 @@
                       <tr>
                          <th>Route</th>              
                           <th>Agent/Employee</th>
-                           <th>Product</th>
-                           <th>Type</th>             
-                            <th>Quantity</th>
-                             <th>Edit</th>
-                            <%-- <th>Delete</th>--%>
+                          <th>Total Bill</th>
+                          <th>Cancel</th>
                                         
                       </tr>
                     </tfoot>
@@ -222,87 +199,7 @@
 
         </div>
 
-            <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
-              <ContentTemplate>         
-                      <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Items</h4>
-      </div>
-      <div class="modal-body">
-          <div class="box-body">
-            
            
-            
-
-                <div class="col-lg-6">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Name"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtName" class="form-control" ToolTip="Name"  placeholder="Name" runat="server" disabled></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                     
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- --> 
-                 <div class="col-lg-6">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Product"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtProductName" class="form-control" ToolTip="Product"  placeholder="Product" runat="server" disabled></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                     
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- --> 
-                 <div class="col-lg-6">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Prv Quantity"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtPrvQuantity" class="form-control" ToolTip="Prv Quantity"  placeholder="Prv Quantity" runat="server" disabled></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                     
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- --> 
-              <div class="col-lg-6">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Quantity"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtNewQuantity" class="form-control" ToolTip="Quantity"  placeholder="Quantity" runat="server" type="number"></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNewQuantity"
-        ErrorMessage="Quantity Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- --> 
-
- 
-            </div>
-      </div>
-      <div class="modal-footer">
-        <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-       <asp:Button ID="btnCloseModal" class="btn btn-default" runat="server" ValidationGroup="none" OnClick="btnCloseModal_Click" Text="Close" UseSubmitBehavior="false"  data-dismiss="modal"/>       
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true"  OnClientClick = "Confirm()" />       
-                
-      </div>
-    </div>
-  </div>
-</div>     
-
-                  </ContentTemplate>
-             </asp:UpdatePanel> 
          </section>
      <script type = "text/javascript">
          function Confirm() {
