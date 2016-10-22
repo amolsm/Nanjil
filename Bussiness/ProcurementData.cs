@@ -232,5 +232,10 @@ namespace Bussiness
 
             return pdb.GetMilkCollectionTransportDetailsbyID(milkcollectionid);
         }
+
+        public DataSet ViewMilkCollectionDetails(Procurement p)
+        {
+            return pdb.ViewMilkCollectionDetails(p);
+        }
     }
 }

@@ -1071,5 +1071,29 @@ namespace DataAccess
             }
             return DS;
         }
+
+        public DataSet ViewMilkCollectionDetails(Procurement p)
+        {
+            DataSet DS = new DataSet();
+           
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+              
+                paramCollection.Add(new DBParameter("@Date", p.Date));
+                paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
+                paramCollection.Add(new DBParameter("@Session", p.Session));
+
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_ViewMilkCollectionDetails", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+
+            }
+            return DS;
+        }
     }
 }

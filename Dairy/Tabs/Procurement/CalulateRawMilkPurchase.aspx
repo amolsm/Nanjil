@@ -25,21 +25,7 @@
          }
     </script>
 
-      <script type = "text/javascript">
-          function PrintPanel() {
-              var panel = document.getElementById("<%=pnlBill.ClientID %>");
-            var printWindow = window.open('', '', 'height=400,width=800');
-            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(panel.innerHTML);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            setTimeout(function () {
-                printWindow.print();
-            }, 500);
-            return true;
-        }
-    </script>
+   
     <section class="content-header">
           <h1>
              Raw Milk Rate Calculation
@@ -215,11 +201,11 @@
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
                        <asp:Panel runat="server" ID="pnlBill">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" Font-Names="Arial"
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" Font-Names="Arial"
     Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B" HeaderStyle-BackColor="#33cccc"
     AllowPaging="false">
-                             <Columns>
-        <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" />
+                     <Columns>
+        <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" DataFormatString="{0:d}" />
         <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
         <asp:BoundField ItemStyle-Width="150px" DataField="MilkInLtr" HeaderText="MilkInLtr" />
         <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FatPercentage" />
@@ -228,13 +214,16 @@
         <asp:BoundField ItemStyle-Width="150px" DataField="RPL" HeaderText="RPL" />
         <asp:BoundField ItemStyle-Width="150px" DataField="Amount" HeaderText="Amount" />
     </Columns>
+                            <EmptyDataTemplate>
+            <asp:Label ID="norecord" Text="no data was found" runat="server"></asp:Label>
+        </EmptyDataTemplate>
                         </asp:GridView>
                </asp:Panel>
                 <br />
                          <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="return PrintPanel(); return true;"    Text="Print"   />   
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  Onclick="btnPrint_Click"    Text="Generate Report"   />   
             
                              </div><!-- /.input group -->
 
@@ -248,9 +237,65 @@
                         </ContentTemplate>
                 </asp:UpdatePanel>
   
+                     <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
+              <ContentTemplate>         
+                      <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+  <div class="modal-dialog" role="document" style="width:75%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Raw Milk Purchase Report</h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
 
+              <div class="row">
+                  
+                    <div class="col-lg-4 ">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
+                     </div><!-- /.input group -->
+                    </div><!-- /.form group -->
+                    </div>  
+              </div>
+
+              
+          <asp:Panel runat="server" ID="pnlRequestDetails" >
+                        <asp:Literal runat="server" ID="RequestDetails"></asp:Literal>
+              </asp:Panel>
+              
+              </div>
+
+      </div>
+      <div class="modal-footer">
+       
+       
+          </div>
+    </div>
+  </div>
+</div>     
+
+                  </ContentTemplate>
+             </asp:UpdatePanel>   
 
             </div><!-- /.box-body --> 
                              
           </div><!-- /.box -->
+           <script type = "text/javascript">
+               function PrintPanel() {
+                   var panel = document.getElementById("<%=pnlRequestDetails.ClientID %>");
+             var printWindow = window.open('', '', 'height=600px,width=800px');
+             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
+             printWindow.document.write('</head><body >');
+             printWindow.document.write(panel.innerHTML);
+             printWindow.document.write('</body></html>');
+             printWindow.document.close();
+             setTimeout(function () {
+                 printWindow.print();
+             }, 500);
+             return false;
+         }
+         </script>
 </asp:Content>

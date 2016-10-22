@@ -20,7 +20,7 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
                 BindDropDown();
-            
+
             }
         }
 
@@ -43,15 +43,15 @@ namespace Dairy.Tabs.Procurement
                 dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
             }
 
-         
+
         }
 
         protected void btnCalculate_Click(object sender, EventArgs e)
         {
             Model.Procurement p = new Model.Procurement();
-            ProcurementData pd=new ProcurementData();
+            ProcurementData pd = new ProcurementData();
             p.CollectionID = Convert.ToInt32(dpCenter.SelectedItem.Value);
-            p.RouteID =Convert.ToInt32(dpRoute.SelectedItem.Value);
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
             p.ModifiedBy = App_code.GlobalInfo.Userid;
@@ -59,60 +59,180 @@ namespace Dairy.Tabs.Procurement
             int Result = 0;
             DataSet DS1 = new DataSet();
             DS1 = pd.CalculateBill(p);
-            if (DS1.Tables[0].Rows.Count>0)
-            {
-                GridView1.DataSource = DS1;
-                GridView1.DataBind();
-                divDanger.Visible = false;
-                divwarning.Visible = false;
-                GridView1.AllowPaging = false;
-                GridView1.DataBind();
-                StringWriter sw = new StringWriter();
-                HtmlTextWriter hw = new HtmlTextWriter(sw);
-                GridView1.RenderControl(hw);
-                string gridHTML = sw.ToString().Replace("\"", "'")
-                    .Replace(System.Environment.NewLine, "");
-                StringBuilder sb = new StringBuilder();
-                sb.Append("<script type = 'text/javascript'>");
-                sb.Append("window.onload = new function(){");
-                sb.Append("var printWin = window.open('', '', 'left=0");
-                sb.Append(",top=0,width=1000,height=600,status=0');");
-                sb.Append("printWin.document.write(\"");
-                sb.Append(gridHTML);
-                sb.Append("\");");
-                sb.Append("printWin.document.close();");
-                sb.Append("printWin.focus();");
-                sb.Append("printWin.print();");
-                sb.Append("printWin.close();};");
-                sb.Append("</script>");
-                ClientScript.RegisterStartupScript(this.GetType(), "GridPrint", sb.ToString());
-                GridView1.AllowPaging = true;
-                GridView1.DataBind();
-                //divSusccess.Visible = true;
-                //lblSuccess.Text = "Bill Calculated Successfully";
-                uprouteList.Update();
-                pnlError.Update();
-                upMain.Update();
-            }
-            else
-            {
-                divDanger.Visible = false;
-                divwarning.Visible = true;
-                divSusccess.Visible = false;
-                lblwarning.Text = "Please Contact to Site Admin";
-                pnlError.Update();
 
-            }
+            GridView1.DataSource = DS1;
+            GridView1.DataBind();
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+
+            //divSusccess.Visible = true;
+            //lblSuccess.Text = "Bill Calculated Successfully";
+            uprouteList.Update();
+            pnlError.Update();
+            upMain.Update();
+
         }
 
-     
 
-       
+
+
 
         public override void VerifyRenderingInServerForm(Control control)
         {
             /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
                server control at run time. */
+        }
+
+        protected void btnPrint_Click(object sender, EventArgs e)
+        {
+           
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+            p.CollectionID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+            p.FomDate = Convert.ToDateTime(txtFromDate.Text);
+            p.ToDate = Convert.ToDateTime(txtToDate.Text);
+            p.ModifiedBy = App_code.GlobalInfo.Userid;
+            p.ModifiedDate = DateTime.Now.ToString();
+           
+            DataSet DS1 = new DataSet();
+            DS1 = pd.CalculateBill(p);
+        
+            string result = string.Empty;
+            if (!Comman.Comman.IsDataSetEmpty(DS1))
+            {
+                StringBuilder sb = new StringBuilder();
+
+
+                sb.Append("<style type='text / css'>");
+                sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; } .dispnone {display:none;} ");
+                sb.Append("</style>");
+                sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                sb.Append("<colgroup>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("</colgroup>");
+
+                sb.Append("<tr>");
+                sb.Append("<th class='tg-yw4l' rowspan='2'>");
+                sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
+                sb.Append("</th>");
+
+                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
+                sb.Append("<u>Raw Milk Purchase Report </u> <br/>");
+                sb.Append("</th>");
+
+                sb.Append("<th class='tg-yw4l' style='text-align:right'>");
+
+                sb.Append("TIN:330761667331<br>");
+                sb.Append("</th>");
+                sb.Append("</tr>");
+
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+
+                sb.Append("PH:248370,248605");
+
+                sb.Append("</td>");
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append(" <td colspan='2' style='text-align:right'>");
+                sb.Append("Date : " + DateTime.Now.ToString());
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(dpCenter.SelectedItem.Text.ToString());
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(dpRoute.SelectedItem.Text.ToString());
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(Convert.ToDateTime(txtFromDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("</td>");
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td>");
+                sb.Append("<b>Date</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Session</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>MilkInLtr</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Fat Perc.</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>SNF Perc.</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>TS Perc.</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>RPL</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Amount</b>");
+                sb.Append("</td>");
+
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                foreach (DataRow row in DS1.Tables[0].Rows)
+                {
+                   
+                    sb.Append("<td>");
+                    sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["_Session"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["MilkInLtr"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["FATPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["SNFPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["TSPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["RPL"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["Amount"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                }
+                result = sb.ToString();
+                RequestDetails.Text = result;
+
+                Session["ctrl"] = pnlRequestDetails;
+
+            }
+            else
+            {
+                result = "No Records Found";
+                RequestDetails.Text = result;
+
+            }
+            upModal.Update();
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+           
         }
     }
 }

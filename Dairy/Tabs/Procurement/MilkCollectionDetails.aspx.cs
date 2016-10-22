@@ -19,7 +19,7 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
 
-                BindMilkCollectionList();
+                //BindMilkCollectionList();
                 BindDropDown();
                 btnAddMilkCollection.Visible = true;
                 btnupdateMilkCollection.Visible = false;
@@ -36,6 +36,10 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
                 dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+
+                dpRoute1.DataSource = DS;
+                dpRoute1.DataBind();
+                dpRoute1.Items.Insert(0, new ListItem("--All Route  --", "0"));
             }
 
             DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
@@ -356,6 +360,26 @@ namespace Dairy.Tabs.Procurement
                 pnlError.Update();
 
             }
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+            p.Date = Convert.ToDateTime(txtDate1.Text);
+            p.RouteID = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+            p.Session = dpSession1.SelectedItem.Text.ToString();
+            DataSet DS1 = new DataSet();
+            DS1 = pd.ViewMilkCollectionDetails(p);
+            if (!Comman.Comman.IsDataSetEmpty(DS1))
+            {
+               
+                rpMilkCollectionList.DataSource = DS1;
+                rpMilkCollectionList.DataBind();
+                uprouteList.Update();
+            }
+        
+        
         }
     }
 }
