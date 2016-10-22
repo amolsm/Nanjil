@@ -209,17 +209,9 @@ namespace Bussiness
 
 
         }
-       
-        public DataSet PartywiseDamageReturnSummary(string StartDate, string EndDate, int RouteID, int BrandID, int TypeID, int CommodityID)
-        {
-            return dbbill.PartywiseDamageReturnSummary(StartDate, EndDate, RouteID, BrandID, TypeID, CommodityID);
-        }
-
-
-
-
         public int CancelOrderById(int id, int flag, int CancelBy)
         {
+
             int Result = 0;
             try
             {
@@ -232,6 +224,11 @@ namespace Bussiness
                 throw;
             }
 
+
+        }
+        public DataSet PartywiseDamageReturnSummary(string StartDate, string EndDate, int RouteID, int BrandID, int TypeID, int CommodityID)
+        {
+            return dbbill.PartywiseDamageReturnSummary(StartDate, EndDate, RouteID, BrandID, TypeID, CommodityID);
         }
     }
     }
