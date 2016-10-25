@@ -657,8 +657,7 @@ namespace Dairy.Tabs.Reception
                 dpEmployeeProductDetails.Focus();
             }
 
-            {
-            }
+            
 
             upMain.Update();
         }

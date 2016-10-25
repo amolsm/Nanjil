@@ -24,16 +24,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 18:29:09</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>10/22/2016 12:38:31</publishTime>
+      <publishTime>10/22/2016 19:12:43</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>10/19/2016 11:58:28</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>10/22/2016 12:38:38</publishTime>
+      <publishTime>10/24/2016 12:40:21</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>10/22/2016 12:38:31</publishTime>
+      <publishTime>10/22/2016 19:12:42</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -453,13 +453,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/19/2016 11:16:33</publishTime>
     </File>
     <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
-      <publishTime>10/21/2016 18:16:43</publishTime>
+      <publishTime>10/22/2016 18:15:06</publishTime>
     </File>
     <File Include="Tabs/Procurement/InsertBatchWiseMilk.aspx">
       <publishTime>10/19/2016 11:16:33</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
-      <publishTime>10/21/2016 18:16:43</publishTime>
+      <publishTime>10/22/2016 18:15:06</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>10/19/2016 11:16:33</publishTime>
@@ -483,7 +483,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/20/2016 19:03:59</publishTime>
     </File>
     <File Include="Tabs/Purchase/Categories.aspx">
-      <publishTime>10/20/2016 19:03:59</publishTime>
+      <publishTime>10/22/2016 14:57:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/ComparativeStatement.aspx">
       <publishTime>10/20/2016 19:03:59</publishTime>
@@ -498,7 +498,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/20/2016 19:03:59</publishTime>
     </File>
     <File Include="Tabs/Purchase/Items.aspx">
-      <publishTime>10/20/2016 19:03:59</publishTime>
+      <publishTime>10/22/2016 14:58:17</publishTime>
     </File>
     <File Include="Tabs/Purchase/PurchaseOrder.aspx">
       <publishTime>10/20/2016 19:03:59</publishTime>
@@ -507,13 +507,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/20/2016 19:03:59</publishTime>
     </File>
     <File Include="Tabs/Purchase/RackSections.aspx">
-      <publishTime>10/19/2016 17:03:22</publishTime>
+      <publishTime>10/22/2016 14:55:47</publishTime>
     </File>
     <File Include="Tabs/Purchase/VendorRegistration.aspx">
       <publishTime>10/03/2016 18:14:01</publishTime>
     </File>
     <File Include="Tabs/Purchase/ViewPurchaseOrder.aspx">
-      <publishTime>10/20/2016 19:10:30</publishTime>
+      <publishTime>10/22/2016 15:55:47</publishTime>
     </File>
     <File Include="Tabs/PurchaseM/Dashboard.aspx">
       <publishTime>10/08/2016 17:29:49</publishTime>
@@ -522,13 +522,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/13/2016 18:24:49</publishTime>
     </File>
     <File Include="Tabs/Reception/CancelOrder.aspx">
-      <publishTime>10/22/2016 12:22:14</publishTime>
+      <publishTime>10/24/2016 12:46:20</publishTime>
     </File>
     <File Include="Tabs/Reception/DuplicateBillForAgent.aspx">
       <publishTime>10/05/2016 18:29:52</publishTime>
     </File>
     <File Include="Tabs/Reception/EditOrder.aspx">
-      <publishTime>10/22/2016 12:34:04</publishTime>
+      <publishTime>10/24/2016 12:45:49</publishTime>
     </File>
     <File Include="Tabs/Reception/GenrateBill.aspx">
       <publishTime>10/05/2016 18:29:52</publishTime>
@@ -3411,7 +3411,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2016 22:32:56</publishTime>
     </File>
     <File Include="UserControl/Footer.ascx">
-      <publishTime>10/20/2016 19:03:59</publishTime>
+      <publishTime>10/24/2016 12:36:11</publishTime>
     </File>
     <File Include="UserControl/Head.ascx">
       <publishTime>10/05/2016 18:30:19</publishTime>
@@ -3420,13 +3420,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 18:30:19</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>10/22/2016 12:33:40</publishTime>
+      <publishTime>10/22/2016 15:51:25</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>10/20/2016 19:03:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/22/2016 12:38:43</publishTime>
+      <publishTime>10/24/2016 12:47:02</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>10/05/2016 18:30:19</publishTime>

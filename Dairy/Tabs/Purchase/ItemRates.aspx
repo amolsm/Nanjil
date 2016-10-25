@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ItemRates.aspx.cs" Inherits="Dairy.Tabs.Purchase.ItemRates" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
-    <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
-    
+   
+     
      <style type="text/css">
         .listboxl {
             height:100px !important;
@@ -81,7 +80,7 @@
                       <div class="input-group-addon">
                       <asp:Label Text="Vendor" runat="server"></asp:Label>
                       </div>
-                       <asp:DropDownList ID="dpVendor" class="form-control selectpicker"  data-live-search="true" DataTextField="Name" DataValueField="Id" runat="server" OnSelectedIndexChanged="dpVendor_SelectedIndexChanged" AutoPostBack="true" > 
+                       <asp:DropDownList ID="dpVendor" class="form-control selectpicker"  data-live-search="true" DataTextField="Name" DataValueField="Id" runat="server" > 
                        </asp:DropDownList>
                         
                          
@@ -89,7 +88,20 @@
                   </div><!-- /.form group -->
                          </div>
 
-       
+        <div class="col-lg-4  ">
+                  <div class="form-group">
+                    <div class="input-group">
+                     <asp:Button ID="btnSearch" class="btn btn-primary" runat="server" CommandName="MoveNext"  Text="Search" ValidationGroup="Add" OnClick="btnSearch_Click"  />                    
+                                  
+                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
                          
                </div>
 
@@ -110,7 +122,7 @@
                    
                               <div class="col-md-12" runat="server" id="divTable">
                           <table id="example1" class="table table-bordered table-striped">'
-          <asp:Repeater ID="rpItemRatesList" runat="server"  OnItemCommand="rpItemRatesList_ItemCommand">
+          <asp:Repeater ID="rpItemRatesList" runat="server"  OnItemCommand="rpItemRatesList_ItemCommand" >
                 
                <HeaderTemplate>
                   <thead>
@@ -140,7 +152,7 @@
                             
                          <td>   <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Edit" runat="server" CommandArgument='<%#Eval("ItemRateId") %>'
-                                                                    CommandName="Edit" OnClientClick="showmodal();"><i class="fa fa-edit"></i></asp:LinkButton>
+                                                                    CommandName="Edit"><i class="fa fa-edit" ></i></asp:LinkButton>
 </td>
 
                       

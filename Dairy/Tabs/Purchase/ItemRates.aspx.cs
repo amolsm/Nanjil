@@ -82,7 +82,8 @@ namespace Dairy.Tabs.Purchase
                         ItemRateId = Convert.ToInt32(hfItemRatesId.Value);
                         GetDetailsById(ItemRateId);
                         upModal.Update();
-                       // ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                        SelDropDown();
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal2", " $('#myModal').modal();", true);
                         break;
                     }
                
@@ -140,12 +141,7 @@ namespace Dairy.Tabs.Purchase
             
         }
 
-        protected void dpVendor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(dpVendor.SelectedItem.Value);
-            
-            UpdateList(id);
-        }
+        
 
         private void UpdateList(int id)
         {
@@ -347,8 +343,14 @@ namespace Dairy.Tabs.Purchase
         {
             CalculateTotalPrice();
         }
+
         #endregion
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dpVendor.SelectedItem.Value);
 
+            UpdateList(id);
+        }
     }
 }

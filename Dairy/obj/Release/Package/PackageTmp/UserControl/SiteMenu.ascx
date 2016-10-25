@@ -449,7 +449,7 @@
                   <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent</a></li>
                   <li><a href="/Tabs/Purchase/ComparativeStatement.aspx"><i class="fa fa-circle-o"></i>Comparative Statement</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseRequests.aspx"><i class="fa fa-circle-o"></i>Purchase Request</a></li>
-                  <li><a href="/Tabs/PurchaseM/ViewPrchsRequests.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
+                  <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
                   <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
               </ul>

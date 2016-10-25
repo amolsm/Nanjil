@@ -176,6 +176,7 @@
     <Content Include="Tabs\Purchase\IndentMaterial.aspx" />
     <Content Include="Tabs\Purchase\ItemRates.aspx" />
     <Content Include="Tabs\Purchase\Items.aspx" />
+    <Content Include="Tabs\Purchase\MaterialReceived.aspx" />
     <Content Include="Tabs\Purchase\PurchaseOrder.aspx" />
     <Content Include="Tabs\Purchase\PurchaseRequests.aspx" />
     <Content Include="Tabs\Purchase\RackSections.aspx" />
@@ -1745,6 +1746,13 @@
     </Compile>
     <Compile Include="Tabs\Purchase\Items.aspx.designer.cs">
       <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\MaterialReceived.aspx.cs">
+      <DependentUpon>MaterialReceived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\MaterialReceived.aspx.designer.cs">
+      <DependentUpon>MaterialReceived.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Purchase\PurchaseOrder.aspx.cs">
       <DependentUpon>PurchaseOrder.aspx</DependentUpon>

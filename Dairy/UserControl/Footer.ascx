@@ -5,7 +5,7 @@
 
     
     <!-- jQuery 2.1.4 -->
-   <%-- <script src="/Theme/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
+    <%--<script src="../../Theme/plugins/jQuery/jQuery-2.1.4.min.js"></script>--%>
     <!-- Bootstrap 3.3.5 -->
     <%--<script src="/Theme/bootstrap/js/bootstrap.min.js"></script>--%>
     <script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
@@ -21,7 +21,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../Theme/dist/js/demo.js"></script>
     <!-- page script --> 
-
+ <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
 
    <script>
        $(function () {
