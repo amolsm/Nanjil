@@ -82,8 +82,11 @@ namespace Dairy.Tabs.Purchase
                         ItemRateId = Convert.ToInt32(hfItemRatesId.Value);
                         GetDetailsById(ItemRateId);
                         upModal.Update();
+                        uprouteList.Update();
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", " $('#myModal').modal();", true);
+                      
                         SelDropDown();
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal2", " $('#myModal').modal();", true);
+                      
                         break;
                     }
                

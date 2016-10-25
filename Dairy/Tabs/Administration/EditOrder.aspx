@@ -322,7 +322,13 @@
              
           }
    
-         
+          $(document).ready(function () {
+              $('#example1').dataTable({
+                  "bPaginate": false,
+                  "paging": false
+                     
+              });
+          });
           //-->
       </script>
     
