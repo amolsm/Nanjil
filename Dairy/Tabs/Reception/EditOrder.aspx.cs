@@ -155,6 +155,7 @@ namespace Dairy.Tabs.Reception
                 DS = new DataSet();
                 billdata = new BillData();
                 int id = Convert.ToInt32(hbankId.Value);
+             
                 int flag = 2;
                 double qty = Convert.ToDouble(txtNewQuantity.Text);
                 int result = billdata.EditOrders(id, flag, qty);

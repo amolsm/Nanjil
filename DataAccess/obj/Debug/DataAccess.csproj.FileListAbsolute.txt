@@ -777,6 +777,7 @@ D:\CurrentProjectWorking\Oct05_nan\DataAccess\bin\Model.pdb
 D:\CurrentProjectWorking\Oct05_nan\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\CurrentProjectWorking\Oct05_nan\DataAccess\obj\Debug\DataAccess.dll
 D:\CurrentProjectWorking\Oct05_nan\DataAccess\obj\Debug\DataAccess.pdb
+<<<<<<< HEAD
 D:\NanjilCode\Nanjil\DataAccess\bin\DataAccess.dll
 D:\NanjilCode\Nanjil\DataAccess\bin\DataAccess.pdb
 D:\NanjilCode\Nanjil\DataAccess\bin\Comman.dll
@@ -786,3 +787,14 @@ D:\NanjilCode\Nanjil\DataAccess\bin\Model.pdb
 D:\NanjilCode\Nanjil\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\NanjilCode\Nanjil\DataAccess\obj\Debug\DataAccess.dll
 D:\NanjilCode\Nanjil\DataAccess\obj\Debug\DataAccess.pdb
+=======
+D:\NanjilCode\DataAccess\bin\DataAccess.dll
+D:\NanjilCode\DataAccess\bin\DataAccess.pdb
+D:\NanjilCode\DataAccess\bin\Comman.dll
+D:\NanjilCode\DataAccess\bin\Model.dll
+D:\NanjilCode\DataAccess\bin\Comman.pdb
+D:\NanjilCode\DataAccess\bin\Model.pdb
+D:\NanjilCode\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\NanjilCode\DataAccess\obj\Debug\DataAccess.dll
+D:\NanjilCode\DataAccess\obj\Debug\DataAccess.pdb
+>>>>>>> origin/master

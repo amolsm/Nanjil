@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrder.aspx.cs" Inherits="Dairy.Tabs.Reception.EditOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
       <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       <section class="content-header">
@@ -129,6 +130,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
+                           <th>Sr.No.</th> 
                           <th>Route</th>              
                           <th>Agent/Employee</th>
                                         <th>Product</th>
@@ -146,7 +148,7 @@
                <ItemTemplate>
                     <tr>
                             
-
+                                <td><%# Container.ItemIndex + 1 %> </td>
                                 <td><%# Eval("RouteName")%></td>
                                 <td><%# (String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeCode") +" "+ Eval("EmployeeName") : Eval("AgentCode") +" "+  Eval("AgentName"))%></td>
                                 <td><%# (String.IsNullOrEmpty(Eval("ProductName").ToString()) ? "Scheme" : Eval("ProductName"))%></td>
@@ -181,6 +183,7 @@
 
                     <tfoot>
                       <tr>
+                            <th>Sr.No.</th> 
                          <th>Route</th>              
                           <th>Agent/Employee</th>
                            <th>Product</th>
@@ -324,5 +327,15 @@
 
 
          //-->
-      </script>
+
+         $(document).ready(function () {
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+         });
+    </script>
+  
+  
 </asp:Content>
