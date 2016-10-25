@@ -13,5 +13,15 @@ namespace Dairy.Tabs.Purchase
         {
 
         }
+
+        protected void dpVendor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rpAgentOrderdetails_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
     }
 }

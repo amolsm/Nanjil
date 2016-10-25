@@ -21,7 +21,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../Theme/dist/js/demo.js"></script>
     <!-- page script --> 
-
+ <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
 
    <script>
        $(function () {
