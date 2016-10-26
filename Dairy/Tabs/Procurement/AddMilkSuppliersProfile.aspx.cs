@@ -464,5 +464,10 @@ namespace Dairy.Tabs.Procurement
             }
 
         }
+
+        protected void btnClick_btnAddNew(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Procurement/AddMilkSuppliersProfile.aspx");
+        }
     }
 }

@@ -372,7 +372,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllBatchWiseMilkCollectionDetails();
+            DS = pd.GetAllBatchWiseMilkCollectionDetail();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 rpBatchWiseMilkCollection.DataSource = DS.Tables[0];
@@ -386,7 +386,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllBatchWiseMilkCollectionDetails();
+            DS = pd.GetAllBatchWiseMilkCollectionDetail();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 rpBatchWiseMilkCollection.DataSource = DS.Tables[1];

@@ -191,7 +191,37 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
+                 <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      CLR Reading
+                      </div>
+                       <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading"  runat="server" ToolTip="CLR Reading" Type="number" step="any"></asp:TextBox>                        
+                    </div><!-- /.input group -->
 
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                   Fat Perc.
+                      </div>
+                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" runat="server" AutoPostBack="true"  OnTextChanged="txtCLRReading_TextChanged"   ToolTip="FAT %" Type="number" step="any"></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -203,36 +233,8 @@
                   </div><!-- /.form group -->                   
                   </div>  
         
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                   Fat Perc.
-                      </div>
-                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" runat="server"  ToolTip="FAT %" Type="number" step="any"></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>  
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      CLR Reading
-                      </div>
-                       <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading"  runat="server" ToolTip="CLR Reading" AutoPostBack="true"  OnTextChanged="txtCLRReading_TextChanged" Type="number" step="any"></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>  
+           
+       
             <%--<div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -461,7 +463,7 @@
                         <th>FATInKG</th>
     
                            <th>Edit</th>
-                          <th>Delete</th>
+                       <%--   <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -485,10 +487,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                         <%--<td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("CollectionID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -506,7 +508,7 @@
                        
                        
                            <th>Edit</th>
-                          <th>Delete</th>
+                       <%--   <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

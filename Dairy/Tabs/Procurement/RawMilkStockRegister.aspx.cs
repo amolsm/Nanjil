@@ -8,19 +8,23 @@ using System.Data;
 using Bussiness;
 using Model;
 using System.Text;
+using Dairy.App_code;
 
 namespace Dairy.Tabs.Procurement
 {
     public partial class RawMilkStockRegister : System.Web.UI.Page
     {
+        string flag= "receive";
         DataSet DS = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindMilkCollectionList();
+                //BindMilkCollectionList();
                 BindDropDwon();
-                txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                txtDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+                txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+                txtTime.Text = DateTime.Now.ToString("HH:MM");
                 btnAddMilk.Visible = true;
                 btnupdateMilk.Visible = false;
                 rdRecieving.Checked = true;
@@ -32,6 +36,20 @@ namespace Dairy.Tabs.Procurement
         public void BindDropDwon()
         {
 
+            DS = BindCommanData.BindCommanDropDwon("ID ", "particular  as Name  ", "Proc_ReceiveandDisposalMaster", "Purpose='Receive' ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpParticularreceive.DataSource = DS;
+                dpParticularreceive.DataBind();
+                dpParticularreceive.Items.Insert(0, new ListItem("--Select Particular  --", "0"));
+            }
+            DS = BindCommanData.BindCommanDropDwon("ID ", "particular  as Name  ", "Proc_ReceiveandDisposalMaster", "Purpose='Dispose' ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpParticulardispose.DataSource = DS;
+                dpParticulardispose.DataBind();
+                dpParticulardispose.Items.Insert(0, new ListItem("--Select Particular  --", "0"));
+            }
             DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -39,6 +57,7 @@ namespace Dairy.Tabs.Procurement
                 dpCenter.DataBind();
                 dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
             }
+
         }
 
         protected void txtMilkInKG_TextChanged(object sender, EventArgs e)
@@ -63,12 +82,12 @@ namespace Dairy.Tabs.Procurement
             p.BatchWiseMilkDisposalID = 0;
             p.BatchNo = txtBatch.Text;
             p.VehicleNo = txtVehicalNo.Text;
-            p.Session = dpSession.SelectedItem.Text;
+            p.Session = txtTime.Text;
             p.Date = Convert.ToDateTime(txtDate.Text);
             p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
             p.ActualMilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.MilkType = dpMilkType.SelectedItem.Text;
-            p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.CenterID = 6; //GlobalInfo.Userid;
             p.Temp = Convert.ToDecimal(txtTEmp.Text);
             p.Acidity = Convert.ToDecimal(txtAcidity.Text);
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
@@ -159,7 +178,7 @@ namespace Dairy.Tabs.Procurement
         {
             txtBatch.Text = string.Empty;
             txtDate.Text = string.Empty;
-            dpSession.ClearSelection();
+            txtTime.Text = string.Empty;
             txtAcidity.Text = string.Empty;
             txtSNFPercentage.Text = string.Empty;
             txtTEmp.Text = string.Empty;
@@ -168,8 +187,7 @@ namespace Dairy.Tabs.Procurement
             txtMilkInKG.Text = string.Empty;
             txtFATPercentage.Text = string.Empty;
             dpMilkType.ClearSelection();
-            dpCenter.ClearSelection();
-            dpSession.ClearSelection();
+           
             rdRecieving.Checked = false;
             rdDisposal.Checked = false;
             rpBatchWiseMilkCollection.DataSource = null;
@@ -187,7 +205,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllBatchWiseMilkCollectionDetails();
+            DS = pd.GetAllBatchWiseMilkCollectionDetail();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 rpBatchWiseMilkCollection.DataSource = DS.Tables[0];
@@ -251,14 +269,10 @@ namespace Dairy.Tabs.Procurement
                 txtSNFPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFPercentage"].ToString();
                 txtAcidity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Acidity"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Acidity"].ToString();
                 dpMilkType.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkType"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkType"].ToString();
-                dpCenter.ClearSelection();
-                if (dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()) != null)
-                {
-                    dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()).Selected = true;
-                }
+                 
                 txtBatch.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
-                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Date"].ToString();
-                dpSession.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Session"].ToString();
+                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["Date"]).ToString("yyyy-MM-dd");
+                txtTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Session"].ToString();
             }
         }
         public void DeleteMilkCollectionbyID(int collectionid)
@@ -296,8 +310,8 @@ namespace Dairy.Tabs.Procurement
             //    ClearTextBox();
             //    BindMilkCollectionList();
             //    pnlError.Update();
-            //    btnAddMilkCollection.Visible = true;
-            //    btnupdateMilkCollection.Visible = false;
+            //    btnAddMilk.Visible = true;
+            //    btnupdateMilk.Visible = false;
             //    upMain.Update();
             //    uprouteList.Update();
             //}
@@ -330,12 +344,12 @@ namespace Dairy.Tabs.Procurement
             
             p.BatchNo = txtBatch.Text;
             p.VehicleNo = txtVehicalNo.Text;
-            p.Session = dpSession.SelectedItem.Text;
+            p.Session = txtTime.Text;
             p.Date = Convert.ToDateTime(txtDate.Text);
             p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
             p.ActualMilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
             p.MilkType = dpMilkType.SelectedItem.Text;
-            p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.CenterID = 6;//App_code.GlobalInfo.Userid;
             p.Temp = Convert.ToDecimal(txtTEmp.Text);
             p.Acidity = Convert.ToDecimal(txtAcidity.Text);
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
@@ -387,17 +401,11 @@ namespace Dairy.Tabs.Procurement
                 d1.Visible = false;
                 d2.Visible = true;
                 disp.Visible = false;
+                flag = string.Empty;
+                flag = "receive";
             }
-            ProcurementData pd = new ProcurementData();
-            DataSet DS = new DataSet();
-            StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllBatchWiseMilkCollectionDetails();
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                rpBatchWiseMilkCollection.DataSource = DS.Tables[0];
-                rpBatchWiseMilkCollection.DataBind();
-            }
-            uprouteList.Update();
+           
+           
         }
 
         protected void rdDisposal_CheckedChanged(object sender, EventArgs e)
@@ -407,21 +415,28 @@ namespace Dairy.Tabs.Procurement
                 d1.Visible = true;
                 d2.Visible = false;
                 disp.Visible = true;
+                flag = string.Empty;
+                flag = "dispose";
             }
+           
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
-            StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllBatchWiseMilkCollectionDetails();
+            Model.Procurement p = new Model.Procurement();
+            p.Date= Convert.ToDateTime(txtDate.Text);
+            p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.flag = flag;
+            DS = pd.GetAllBatchWiseMilkCollectionDetails(p);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                rpBatchWiseMilkCollection.DataSource = DS.Tables[1];
+                rpBatchWiseMilkCollection.DataSource = DS;
                 rpBatchWiseMilkCollection.DataBind();
             }
             uprouteList.Update();
         }
-
-
-
     }
     
 }

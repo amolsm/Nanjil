@@ -1485,5 +1485,9 @@ namespace Model
                 _BankAddress = value;
             }
         }
+        public string VehicleTypeName { get; set; }
+        public int ID { get; set; }
+        public string particular { get; set; }
+        public string purpose { get; set; }
     }
 }

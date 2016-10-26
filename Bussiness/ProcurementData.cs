@@ -39,16 +39,44 @@ namespace Bussiness
 
             return pdb.GetAllSupplierProfiles();
         }
+
+        public DataSet GetReceiveDisposeHeadMaster()
+        {
+            return pdb.GetReceiveDisposeHeadMaster();
+        }
+
         public DataSet GetSupplierProfilebyID(int SupplierID)
         {
 
             return pdb.GetSupplierProfilebyID(SupplierID);
         }
+
+        public DataSet GetVehicleType()
+        {
+            return pdb.GetVehicleType();
+        }
+       
+
         public int InsertSupplierBankDetails(Procurement p)
         {
 
             return pdb.InsertSupplierBankDetails(p);
         }
+
+        public int InsertReceiveandDisposeMaster(Procurement p)
+        {
+            return pdb.InsertReceiveandDisposeMaster(p);
+        }
+
+        public DataSet GetReceiveDisposeHeadMasterId(int ID)
+        {
+            return pdb.GetReceiveDisposeHeadMasterId(ID);
+        }
+        public int InsertVehicleType(Procurement p)
+        {
+            return pdb.InsertVehicleType(p);
+        }
+
         public DataSet GetAllSupplierBankDetails()
         {
 
@@ -137,6 +165,10 @@ namespace Bussiness
             return pdb.GetVehicleMasterDetailsbyID(vehicleid);
         }
 
+        public DataSet GetVehicleTypeById(int typeID)
+        {
+            return pdb.GetVehicleTypeById(typeID);
+        }
 
         public int InsertVehicleDetails(Procurement p)
         {
@@ -201,10 +233,10 @@ namespace Bussiness
 
             return pdb.InsertBatchWiseMilkCollection(p);
         }
-        public DataSet GetAllBatchWiseMilkCollectionDetails()
+        public DataSet GetAllBatchWiseMilkCollectionDetails(Procurement p)
         {
 
-            return pdb.GetAllBatchWiseMilkCollectionDetails();
+            return pdb.GetAllBatchWiseMilkCollectionDetails(p);
         }
         public DataSet GetBatchWiseMilkCollectionDetailsbyID(int milkcollectionid)
         {
@@ -236,6 +268,11 @@ namespace Bussiness
         public DataSet ViewMilkCollectionDetails(Procurement p)
         {
             return pdb.ViewMilkCollectionDetails(p);
+        }
+
+        public DataSet GetAllBatchWiseMilkCollectionDetail()
+        {
+            return pdb.GetAllBatchWiseMilkCollectionDetail();
         }
     }
 }

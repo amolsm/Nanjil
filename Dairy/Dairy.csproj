@@ -164,9 +164,11 @@
     <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
     <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
     <Content Include="Tabs\Procurement\RawMilkTariff.aspx" />
+    <Content Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx" />
     <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
     <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
-    <Content Include="Tabs\Procurement\VehicleTeriff.aspx" />
+    <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
+    <Content Include="Tabs\Procurement\VehicleType.aspx" />
     <Content Include="Tabs\PurchaseM\Dashboard.aspx" />
     <Content Include="Tabs\PurchaseM\ViewPrchsRequest.aspx" />
     <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
@@ -1231,7 +1233,6 @@
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.designer.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>
@@ -1280,7 +1281,6 @@
     </Compile>
     <Compile Include="Tabs\Administration\UserLog.aspx.cs">
       <DependentUpon>UserLog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Administration\UserLog.aspx.designer.cs">
       <DependentUpon>UserLog.aspx</DependentUpon>
@@ -1663,6 +1663,13 @@
     <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.designer.cs">
       <DependentUpon>RawMilkTariff.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx.cs">
+      <DependentUpon>ReceiveDisposalheadmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx.designer.cs">
+      <DependentUpon>ReceiveDisposalheadmaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.cs">
       <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1677,12 +1684,19 @@
     <Compile Include="Tabs\Procurement\VehicleMaster.aspx.designer.cs">
       <DependentUpon>VehicleMaster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Procurement\VehicleTeriff.aspx.cs">
-      <DependentUpon>VehicleTeriff.aspx</DependentUpon>
+    <Compile Include="Tabs\Procurement\VehicleTariff.aspx.cs">
+      <DependentUpon>VehicleTariff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tabs\Procurement\VehicleTeriff.aspx.designer.cs">
-      <DependentUpon>VehicleTeriff.aspx</DependentUpon>
+    <Compile Include="Tabs\Procurement\VehicleTariff.aspx.designer.cs">
+      <DependentUpon>VehicleTariff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleType.aspx.cs">
+      <DependentUpon>VehicleType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleType.aspx.designer.cs">
+      <DependentUpon>VehicleType.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\PurchaseM\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>

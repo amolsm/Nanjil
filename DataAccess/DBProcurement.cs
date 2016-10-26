@@ -61,6 +61,123 @@ namespace DataAccess
             return result;
         }
 
+        public int InsertReceiveandDisposeMaster(Procurement p)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@ID", p.ID));
+                paramCollection.Add(new DBParameter("@particular", p.particular));
+                paramCollection.Add(new DBParameter("@purpose", p.purpose));
+                paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
+                paramCollection.Add(new DBParameter("@flag", p.flag));
+                result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertReceiveandDisposeMaster", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return result;
+        }
+
+        public DataSet GetReceiveDisposeHeadMasterId(int ID)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@ID", ID));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetReceiveDisposeHeadMasterId", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public DataSet GetReceiveDisposeHeadMaster()
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetReceiveDisposeHeadMaster", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public int InsertVehicleType(Procurement p)
+        {
+            int result = 0;
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@VehicleType", p.VehicleType));
+                paramCollection.Add(new DBParameter("@VehicleTypeName", p.VehicleTypeName));
+                paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
+                paramCollection.Add(new DBParameter("@flag", p.flag));
+                result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertVehicleType", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+
+            }
+            return result;
+        }
+
+        public DataSet GetVehicleTypeById(int typeID)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@VehicleType", typeID));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetVehicleTypebyId", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public DataSet GetVehicleType()
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetVehicleType", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
         public DataSet GetAllCenterDetails()
         {
 
@@ -70,6 +187,24 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 DS= _DBHelper.ExecuteDataSet("Proc_Sp_GetAllCenterDetails", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public DataSet GetAllBatchWiseMilkCollectionDetail()
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetAllBatchWiseMilk", paramCollection, CommandType.StoredProcedure);
 
             }
             catch (Exception)
@@ -922,7 +1057,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Acidity", p.Acidity));
                 paramCollection.Add(new DBParameter("@SNFPercentage", p.SNFPercentage));
                 paramCollection.Add(new DBParameter("@FATPercentage", p.FATPercentage));
-                paramCollection.Add(new DBParameter("@Time", p.Time));
+                //paramCollection.Add(new DBParameter("@Time", p.Time));
                 paramCollection.Add(new DBParameter("@Disposal", p.Disposal));
                 paramCollection.Add(new DBParameter("@HandlingExcess", p.HandlingExcess));
                 paramCollection.Add(new DBParameter("@HandlingLoss", p.HandlingLoss));
@@ -942,14 +1077,14 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertBatchWiseMilkCollection", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-
+                string msg = ex.ToString();
             }
             return result;
         }
-        public DataSet GetAllBatchWiseMilkCollectionDetails()
+        public DataSet GetAllBatchWiseMilkCollectionDetails(Procurement p)
         {
 
             DataSet DS = new DataSet();
@@ -957,12 +1092,15 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Date",p.Date));
+                paramCollection.Add(new DBParameter("@CenterID",p.CenterID));
+                paramCollection.Add(new DBParameter("@flag",p.flag));
                 DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetAllBatchWiseMilkCollectionDetails", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.ToString();
 
             }
             return DS;

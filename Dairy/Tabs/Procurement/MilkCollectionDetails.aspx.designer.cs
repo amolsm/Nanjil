@@ -175,13 +175,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtMilkInLtr;
         
         /// <summary>
-        /// txtActualMilkInLtr control.
+        /// txtCLRReading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtActualMilkInLtr;
+        protected global::System.Web.UI.WebControls.TextBox txtCLRReading;
         
         /// <summary>
         /// txtFATPercentage control.
@@ -193,13 +193,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtFATPercentage;
         
         /// <summary>
-        /// txtCLRReading control.
+        /// txtActualMilkInLtr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCLRReading;
+        protected global::System.Web.UI.WebControls.TextBox txtActualMilkInLtr;
         
         /// <summary>
         /// UpdatePanel1 control.

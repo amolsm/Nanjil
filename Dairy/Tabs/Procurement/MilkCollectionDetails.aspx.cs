@@ -23,7 +23,9 @@ namespace Dairy.Tabs.Procurement
                 BindDropDown();
                 btnAddMilkCollection.Visible = true;
                 btnupdateMilkCollection.Visible = false;
-         
+                txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtDate1.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
             }
         }
 
@@ -131,7 +133,7 @@ namespace Dairy.Tabs.Procurement
                 lblSuccess.Text = "Milk Collection Record Add  Successfully";
 
                 ClearTextBox();
-                BindMilkCollectionList();
+                //BindMilkCollectionList();
                 pnlError.Update();
                 upMain.Update();
                 uprouteList.Update();
@@ -211,7 +213,7 @@ namespace Dairy.Tabs.Procurement
                         hfMilkCollectionID.Value = MilkCollectionid.ToString();
                         MilkCollectionid = Convert.ToInt32(hfMilkCollectionID.Value);
                         DeleteMilkCollectionbyID(MilkCollectionid);
-                        BindMilkCollectionList();
+                        //BindMilkCollectionList();
                         upMain.Update();
                         uprouteList.Update();
                         break;
@@ -344,7 +346,7 @@ namespace Dairy.Tabs.Procurement
                 divSusccess.Visible = true;
                 lblSuccess.Text = "Milk Collection Record Updated  Successfully";
                 ClearTextBox();
-                BindMilkCollectionList();
+                //BindMilkCollectionList();
                 pnlError.Update();
                 btnAddMilkCollection.Visible = true;
                 btnupdateMilkCollection.Visible = false;

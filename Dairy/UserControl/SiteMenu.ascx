@@ -265,6 +265,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+                  <li><a href="/Tabs/Procurement/VehicleType.aspx"><i class="fa fa-circle-o"></i>Vehicle Type</a></li>
+                  <li><a href="/Tabs/Procurement/ReceiveDisposalheadmaster.aspx"><i class="fa fa-circle-o"></i>Receive & Dispose Master</a></li>
                   <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Add Milk Collection Center</a></li>
                   <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Add Milk Collection Route</a></li> 
                 
@@ -278,7 +280,7 @@
                 <li><a href="/Tabs/Procurement/AddSupplierSchemeBonus.aspx"><i class="fa fa-circle-o"></i>Yearwise Scheme Bonus</a></li> 
                 <li><a href="/Tabs/Procurement/SupplierAdvanceInfo.aspx"><i class="fa fa-circle-o"></i> Vehicle Advance Info</a></li> 
                   <li><a href="/Tabs/Procurement/AddSupplierRDInfo.aspx"><i class="fa fa-circle-o"></i> Supplier RD Info</a></li>
-                  <li><a href="/Tabs/Procurement/VehicleTeriff.aspx"><i class="fa fa-circle-o"></i> Vehicle Teriff Info</a></li>
+                  <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
                   <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>Collection Vehicle Information</a></li>
                
                 

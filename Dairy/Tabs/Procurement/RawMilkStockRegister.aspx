@@ -5,13 +5,13 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
+   <%-- <script type="text/javascript">
 
         $(function () {
             $("#MainContent_txtDate").datepicker({ format: 'dd-MM-yyyy' });
 
         })
-    </script>
+    </script>--%>
     <script type="text/javascript">
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
         function InIEvent() {
@@ -107,9 +107,9 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Date" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Date" runat="server" type="date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       
                   </div><!-- /.form group --> 
                           
                       </div> 
@@ -119,13 +119,13 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTime" class="form-control" placeholder="Time" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtTime" class="form-control" placeholder="Time" runat="server"  Type="time"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
                       </div> 
-           <div class="col-lg-3">
+      <%--     <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -139,7 +139,7 @@
 
                   </div><!-- /.form group --> 
                           
-                      </div> 
+                      </div> --%>
 
             
 
@@ -172,7 +172,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" ToolTip="Select Center"> 
+                      <asp:DropDownList ID="dpParticularreceive" class="form-control" DataTextField="Name" DataValueField="ID" runat="server" ToolTip="Select Particular"> 
                        </asp:DropDownList>                   
                     </div><!-- /.input group -->
 
@@ -182,8 +182,9 @@
                        
                           
                       </div> 
-
-            <div class="col-lg-3" id="d1" runat="server">
+           
+            <div class="col-lg-9" id="d1" runat="server">
+              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -199,46 +200,62 @@
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
-
-                     
+                </div>
+               <div class="col-lg-4">
+                        <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpParticulardispose" class="form-control" DataTextField="Name" DataValueField="ID" runat="server" ToolTip="Select Particular"> 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
                        
-                          
-                      </div>  
+                        </div>
 
+                     </div>
+
+                      
+                          
+                   
+          
+
+             <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtVehicalNo" class="form-control" placeholder="Vehical No" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
+             <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtBatch" class="form-control" placeholder="Batch" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+                 
              
-
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtVehicalNo" class="form-control" placeholder="Vehical No" runat="server" required></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div>
-
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtBatch" class="form-control" placeholder="Batch" runat="server" required></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div>
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -250,7 +267,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server" required ToolTip="Milk In Liter"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -261,7 +278,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTEmp" class="form-control" placeholder="Temp" runat="server" required ToolTip="Temp"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTEmp" class="form-control" placeholder="Temp" runat="server"  ToolTip="Temp"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -272,7 +289,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAcidity" class="form-control" placeholder="Acidity" runat="server" required ToolTip="Acidity"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAcidity" class="form-control" placeholder="Acidity" runat="server"  ToolTip="Acidity"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -283,7 +300,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" type="text" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -299,7 +316,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %" type="text" runat="server"  required></asp:TextBox>                        
+                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %" type="text" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -369,7 +386,9 @@
                        
                           
                       </div>
-            <div class="col-lg-3">
+          
+                </div>
+              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -379,12 +398,8 @@
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>
-                </div>
+               
+                     </div>
                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -422,6 +437,45 @@
                 
               </div>
             </div>
+            <div class="pull-right" id="Div1" runat="server">
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Date
+                      </div>
+                       <asp:TextBox ID="txtDate1" class="form-control" placeholder="Collection Date" runat="server" type="date"  ToolTip="Collection Date"></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Collection Center
+                      </div>
+                 <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center"> 
+                       </asp:DropDownList>
+                           </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+                  <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                          <asp:Button ID="btnView" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnView_Click"   Text="View"  />     
+                       </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+                </div>
             <div class="box-body" id="datalist">
                    
                 
@@ -440,8 +494,11 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Session</th>
+                         
                         <th>Date</th>
+                         <th>TIME</th>
+                        <th>CollectionCenter</th>
+                  
                         <th>VehicalNo</th>
                         <th>BatchNo</th>
                         <th>Milk In Ltr</th>
@@ -449,8 +506,8 @@
                          <th>Acidity</th>
                          <th>FAT Percentage</th>
                          <th>SNF Percentage</th>
-                          <%--<th>Edit</th>
-                          <th>Delete</th>--%>
+                          <th>Edit</th>
+                          <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -459,8 +516,10 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("Session")%></td>
-                          <td><%# Eval("Date")%></td>
+                        
+                          <td><%# Convert.ToDateTime(Eval("Date")).ToString("dd-MM-yyyy")%></td>
+                           <td><%# Eval("Session")%></td>
+                          <td><%# Eval("Center")%></td>
                           <td><%# Eval("VehicalNo")%></td>
                           <td><%# Eval("BatchNo")%></td>
                         <td><%# Eval("MilkInLtr") %></td>
@@ -469,7 +528,7 @@
                         <td><%# Eval("FATPercentage") %></td>
                         <td><%# Eval("SNFPercentage") %></td>
 
-                         <%--<td>
+                         <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Edit" runat="server" CommandArgument='<%#Eval("BatchWiseMilkCollectionID") %>'
@@ -479,7 +538,7 @@
                          <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("BatchWiseMilkCollectionID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>--%>
+</td>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -488,8 +547,11 @@
 
                     <tfoot>
                       <tr>
-                            <th>Session</th>
+                        
                         <th>Date</th>
+                           <th>TIME</th>
+                        <th>CollectionCenter</th>
+                   
                         <th>VehicalNo</th>
                         <th>BatchNo</th>
                         <th>Milk In Ltr</th>
@@ -497,8 +559,8 @@
                          <th>Acidity</th>
                          <th>FAT Percentage</th>
                          <th>SNF Percentage</th>
-                           <%--<th>Edit</th>
-                          <th>Delete</th>--%>
+                           <th>Edit</th>
+                          <th>Delete</th>
                       </tr>
                     </tfoot>
 
