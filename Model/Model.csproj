@@ -76,6 +76,8 @@
     <Compile Include="Purchase\IndentDetails.cs" />
     <Compile Include="Purchase\Item.cs" />
     <Compile Include="Purchase\ItemRate.cs" />
+    <Compile Include="Purchase\MRN.cs" />
+    <Compile Include="Purchase\MRNDetails.cs" />
     <Compile Include="Purchase\Order.cs" />
     <Compile Include="Purchase\OrderCart.cs" />
     <Compile Include="Purchase\Rack.cs" />

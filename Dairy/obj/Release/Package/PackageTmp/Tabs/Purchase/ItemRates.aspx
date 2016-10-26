@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ItemRates.aspx.cs" Inherits="Dairy.Tabs.Purchase.ItemRates" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
-   
+    <!-- jQuery library -->
+
+     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
      
      <style type="text/css">
         .listboxl {
@@ -25,7 +27,7 @@
             <small>Purchase</small> 
 
           </h1>
-          <ol class="breadcrumb">
+          <ol class="breadcrumb"> <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
             <li><a href="#"><i class="fa fa-dashboard"></i> Item Rates</a></li>
             <li class="active">Purchase</li>
           </ol>
@@ -115,12 +117,16 @@
 
                   </div><!-- /.form group -->
 
-                     
+                   
                        
                           
                       </div>  
-                   
+                    
                               <div class="col-md-12" runat="server" id="divTable">
+                                  
+                                <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
+                    <ContentTemplate>
+                       
                           <table id="example1" class="table table-bordered table-striped">'
           <asp:Repeater ID="rpItemRatesList" runat="server"  OnItemCommand="rpItemRatesList_ItemCommand" >
                 
@@ -183,6 +189,8 @@
            </asp:Repeater>
                   <asp:HiddenField id="hfItemRatesId" runat="server" />     
            </table>
+                         </ContentTemplate>
+                </asp:UpdatePanel>
          
        </div> 
 

@@ -80,9 +80,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                      <asp:Label Text="Vendor" runat="server"></asp:Label>
+                      <asp:Label Text="Purchase Order" runat="server"></asp:Label>
                       </div>
-                       <asp:DropDownList ID="dpPOCode" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" > 
+                       <asp:DropDownList ID="dpPOCode" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" AutoPostBack="true" OnSelectedIndexChanged="dpPOCode_SelectedIndexChanged1" > 
                        </asp:DropDownList>
                         
                          
@@ -150,11 +150,11 @@
                          
                </div>
 
-                         
+                      
                    
-                              <div class="col-md-12" runat="server" id="divTable">
-                          <table id="example1" class="table table-bordered table-striped">'
-          <asp:Repeater ID="rpAgentOrderdetails" runat="server" OnItemCommand="rpAgentOrderdetails_ItemCommand">
+                              <div class="col-md-12" runat="server" id="divTable" style="padding-top:25px;padding-bottom:25px;">
+                          <table id="example1" class="table table-bordered table-striped">
+          <asp:Repeater ID="rpAgentOrderdetails" runat="server" OnItemCommand="rpAgentOrderdetails_ItemCommand" OnItemDataBound="rpAgentOrderdetails_ItemDataBound">
                 
                <HeaderTemplate>
                   <thead>
@@ -162,10 +162,14 @@
                          
                                         <th>Sr.No</th>
                                         <th>Item</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
+                                        
+                                        <th>Ordered Qty</th>
+                                        <th>Received Qty</th>
+                                      <th>Accepted Qty</th>
+                                      <th>Rejected Qty</th>
+                                      <th>Price</th>
                                         <th style="text-align:right">Amount (Tax Included)</th>
-                                        <th style="text-align:center">Remove</th> 
+                                        
                                        
                       </tr>
                     </thead>
@@ -176,15 +180,32 @@
                <ItemTemplate>
                     <tr>
                                  
-                                <td><%# Eval("srno")%></td>
-                                <td><%# Eval("ItemName")%></td>                       
-                                <td><%# string.Format("{0:##,###.00}",Eval("Price"))%></td>
-                                <td><%# Eval("Quantity")%></td>
+                                <td><%# Eval("srno")%>
+                                    <asp:HiddenField ID="hfOrderDetailsId" runat="server" Value='<%# Eval("OrderDetailsId")%>'/>
+                                </td>
+                                <td><%# Eval("ItemName")%>
+                                    <asp:HiddenField ID="hfItemId" runat="server" Value='<%# Eval("ItemId")%>'/>
+                                </td>                       
+                                
+                                <td><asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("Quantity")%>'></asp:Label>
+                                    <asp:HiddenField ID="hfCst" runat="server" Value='<%# Eval("CST")%>'/>
+                                     <asp:HiddenField ID="hfExcise" runat="server" Value='<%# Eval("Excise")%>'/>
+                                     <asp:HiddenField ID="hfVat" runat="server" Value='<%# Eval("VAT")%>'/>
+                                </td>
+                                <td> 
+                                    <asp:TextBox runat="server" ID="txtReceivedQty" ToolTip="Received Quantity" placeholder ="Received Quantity" Type="number" />
+                                </td>
+                                <td> 
+                                    <asp:TextBox runat="server" ID="txtAcceptedQty" ToolTip="Accepted Quantity" placeholder ="Accepted Quantity" Type="number" OnTextChanged="txtAcceptedQty_TextChanged" AutoPostBack="true"/>
+                                </td>
+                                <td> 
+                                    <asp:TextBox runat="server" ID="txtRejectedQty" ToolTip="Rejected Quantity" placeholder ="Rejected Quantity" Type="number"/>
+                                </td>
+                               
+                                <td style="text-align:right"><asp:Label ID="lblPrice" runat="server" Text='<%# string.Format("{0:##,###.00}",Eval("Price"))%>'></asp:Label></td>
                                  <td style="text-align:right"><asp:Label ID="lbltotal" runat="server" Text='<%# string.Format("{0:##,###.00}",Eval("Amt"))%>'></asp:Label></td>
                             
-                         <td style="text-align:center">   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
-                                                                    ToolTip="Delete" runat="server" CommandArgument='<%#Eval("OrderCartId") %>'
-                                                                    CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
+                        
 </td>
 
                       
@@ -202,6 +223,9 @@
                          <th></th>
                         <th> </th>
                         <th></th>
+                          <th></th>
+                        <th> </th>
+                        <th></th>
                      <th style="text-align:right">Total</th> 
 <th style="text-align:right"><asp:Label ID="lblFInaltotal" runat="server" Text='<%# string.Format("{0:##,###.00}",Eval("Amt"))%>'></asp:Label></th> 
                        
@@ -216,11 +240,97 @@
            <asp:HiddenField ID="hftotalAmout" runat="server" />
        </div> 
 
+                            <div class="col-md-12">
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="Required For" runat="server"></asp:Label>
+                         
+                      </div>
+                      <asp:TextBox ID="txtRequiredFor" class="form-control" runat="server" ></asp:TextBox>                        
+                         
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
+
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="Remarks" runat="server"></asp:Label>
+                         
+                      </div>
+                      <asp:TextBox ID="txtRemarks" class="form-control" runat="server" ></asp:TextBox>                        
+                         
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
+
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="ReceivedBy" runat="server"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpReceivedBy" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div> 
+                             
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="QC By" runat="server"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpQcBy" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
+                                
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="Finance" runat="server"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpFinanceMgr" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div> 
+
+                                <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <asp:Label Text="Approved By" runat="server"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpApprovedBy" class="form-control "  data-live-search="true" DataTextField="Name" DataValueField="ID" runat="server" > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div> 
+                </div>
+
                                 <div class="col-lg-4 pull-right" style="text-align:right">
                   <div class="form-group">
                     <div class="input-group">
                       
-                       <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext"  Text="Submit" ValidationGroup="none" />                    
+                       <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext"  Text="Submit" ValidationGroup="none" OnClick="btnSubmit_Click"/>                    
                         
                     </div><!-- /.input group -->
 
@@ -311,19 +421,29 @@
       <script type="text/javascript">
           
            $(document).ready(function () {
-              
-
                $("#<% =dpVendor.ClientID %>").addClass("selectpicker");
                $("#dpCategory").selectpicker();
 
+                $("#<% =dpPOCode.ClientID %>").addClass("selectpicker");
+               $("#dpPOCode").selectpicker();
                
+                $("#<% =dpReceivedBy.ClientID %>").addClass("selectpicker");
+               $("#dpReceivedBy").selectpicker();
 
+                $("#<% =dpQcBy.ClientID %>").addClass("selectpicker");
+               $("#dpQcBy").selectpicker();
+
+                $("#<% =dpFinanceMgr.ClientID %>").addClass("selectpicker");
+               $("#dpFinanceMgr").selectpicker();
+
+               $("#<% =dpApprovedBy.ClientID %>").addClass("selectpicker");
+               $("#dpApprovedBy").selectpicker();
            });
 
           
            </script>
 
- 
+  
   
 </asp:Content>
 

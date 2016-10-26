@@ -442,6 +442,42 @@ namespace DataAccess
         }
         #endregion
 
+        #region MRN
+        public bool MrnDML(MRNDetails ic)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Id", ic.Id));
+                paramCollection.Add(new DBParameter("@ItemId", ic.ItemId));
+                paramCollection.Add(new DBParameter("@OrderDetailsId", ic.OrderDetailsId));
+                paramCollection.Add(new DBParameter("@OrderedQty", ic.OrderedQty));
+                paramCollection.Add(new DBParameter("@ReceivedQty", ic.ReceivedQty));
+                paramCollection.Add(new DBParameter("@AcceptedQty", ic.AcceptedQty));
+                paramCollection.Add(new DBParameter("@RejectedQty", ic.RejectedQty));
+                paramCollection.Add(new DBParameter("@Price", ic.Price));
+                paramCollection.Add(new DBParameter("@Excise", ic.Excise));
+                paramCollection.Add(new DBParameter("@Cst", ic.Cst));
+                paramCollection.Add(new DBParameter("@Vat", ic.Vat));
+                paramCollection.Add(new DBParameter("@Amount", ic.Amount));
+                paramCollection.Add(new DBParameter("@flag", ic.Flag));
+                result = _DBHelper.ExecuteNonQuery("SpPrchsMrnDML", paramCollection, CommandType.StoredProcedure);
+
+
+            }
+            catch (Exception ex)
+            {
+                string e = ex.ToString();
+            }
+            if (result > 0)
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
         #region PurchaseRequestOrder
         public bool RequestCartDML(RequestCart ic)
         {
