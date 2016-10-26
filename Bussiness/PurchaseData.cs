@@ -262,6 +262,14 @@ namespace Bussiness
         }
         #endregion
 
+        #region MRN
+        public bool MrnDML(MRNDetails ic)
+        {
+            dbPurchase = new DBPurchase();
+            return dbPurchase.MrnDML(ic);
+        }
+        #endregion
+
         #region PurchaseRequestOrder
 
         public bool RequestCartDML(RequestCart ic)
