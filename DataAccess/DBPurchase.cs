@@ -476,6 +476,41 @@ namespace DataAccess
             else
                 return false;
         }
+
+        public bool MrnDML2(MRN ic)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@CreatedBy", ic.CreatedBy));
+                paramCollection.Add(new DBParameter("@VendorId", ic.VendorId));
+                paramCollection.Add(new DBParameter("@PRNo", ic.PRNo));
+                paramCollection.Add(new DBParameter("@OrderId", ic.OrderId));
+                paramCollection.Add(new DBParameter("@BillNo", ic.BillNo));
+                paramCollection.Add(new DBParameter("@BillDate", ic.BillDate));
+                paramCollection.Add(new DBParameter("@RequiredFor", ic.RequiredFor));
+                paramCollection.Add(new DBParameter("@Remarks", ic.Remarks));
+                paramCollection.Add(new DBParameter("@ReceivedBy", ic.ReceivedBy));
+                paramCollection.Add(new DBParameter("@QCBy", ic.QCBy));
+                paramCollection.Add(new DBParameter("@FinMgr", ic.FinMgr));
+                paramCollection.Add(new DBParameter("@ApprovedByEmpId", ic.ApprovedBy));
+                paramCollection.Add(new DBParameter("@VehicleNo", ic.VehicleNo));
+                paramCollection.Add(new DBParameter("@TotalAmt", ic.TotalAmt));
+                result = _DBHelper.ExecuteNonQuery("SpPrchsMrnDML2", paramCollection, CommandType.StoredProcedure);
+
+
+            }
+            catch (Exception ex)
+            {
+                string e = ex.ToString();
+            }
+            if (result > 0)
+                return true;
+            else
+                return false;
+        }
         #endregion
 
         #region PurchaseRequestOrder

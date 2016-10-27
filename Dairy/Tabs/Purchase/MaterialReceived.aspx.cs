@@ -1,4 +1,5 @@
 ﻿using Bussiness;
+using Dairy.App_code;
 using Model.Purchase;
 using System;
 using System.Collections.Generic;
@@ -88,12 +89,12 @@ namespace Dairy.Tabs.Purchase
         private void dpSelect()
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpVendor').addClass('selectpicker');$('#MainContent_dpVendor').selectpicker();", true);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpPOCode').addClass('selectpicker');$('#MainContent_dpPOCode').selectpicker();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel3", "$('#MainContent_dpPOCode').addClass('selectpicker');$('#MainContent_dpPOCode').selectpicker();", true);
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpReceivedBy').addClass('selectpicker');$('#MainContent_dpReceivedBy').selectpicker();", true);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpQcBy').addClass('selectpicker');$('#MainContent_dpQcBy').selectpicker();", true);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpFinanceMgr').addClass('selectpicker');$('#MainContent_dpFinanceMgr').selectpicker();", true);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel2", "$('#MainContent_dpApprovedBy').addClass('selectpicker');$('#MainContent_dpApprovedBy').selectpicker();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel4", "$('#MainContent_dpReceivedBy').addClass('selectpicker');$('#MainContent_dpReceivedBy').selectpicker();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel5", "$('#MainContent_dpQcBy').addClass('selectpicker');$('#MainContent_dpQcBy').selectpicker();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel6", "$('#MainContent_dpFinanceMgr').addClass('selectpicker');$('#MainContent_dpFinanceMgr').selectpicker();", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "sel7", "$('#MainContent_dpApprovedBy').addClass('selectpicker');$('#MainContent_dpApprovedBy').selectpicker();", true);
         }
 
                
@@ -108,6 +109,8 @@ namespace Dairy.Tabs.Purchase
             order.OrderDate = string.Empty;
             rpAgentOrderdetails.DataSource = purchaseData.GetOrderList(order);
             rpAgentOrderdetails.DataBind();
+
+            dpSelect();
         }
 
         protected void rpAgentOrderdetails_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -129,8 +132,42 @@ namespace Dairy.Tabs.Purchase
             HiddenField hfVat = (HiddenField)rp1.FindControl("hfVat");
 
             lbltotal.Text = (Convert.ToDouble(tb1.Text) * (Convert.ToDouble(lblPrice.Text) + ((Convert.ToDouble(lblPrice.Text)/100)* Convert.ToDouble(hfexcise.Value))+ ((Convert.ToDouble(lblPrice.Text) / 100) * Convert.ToDouble(hfVat.Value))+ ((Convert.ToDouble(lblPrice.Text) / 100) * Convert.ToDouble(hfCst.Value)))).ToString("#0.00");
+            calTotal();
+            dpSelect();
+        }
 
-            //tb3.Text = Convert.ToString(Convert.ToDouble(tb1.Text) * 1.2);
+        private void calTotal()
+        {
+            total = 0;
+            foreach (RepeaterItem item in rpAgentOrderdetails.Controls)
+            {
+                if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
+                {
+                    // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
+                    Label lbltotal = (Label)item.FindControl("lbltotal");
+                    Label lblType = (Label)item.FindControl("lblType");
+                    if (lblType != null && string.IsNullOrEmpty(lblType.Text))
+                    {
+                        lblType.Text = "Scheme Amount";
+                    }
+                    if (lbltotal != null)
+                    {
+                        total = total + (string.IsNullOrEmpty(lbltotal.Text) ? 0 : Convert.ToDouble(lbltotal.Text));
+                    }
+                }
+                if (item.ItemType == ListItemType.Footer || item.ItemType == ListItemType.Item)
+                {
+                    // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
+                    Label lblFInaltotal = (Label)item.FindControl("lblFInaltotal");
+                    if (lblFInaltotal != null)
+                    {
+                        lblFInaltotal.Text = total.ToString("#0.00");
+                        hftotalAmout.Value = total.ToString("#0.00");
+                    }
+
+                }
+            }
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -174,7 +211,54 @@ namespace Dairy.Tabs.Purchase
             mrn.BillNo = txtBillNumber.Text;
             mrn.VehicleNo = txtVehicleNo.Text;
             mrn.PRNo = txtPRNo.Text;
+            mrn.RequiredFor = txtRequiredFor.Text;
+            mrn.Remarks = txtRemarks.Text;
+            mrn.CreatedBy = GlobalInfo.Userid;
+            mrn.ReceivedBy = Convert.ToInt32(dpReceivedBy.SelectedItem.Value);
+            mrn.QCBy = Convert.ToInt32(dpQcBy.SelectedItem.Value);
+            mrn.FinMgr = Convert.ToInt32(dpFinanceMgr.SelectedItem.Value);
+            mrn.ApprovedBy = Convert.ToInt32(dpApprovedBy.SelectedItem.Value);
+            mrn.OrderId = Convert.ToInt32(dpPOCode.SelectedItem.Value);
+            mrn.TotalAmt = Convert.ToDecimal(hftotalAmout.Value);
 
+            bool result = purchaseData.MrnDML2(mrn);
+
+            if (result)
+            {
+                
+                ClearTexboxes();
+                
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                lblSuccess.Text = "Material Received Note Submitted Successfully";
+                pnlError.Update();
+                upMain.Update();
+            }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
+            }
+
+        }
+
+        private void ClearTexboxes()
+        {
+            dpVendor.ClearSelection();
+            dpPOCode.ClearSelection();
+            txtBillNumber.Text = string.Empty;
+            txtVehicleNo.Text = string.Empty;
+            txtPRNo.Text = string.Empty;
+            txtRequiredFor.Text = string.Empty;
+            txtRemarks.Text = string.Empty;
+            dpReceivedBy.ClearSelection();
+            dpQcBy.ClearSelection();
+            dpFinanceMgr.ClearSelection();
+            dpApprovedBy.ClearSelection();
         }
 
         protected void rpAgentOrderdetails_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -206,5 +290,15 @@ namespace Dairy.Tabs.Purchase
 
             }
         }
+
+        
+
+        protected void rpAgentOrderdetails_ItemCreated(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+           
+        }
+
+        
     }
 }

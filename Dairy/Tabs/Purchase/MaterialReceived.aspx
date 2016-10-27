@@ -153,8 +153,8 @@
                       
                    
                               <div class="col-md-12" runat="server" id="divTable" style="padding-top:25px;padding-bottom:25px;">
-                          <table id="example1" class="table table-bordered table-striped">
-          <asp:Repeater ID="rpAgentOrderdetails" runat="server" OnItemCommand="rpAgentOrderdetails_ItemCommand" OnItemDataBound="rpAgentOrderdetails_ItemDataBound">
+                          <table id="example3" class="table table-bordered table-striped">
+          <asp:Repeater ID="rpAgentOrderdetails" runat="server" OnItemCommand="rpAgentOrderdetails_ItemCommand" OnItemDataBound="rpAgentOrderdetails_ItemDataBound" OnItemCreated="rpAgentOrderdetails_ItemCreated" >
                 
                <HeaderTemplate>
                   <thead>

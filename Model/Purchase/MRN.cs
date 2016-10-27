@@ -22,5 +22,7 @@ namespace Model.Purchase
         public int ApprovedBy { get; set; }
         public string VehicleNo { get; set; }
         public int FinMgr { get; set; }
+
+        public decimal TotalAmt { get; set; }
     }
 }

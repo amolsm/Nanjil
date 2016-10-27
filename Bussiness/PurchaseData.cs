@@ -268,6 +268,11 @@ namespace Bussiness
             dbPurchase = new DBPurchase();
             return dbPurchase.MrnDML(ic);
         }
+        public bool MrnDML2(MRN ic)
+        {
+            dbPurchase = new DBPurchase();
+            return dbPurchase.MrnDML2(ic);
+        }
         #endregion
 
         #region PurchaseRequestOrder
