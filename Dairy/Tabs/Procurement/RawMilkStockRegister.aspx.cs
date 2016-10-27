@@ -14,7 +14,7 @@ namespace Dairy.Tabs.Procurement
 {
     public partial class RawMilkStockRegister : System.Web.UI.Page
     {
-        string flag= "receive";
+        string flag;
         DataSet DS = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Procurement
                 btnupdateMilk.Visible = false;
                 rdRecieving.Checked = true;
                 d1.Visible = false;
-                disp.Visible = false;
+              //  disp.Visible = false;
             }
         }
 
@@ -50,13 +50,13 @@ namespace Dairy.Tabs.Procurement
                 dpParticulardispose.DataBind();
                 dpParticulardispose.Items.Insert(0, new ListItem("--Select Particular  --", "0"));
             }
-            DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpCenter.DataSource = DS;
-                dpCenter.DataBind();
-                dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
-            }
+            //DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpCenter.DataSource = DS;
+            //    dpCenter.DataBind();
+            //    dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
+            //}
 
         }
 
@@ -72,11 +72,13 @@ namespace Dairy.Tabs.Procurement
             if (rdRecieving.Checked)
             {
                 p.flag1 = "Receiving";
+                p.ID = Convert.ToInt32(dpParticularreceive.SelectedItem.Value);
             }
             else
             {
                 p.flag1 = "Disposal";
-          
+                p.ID = Convert.ToInt32(dpParticulardispose.SelectedItem.Value);
+
             }
             p.BatchWiseMilkCollectionID = 0;
             p.BatchWiseMilkDisposalID = 0;
@@ -93,16 +95,17 @@ namespace Dairy.Tabs.Procurement
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
             p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
             p.Time = txtTime.Text;
-            p.HandlingExcess =!string.IsNullOrEmpty(txtHandlingExcess.Text)?Convert.ToDecimal(txtHandlingExcess.Text):0;
-            p.HandlingLoss = !string.IsNullOrEmpty(txtHandlingLoss.Text)?Convert.ToDecimal(txtHandlingLoss.Text):0;
-            p.Disposal = dpdestination.SelectedItem.Text;
-            p.InternameConsumption =!string.IsNullOrEmpty(txtInternalConsumption.Text)? Convert.ToDecimal(txtInternalConsumption.Text):0;
-            p.DamageMilk =!string.IsNullOrEmpty(txtDamageMilk.Text)? Convert.ToDecimal(txtDamageMilk.Text):0;
-            p.Other =!string.IsNullOrEmpty(TextBtxtOther.Text)? Convert.ToDecimal(TextBtxtOther.Text):0;
+          //  p.HandlingExcess =!string.IsNullOrEmpty(txtHandlingExcess.Text)?Convert.ToDecimal(txtHandlingExcess.Text):0;
+           // p.HandlingLoss = !string.IsNullOrEmpty(txtHandlingLoss.Text)?Convert.ToDecimal(txtHandlingLoss.Text):0;
+         //   p.Disposal = dpdestination.SelectedItem.Text;
+           // p.InternameConsumption =!string.IsNullOrEmpty(txtInternalConsumption.Text)? Convert.ToDecimal(txtInternalConsumption.Text):0;
+          //  p.DamageMilk =!string.IsNullOrEmpty(txtDamageMilk.Text)? Convert.ToDecimal(txtDamageMilk.Text):0;
+          //  p.Other =!string.IsNullOrEmpty(TextBtxtOther.Text)? Convert.ToDecimal(TextBtxtOther.Text):0;
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+         
             p.flag = "Insert";
 
             DS = pd.GetOpeningClosingBal(p.Date,p.CenterID);
@@ -187,17 +190,18 @@ namespace Dairy.Tabs.Procurement
             txtMilkInKG.Text = string.Empty;
             txtFATPercentage.Text = string.Empty;
             dpMilkType.ClearSelection();
-           
+            dpParticulardispose.ClearSelection();
+            dpParticularreceive.ClearSelection();
             rdRecieving.Checked = false;
             rdDisposal.Checked = false;
             rpBatchWiseMilkCollection.DataSource = null;
             rpBatchWiseMilkCollection.DataBind();
-            dpdestination.ClearSelection();
-            txtHandlingExcess.Text = string.Empty;
-            txtHandlingLoss.Text = string.Empty;
-            txtInternalConsumption.Text = string.Empty;
-            txtDamageMilk.Text = string.Empty;
-            TextBtxtOther.Text = string.Empty;
+           //  dpdestination.ClearSelection();
+           // txtHandlingExcess.Text = string.Empty;
+           // txtHandlingLoss.Text = string.Empty;
+           // txtInternalConsumption.Text = string.Empty;
+           // txtDamageMilk.Text = string.Empty;
+           // TextBtxtOther.Text = string.Empty;
         }
         public void BindMilkCollectionList()
         {
@@ -258,7 +262,12 @@ namespace Dairy.Tabs.Procurement
         {
             DataSet DS = new DataSet();
             ProcurementData pd = new ProcurementData();
-            DS = pd.GetBatchWiseMilkCollectionDetailsbyID(milkcollectionid);
+            if (rdRecieving.Checked)
+            {
+                flag = "receive";
+            }
+            else { flag = "dispose"; }
+            DS = pd.GetBatchWiseMilkCollection(milkcollectionid,flag);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 txtFATPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["FATPercentage"].ToString();
@@ -268,8 +277,28 @@ namespace Dairy.Tabs.Procurement
                 txtTEmp.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Temp"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Temp"].ToString();
                 txtSNFPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFPercentage"].ToString();
                 txtAcidity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Acidity"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Acidity"].ToString();
-                dpMilkType.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkType"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkType"].ToString();
-                 
+                dpMilkType.ClearSelection();
+                if (dpMilkType.Items.FindByText(DS.Tables[0].Rows[0]["MilkType"].ToString()) != null)
+                {
+                    dpMilkType.Items.FindByText(DS.Tables[0].Rows[0]["MilkType"].ToString()).Selected = true;
+                }
+                dpParticularreceive.ClearSelection();
+                if (rdRecieving.Checked)
+                {
+                    if (dpParticularreceive.Items.FindByValue(DS.Tables[0].Rows[0]["Particular"].ToString()) != null)
+                    {
+                        dpParticularreceive.Items.FindByValue(DS.Tables[0].Rows[0]["Particular"].ToString()).Selected = true;
+                    }
+                }
+                dpParticulardispose.ClearSelection();
+                if (rdDisposal.Checked)
+                {
+
+                    if (dpParticulardispose.Items.FindByValue(DS.Tables[0].Rows[0]["Particular"].ToString()) != null)
+                    {
+                        dpParticulardispose.Items.FindByValue(DS.Tables[0].Rows[0]["Particular"].ToString()).Selected = true;
+                    }
+                }
                 txtBatch.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                 txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["Date"]).ToString("yyyy-MM-dd");
                 txtTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Session"].ToString();
@@ -334,12 +363,14 @@ namespace Dairy.Tabs.Procurement
                 p.BatchWiseMilkCollectionID = string.IsNullOrEmpty(hfBatchWiseMilkCollectionID.Value) ? 0 : Convert.ToInt32(hfBatchWiseMilkCollectionID.Value);
                 p.BatchWiseMilkDisposalID = 0;
                 p.flag1 = "Receiving";
+                p.ID = Convert.ToInt32(dpParticularreceive.SelectedItem.Value);
             }
             else
             {
                 p.BatchWiseMilkDisposalID = string.IsNullOrEmpty(hfBatchWiseMilkCollectionID.Value) ? 0 : Convert.ToInt32(hfBatchWiseMilkCollectionID.Value);
                 p.BatchWiseMilkCollectionID = 0;
                 p.flag1 = "Disposal";
+                p.ID = Convert.ToInt32(dpParticulardispose.SelectedItem.Value);
             }
             
             p.BatchNo = txtBatch.Text;
@@ -355,17 +386,18 @@ namespace Dairy.Tabs.Procurement
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
             p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
             p.Time = txtTime.Text;
-            p.Disposal = dpdestination.SelectedItem.Text;
-            p.HandlingExcess = Convert.ToDecimal(txtHandlingExcess.Text);
-            p.HandlingLoss = Convert.ToDecimal(txtHandlingLoss.Text);
-            p.InternameConsumption = Convert.ToDecimal(txtInternalConsumption.Text);
-            p.DamageMilk = Convert.ToDecimal(txtDamageMilk.Text);
-            p.Other = Convert.ToDecimal(TextBtxtOther.Text);
+           // p.Disposal = dpdestination.SelectedItem.Text;
+           // p.HandlingExcess = Convert.ToDecimal(txtHandlingExcess.Text);
+           // p.HandlingLoss = Convert.ToDecimal(txtHandlingLoss.Text);
+           // p.InternameConsumption = Convert.ToDecimal(txtInternalConsumption.Text);
+           // p.DamageMilk = Convert.ToDecimal(txtDamageMilk.Text);
+            //p.Other = Convert.ToDecimal(TextBtxtOther.Text);
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             p.flag = "Update";
+            p.flag2 = "";
             int Result = 0;
             Result = pd.InsertBatchWiseMilkCollection(p);
             if (Result > 0)
@@ -400,9 +432,10 @@ namespace Dairy.Tabs.Procurement
             {
                 d1.Visible = false;
                 d2.Visible = true;
-                disp.Visible = false;
-                flag = string.Empty;
-                flag = "receive";
+                //disp.Visible = false;
+            
+               
+                rpBatchWiseMilkCollection.Dispose();
             }
            
            
@@ -414,9 +447,10 @@ namespace Dairy.Tabs.Procurement
             {
                 d1.Visible = true;
                 d2.Visible = false;
-                disp.Visible = true;
-                flag = string.Empty;
-                flag = "dispose";
+             //   disp.Visible = true;
+               
+               
+                rpBatchWiseMilkCollection.Dispose();
             }
            
         }
@@ -426,16 +460,32 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             Model.Procurement p = new Model.Procurement();
-            p.Date= Convert.ToDateTime(txtDate.Text);
-            p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+           
+            p.CenterID = 6;//Convert.ToInt32(dpCenter.SelectedItem.Value);
+            if (rdDisposal.Checked)
+            {
+                p.Date = Convert.ToDateTime(txtDate.Text);
+                flag = "dispose";
+            }
+            if (rdRecieving.Checked)
+            {
+                flag = "receive";
+                p.Date = Convert.ToDateTime(txtDate.Text);
+            }
             p.flag = flag;
             DS = pd.GetAllBatchWiseMilkCollectionDetails(p);
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            try
             {
                 rpBatchWiseMilkCollection.DataSource = DS;
                 rpBatchWiseMilkCollection.DataBind();
             }
+            catch { }
             uprouteList.Update();
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Procurement/RawMilkStockRegister.aspx");
         }
     }
     

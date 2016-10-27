@@ -31,7 +31,7 @@
     </script>
     <section class="content-header">
           <h1>
-             Batch Wise Milk Collection
+          MilkReceiving/Disposing Details
             <small>Procurement</small>
           </h1>
           <ol class="breadcrumb">
@@ -71,7 +71,7 @@
           <!-- Default box -->
               <div class="box <%--collapsed-box--%>">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Batch Wise Milk Collection"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="MilkReceiving/Disposing Details"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -183,9 +183,9 @@
                           
                       </div> 
            
-            <div class="col-lg-9" id="d1" runat="server">
-              <div class="col-lg-4">
-                  <div class="form-group">
+    <%--        <div class="col-lg-9" id="d1" runat="server">--%>
+             <%-- <div class="col-lg-4">--%>
+                 <%-- <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -199,9 +199,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                </div>
-               <div class="col-lg-4">
+                  </div><!-- /.form group -->--%>
+            <%--    </div>--%>
+               <div class="col-lg-3" id="d1" runat="server">
                         <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -215,7 +215,7 @@
                        
                         </div>
 
-                     </div>
+                    <%-- </div>--%>
 
                       
                           
@@ -255,7 +255,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged" type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -267,7 +267,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter" ReadOnly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -278,7 +278,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTEmp" class="form-control" placeholder="Temp" runat="server"  ToolTip="Temp"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTEmp" class="form-control" placeholder="Temp" runat="server"  ToolTip="Temp" type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -289,7 +289,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAcidity" class="form-control" placeholder="Acidity" runat="server"  ToolTip="Acidity"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAcidity" class="form-control" placeholder="Acidity" runat="server"  ToolTip="Acidity" type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -300,7 +300,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" type="text" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %"  runat="server" type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -316,7 +316,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %" type="text" runat="server"  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtSNFPercentage" class="form-control" placeholder="SNF %"  runat="server" type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -325,7 +325,7 @@
                        
                           
                       </div>         
-             <div class="col-lg-3">
+             <%--<div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -354,10 +354,10 @@
                      
                        
                           
-                      </div>
-            <div id="disp" runat="server">
-            <div class="col-lg-3">
-                  <div class="form-group">
+                      </div>--%>
+        <%--    <div id="disp" runat="server">--%>
+           <%-- <div class="col-lg-3">--%>
+                  <%--<div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
@@ -365,13 +365,13 @@
                        <asp:TextBox ID="txtInternalConsumption" class="form-control" placeholder="InternalConsumption in Ltr" type="text" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
-                  </div><!-- /.form group -->
+                  </div><--%>
 
                      
                        
                           
-                      </div>
-            <div class="col-lg-3">
+                   <%--   </div>--%>
+            <%--<div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -385,10 +385,10 @@
                      
                        
                           
-                      </div>
+                      </div>--%>
           
-                </div>
-              <div class="col-lg-3">
+             <%--   </div>--%>
+              <%--<div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -399,7 +399,7 @@
 
                   </div><!-- /.form group -->
                
-                     </div>
+                     </div>--%>
                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -407,7 +407,8 @@
                     
                       
                               <asp:Button ID="btnAddMilk" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddMilk_Click" />     
-                        <asp:Button ID="btnupdateMilk" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateMilk_Click" />           
+                        <asp:Button ID="btnupdateMilk" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateMilk_Click" />      
+                        &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="Save" OnClick="btnAddNew_Click" />                
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -431,7 +432,7 @@
 
         <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title"> Milk Collection List </h3>
+              <h3 class="box-title">MilkReceiving/Disposing Details List </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
@@ -450,7 +451,7 @@
                   </div><!-- /.form group --> 
                           
                       </div>
-              <div class="col-lg-3">
+             <%-- <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -462,7 +463,7 @@
 
                   </div><!-- /.form group --> 
                           
-                      </div>
+                      </div>--%>
                   <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">

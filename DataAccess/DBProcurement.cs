@@ -197,6 +197,46 @@ namespace DataAccess
             return DS;
         }
 
+        public DataSet GetRouteSchemeBonusbyroute(int routeID)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@routeID", routeID));
+                DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetRouteSchemeBonusbyroute", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public DataSet GetBatchWiseMilkCollection(int milkcollectionid, string flag)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@milkcollectionid", milkcollectionid));
+                paramCollection.Add(new DBParameter("@flag", flag));
+                DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetBatchWiseMilkCollection", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+       
+    }
+
         public DataSet GetAllBatchWiseMilkCollectionDetail()
         {
             DataSet DS = new DataSet();
@@ -1058,12 +1098,12 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@SNFPercentage", p.SNFPercentage));
                 paramCollection.Add(new DBParameter("@FATPercentage", p.FATPercentage));
                 //paramCollection.Add(new DBParameter("@Time", p.Time));
-                paramCollection.Add(new DBParameter("@Disposal", p.Disposal));
-                paramCollection.Add(new DBParameter("@HandlingExcess", p.HandlingExcess));
-                paramCollection.Add(new DBParameter("@HandlingLoss", p.HandlingLoss));
-                paramCollection.Add(new DBParameter("@InternameConsumption", p.InternameConsumption));
-                paramCollection.Add(new DBParameter("@DamageMilk", p.DamageMilk));
-                paramCollection.Add(new DBParameter("@Other", p.Other));
+               // paramCollection.Add(new DBParameter("@Disposal", p.Disposal));
+                //paramCollection.Add(new DBParameter("@HandlingExcess", p.HandlingExcess));
+               // paramCollection.Add(new DBParameter("@HandlingLoss", p.HandlingLoss));
+               // paramCollection.Add(new DBParameter("@InternameConsumption", p.InternameConsumption));
+               // paramCollection.Add(new DBParameter("@DamageMilk", p.DamageMilk));
+              //  paramCollection.Add(new DBParameter("@Other", p.Other));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));
@@ -1074,6 +1114,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@OpeningBalance", p.OpeningBalance));
                 paramCollection.Add(new DBParameter("@ClosingBalance", p.ClosingBalance));
                 paramCollection.Add(new DBParameter("@BalanceID", p.BalanceID));
+                paramCollection.Add(new DBParameter("@Particularid", p.ID));
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertBatchWiseMilkCollection", paramCollection, CommandType.StoredProcedure);
 
             }
@@ -1114,6 +1155,7 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@MilkCollectionID", milkcollectionid));
+                
                 DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetBatchWiseMilkCollectionDetailsbyID", paramCollection, CommandType.StoredProcedure);
 
             }

@@ -181,16 +181,7 @@
                           
                       </div> 
              
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                   Milk Ltr.
-                      </div>
-                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter" readonly ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->                   
-                  </div>  
+          
                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -222,6 +213,16 @@
                        
                           
                       </div>  
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                   Milk Ltr.
+                      </div>
+                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter" readonly ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->                   
+                  </div>  
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -347,7 +348,8 @@
                     
                       
                               <asp:Button ID="btnAddMilkCollection" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddMilkCollection_Click"   Text="Add" ValidationGroup="Save" />     
-                        <asp:Button ID="btnupdateMilkCollection" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnupdateMilkCollection_Click"  Text="Update" ValidationGroup="Save" />           
+                        <asp:Button ID="btnupdateMilkCollection" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnupdateMilkCollection_Click"  Text="Update" ValidationGroup="Save" />     
+                         &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="Save" OnClick="btnAddNew_Click" />                      
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
