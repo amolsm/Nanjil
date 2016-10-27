@@ -1,4 +1,0 @@
-D:\NanjilCode\Model\bin\Model.dll
-D:\NanjilCode\Model\bin\Model.pdb
-D:\NanjilCode\Model\obj\Release\Model.dll
-D:\NanjilCode\Model\obj\Release\Model.pdb

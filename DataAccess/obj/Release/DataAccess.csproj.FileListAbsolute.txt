@@ -1,9 +1,0 @@
-D:\NanjilCode\DataAccess\bin\DataAccess.dll
-D:\NanjilCode\DataAccess\bin\DataAccess.pdb
-D:\NanjilCode\DataAccess\bin\Comman.dll
-D:\NanjilCode\DataAccess\bin\Model.dll
-D:\NanjilCode\DataAccess\bin\Comman.pdb
-D:\NanjilCode\DataAccess\bin\Model.pdb
-D:\NanjilCode\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
-D:\NanjilCode\DataAccess\obj\Release\DataAccess.dll
-D:\NanjilCode\DataAccess\obj\Release\DataAccess.pdb

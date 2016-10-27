@@ -1,4 +1,0 @@
-D:\NanjilCode\Comman\bin\Comman.dll
-D:\NanjilCode\Comman\bin\Comman.pdb
-D:\NanjilCode\Comman\obj\Release\Comman.dll
-D:\NanjilCode\Comman\obj\Release\Comman.pdb

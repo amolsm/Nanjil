@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-D:\NanjilCode\Nanjil\Dairy\bin\Dairy.dll.config
-D:\NanjilCode\Nanjil\Dairy\bin\Dairy.dll
-D:\NanjilCode\Nanjil\Dairy\bin\Dairy.pdb
-D:\NanjilCode\Nanjil\Dairy\bin\Bussiness.dll
-D:\NanjilCode\Nanjil\Dairy\bin\Comman.dll
-D:\NanjilCode\Nanjil\Dairy\bin\DataAccess.dll
-D:\NanjilCode\Nanjil\Dairy\bin\EntityFramework.dll
-D:\NanjilCode\Nanjil\Dairy\bin\Microsoft.ReportViewer.WebForms.dll
-D:\NanjilCode\Nanjil\Dairy\bin\Model.dll
-D:\NanjilCode\Nanjil\Dairy\bin\Bussiness.pdb
-D:\NanjilCode\Nanjil\Dairy\bin\Comman.pdb
-D:\NanjilCode\Nanjil\Dairy\bin\DataAccess.pdb
-D:\NanjilCode\Nanjil\Dairy\bin\Model.pdb
-D:\NanjilCode\Nanjil\Dairy\bin\EntityFramework.xml
-D:\NanjilCode\Nanjil\Dairy\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
-D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.csprojResolveAssemblyReference.cache
-D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.dll
-D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.pdb
-=======
 D:\NanjilCode\Dairy\bin\Dairy.dll.config
 D:\NanjilCode\Dairy\bin\Dairy.dll
 D:\NanjilCode\Dairy\bin\Dairy.pdb
@@ -56,4 +27,3 @@ D:\NanjilCode\Dairy\obj\Debug\RdlCompile.cache
 D:\NanjilCode\Dairy\obj\Debug\RdlCompile.compiled
 D:\NanjilCode\Dairy\obj\Debug\Dairy.dll
 D:\NanjilCode\Dairy\obj\Debug\Dairy.pdb
->>>>>>> origin/master

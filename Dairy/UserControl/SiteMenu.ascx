@@ -454,6 +454,7 @@
                   <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
                   <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
+                  <li><a href="/Tabs/Purchase/MaterialReceived.aspx"><i class="fa fa-circle-o"></i>Material Received</a></li>
               </ul>
             </li> 
 

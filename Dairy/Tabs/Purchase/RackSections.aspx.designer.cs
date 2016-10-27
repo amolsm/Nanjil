@@ -139,6 +139,15 @@ namespace Dairy.Tabs.Purchase {
         protected global::System.Web.UI.WebControls.TextBox txtRackName;
         
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// lblSec control.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace Dairy.Tabs.Purchase {
         protected global::System.Web.UI.WebControls.TextBox txtSectionCount;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// dpIsActive control.
         /// </summary>
         /// <remarks>
@@ -164,6 +182,15 @@ namespace Dairy.Tabs.Purchase {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpIsActive;
+        
+        /// <summary>
+        /// VldIsActive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator VldIsActive;
         
         /// <summary>
         /// btnSubmit control.
