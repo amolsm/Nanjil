@@ -5,13 +5,13 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
 
         $(function () {
             $("#MainContent_txtWEF_DATE").datepicker({ format: 'dd-MM-yyyy' });
 
         })
-    </script>
+    </script>--%>
     <script type="text/javascript">
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
         function InIEvent() {
@@ -140,7 +140,10 @@
                      
                        
                           
-                      </div>     
+                      </div>   
+              <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="DropDownList1"
+        ErrorMessage="TSL is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>    
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -167,20 +170,28 @@
                      
                        
                           
-                      </div>     
+                      </div>  
+            <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="DropDownList2"
+        ErrorMessage="TSH is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>  
+             
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
                       </div> 
-             <div class="col-lg-4">
+            
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTSRate"
+        ErrorMessage="TS Rate is Required" ValidationGroup="Save" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
+                       
+           <%--  <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -194,14 +205,14 @@
                      
                        
                           
-                      </div> 
+                      </div> --%>
              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIncentive" class="form-control" placeholder="Incentive" runat="server" required ToolTip="Incentive"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIncentive" class="form-control" placeholder="Incentive" runat="server"  ToolTip="Incentive"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -214,7 +225,7 @@
                       <div class="input-group-addon">
                       <span style="color:red">&nbsp;*</span>
                       </div>        
-                     <asp:TextBox ID="txtIN_FAT" class="form-control" placeholder="IN_FAT" runat="server" required ToolTip="IN_FAT"></asp:TextBox>                        
+                     <asp:TextBox ID="txtIN_FAT" class="form-control" placeholder="IN_FAT" runat="server"  ToolTip="IN_FAT"></asp:TextBox>                        
 
                   </div><!-- /.form group -->
 
@@ -229,7 +240,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIN_SNF" class="form-control" placeholder="IN_SNF" runat="server" required ToolTip="IN_SNF"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIN_SNF" class="form-control" placeholder="IN_SNF" runat="server"  ToolTip="IN_SNF"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -242,7 +253,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtIN_TS" class="form-control" placeholder="IN_TS" runat="server" required ToolTip="IN_TS"></asp:TextBox>                        
+                      <asp:TextBox ID="txtIN_TS" class="form-control" placeholder="IN_TS" runat="server"  ToolTip="IN_TS"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -257,7 +268,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtScheme" class="form-control" placeholder="Scheme" runat="server" required ToolTip="Scheme"></asp:TextBox>                        
+                      <asp:TextBox ID="txtScheme" class="form-control" placeholder="Scheme" runat="server"  ToolTip="Scheme"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -272,7 +283,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtBonus" class="form-control" placeholder="Bonus" runat="server" required ToolTip="Bonus"></asp:TextBox>                        
+                      <asp:TextBox ID="txtBonus" class="form-control" placeholder="Bonus" runat="server"  ToolTip="Bonus"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -287,7 +298,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtWEF_DATE" class="form-control" placeholder="WEF_DATE" runat="server" required ToolTip="WEF_DATE"></asp:TextBox>                        
+                      <asp:TextBox ID="txtWEF_DATE" class="form-control" placeholder="WEF_DATE" runat="server" type="date" required ToolTip="WEF_DATE"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -295,7 +306,9 @@
                      
                        
                           
-                      </div>     
+                      </div>   
+             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+        ShowSummary="False" ValidationGroup="Save" />  
                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -303,7 +316,8 @@
                     
                       
                               <asp:Button ID="btnAddRaw" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddRaw_Click" />     
-                        <asp:Button ID="btnupdateRaw" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateRaw_Click" />           
+                        <asp:Button ID="btnupdateRaw" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateRaw_Click" /> 
+                          &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -355,7 +369,7 @@
                         <th>TSL</th>
                         <th>TSH</th>
                         <th>TS_RATE</th>
-                        <th>TS_INCR</th>
+                  <%--      <th>TS_INCR</th>--%>
                         <th>Incentive</th>
                           <th>IN_FAT</th>
                           <th>IN_SNF</th>
@@ -377,7 +391,7 @@
                       <td><%# Eval("TSL")%></td>
                       <td><%# Eval("TSH")%></td>
                       <td><%# Eval("TSRATE")%></td>
-                        <td><%# Eval("TS_INCR") %></td>
+                     <%--   <td><%# Eval("TS_INCR") %></td>--%>
                         <td><%# Eval("Incentive") %></td>
                         <td><%# Eval("IN_FAT") %></td>
                         <td><%# Eval("IN_SNF") %></td>
@@ -409,7 +423,7 @@
                         <th>TSL</th>
                         <th>TSH</th>
                         <th>TS_RATE</th>
-                        <th>TS_INCR</th>
+                   <%--     <th>TS_INCR</th>--%>
                         <th>Incentive</th>
                           <th>IN_FAT</th>
                           <th>IN_SNF</th>

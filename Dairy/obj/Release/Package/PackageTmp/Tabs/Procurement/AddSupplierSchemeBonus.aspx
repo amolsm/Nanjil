@@ -5,13 +5,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtPaymentDate").datepicker({ format: 'dd-MM-yyyy' });
-
-        })
-    </script>
+   
     <section class="content-header">
           <h1>
              Supplier Scheme Bonus
@@ -77,8 +71,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
-                       </asp:DropDownList>                               
+                   <%--    <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
+                       </asp:DropDownList>    --%>
+                         <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true"> 
+                       </asp:DropDownList>                           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -90,7 +86,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSchemeBonusYr" class="form-control" placeholder="Scheme Bonus Year" runat="server" required ToolTip="Scheme Bonus Year"></asp:TextBox>                        
+                       <asp:TextBox ID="txtSchemeBonusYr" class="form-control" placeholder="Scheme Bonus Year" runat="server" required ToolTip="Scheme Bonus Year" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -105,7 +101,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSchemeAmount" class="form-control" placeholder="Scheme Amount" runat="server" required ToolTip="Scheme Amount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtSchemeAmount" class="form-control" placeholder="Scheme Amount" runat="server" required ToolTip="Scheme Amount" ReadOnly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -117,7 +113,7 @@
                       <div class="input-group-addon">
                          <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtBonusAmount" class="form-control" placeholder="Bonus Amount" runat="server" required ToolTip="Bonus Amount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBonusAmount" class="form-control" placeholder="Bonus Amount" runat="server" required ToolTip="Bonus Amount" ReadOnly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -154,7 +150,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtPaymentDate" class="form-control" placeholder="Payment Date" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtPaymentDate" class="form-control" placeholder="Payment Date" type="date" runat="server" required ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -218,7 +214,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>SupplierID</th>
+                          <th>RouteID</th>
                         <th>Scheme Bonus Year</th>
                         <th>Schmeme Amount</th> 
              
@@ -260,7 +256,7 @@
 
                     <tfoot>
                       <tr>
-                             <th>SupplierID</th>
+                             <th>RouteID</th>
                         <th>Scheme Bonus Year</th>
                         <th>Schmeme Amount</th> 
              

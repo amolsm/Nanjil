@@ -8,7 +8,7 @@ using System.Data;
 using Bussiness;
 using Model;
 using System.Text;
-using Model;
+
 
 namespace Dairy.Tabs.Procurement
 {
@@ -22,6 +22,7 @@ namespace Dairy.Tabs.Procurement
                 BindRawMilkTerrifList();
                 btnAddRaw.Visible = true;
                 btnupdateRaw.Visible = false;
+                txtWEF_DATE.Text = DateTime.Now.ToString("yyyy/MM/dd");
             }
         }
 
@@ -39,13 +40,13 @@ namespace Dairy.Tabs.Procurement
                 p.TSL = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
                 p.TSH = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
-                p.TS_INCR = Convert.ToInt32(txtTS_INCR.Text);
-                p.Incentive = Convert.ToInt32(txtIncentive.Text);
-                p.IN_FAT = Convert.ToInt32(txtIN_FAT.Text);
-                p.IN_SNF = Convert.ToInt32(txtIN_SNF.Text);
-                p.IN_TS = Convert.ToInt32(txtIN_TS.Text);
-                p.Bonus1 = Convert.ToDecimal(txtBonus.Text);
-                p.Scheme = Convert.ToDecimal(txtScheme.Text);
+                p.TS_INCR = 0;
+                p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToInt32(txtIncentive.Text);
+                p.IN_FAT = string.IsNullOrEmpty(txtIN_FAT.Text) ? 0 : Convert.ToInt32(txtIN_FAT.Text);
+                p.IN_SNF = string.IsNullOrEmpty(txtIN_SNF.Text) ? 0 : Convert.ToInt32(txtIN_SNF.Text);
+                p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
+                p.Bonus1 = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDecimal(txtBonus.Text);
+                p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
                 p.WEF_DATE = Convert.ToDateTime(txtWEF_DATE.Text);
                 p.CreatedBy = App_code.GlobalInfo.Userid;
                 p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -104,7 +105,7 @@ namespace Dairy.Tabs.Procurement
         {
             txtWEF_DATE.Text = string.Empty;
             txtTSRate.Text = string.Empty;
-            txtTS_INCR.Text = string.Empty;
+            //txtTS_INCR.Text = string.Empty;
             txtScheme.Text = string.Empty;
             txtIncentive.Text = string.Empty;
             txtIN_TS.Text = string.Empty;
@@ -204,9 +205,9 @@ namespace Dairy.Tabs.Procurement
                 txtIN_TS.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IN_TS"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IN_TS"].ToString();
                 txtIncentive.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Incentive"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Incentive"].ToString();
                 txtScheme.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Scheme"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Scheme"].ToString();
-                txtTS_INCR.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TS_INCR"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TS_INCR"].ToString();
+                //txtTS_INCR.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TS_INCR"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TS_INCR"].ToString();
                 txtTSRate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSRATE"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSRATE"].ToString();
-                txtWEF_DATE.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["WEF_DATE"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["WEF_DATE"].ToString();
+                txtWEF_DATE.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["WEF_DATE"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["WEF_DATE"]).ToString("yyyy-MM-dd");
 
 
             }
@@ -269,13 +270,13 @@ namespace Dairy.Tabs.Procurement
                 p.TSL = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
                 p.TSH = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
-                p.TS_INCR = Convert.ToInt32(txtTS_INCR.Text);
-                p.Incentive = Convert.ToInt32(txtIncentive.Text);
-                p.IN_FAT = Convert.ToInt32(txtIN_FAT.Text);
-                p.IN_SNF = Convert.ToInt32(txtIN_SNF.Text);
-                p.IN_TS = Convert.ToInt32(txtIN_TS.Text);
-                p.Bonus1 = Convert.ToDecimal(txtBonus.Text);
-                p.Scheme = Convert.ToDecimal(txtScheme.Text);
+                p.TS_INCR = 0;
+                p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0:Convert.ToInt32(txtIncentive.Text);
+                p.IN_FAT = string.IsNullOrEmpty(txtIN_FAT.Text) ? 0 : Convert.ToInt32(txtIN_FAT.Text);
+                p.IN_SNF = string.IsNullOrEmpty(txtIN_SNF.Text) ? 0 : Convert.ToInt32(txtIN_SNF.Text);
+                p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
+                p.Bonus1 = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDecimal(txtBonus.Text);
+                p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
                 p.WEF_DATE = Convert.ToDateTime(txtWEF_DATE.Text);
                 p.CreatedBy = App_code.GlobalInfo.Userid;
                 p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -317,6 +318,12 @@ namespace Dairy.Tabs.Procurement
                 lblwarning.Text = "TSL must be a less than TSH";
                 pnlError.Update();
             }
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Procurement/RawMilkTariff.aspx");
+
         }
     }
 }

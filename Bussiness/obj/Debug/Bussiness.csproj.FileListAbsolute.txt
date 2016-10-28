@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\NanjilCode\Nanjil\Bussiness\bin\Bussiness.dll
 D:\NanjilCode\Nanjil\Bussiness\bin\Bussiness.pdb
 D:\NanjilCode\Nanjil\Bussiness\bin\Comman.dll
@@ -10,16 +9,3 @@ D:\NanjilCode\Nanjil\Bussiness\bin\Model.pdb
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.dll
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.pdb
-=======
-D:\NanjilCode\Bussiness\bin\Bussiness.dll
-D:\NanjilCode\Bussiness\bin\Bussiness.pdb
-D:\NanjilCode\Bussiness\bin\Comman.dll
-D:\NanjilCode\Bussiness\bin\DataAccess.dll
-D:\NanjilCode\Bussiness\bin\Model.dll
-D:\NanjilCode\Bussiness\bin\Comman.pdb
-D:\NanjilCode\Bussiness\bin\DataAccess.pdb
-D:\NanjilCode\Bussiness\bin\Model.pdb
-D:\NanjilCode\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
-D:\NanjilCode\Bussiness\obj\Debug\Bussiness.dll
-D:\NanjilCode\Bussiness\obj\Debug\Bussiness.pdb
->>>>>>> origin/master

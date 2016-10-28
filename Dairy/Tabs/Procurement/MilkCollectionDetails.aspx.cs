@@ -151,9 +151,9 @@ namespace Dairy.Tabs.Procurement
 
         public void ClearTextBox()
         {
-            txtBatch.Text = string.Empty;
-            txtDate.Text = string.Empty;
-            dpSession.ClearSelection();
+           // txtBatch.Text = string.Empty;
+            //txtDate.Text = string.Empty;
+           // dpSession.ClearSelection();
             txtTSPercentage.Text = string.Empty;
             txtSNFPercentage.Text = string.Empty;
             txtSNFInKG.Text = string.Empty;
@@ -164,7 +164,7 @@ namespace Dairy.Tabs.Procurement
             txtFATPercentage.Text = string.Empty;
             txtFATInKG.Text = string.Empty;
             txtCLRReading.Text = string.Empty;
-            dpRoute.ClearSelection();
+           // dpRoute.ClearSelection();
             dpSupplier.ClearSelection();
             txtMilkCan.Text = string.Empty;
             txtTSKG.Text = string.Empty;
@@ -386,7 +386,12 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Tabs/Procurement/MilkCollectionDetails.aspx");
+            //Response.Redirect("~/Tabs/Procurement/MilkCollectionDetails.aspx");
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            pnlError.Update();
+            upMain.Update();
         }
     }
 }

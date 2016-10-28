@@ -97,6 +97,22 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
+                 <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true"> 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
