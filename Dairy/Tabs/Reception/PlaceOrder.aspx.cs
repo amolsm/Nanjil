@@ -397,12 +397,7 @@ namespace Dairy.Tabs.Reception
                     BindAgntTempItam(invocie);
 
 
-
-                    //Label lblFInaltotal = Label.FindControl("lblFInaltotal");
-                    //Label lblFInaltotal = (Label)rpAgentOrderdetails.Items[0].FindControl("lblFInaltotal");
-                    //lblFInaltotal.Text = totsum.ToString();
-                    // txtGentOrderDate.Text= DateTime.Now.ToString("MM-dd-yyyy");
-                    txtagentOrderqty.Text = "0";
+                    //txtagentOrderqty.Text = "0";
                 }
 
             }
@@ -439,8 +434,10 @@ namespace Dairy.Tabs.Reception
             bool result = invicedata.CheckTempInvoiceItam(invocie, flag);
             if (!result)
             {
+                
                 invicedata.InsertTempInvoiceItam(invocie);
                 BindAgntTempItam(invocie);
+                txtagentOrderqty.Text = string.Empty;
             }
             else
             {
@@ -481,7 +478,7 @@ namespace Dairy.Tabs.Reception
                 btnagentItamsremove.Visible = false;
                 btnAgentORderSubmit.Visible = false;
                 clearAgentValues();
-                txtagentOrderqty.Text = "0";
+                //txtagentOrderqty.Text = "0";
                 BindAgntTempItam(inovice);
                 divDanger.Visible = false;
                 divwarning.Visible = false;
@@ -906,7 +903,7 @@ namespace Dairy.Tabs.Reception
                 Button1.Visible = false;
                 Button2.Visible = false;
                 ClereEmployee();
-                txtagentOrderqty.Text = "0";
+                //txtagentOrderqty.Text = "0";
                 inovice.TokanId = hftokanno.Value;
                 inovice.CreatedBy = GlobalInfo.Userid;
                 BindEmployeeOrderDetails(inovice);

@@ -149,16 +149,24 @@ namespace Dairy.Tabs.Reception
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string confirmValue = Request.Form["confirm_value"];
-            if (confirmValue == "Yes")
-            {
+            
                 DS = new DataSet();
                 billdata = new BillData();
                 int id = Convert.ToInt32(hbankId.Value);
-             
+            int result = 0;
+                
+                double qty = string.IsNullOrEmpty(txtNewQuantity.Text)? 0: Convert.ToDouble(txtNewQuantity.Text);
+            if (qty != 0)
+            {
                 int flag = 2;
-                double qty = Convert.ToDouble(txtNewQuantity.Text);
-                int result = billdata.EditOrders(id, flag, qty);
+                result = billdata.EditOrders(id, flag, qty);
+            }
+            else
+            {
+                int flag = 4;
+                result = billdata.EditOrders(id, flag, qty);
+            }
+
                 if (result > 0)
                 {
 
@@ -179,7 +187,7 @@ namespace Dairy.Tabs.Reception
                     pnlError.Update();
 
                 }
-            }
+            
         }
     }
 }
