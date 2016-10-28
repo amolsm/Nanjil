@@ -28,6 +28,13 @@ namespace Dairy.Tabs.Procurement
 
         public void BindDropdown()
         {
+            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpRoute.DataSource = DS;
+                dpRoute.DataBind();
+                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+            }
             DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -287,6 +294,20 @@ namespace Dairy.Tabs.Procurement
             //    pnlError.Update();
 
             //}
+        }
+
+        protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dpSupplier.ClearSelection();
+            int routeid=Convert.ToInt32(dpRoute.SelectedItem.Value);
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID="+routeid);
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpSupplier.DataSource = DS;
+                dpSupplier.DataBind();
+                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+            }
+
         }
     }
 }

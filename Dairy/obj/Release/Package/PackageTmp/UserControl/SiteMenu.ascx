@@ -41,8 +41,8 @@
                   <li><a href="/Tabs/Administration/UnitMaster.aspx"><i class="fa fa-circle-o"></i> Unit Information</a></li>
                   <li><a href="/Tabs/Administration/IncentiveSetup.aspx"><i class="fa fa-circle-o"></i> Incentive Rate Setup </a></li>
                       <li><a href="/Tabs/Administration/DamageRateSetup.aspx"><i class="fa fa-circle-o"></i>Damage Rate Setup  </a></li>
-             
-              
+                <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>
+               <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
               </ul>
             </li>
               <li class="treeview">
@@ -273,14 +273,14 @@
                 
                 <li><a href="/Tabs/Procurement/AddMilkSuppliersProfile.aspx"><i class="fa fa-circle-o"></i>Create Supplier Profile</a></li> 
                 <li><a href="/Tabs/Procurement/AddSuppliersLoanInfo.aspx"><i class="fa fa-circle-o"></i> Supplier Loan Info</a></li> 
-                     <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>
+                  <%--   <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>--%>
                     <li><a href="/Tabs/Procurement/MilkCollectionDetails.aspx"><i class="fa fa-circle-o"></i>Milk Collection Details</a></li>
                     <li><a href="/Tabs/Procurement/CalulateRawMilkPurchase.aspx"><i class="fa fa-circle-o"></i>Raw Milk Rate Calculation</a></li>
                 <%--<li><a href="/Tabs/Procurement/AddSupplierBankDetails.aspx"><i class="fa fa-circle-o"></i>Add Supplier Bank Details</a></li> --%>
                 <li><a href="/Tabs/Procurement/AddSupplierSchemeBonus.aspx"><i class="fa fa-circle-o"></i>Yearwise Scheme Bonus</a></li> 
                 <li><a href="/Tabs/Procurement/SupplierAdvanceInfo.aspx"><i class="fa fa-circle-o"></i> Vehicle Advance Info</a></li> 
                   <li><a href="/Tabs/Procurement/AddSupplierRDInfo.aspx"><i class="fa fa-circle-o"></i> Supplier RD Info</a></li>
-                  <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
+                 <%-- <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>--%>
                   <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>Collection Vehicle Information</a></li>
                
                 
@@ -454,6 +454,7 @@
                   <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
                   <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
+                  <li><a href="/Tabs/Purchase/MaterialReceived.aspx"><i class="fa fa-circle-o"></i>Material Received</a></li>
               </ul>
             </li> 
 

@@ -459,7 +459,7 @@
                       <tr>
                             <th>Date</th>
                           <th>Supplier</th>
-                        <th>RouteID</th>
+                        <th>Route</th>
                         <th>MilkInKG </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
@@ -475,8 +475,8 @@
                <ItemTemplate>
                     <tr>
                           <td><%#  Convert.ToDateTime(Eval("_Date")).ToString("dd-MM-yyyy")%></td>
-                         <td><%# Eval("SupplierName")%></td>
-                      <td><%# Eval("RouteID")%></td>
+                         <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
+                      <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
                       <td><%# Eval("MilkInKG")%></td>
                       <td><%# Eval("FATPercentage")%></td>
                      
@@ -502,7 +502,7 @@
                     <tfoot>
                       <tr><th>Date</th>
                            <th>Supplier</th>
-                        <th>RouteID</th>
+                        <th>Route</th>
                         <th>MilkInKG </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
@@ -543,5 +543,17 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
-      
+      <script type = "text/javascript">
+          $("#btnAddNew").click(function (e) {
+            // prevent from going to the page
+            e.preventDefault();
+
+            // get the href
+            var href = $(this).attr("href");
+            $("#pnlError").load(href, function () {
+                // do something after content has been 
+                
+            });
+        });
+    </script>
 </asp:Content>

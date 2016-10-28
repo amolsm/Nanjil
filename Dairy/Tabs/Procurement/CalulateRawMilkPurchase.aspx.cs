@@ -35,13 +35,13 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
             }
 
-            DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpCenter.DataSource = DS;
-                dpCenter.DataBind();
-                dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
-            }
+            //DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpCenter.DataSource = DS;
+            //    dpCenter.DataBind();
+            //    dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
+            //}
 
 
         }
@@ -50,7 +50,7 @@ namespace Dairy.Tabs.Procurement
         {
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
-            p.CollectionID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.CollectionID = 6;//Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
@@ -88,7 +88,7 @@ namespace Dairy.Tabs.Procurement
            
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
-            p.CollectionID = Convert.ToInt32(dpCenter.SelectedItem.Value);
+            p.CollectionID = 6;//Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
@@ -117,6 +117,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -124,7 +125,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
                 sb.Append("<u>Raw Milk Purchase Report </u> <br/>");
                 sb.Append("</th>");
 
@@ -135,7 +136,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
 
                 sb.Append("</td>");
@@ -151,8 +152,8 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("Date : " + DateTime.Now.ToString());
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<td colspan='2'>");
-                sb.Append(dpCenter.SelectedItem.Text.ToString());
+                sb.Append("<td colspan='3'>");
+                sb.Append(App_code.GlobalInfo.UserName);
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
                 sb.Append(dpRoute.SelectedItem.Text.ToString());
@@ -167,6 +168,9 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("<b>Session</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Supplier</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("<b>MilkInLtr</b>");
@@ -197,6 +201,9 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append(row["_Session"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(row["Supplier"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append(row["MilkInLtr"].ToString());

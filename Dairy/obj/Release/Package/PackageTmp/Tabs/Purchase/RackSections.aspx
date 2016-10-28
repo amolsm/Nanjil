@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RackSections.aspx.cs" Inherits="Dairy.Tabs.Purchase.RackSections" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    
+     <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+    </style>
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -57,7 +64,7 @@
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:Button ID="btnAdd" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="Save" OnClick="btnAdd_Click" />     
+                      <asp:Button ID="btnAdd" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="None" OnClick="btnAdd_Click" />     
                        
                     </div><!-- /.input group -->
 
@@ -151,7 +158,7 @@
         <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
               <ContentTemplate>         
                       <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -162,34 +169,36 @@
           <div class="box-body">
             
                    <div class="col-lg-6">
-                  <div class="form-group" >
+                  <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <asp:Label runat="server" Text="Rack Name"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtRackName" class="form-control" ToolTip="Rack Name"   runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRackName"
+        ErrorMessage="Rack Name Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
                
 
                <div class="col-lg-6">
-                  <div class="form-group" >
+                  <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <asp:Label ID="lblSec" runat="server" Text="Sections"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtSectionCount" class="form-control" ToolTip="Enter How many sections"  placeholder="How Many Sections" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtSectionCount" class="form-control" ToolTip="Enter How many sections"  placeholder="How Many Sections" runat="server" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtSectionCount"
+        ErrorMessage="Sections Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
 
            <div class="col-lg-6">
-                  <div class="form-group" >
+                  <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
@@ -202,7 +211,9 @@
                             
                        </asp:DropDownList>
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator InitialValue="0" ID="VldIsActive" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="dpIsActive" ForeColor="Red"
+    ErrorMessage="Please Select Status "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
@@ -212,7 +223,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnSubmit_Click"  Text="Save" UseSubmitBehavior="false"  data-dismiss="modal"/>       
+          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click"  Text="Save" UseSubmitBehavior="false"  />       
            <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved"  Text="Udpate" UseSubmitBehavior="false"  data-dismiss="modal" OnClick="btnUpdate_Click"/>       
       </div>
     </div>

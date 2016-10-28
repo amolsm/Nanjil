@@ -86,7 +86,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-               <div class="col-lg-3">
+              <%-- <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -101,7 +101,7 @@
                      
                        
                           
-                      </div>  
+                      </div> --%> 
 
             <div class="col-lg-3">
                   <div class="form-group">
