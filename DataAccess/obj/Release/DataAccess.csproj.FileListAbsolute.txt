@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\NanjilCode\DataAccess\bin\DataAccess.dll
 D:\NanjilCode\DataAccess\bin\DataAccess.pdb
 D:\NanjilCode\DataAccess\bin\Comman.dll
@@ -7,3 +8,14 @@ D:\NanjilCode\DataAccess\bin\Model.pdb
 D:\NanjilCode\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
 D:\NanjilCode\DataAccess\obj\Release\DataAccess.dll
 D:\NanjilCode\DataAccess\obj\Release\DataAccess.pdb
+=======
+D:\NanjilCode\Nanjil\DataAccess\bin\DataAccess.dll
+D:\NanjilCode\Nanjil\DataAccess\bin\DataAccess.pdb
+D:\NanjilCode\Nanjil\DataAccess\bin\Comman.dll
+D:\NanjilCode\Nanjil\DataAccess\bin\Model.dll
+D:\NanjilCode\Nanjil\DataAccess\bin\Comman.pdb
+D:\NanjilCode\Nanjil\DataAccess\bin\Model.pdb
+D:\NanjilCode\Nanjil\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Nanjil\DataAccess\obj\Release\DataAccess.dll
+D:\NanjilCode\Nanjil\DataAccess\obj\Release\DataAccess.pdb
+>>>>>>> origin/master

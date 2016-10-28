@@ -274,5 +274,15 @@ namespace Bussiness
         {
             return pdb.GetAllBatchWiseMilkCollectionDetail();
         }
+
+        public DataSet GetRouteSchemeBonusbyroute(int routeID)
+        {
+            return pdb.GetRouteSchemeBonusbyroute(routeID);
+        }
+
+        public DataSet GetBatchWiseMilkCollection(int milkcollectionid, string flag)
+        {
+            return pdb.GetBatchWiseMilkCollection(milkcollectionid, flag);
+        }
     }
 }

@@ -175,15 +175,6 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl d1;
         
         /// <summary>
-        /// dpdestination control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpdestination;
-        
-        /// <summary>
         /// dpParticulardispose control.
         /// </summary>
         /// <remarks>
@@ -265,60 +256,6 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtSNFPercentage;
         
         /// <summary>
-        /// txtHandlingExcess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHandlingExcess;
-        
-        /// <summary>
-        /// txtHandlingLoss control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHandlingLoss;
-        
-        /// <summary>
-        /// disp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl disp;
-        
-        /// <summary>
-        /// txtInternalConsumption control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInternalConsumption;
-        
-        /// <summary>
-        /// txtDamageMilk control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDamageMilk;
-        
-        /// <summary>
-        /// TextBtxtOther control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBtxtOther;
-        
-        /// <summary>
         /// btnAddMilk control.
         /// </summary>
         /// <remarks>
@@ -337,6 +274,15 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.Button btnupdateMilk;
         
         /// <summary>
+        /// btnAddNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddNew;
+        
+        /// <summary>
         /// Div1 control.
         /// </summary>
         /// <remarks>
@@ -353,15 +299,6 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDate1;
-        
-        /// <summary>
-        /// dpCenter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpCenter;
         
         /// <summary>
         /// btnView control.

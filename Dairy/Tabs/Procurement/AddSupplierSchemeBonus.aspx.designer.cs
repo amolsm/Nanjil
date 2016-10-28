@@ -103,13 +103,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel upMain;
         
         /// <summary>
-        /// dpSupplier control.
+        /// dpRoute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpSupplier;
+        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
         
         /// <summary>
         /// txtSchemeBonusYr control.

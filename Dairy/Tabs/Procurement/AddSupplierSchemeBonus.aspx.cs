@@ -21,24 +21,34 @@ namespace Dairy.Tabs.Procurement
                 BindDropdown();
                 btnAddBonus.Visible = true;
                 btnupdateBonus.Visible = false;
-               
+                DateTime dt = DateTime.Now;
+                txtSchemeBonusYr.Text = dt.Year.ToString();
+                txtPaymentDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
             }
         }
 
         public void BindDropdown()
         {
-            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
+            //DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpSupplier.DataSource = DS;
+            //    dpSupplier.DataBind();
+            //    dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+            //}
+            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                dpSupplier.DataSource = DS;
-                dpSupplier.DataBind();
-                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+                dpRoute.DataSource = DS;
+                dpRoute.DataBind();
+                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
             }
         }
 
         public void ClearTextBox()
         {
-            dpSupplier.ClearSelection();
+            dpRoute.ClearSelection();
             DropDownList1.ClearSelection();
             txtSchemeBonusYr.Text = string.Empty;
             txtBonusAmount.Text = string.Empty;
@@ -106,15 +116,15 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetSupplierSchemeInfobyID(SchemeID);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                dpSupplier.ClearSelection();
-                if (dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()) != null)
+                dpRoute.ClearSelection();
+                if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()) != null)
                 {
-                    dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()).Selected = true;
+                    dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()).Selected = true;
                 }
                 txtSchemeBonusYr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SchemeBonusYear"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SchemeBonusYear"].ToString();
                 txtSchemeAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SchemeAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SchemeAmount"].ToString();
                 txtBonusAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BonusAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BonusAmount"].ToString();
-                txtPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["PaymentDateTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["PaymentDateTime"].ToString();
+                txtPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["PaymentDateTime"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["PaymentDateTime"]).ToString("yyyy-MM-dd");
                 DropDownList1.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["PaymentStatus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["PaymentStatus"].ToString();
             }
         }
@@ -155,7 +165,7 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.SchemeID = 0;
-            p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
+            p.SupplierID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SchemeBonusYr = txtSchemeBonusYr.Text;
             p.SchemeAmount = Convert.ToDouble(txtSchemeAmount.Text);
             p.BonusAmount = Convert.ToDouble(txtBonusAmount.Text);
@@ -198,7 +208,7 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.SchemeID = string.IsNullOrEmpty(hfScheme.Value) ? 0 : Convert.ToInt32(hfScheme.Value);
-            p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
+            p.SupplierID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SchemeBonusYr = txtSchemeBonusYr.Text;
             p.SchemeAmount = Convert.ToDouble(txtSchemeAmount.Text);
             p.BonusAmount = Convert.ToDouble(txtBonusAmount.Text);
@@ -236,6 +246,28 @@ namespace Dairy.Tabs.Procurement
                 lblwarning.Text = "Please Contact to Site Admin";
                 pnlError.Update();
 
+            }
+
+        }
+
+        protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+            DataSet DS = new DataSet();
+            DS = pd.GetRouteSchemeBonusbyroute(RouteID);
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                txtSchemeAmount.Text = string.Empty;
+                txtBonusAmount.Text = string.Empty;
+                txtSchemeAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Scheme"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Scheme"].ToString();
+                txtBonusAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Bonus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Bonus"].ToString();
+
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' Scheme and Bonus not found for this route')", true);
+                dpRoute.ClearSelection();
             }
 
         }
