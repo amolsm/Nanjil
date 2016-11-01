@@ -1,9 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RackSections.aspx.cs" Inherits="Dairy.Tabs.Purchase.RackSections" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
      <style type="text/css">
         .listboxl {
             height:100px !important;
@@ -12,12 +8,6 @@
        margin-bottom:1px;
        }
     </style>
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/master
-=======
->>>>>>> origin/master
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -74,15 +64,7 @@
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-<<<<<<< HEAD
-<<<<<<< HEAD
                       <asp:Button ID="btnAdd" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="None" OnClick="btnAdd_Click" />     
-=======
-                      <asp:Button ID="btnAdd" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="Save" OnClick="btnAdd_Click" />     
->>>>>>> origin/master
-=======
-                      <asp:Button ID="btnAdd" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="None" OnClick="btnAdd_Click" />     
->>>>>>> origin/master
                        
                     </div><!-- /.input group -->
 
@@ -176,15 +158,7 @@
         <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
               <ContentTemplate>         
                       <!-- Modal -->
-<<<<<<< HEAD
-<<<<<<< HEAD
        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
-=======
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
->>>>>>> origin/master
-=======
-       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
->>>>>>> origin/master
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -195,82 +169,36 @@
           <div class="box-body">
             
                    <div class="col-lg-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <div class="form-group frmgrp" >
-=======
-                  <div class="form-group" >
->>>>>>> origin/master
-=======
-                  <div class="form-group frmgrp" >
->>>>>>> origin/master
                     <div class="input-group">
                       <div class="input-group-addon">
                         <asp:Label runat="server" Text="Rack Name"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtRackName" class="form-control" ToolTip="Rack Name"   runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-<<<<<<< HEAD
-<<<<<<< HEAD
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRackName"
         ErrorMessage="Rack Name Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-=======
-
->>>>>>> origin/master
-=======
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRackName"
-        ErrorMessage="Rack Name Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
->>>>>>> origin/master
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
                
 
                <div class="col-lg-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <div class="form-group frmgrp" >
-=======
-                  <div class="form-group" >
->>>>>>> origin/master
-=======
-                  <div class="form-group frmgrp" >
->>>>>>> origin/master
                     <div class="input-group">
                       <div class="input-group-addon">
                         <asp:Label ID="lblSec" runat="server" Text="Sections"></asp:Label>
                       </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                        <asp:TextBox ID="txtSectionCount" class="form-control" ToolTip="Enter How many sections"  placeholder="How Many Sections" runat="server" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtSectionCount"
         ErrorMessage="Sections Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-=======
-                       <asp:TextBox ID="txtSectionCount" class="form-control" ToolTip="Enter How many sections"  placeholder="How Many Sections" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
->>>>>>> origin/master
-=======
-                       <asp:TextBox ID="txtSectionCount" class="form-control" ToolTip="Enter How many sections"  placeholder="How Many Sections" runat="server" type="number"></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtSectionCount"
-        ErrorMessage="Sections Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
->>>>>>> origin/master
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
 
            <div class="col-lg-6">
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <div class="form-group frmgrp" >
-=======
-                  <div class="form-group" >
->>>>>>> origin/master
-=======
-                  <div class="form-group frmgrp" >
->>>>>>> origin/master
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
@@ -283,19 +211,9 @@
                             
                        </asp:DropDownList>
                     </div><!-- /.input group -->
-<<<<<<< HEAD
-<<<<<<< HEAD
                       <asp:RequiredFieldValidator InitialValue="0" ID="VldIsActive" Display="Dynamic" 
     ValidationGroup="Save" runat="server" ControlToValidate="dpIsActive" ForeColor="Red"
     ErrorMessage="Please Select Status "></asp:RequiredFieldValidator>
-=======
-
->>>>>>> origin/master
-=======
-                      <asp:RequiredFieldValidator InitialValue="0" ID="VldIsActive" Display="Dynamic" 
-    ValidationGroup="Save" runat="server" ControlToValidate="dpIsActive" ForeColor="Red"
-    ErrorMessage="Please Select Status "></asp:RequiredFieldValidator>
->>>>>>> origin/master
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
@@ -305,15 +223,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
        
-<<<<<<< HEAD
-<<<<<<< HEAD
           <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click"  Text="Save" UseSubmitBehavior="false"  />       
-=======
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnSubmit_Click"  Text="Save" UseSubmitBehavior="false"  data-dismiss="modal"/>       
->>>>>>> origin/master
-=======
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click"  Text="Save" UseSubmitBehavior="false"  />       
->>>>>>> origin/master
            <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved"  Text="Udpate" UseSubmitBehavior="false"  data-dismiss="modal" OnClick="btnUpdate_Click"/>       
       </div>
     </div>

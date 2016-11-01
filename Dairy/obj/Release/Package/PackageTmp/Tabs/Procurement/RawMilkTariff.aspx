@@ -181,7 +181,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server"  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server" type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -212,7 +212,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIncentive" class="form-control" placeholder="Incentive" runat="server"  ToolTip="Incentive"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIncentive" class="form-control" placeholder="Incentive" runat="server"  ToolTip="Incentive" type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -225,7 +225,7 @@
                       <div class="input-group-addon">
                       <span style="color:red">&nbsp;*</span>
                       </div>        
-                     <asp:TextBox ID="txtIN_FAT" class="form-control" placeholder="IN_FAT" runat="server"  ToolTip="IN_FAT"></asp:TextBox>                        
+                     <asp:TextBox ID="txtIN_FAT" class="form-control" placeholder="IN_FAT" runat="server"  ToolTip="IN_FAT" type="number" step="any"></asp:TextBox>                        
 
                   </div><!-- /.form group -->
 
@@ -240,7 +240,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIN_SNF" class="form-control" placeholder="IN_SNF" runat="server"  ToolTip="IN_SNF"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIN_SNF" class="form-control" placeholder="IN_SNF" runat="server"  ToolTip="IN_SNF" type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -253,7 +253,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtIN_TS" class="form-control" placeholder="IN_TS" runat="server"  ToolTip="IN_TS"></asp:TextBox>                        
+                      <asp:TextBox ID="txtIN_TS" class="form-control" placeholder="IN_TS" runat="server"  ToolTip="IN_TS" type="number" step="any"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -268,7 +268,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtScheme" class="form-control" placeholder="Scheme" runat="server"  ToolTip="Scheme"></asp:TextBox>                        
+                      <asp:TextBox ID="txtScheme" class="form-control" placeholder="Scheme" runat="server"  ToolTip="Scheme" type="number" step="any"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -283,7 +283,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtBonus" class="form-control" placeholder="Bonus" runat="server"  ToolTip="Bonus"></asp:TextBox>                        
+                      <asp:TextBox ID="txtBonus" class="form-control" placeholder="Bonus" runat="server"  ToolTip="Bonus" type="number" step="any"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->

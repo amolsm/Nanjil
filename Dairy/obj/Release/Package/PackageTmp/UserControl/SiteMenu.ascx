@@ -275,6 +275,7 @@
                 <li><a href="/Tabs/Procurement/AddSuppliersLoanInfo.aspx"><i class="fa fa-circle-o"></i> Supplier Loan Info</a></li> 
                   <%--   <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>--%>
                     <li><a href="/Tabs/Procurement/MilkCollectionDetails.aspx"><i class="fa fa-circle-o"></i>Milk Collection Details</a></li>
+                     <li><a href="/Tabs/Procurement/CheckList.aspx"><i class="fa fa-circle-o"></i>Check List </a></li>
                     <li><a href="/Tabs/Procurement/CalulateRawMilkPurchase.aspx"><i class="fa fa-circle-o"></i>Raw Milk Rate Calculation</a></li>
                 <%--<li><a href="/Tabs/Procurement/AddSupplierBankDetails.aspx"><i class="fa fa-circle-o"></i>Add Supplier Bank Details</a></li> --%>
                 <li><a href="/Tabs/Procurement/AddSupplierSchemeBonus.aspx"><i class="fa fa-circle-o"></i>Yearwise Scheme Bonus</a></li> 
@@ -454,14 +455,7 @@
                   <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
                   <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
                   <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <li><a href="/Tabs/Purchase/MaterialReceived.aspx"><i class="fa fa-circle-o"></i>Material Received</a></li>
-=======
->>>>>>> origin/master
-=======
-                  <li><a href="/Tabs/Purchase/MaterialReceived.aspx"><i class="fa fa-circle-o"></i>Material Received</a></li>
->>>>>>> origin/master
               </ul>
             </li> 
 

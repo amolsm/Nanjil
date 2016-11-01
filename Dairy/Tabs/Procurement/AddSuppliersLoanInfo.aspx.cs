@@ -224,14 +224,18 @@ namespace Dairy.Tabs.Procurement
                     }
                 case ("delete"):
                     {
-
-                        hfLoanID.Value = LoanID.ToString();
-                        LoanID = Convert.ToInt32(hfLoanID.Value);
-                        DeleteRoutebyrouteID(LoanID);
-                        BindeSupplierLoanInfo();
-                        upMain.Update();
-                        uprouteList.Update();
-                        break;
+                        string confirmValue = Request.Form["confirm_value"];
+                        if (confirmValue == "Yes")
+                        {
+                            hfLoanID.Value = LoanID.ToString();
+                            LoanID = Convert.ToInt32(hfLoanID.Value);
+                            DeleteRoutebyrouteID(LoanID);
+                            BindeSupplierLoanInfo();
+                            upMain.Update();
+                            uprouteList.Update();
+                        }
+                            break;
+                       
                     }
 
 
@@ -266,34 +270,58 @@ namespace Dairy.Tabs.Procurement
         }
         public void DeleteRoutebyrouteID(int CenterID)
         {
+           // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Do you want to delete')", true);
 
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+            p.LoanID = string.IsNullOrEmpty(hfLoanID.Value) ? 0 : Convert.ToInt32(hfLoanID.Value);
+            p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
+            p.LoanType = ddLoanType.SelectedItem.Text;
+            p.AccounNumber = txtLoanAccountNo.Text;
+            p.LoanAmount = 0;
+            p.LoanTakenDate = txtLoanTakenDate.Text;
+            p.LoanDuration = txtLoanDuration.Text;
+            p.LoanPaid =0;
+            p.LoanBalance =0;
+            p.LoanStatus = DropDownList1.SelectedItem.Text;
+            p.BankName = dpBankName.SelectedItem.Text;
+            p.BranchName = txtBranchName.Text;
+            p.IFSCCode = dpIfscCode.SelectedItem.Text;
+            p.Interest = 0;
+            p.LoanBalance = 0;
+            p.CreatedBy = App_code.GlobalInfo.Userid;
+            p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+            p.ModifiedBy = App_code.GlobalInfo.Userid;
+            p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
 
-            //int Result = 0;
-            //Result = routeDate.InsertRoute(route);
-            //if (Result > 0)
-            //{
+            p.flag = "Delete";
+            int Result = 0;
+            Result = pd.InsertSupplierLoanInfo(p);
+            if (Result > 0)
+            {
+              
 
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = false;
-            //    divSusccess.Visible = true;
-            //    lblSuccess.Text = "Delete Updated  Successfully";
-            //    ClearTextBox();
-            //    BindRouteList();
-            //    pnlError.Update();
-            //    btnAddRoute.Visible = true;
-            //    btnupdateroute.Visible = false;
-            //    upMain.Update();
-            //    uprouteList.Update();
-            //}
-            //else
-            //{
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = true;
-            //    divSusccess.Visible = false;
-            //    lblwarning.Text = "Please Contact to Site Admin";
-            //    pnlError.Update();
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                lblSuccess.Text = "Delete Updated  Successfully";
+                ClearTextBox();
+                BindeSupplierLoanInfo();
+                pnlError.Update();
+                btnLoanadd.Visible = true;
+                btnLoanUpdate.Visible = false;
+                upMain.Update();
+                uprouteList.Update();
+            }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
 
-            //}
+            }
         }
 
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)

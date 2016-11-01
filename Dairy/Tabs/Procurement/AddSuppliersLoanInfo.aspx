@@ -404,7 +404,7 @@
                          </td>
                          <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("LoanID") %>'
-                                                                    CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
+                                                                  OnClientClick = "Confirm()"  CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
 </td>
                     </tr>
                </ItemTemplate>
@@ -456,4 +456,17 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
+    <script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want to delete data?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
 </asp:Content>

@@ -1,39 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CalulateRawMilkPurchase.aspx.cs" Inherits="Dairy.Tabs.Procurement.CalulateRawMilkPurchase" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckList.aspx.cs" Inherits="Dairy.Tabs.Procurement.CheckList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     
-     <script type="text/javascript">
-         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
-         function InIEvent() {
-
-
-             $(function () {
-                 $("#example1").DataTable();
-                 $('#example2').DataTable({
-                     "paging": true,
-                     "lengthChange": false,
-                     "searching": false,
-                     "ordering": true,
-                     "info": true,
-                     "autoWidth": false
-                 });
-             });
-         }
-    </script>
-
-   
-    <section class="content-header">
+     <section class="content-header">
           <h1>
-             Raw Milk Rate Calculation
+           Check List
             <small>Procurement</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Procurement</a></li>
-            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Raw Milk Rate Calculation"></asp:Label> </li>
+            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Check List"></asp:Label> </li>
           </ol>
         </section>
 
@@ -68,7 +44,7 @@
           <!-- Default box -->
               <div class="box <%--collapsed-box--%>">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Raw Milk Rate Calculation"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Check List"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -82,7 +58,7 @@
         
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title"> Raw Milk Rate Calculation</h3>
+          <h3 class="box-title">Check List</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -156,7 +132,7 @@
                       
                     
                       
-                              <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnCalculate_Click"   Text="Calculate" ValidationGroup="Save" />     
+                              <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnCalculate_Click"   Text="GenerateCheckList" ValidationGroup="Save" />     
                         
                     </div><!-- /.input group -->
 
@@ -167,10 +143,20 @@
                           
                       </div> 
             
+                  
+                    <div class="col-lg-2 ">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
+                     </div><!-- /.input group -->
+                    </div><!-- /.form group -->
+                    </div>  
+              
+                  </div>
           
               
         </div><!-- /.box-body -->
-      </div>
+     
 
                              
                          
@@ -192,104 +178,30 @@
               </div>
 
             </div>
-                 
+                     
             <div class="box-body" id="datalist">
                    
                 
-                       
+                   
 
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
-                       <asp:Panel runat="server" ID="pnlBill">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" Font-Names="Arial"
-    Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B" HeaderStyle-BackColor="#33cccc"
-    AllowPaging="false">
-                     <Columns>
-        <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" DataFormatString="{0:d}" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
-          <asp:BoundField ItemStyle-Width="150px" DataField="Supplier" HeaderText="Supplier" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="MilkInLtr" HeaderText="MilkInLtr" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FatPercentage" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="SNFPercentage" HeaderText="SNFPercentage" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="TSPercentage" HeaderText="TSPercentage" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="RPL" HeaderText="RPL" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="Amount" HeaderText="Amount" />
-    </Columns>
-                            <EmptyDataTemplate>
-            <asp:Label ID="norecord" Text="no data was found" runat="server"></asp:Label>
-        </EmptyDataTemplate>
-                        </asp:GridView>
-               </asp:Panel>
+                    
                 <br />
-                         <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  Onclick="btnPrint_Click"    Text="Generate Report"   />   
-            
-                             </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>  
+                         <asp:Panel runat="server" ID="pnlCheckList" >
+                        <asp:Literal runat="server" ID="CheckLists"></asp:Literal>
+              </asp:Panel>  
 
                         </ContentTemplate>
                 </asp:UpdatePanel>
   
-                     <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
-              <ContentTemplate>         
-                      <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
-  <div class="modal-dialog" role="document" style="width:75%">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Raw Milk Purchase Report</h4>
-      </div>
-      <div class="modal-body">
-          <div class="box-body">
-
-              <div class="row">
-                  
-                    <div class="col-lg-4 ">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
-                     </div><!-- /.input group -->
-                    </div><!-- /.form group -->
-                    </div>  
-              
-                  </div>
-              
-          <asp:Panel runat="server" ID="pnlRequestDetails" >
-                        <asp:Literal runat="server" ID="RequestDetails"></asp:Literal>
-              </asp:Panel>
+                 
+       
               </div>
-              
-             
-             
-               </div>
-
-      </div>
-      <div class="modal-footer">
-       
-       
-          </div>
-    </div>
-  </div>
-</div>     
-
-                  </ContentTemplate>
-             </asp:UpdatePanel>   
-
-            </div><!-- /.box-body --> 
-                             
-          </div><!-- /.box -->
+              </div><!-- /.box -->
            <script type = "text/javascript">
                function PrintPanel() {
-                   var panel = document.getElementById("<%=pnlRequestDetails.ClientID %>");
+                   var panel = document.getElementById("<%=pnlCheckList.ClientID %>");
              var printWindow = window.open('', '', 'height=600px,width=800px');
              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
              printWindow.document.write('</head><body >');

@@ -459,7 +459,7 @@
                       <tr>
                             <th>Date</th>
                           <th>Supplier</th>
-                        <th>RouteID</th>
+                        <th>Route</th>
                         <th>MilkInKG </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
@@ -475,8 +475,8 @@
                <ItemTemplate>
                     <tr>
                           <td><%#  Convert.ToDateTime(Eval("_Date")).ToString("dd-MM-yyyy")%></td>
-                         <td><%# Eval("SupplierName")%></td>
-                      <td><%# Eval("RouteID")%></td>
+                         <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
+                      <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
                       <td><%# Eval("MilkInKG")%></td>
                       <td><%# Eval("FATPercentage")%></td>
                      
@@ -502,7 +502,7 @@
                     <tfoot>
                       <tr><th>Date</th>
                            <th>Supplier</th>
-                        <th>RouteID</th>
+                        <th>Route</th>
                         <th>MilkInKG </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>

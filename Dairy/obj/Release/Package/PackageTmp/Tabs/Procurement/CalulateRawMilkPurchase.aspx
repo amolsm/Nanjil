@@ -207,6 +207,7 @@
                      <Columns>
         <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" DataFormatString="{0:d}" />
         <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
+          <asp:BoundField ItemStyle-Width="150px" DataField="Supplier" HeaderText="Supplier" />
         <asp:BoundField ItemStyle-Width="150px" DataField="MilkInLtr" HeaderText="MilkInLtr" />
         <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FatPercentage" />
         <asp:BoundField ItemStyle-Width="150px" DataField="SNFPercentage" HeaderText="SNFPercentage" />
@@ -259,14 +260,17 @@
                      </div><!-- /.input group -->
                     </div><!-- /.form group -->
                     </div>  
-              </div>
-
+              
+                  </div>
               
           <asp:Panel runat="server" ID="pnlRequestDetails" >
                         <asp:Literal runat="server" ID="RequestDetails"></asp:Literal>
               </asp:Panel>
-              
               </div>
+              
+             
+             
+               </div>
 
       </div>
       <div class="modal-footer">
@@ -298,4 +302,5 @@
              return false;
          }
          </script>
+       </section>   
 </asp:Content>

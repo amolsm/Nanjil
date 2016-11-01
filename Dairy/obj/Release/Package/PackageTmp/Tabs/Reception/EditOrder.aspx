@@ -287,10 +287,7 @@
                     </div><!-- /.input group -->
                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNewQuantity"
         ErrorMessage="Quantity Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-<<<<<<< HEAD
                   <%--<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtNewQuantity" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="Save" ForeColor="#cc0000"/>--%>
-=======
->>>>>>> origin/master
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
@@ -301,11 +298,7 @@
       <div class="modal-footer">
         <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
        <asp:Button ID="btnCloseModal" class="btn btn-default" runat="server" ValidationGroup="none" OnClick="btnCloseModal_Click" Text="Close" UseSubmitBehavior="false"  data-dismiss="modal"/>       
-<<<<<<< HEAD
           <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true"  OnClientClick = "return Confirm('Are u Sure ?)" />       
-=======
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true"  OnClientClick = "Confirm()" />       
->>>>>>> origin/master
                 
       </div>
     </div>
@@ -315,11 +308,7 @@
                   </ContentTemplate>
              </asp:UpdatePanel> 
          </section>
-<<<<<<< HEAD
    <%--  <script type = "text/javascript">
-=======
-     <script type = "text/javascript">
->>>>>>> origin/master
          function Confirm() {
              var confirm_value = document.createElement("INPUT");
              confirm_value.type = "hidden";
@@ -347,11 +336,7 @@
 
              });
          });
-<<<<<<< HEAD
     </script>--%>
-=======
-    </script>
->>>>>>> origin/master
   
   
 </asp:Content>

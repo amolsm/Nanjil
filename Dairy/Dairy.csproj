@@ -159,9 +159,11 @@
     <Content Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx" />
     <Content Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx" />
     <Content Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx" />
+    <Content Include="Tabs\Procurement\CheckList.aspx" />
     <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
+    <Content Include="Tabs\Procurement\PaymentSummary.aspx" />
     <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
     <Content Include="Tabs\Procurement\RawMilkTariff.aspx" />
     <Content Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx" />
@@ -1628,6 +1630,13 @@
     <Compile Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx.designer.cs">
       <DependentUpon>CalulateRawMilkPurchase.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Procurement\CheckList.aspx.cs">
+      <DependentUpon>CheckList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CheckList.aspx.designer.cs">
+      <DependentUpon>CheckList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.cs">
       <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1648,6 +1657,13 @@
     </Compile>
     <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.designer.cs">
       <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\PaymentSummary.aspx.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\PaymentSummary.aspx.designer.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.cs">
       <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
