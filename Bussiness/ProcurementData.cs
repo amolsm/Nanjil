@@ -68,6 +68,26 @@ namespace Bussiness
             return pdb.InsertReceiveandDisposeMaster(p);
         }
 
+        public DataSet ConsolidatePayementSummary(Procurement p)
+        {
+            return pdb.ConsolidatePayementSummary(p);
+        }
+
+        public DataSet RawMilkPaymentListViaBank(Procurement p)
+        {
+            return pdb.RawMilkPaymentListViaBank(p);
+        }
+
+        public DataSet SupplierWiseMilkqtyandQlty(Procurement p)
+        {
+            return pdb.SupplierWiseMilkqtyandQlty(p);
+        }
+
+        public DataSet PaymentSummary(Procurement p)
+        {
+            return pdb.PaymentSummary(p);
+        }
+
         public DataSet GetReceiveDisposeHeadMasterId(int ID)
         {
             return pdb.GetReceiveDisposeHeadMasterId(ID);

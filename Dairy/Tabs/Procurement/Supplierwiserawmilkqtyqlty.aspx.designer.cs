@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class PaymentSummary {
+    public partial class Supplierwiserawmilkqtyqlty {
         
         /// <summary>
         /// lblHeaderTab control.

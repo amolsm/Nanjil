@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PaymentSummary.aspx.cs" Inherits="Dairy.Tabs.Procurement.PaymentSummary" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Supplierwiserawmilkqtyqlty.aspx.cs" Inherits="Dairy.Tabs.Procurement.Supplierwiserawmilkqtyqlty" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <section class="content-header">
           <h1>
-             Payment Summary
+            Supplier Wise Quantity and Quality Report
             <small>Procurement</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Procurement</a></li>
-            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text=" Payment Summary"></asp:Label> </li>
+            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Supplier Wise Quantity and Quality Report"></asp:Label> </li>
           </ol>
         </section>
      <section class="content">
@@ -43,7 +43,7 @@
           <!-- Default box -->
               <div class="box collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Payment Summary"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Supplier Wise Quantity and Quality Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -57,7 +57,7 @@
         
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title"> Payment Summary </h3>
+          <h3 class="box-title">Supplier Wise Quantity and Quality Report</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -113,7 +113,7 @@
                     
                       
                               <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick=""   Text="Print" ValidationGroup="Save" />           
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

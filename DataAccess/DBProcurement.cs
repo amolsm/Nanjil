@@ -61,6 +61,64 @@ namespace DataAccess
             return result;
         }
 
+        public DataSet ConsolidatePayementSummary(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_ConsolidatePayementSummary", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
+        }
+
+        public DataSet RawMilkPaymentListViaBank(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_RawMilkPaymentListViaBank", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+   
+
+        public DataSet SupplierWiseMilkqtyandQlty(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_SupplierWiseMilkqtyandQlty", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
         public int InsertReceiveandDisposeMaster(Procurement p)
         {
             int result = 0;
@@ -1266,6 +1324,31 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Session", p.Session));
 
                 DS = _DBHelper.ExecuteDataSet("Proc_SP_ViewMilkCollectionDetails", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+
+            }
+            return DS;
+        }
+
+
+        public DataSet PaymentSummary(Procurement p)
+        {
+            DataSet DS = new DataSet();
+
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_PaymentSummary", paramCollection, CommandType.StoredProcedure);
 
             }
             catch (Exception ex)

@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PaymentSummary.aspx.cs" Inherits="Dairy.Tabs.Procurement.PaymentSummary" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsolidatePaymentSummary.aspx.cs" Inherits="Dairy.Tabs.Procurement.ConsolidatePaymentSummary" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <section class="content-header">
           <h1>
-             Payment Summary
+             Consolidate Payment Summary
             <small>Procurement</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Procurement</a></li>
-            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text=" Payment Summary"></asp:Label> </li>
+            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Consolidate Payment Summary"></asp:Label> </li>
           </ol>
         </section>
      <section class="content">
@@ -43,7 +43,7 @@
           <!-- Default box -->
               <div class="box collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Payment Summary"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Consolidate Payment Summary"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -57,7 +57,7 @@
         
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title"> Payment Summary </h3>
+          <h3 class="box-title">Consolidate Payment Summary</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -95,10 +95,10 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                    Route
+                    Collection Center
                       </div>
-                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
-                       </asp:DropDownList>                               
+                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center"> 
+                       </asp:DropDownList>                              
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 

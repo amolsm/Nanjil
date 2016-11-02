@@ -61,27 +61,15 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
+          
+            
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Start Date
                       </div>
-                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
-                       </asp:DropDownList>                               
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div> 
-            
-             <div class="col-lg-4">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtLoanAmtPaid" class="form-control" placeholder="Loan Amt Paid" ToolTip="Loan Amt Paid" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control" placeholder="Start Date" ToolTip="Start Date" runat="server" type="date" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -94,41 +82,29 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      End Date
                       </div>
-                       <asp:TextBox ID="txtPaidDate" class="form-control" placeholder="Paid Date" runat="server" required ToolTip="Paid Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndDate" class="form-control" placeholder="End Date" runat="server" type="date" required ToolTip="End Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
                           
                       </div> 
-            <div class="col-lg-3">
+     
+               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                    Route
                       </div>
-                       <asp:TextBox ID="txtPaidInstrument" class="form-control" placeholder="Paid Instrument" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
+                       </asp:DropDownList>                               
                     </div><!-- /.input group -->
 
-                  </div><!-- /.form group -->
-
-                     
-                       
+                  </div><!-- /.form group --> 
                           
-                      </div>  
-
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtInstrumentReff" class="form-control" placeholder="Instrument Reference" ToolTip="Instrument Reference" runat="server" required></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->                   
-                  </div>  
-
+                      </div> 
+         
             
                <div class="col-lg-3">
                   <div class="form-group">
@@ -136,8 +112,8 @@
                       
                     
                       
-                              <asp:Button ID="btnLoanDetailsadd" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnLoanadd"   Text="Add" ValidationGroup="Save" />     &nbsp;&nbsp;
-                        <asp:Button ID="btnLoanDetailsUpdate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnLoanUpdate"   Text="Update" ValidationGroup="Save" />           
+                              <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick=""   Text="Print" ValidationGroup="Save" />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -161,112 +137,50 @@
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
-          <%--<div class="box ">
+         <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title"> Loan Details </h3>
+              <h3 class="box-title"></h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
               </div>
+
             </div>
+                     
             <div class="box-body" id="datalist">
                    
                 
-                       
+                   
 
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
+                    
+                <br />
+                         <asp:Panel runat="server" ID="pnlPayment" >
+                        <asp:Literal runat="server" ID="Payment"></asp:Literal>
+              </asp:Panel>  
 
-                <table id="example1" class="table table-bordered table-striped">
-                   
-
-                 
-
-                <asp:Repeater ID="rpLoanDetailsList" runat="server" OnItemCommand="rpLoanDetailsList_ItemCommand">
-                
-               <HeaderTemplate>
-                  <thead>
-                      <tr>
-                          <th>SupplierID</th>
-                        <th>Loan Amount Paid</th>
-                        <th>Paid Date</th> 
-                        <th>Paid Instrument</th>
-                          <th>Paid Instrument Reference</th>
-                           <th>Edit</th>
-                          <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                   
-               </HeaderTemplate>
-               <ItemTemplate>
-                    <tr>
-                         <td><%# Eval("SupplierID")%></td>
-                      <td><%# Eval("LoanAmtPaid")%></td>
-                      <td><%# Eval("PaidDateTime")%></td>
-                      <td><%# Eval("PaidInstrument")%></td>
-                     
-                      <td><%# Eval("InstrumentRef")%></td>
-                   
-                         <td>
-
-                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#Eval("LoanDetailsID") %>'
-                                                                    CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
-
-                         </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
-                                                                    ToolTip="Delete" runat="server" CommandArgument='<%#Eval("LoanDetailsID") %>'
-                                                                    CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
-                    </tr>
-               </ItemTemplate>
-                    <FooterTemplate>
-
-                         </tbody>
-
-                    <tfoot>
-                      <tr>
-                           <th>SupplierID</th>
-                        <th>Loan Amount Paid</th>
-                        <th>Paid Date</th> 
-                        <th>Paid Instrument</th>
-                          <th>Paid Instrument Reference</th>
-                       
-                       
-                           <th>Edit</th>
-                          <th>Delete</th>
-                      </tr>
-                    </tfoot>
-
-                    </FooterTemplate>
-                                             
-           </asp:Repeater>
-                    <asp:HiddenField id="hfLoanID" runat="server" />
-             
-                
-                  
-                     
-                   
-                  </table>
-               
-                
                         </ContentTemplate>
                 </asp:UpdatePanel>
   
-
-
-            </div><!-- /.box-body --> 
-                       <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="uprouteList">
-            <ProgressTemplate>
-                
-                <div class="overlay">
-                  <i class="fa fa-refresh fa-spin"></i>
-                </div>
-
-            </ProgressTemplate>
-            </asp:UpdateProgress>           
-          </div>--%><!-- /.box -->
+                 
+       
+              </div>
+              </div><!-- /.box -->
+           <script type = "text/javascript">
+               function PrintPanel() {
+                   var panel = document.getElementById("<%=pnlPayment.ClientID %>");
+             var printWindow = window.open('', '', 'height=600px,width=800px');
+             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
+             printWindow.document.write('</head><body >');
+             printWindow.document.write(panel.innerHTML);
+             printWindow.document.write('</body></html>');
+             printWindow.document.close();
+             setTimeout(function () {
+                 printWindow.print();
+             }, 500);
+             return false;
+         }
+         </script>
         </section>
 </asp:Content>

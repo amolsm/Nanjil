@@ -1,52 +1,48 @@
-﻿using System;
+﻿using Bussiness;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
-using System.Data;
 using System.Web.UI.WebControls;
-using Bussiness;
-using System.Text;
 
 namespace Dairy.Tabs.Procurement
 {
-    public partial class PaymentSummary : System.Web.UI.Page
+    public partial class ConsolidatePaymentSummary : System.Web.UI.Page
     {
         DataSet DS = new DataSet();
-       
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 BindDropDown();
             }
         }
-
         public void BindDropDown()
         {
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
+            DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                dpRoute.DataSource = DS;
-                dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
-
+                dpCenter.DataSource = DS;
+                dpCenter.DataBind();
+                dpCenter.Items.Insert(0, new ListItem("--All Center  --", "0"));
             }
         }
-
 
         protected void btnGeneratereport_Click(object sender, EventArgs e)
         {
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
-          
-            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+
+            p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
-            DataSet DS1 = new DataSet();
-            DS1 = pd.PaymentSummary(p);
+            DataSet DS = new DataSet();
+            DS = pd.ConsolidatePayementSummary(p);
             string result = string.Empty;
-            if (!Comman.Comman.IsDataSetEmpty(DS1))
+            if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
 
@@ -98,15 +94,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append(" <td colspan='2' style='text-align:left'>");
                 sb.Append("Date : " + DateTime.Now.ToString());
                 sb.Append("</td>");
-             
+
                 sb.Append("<td colspan='2'>");
-                sb.Append(dpRoute.SelectedItem.Text.ToString());
+                sb.Append(dpCenter.SelectedItem.Text.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
-                sb.Append("Date : "+Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("Date : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
-                sb.Append("To : "+Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("To : " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
@@ -138,7 +134,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("</tr>");
                 sb.Append("<tr>");
-                foreach (DataRow row in DS1.Tables[0].Rows)
+                foreach (DataRow row in DS.Tables[0].Rows)
                 {
 
                     sb.Append("<td>");

@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class PaymentSummary {
+    public partial class ConsolidatePaymentSummary {
         
         /// <summary>
         /// lblHeaderTab control.
@@ -121,13 +121,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
         
         /// <summary>
-        /// dpRoute control.
+        /// dpCenter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
+        protected global::System.Web.UI.WebControls.DropDownList dpCenter;
         
         /// <summary>
         /// btnGeneratereport control.

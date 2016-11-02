@@ -83,7 +83,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                     Route
                       </div>
                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"> 
                        </asp:DropDownList>
@@ -101,7 +101,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     From Date
                       </div>
                        <asp:TextBox ID="txtFromDate" class="form-control" placeholder="From Date" runat="server" required ToolTip="From Date" type="date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -114,7 +114,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      To Date
                       </div>
                        <asp:TextBox ID="txtToDate" class="form-control" placeholder="TO Date" runat="server" required ToolTip="To Date"  type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
