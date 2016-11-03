@@ -283,6 +283,7 @@
                   <li><a href="/Tabs/Procurement/AddSupplierRDInfo.aspx"><i class="fa fa-circle-o"></i> Supplier RD Info</a></li>
                  <%-- <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>--%>
                   <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>Collection Vehicle Information</a></li>
+                   <li><a href="/Tabs/Procurement/PaymentSummary.aspx"><i class="fa fa-circle-o"></i>Payment Summary</a></li>
                
                 
                   <li><a href="/Tabs/Procurement/MilkCollectionTransport.aspx"><i class="fa fa-circle-o"></i>Milk Collection Trasport</a></li>

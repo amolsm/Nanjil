@@ -94,7 +94,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="Category" class="form-control" runat="server" selected>
+                      <asp:DropDownList ID="Category" class="form-control" runat="server" selected  OnSelectedIndexChanged="Category_SelectedIndexChanged" AutoPostBack="true">
 
                            <asp:ListItem Value="0">---Select Category---</asp:ListItem>
                            <asp:ListItem Value="1">A</asp:ListItem>

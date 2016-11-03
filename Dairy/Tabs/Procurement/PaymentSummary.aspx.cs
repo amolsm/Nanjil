@@ -64,6 +64,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
 
                 sb.Append("</colgroup>");
 
@@ -72,8 +73,8 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>Check List </u> <br/>");
+                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
+                sb.Append("<u>Payment Summary</u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -83,7 +84,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
 
                 sb.Append("</td>");
@@ -99,7 +100,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("Date : " + DateTime.Now.ToString());
                 sb.Append("</td>");
              
-                sb.Append("<td colspan='2'>");
+                sb.Append("<td colspan='3'>");
                 sb.Append(dpRoute.SelectedItem.Text.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
@@ -110,7 +111,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td>");
+                sb.Append("<td colspan='2' style='text-align:center'>");
                 sb.Append("<b>Supplier</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
@@ -138,6 +139,14 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("</tr>");
                 sb.Append("<tr>");
+                double milkinlter = 0.00;
+                double scheme = 0.00;
+                double supplierscheme = 0.00;
+                double rd = 0.00;
+                double can = 0.00;
+                double loan = 0.00;
+                double netamt = 0.00;
+                double amt = 0.00;
                 foreach (DataRow row in DS1.Tables[0].Rows)
                 {
 
@@ -148,19 +157,34 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(row["SupplierName"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["MilkInLtr"].ToString());
+                    milkinlter = Convert.ToDouble(row["MilkInLtr"]);
+                    sb.Append(Convert.ToDecimal(milkinlter).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["Amount"].ToString());
+                    amt = Convert.ToDouble(row["Amount"]);
+                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["Can"].ToString());
+                  
+                    scheme= Convert.ToDouble(row["Scheme"]);
+                    supplierscheme = scheme * milkinlter;
+                    sb.Append(Convert.ToDecimal(supplierscheme).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["LoanPaid"].ToString());
+                    rd = Convert.ToDouble(row["RDAmt"]);
+                    sb.Append(Convert.ToDecimal(rd).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["RDAmt"].ToString());
+                    can=Convert.ToDouble(row["Can"]);
+                    sb.Append(Convert.ToDecimal(can).ToString("0.00"));
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    loan = Convert.ToDouble(row["LoanPaid"]);
+                    sb.Append(Convert.ToDecimal(loan).ToString("0.00"));
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    netamt = (amt - (supplierscheme + rd + can + loan));
+                    sb.Append(Convert.ToDecimal(netamt).ToString("0.00"));
                     sb.Append("</td>");
 
                     sb.Append("</tr>");

@@ -393,5 +393,17 @@ namespace Dairy.Tabs.Procurement
             pnlError.Update();
             upMain.Update();
         }
+
+        protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dpSupplier.ClearSelection();
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteId="+dpRoute.SelectedItem.Value);
+           
+            dpSupplier.DataSource = DS;
+            dpSupplier.DataBind();
+            dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+            
+
+        }
     }
 }

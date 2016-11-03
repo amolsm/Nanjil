@@ -271,7 +271,7 @@ namespace Dairy.Tabs.Procurement
                 p.TSH = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
                 p.TS_INCR = 0;
-                p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0:Convert.ToInt32(txtIncentive.Text);
+                p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToInt32(txtIncentive.Text);
                 p.IN_FAT = string.IsNullOrEmpty(txtIN_FAT.Text) ? 0 : Convert.ToInt32(txtIN_FAT.Text);
                 p.IN_SNF = string.IsNullOrEmpty(txtIN_SNF.Text) ? 0 : Convert.ToInt32(txtIN_SNF.Text);
                 p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
@@ -324,6 +324,25 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/RawMilkTariff.aspx");
 
+        }
+
+        protected void Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            DataSet DS = new DataSet();
+            StringBuilder sb = new StringBuilder();
+            DS = pd.GetAllRawMilkTarrifDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach(DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["CategoryName"].ToString() == Category.SelectedItem.Text.ToString())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Raw Milk Tariff for this category already assigned')", true);
+                        Category.ClearSelection();
+                    }
+                }
+            }
         }
     }
 }
