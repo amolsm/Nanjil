@@ -398,7 +398,7 @@
                         <td><%# Eval("IN_TS") %></td>
                         <td><%# Eval("Scheme") %></td>
                       <td><%# Eval("Bonus") %></td>
-                        <td><%# Eval("WEF_DATE") %></td>
+                        <td><%# Convert.ToDateTime(Eval("WEF_DATE")).ToString("dd-MM-yyyy") %></td>
 
                          <td>
 

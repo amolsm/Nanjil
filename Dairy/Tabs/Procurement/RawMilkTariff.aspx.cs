@@ -328,21 +328,21 @@ namespace Dairy.Tabs.Procurement
 
         protected void Category_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProcurementData pd = new ProcurementData();
-            DataSet DS = new DataSet();
-            StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllRawMilkTarrifDetails();
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                foreach(DataRow row in DS.Tables[0].Rows)
-                {
-                    if (row["CategoryName"].ToString() == Category.SelectedItem.Text.ToString())
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Raw Milk Tariff for this category already assigned')", true);
-                        Category.ClearSelection();
-                    }
-                }
-            }
+            //ProcurementData pd = new ProcurementData();
+            //DataSet DS = new DataSet();
+            //StringBuilder sb = new StringBuilder();
+            //DS = pd.GetAllRawMilkTarrifDetails();
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    foreach(DataRow row in DS.Tables[0].Rows)
+            //    {
+            //        if (row["CategoryName"].ToString() == Category.SelectedItem.Text.ToString())
+            //        {
+            //            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Raw Milk Tariff for this category already assigned')", true);
+            //            Category.ClearSelection();
+            //        }
+            //    }
+            //}
         }
     }
 }

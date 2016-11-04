@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class ConsolidatePaymentSummary {
+    public partial class IncentiveTarrif {
         
         /// <summary>
         /// lblHeaderTab control.
@@ -103,58 +103,67 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel upMain;
         
         /// <summary>
-        /// txtStartDate control.
+        /// txtQCat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartDate;
+        protected global::System.Web.UI.WebControls.TextBox txtQCat;
         
         /// <summary>
-        /// txtEndDate control.
+        /// txtQLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndDate;
+        protected global::System.Web.UI.WebControls.TextBox txtQLow;
         
         /// <summary>
-        /// dpCenter control.
+        /// txtQHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpCenter;
+        protected global::System.Web.UI.WebControls.TextBox txtQHigh;
         
         /// <summary>
-        /// dpRoute control.
+        /// txtQIncentive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
+        protected global::System.Web.UI.WebControls.TextBox txtQIncentive;
         
         /// <summary>
-        /// btnGeneratereport control.
+        /// dpStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGeneratereport;
+        protected global::System.Web.UI.WebControls.DropDownList dpStatus;
         
         /// <summary>
-        /// btnPrint control.
+        /// btnAddTariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrint;
+        protected global::System.Web.UI.WebControls.Button btnAddTariff;
+        
+        /// <summary>
+        /// btnupdateTariff control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnupdateTariff;
         
         /// <summary>
         /// uprouteList control.
@@ -166,21 +175,30 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel uprouteList;
         
         /// <summary>
-        /// pnlPayment control.
+        /// rpIncentiveTariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlPayment;
+        protected global::System.Web.UI.WebControls.Repeater rpIncentiveTariff;
         
         /// <summary>
-        /// Payment control.
+        /// hftariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Payment;
+        protected global::System.Web.UI.WebControls.HiddenField hftariff;
+        
+        /// <summary>
+        /// UpdateProgress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgress2;
     }
 }

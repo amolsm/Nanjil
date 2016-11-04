@@ -113,7 +113,7 @@
                     
                       
                               <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick=""   Text="Print" ValidationGroup="Save" />           
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

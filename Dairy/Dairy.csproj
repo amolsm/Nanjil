@@ -161,6 +161,7 @@
     <Content Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx" />
     <Content Include="Tabs\Procurement\CheckList.aspx" />
     <Content Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx" />
+    <Content Include="Tabs\Procurement\IncentiveTarrif.aspx" />
     <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
@@ -1646,6 +1647,13 @@
     </Compile>
     <Compile Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx.designer.cs">
       <DependentUpon>ConsolidatePaymentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\IncentiveTarrif.aspx.cs">
+      <DependentUpon>IncentiveTarrif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\IncentiveTarrif.aspx.designer.cs">
+      <DependentUpon>IncentiveTarrif.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.cs">
       <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
