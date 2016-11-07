@@ -1,22 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PlaceOrderEmpRoutewise.aspx.cs" Inherits="Dairy.Tabs.Reception.PlaceOrderEmpRoutewise" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-  <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">--%>
-    <link rel="stylesheet" href="http://localhost:4888/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
+    <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
     
-     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="//Theme/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<%--    <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtGentOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-            $("#MainContent_txtEmployeeOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-
-        })
-    </script>--%>
+<script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 
         <section class="content-header">
           <h1>

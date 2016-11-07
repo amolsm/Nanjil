@@ -99,7 +99,7 @@ namespace Dairy.Tabs.Reception
 
                 
                 sb.Append("<tr style='border-bottom:2px solid'>");
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
 
                 if (Convert.ToInt32(dpRoute.SelectedItem.Value) == 0)
                 {
@@ -110,7 +110,7 @@ namespace Dairy.Tabs.Reception
                     sb.Append("Route : " + dpRoute.SelectedItem.Text.ToString());
                 }
                 sb.Append("</td>");
-                sb.Append("<td>&nbsp;</td>");
+               // sb.Append("<td>&nbsp;</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 sb.Append(Convert.ToDateTime(txtDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
@@ -133,11 +133,11 @@ namespace Dairy.Tabs.Reception
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
                 sb.Append("<b>ITEM </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td>&nbsp;</td>");
+                //sb.Append("<td>&nbsp;</td>");
 
                 sb.Append("<td class='tg-yw4l'   style='text-align:center'>");
                 sb.Append("<b>Quantity</b>");
@@ -159,11 +159,11 @@ namespace Dairy.Tabs.Reception
 
 
 
-                    sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                    sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
                     sb.Append(row["ITEM"].ToString());
                     sb.Append("</td>");
 
-                    sb.Append("<td>&nbsp;</td>");
+                    //sb.Append("<td>&nbsp;</td>");
 
                     sb.Append("<td class='tg-yw4l'   style='text-align:center'>");
                     sb.Append(row["Quantity"].ToString());

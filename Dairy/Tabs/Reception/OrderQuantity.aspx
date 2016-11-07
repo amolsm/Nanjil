@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderQuantity.aspx.cs" Inherits="Dairy.Tabs.Reception.OrderQuantity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      
