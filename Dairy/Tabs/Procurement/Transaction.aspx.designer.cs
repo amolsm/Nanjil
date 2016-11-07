@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class AddSupplierRDInfo {
+    public partial class Transaction {
         
         /// <summary>
         /// lblHeaderTab control.
@@ -112,148 +112,40 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList dpRoute;
         
         /// <summary>
-        /// dpSupplier control.
+        /// txtpaymentdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpSupplier;
+        protected global::System.Web.UI.WebControls.TextBox txtpaymentdate;
         
         /// <summary>
-        /// txtRDStartDate control.
+        /// txtfromdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDStartDate;
+        protected global::System.Web.UI.WebControls.TextBox txtfromdate;
         
         /// <summary>
-        /// txtRDMaturityDate control.
+        /// txttodate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDMaturityDate;
+        protected global::System.Web.UI.WebControls.TextBox txttodate;
         
         /// <summary>
-        /// txtRDAmount control.
+        /// btnShow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDAmount;
-        
-        /// <summary>
-        /// txtRDAmountDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDAmountDate;
-        
-        /// <summary>
-        /// DropDownList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// divinvisible control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divinvisible;
-        
-        /// <summary>
-        /// txtRDPaymentDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDPaymentDate;
-        
-        /// <summary>
-        /// dpBankName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpBankName;
-        
-        /// <summary>
-        /// txtAccountName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAccountName;
-        
-        /// <summary>
-        /// txtAccountNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAccountNo;
-        
-        /// <summary>
-        /// dpIfscCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpIfscCode;
-        
-        /// <summary>
-        /// txtBranchName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBranchName;
-        
-        /// <summary>
-        /// btnAddRDInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddRDInfo;
-        
-        /// <summary>
-        /// btnupdateRDInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnupdateRDInfo;
-        
-        /// <summary>
-        /// btnAddNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNew;
+        protected global::System.Web.UI.WebControls.Button btnShow;
         
         /// <summary>
         /// uprouteList control.
@@ -265,22 +157,22 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel uprouteList;
         
         /// <summary>
-        /// rpRDInfo control.
+        /// rpRouteList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpRDInfo;
+        protected global::System.Web.UI.WebControls.Repeater rpRouteList;
         
         /// <summary>
-        /// hfRDID control.
+        /// hfrouteID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfRDID;
+        protected global::System.Web.UI.WebControls.HiddenField hfrouteID;
         
         /// <summary>
         /// UpdateProgress2 control.

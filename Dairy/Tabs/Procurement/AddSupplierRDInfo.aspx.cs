@@ -22,6 +22,7 @@ namespace Dairy.Tabs.Procurement
                 btnAddRDInfo.Visible = true;
                 btnupdateRDInfo.Visible = false;
 
+
             }
         }
         public void BindDropdown()
@@ -45,11 +46,20 @@ namespace Dairy.Tabs.Procurement
             dpIfscCode.DataSource = DS;
             dpIfscCode.DataBind();
             dpIfscCode.Items.Insert(0, new ListItem("--Select Ifsc Code--", "0"));
+            DS = new DataSet();
+            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpRoute.DataSource = DS;
+                dpRoute.DataBind();
+                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+            }
         }
 
 
         public void ClearTextBox()
         {
+            dpRoute.ClearSelection();
             dpSupplier.ClearSelection();
             DropDownList1.ClearSelection();
             txtRDAmount.Text = string.Empty;
@@ -123,6 +133,11 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetSupplierRDInfobyID(RDID);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
+                dpRoute.ClearSelection();
+                if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteId"].ToString()) != null)
+                {
+                    dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteId"].ToString()).Selected = true;
+                }
                 dpSupplier.ClearSelection();
                 if (dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()) != null)
                 {
@@ -134,10 +149,25 @@ namespace Dairy.Tabs.Procurement
                 txtRDMaturityDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDMaturityDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDMaturityDate"].ToString();
                 txtRDPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString();
                 txtRDStartDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDStartDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDStartDate"].ToString();
-                DropDownList1.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDStatus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDStatus"].ToString();
-                dpBankName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BankName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BankName"].ToString();
+                DropDownList1.ClearSelection();
+                if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()) != null)
+                {
+                    DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()).Selected = true;
+                }
+                
+                dpBankName.ClearSelection();
+                if (dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()) != null)
+                {
+                    dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()).Selected = true;
+                }
+               
                 txtAccountNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountNo"].ToString();
-                dpIfscCode.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCCode"].ToString();
+                dpIfscCode.ClearSelection();
+                if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
+                {
+                    dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true;
+                }
+                
                 txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
                 txtAccountName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountName"].ToString();
             }
@@ -195,6 +225,7 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.RDID = 0;
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
             p.RDStartDate = txtRDStartDate.Text;
             p.RDMaturityDate = txtRDMaturityDate.Text;
@@ -244,6 +275,7 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.RDID = string.IsNullOrEmpty(hfRDID.Value) ? 0 : Convert.ToInt32(hfRDID.Value);
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
             p.RDStartDate = txtRDStartDate.Text;
             p.RDMaturityDate = txtRDMaturityDate.Text;
@@ -289,6 +321,26 @@ namespace Dairy.Tabs.Procurement
 
             }
 
+        }
+
+        protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dpSupplier.ClearSelection();
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteId=" + dpRoute.SelectedItem.Value);
+
+            dpSupplier.DataSource = DS;
+            dpSupplier.DataBind();
+            dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            pnlError.Update();
+            ClearTextBox();
+            upMain.Update();
         }
     }
 }

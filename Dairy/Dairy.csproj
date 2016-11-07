@@ -172,6 +172,7 @@
     <Content Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx" />
     <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
     <Content Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx" />
+    <Content Include="Tabs\Procurement\Transaction.aspx" />
     <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
     <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
     <Content Include="Tabs\Procurement\VehicleType.aspx" />
@@ -1724,6 +1725,13 @@
     </Compile>
     <Compile Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx.designer.cs">
       <DependentUpon>Supplierwiserawmilkqtyqlty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Transaction.aspx.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Transaction.aspx.designer.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\VehicleMaster.aspx.cs">
       <DependentUpon>VehicleMaster.aspx</DependentUpon>

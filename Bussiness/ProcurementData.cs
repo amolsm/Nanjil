@@ -72,6 +72,12 @@ namespace Bussiness
             return pdb.InsertSupplierBankDetails(p);
         }
 
+        public DataSet GetTransactionDetails(Procurement p)
+        {
+            return pdb.GetTransactionDetails(p);
+
+        }
+
         public int InsertReceiveandDisposeMaster(Procurement p)
         {
             return pdb.InsertReceiveandDisposeMaster(p);

@@ -61,7 +61,21 @@ namespace DataAccess
             return result;
         }
 
-       
+        public DataSet GetTransactionDetails(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                DS = _DBHelper.ExecuteDataSet("Proc_GetTransaction", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
+            }
+
         public DataSet GetIncentivetariff()
         {
             DataSet DS = new DataSet();
@@ -684,6 +698,7 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@RDID", p.RDID));
+                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
                 paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@RDStartDate", p.RDStartDate));
                 paramCollection.Add(new DBParameter("@RDMaturityDate", p.RDMaturityDate));

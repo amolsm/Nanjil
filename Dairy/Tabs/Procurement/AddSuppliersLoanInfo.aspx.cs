@@ -21,6 +21,7 @@ namespace Dairy.Tabs.Procurement
                 BindDropdown();
                 btnLoanadd.Visible = true;
                 btnLoanUpdate.Visible = false;
+                txtLoanTakenDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
 
             }
@@ -256,14 +257,22 @@ namespace Dairy.Tabs.Procurement
                 ddLoanType.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanType"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanType"].ToString();
                 txtLoanAccountNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanAccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanAccountNo"].ToString();
                 txtLoanAmt.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanAmount"].ToString();
-                txtLoanTakenDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanTakenDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanTakenDate"].ToString();
+                txtLoanTakenDate.Text = string.IsNullOrEmpty((DS.Tables[0].Rows[0]["LoanTakenDate"]).ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanTakenDate"].ToString();
                 txtLoanDuration.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanDuration"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanDuration"].ToString();
                 txtLoadPaid.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanPaid"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanPaid"].ToString();
                 txtLoanBalance.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanBalance"].ToString();
-                DropDownList1.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanStatus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanStatus"].ToString();
-                dpBankName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BankName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BankName"].ToString();
+                DropDownList1.ClearSelection();
+                if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["LoanStatus"].ToString())!=null)
+                { DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["LoanStatus"].ToString()).Selected = true; }
+                dpBankName.ClearSelection();
+                if (dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()) != null)
+                { dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()).Selected = true; }
+               
                 txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
-                dpIfscCode.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCCode"].ToString();
+                dpIfscCode.ClearSelection();
+                if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
+                { dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true; }
+                
                 txtInterest.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Interest"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Interest"].ToString();
 
             }
