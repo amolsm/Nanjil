@@ -61,6 +61,33 @@ namespace DataAccess
             return result;
         }
 
+        public DataSet GetTransactionDetails(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                DS = _DBHelper.ExecuteDataSet("Proc_GetTransaction", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
+            }
+
+        public DataSet GetIncentivetariff()
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetIncentivetariff", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
+        }
+
         public DataSet ConsolidatePayementSummary(Procurement p)
         {
             DataSet DS = new DataSet();
@@ -70,6 +97,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
                 paramCollection.Add(new DBParameter("@todate", p.ToDate));
                 paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
+                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
                 DS = _DBHelper.ExecuteDataSet("Proc_sp_ConsolidatePayementSummary", paramCollection, CommandType.StoredProcedure);
             }
             catch { }
@@ -197,6 +225,19 @@ namespace DataAccess
 
             }
             return result;
+        }
+
+        public DataSet GetIncentiveTariffbyID(int incentivetariffid)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@ID", incentivetariffid));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetIncentivetariff", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
         }
 
         public DataSet GetVehicleTypeById(int typeID)
@@ -657,6 +698,7 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@RDID", p.RDID));
+                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
                 paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@RDStartDate", p.RDStartDate));
                 paramCollection.Add(new DBParameter("@RDMaturityDate", p.RDMaturityDate));
@@ -1358,5 +1400,28 @@ namespace DataAccess
             }
             return DS;
         }
+
+        public int AllIncentiveTariff(Procurement p)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@ID", p.ID));
+                paramCollection.Add(new DBParameter("@QCat", p.QCat));
+                paramCollection.Add(new DBParameter("@QLow", p.QLow));
+                paramCollection.Add(new DBParameter("@QHigh", p.QHigh));
+                paramCollection.Add(new DBParameter("@QIncentive", p.QIncentive));
+                paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
+                paramCollection.Add(new DBParameter("@flag", p.flag));
+
+                result = _DBHelper.ExecuteNonQuery("Proc_sp_AllIncentiveTariff", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return result;
+
+            }
+
     }
 }

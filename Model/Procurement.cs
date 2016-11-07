@@ -1489,5 +1489,9 @@ namespace Model
         public int ID { get; set; }
         public string particular { get; set; }
         public string purpose { get; set; }
+        public string QCat { get; set; }
+        public decimal QLow { get; set; }
+        public decimal QHigh { get; set; }
+        public decimal QIncentive { get; set; }
     }
 }

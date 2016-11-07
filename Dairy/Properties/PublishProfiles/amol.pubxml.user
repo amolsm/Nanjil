@@ -22,16 +22,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 18:29:09</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
+<<<<<<< HEAD
       <publishTime>11/05/2016 11:18:22</publishTime>
+=======
+      <publishTime>11/04/2016 16:26:18</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
+<<<<<<< HEAD
       <publishTime>11/05/2016 11:18:40</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>11/05/2016 11:18:20</publishTime>
+=======
+      <publishTime>11/04/2016 16:37:45</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>11/04/2016 16:26:18</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -40,7 +51,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 18:29:44</publishTime>
     </File>
     <File Include="bin/es/Microsoft.ReportViewer.WebForms.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2012 13:51:00</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:49:30</publishTime>
@@ -58,7 +69,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
+<<<<<<< HEAD
       <publishTime>11/04/2016 10:14:01</publishTime>
+=======
+      <publishTime>11/04/2016 16:26:17</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -427,22 +442,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/04/2016 10:14:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/CheckList.aspx">
+<<<<<<< HEAD
       <publishTime>11/04/2016 10:14:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
       <publishTime>11/04/2016 10:14:00</publishTime>
+=======
+      <publishTime>11/02/2016 16:07:21</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
+      <publishTime>11/04/2016 16:36:46</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/IncentiveTarrif.aspx">
+      <publishTime>11/04/2016 13:39:36</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/InsertBatchWiseMilk.aspx">
       <publishTime>10/19/2016 11:16:33</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
+<<<<<<< HEAD
       <publishTime>11/04/2016 10:14:00</publishTime>
+=======
+      <publishTime>11/03/2016 14:55:26</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>10/19/2016 11:16:33</publishTime>
     </File>
     <File Include="Tabs/Procurement/PaymentSummary.aspx">
+<<<<<<< HEAD
       <publishTime>11/04/2016 10:14:00</publishTime>
+=======
+      <publishTime>11/04/2016 11:02:27</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
       <publishTime>11/04/2016 10:14:00</publishTime>
@@ -451,7 +484,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2016 18:10:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkTariff.aspx">
+<<<<<<< HEAD
       <publishTime>11/04/2016 10:14:00</publishTime>
+=======
+      <publishTime>11/04/2016 14:43:23</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/ReceiveDisposalheadmaster.aspx">
       <publishTime>10/26/2016 18:42:38</publishTime>
@@ -3424,13 +3461,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 18:30:19</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
+<<<<<<< HEAD
       <publishTime>11/05/2016 09:34:00</publishTime>
+=======
+      <publishTime>11/04/2016 16:18:57</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>10/20/2016 19:03:59</publishTime>
     </File>
     <File Include="Web.config">
+<<<<<<< HEAD
       <publishTime>11/05/2016 11:18:47</publishTime>
+=======
+      <publishTime>11/01/2016 11:30:51</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>10/05/2016 18:30:19</publishTime>

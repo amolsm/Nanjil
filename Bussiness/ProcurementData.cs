@@ -40,6 +40,11 @@ namespace Bussiness
             return pdb.GetAllSupplierProfiles();
         }
 
+        public DataSet GetIncentivetariff()
+        {
+            return pdb.GetIncentivetariff();
+        }
+
         public DataSet GetReceiveDisposeHeadMaster()
         {
             return pdb.GetReceiveDisposeHeadMaster();
@@ -55,12 +60,22 @@ namespace Bussiness
         {
             return pdb.GetVehicleType();
         }
-       
+
+        public int AllIncentiveTariff(Procurement p)
+        {
+           return pdb.AllIncentiveTariff(p);
+        }
 
         public int InsertSupplierBankDetails(Procurement p)
         {
 
             return pdb.InsertSupplierBankDetails(p);
+        }
+
+        public DataSet GetTransactionDetails(Procurement p)
+        {
+            return pdb.GetTransactionDetails(p);
+
         }
 
         public int InsertReceiveandDisposeMaster(Procurement p)
@@ -288,6 +303,11 @@ namespace Bussiness
         public DataSet ViewMilkCollectionDetails(Procurement p)
         {
             return pdb.ViewMilkCollectionDetails(p);
+        }
+
+        public DataSet GetIncentiveTariffbyID(int incentivetariffid)
+        {
+            return pdb.GetIncentiveTariffbyID(incentivetariffid);
         }
 
         public DataSet GetAllBatchWiseMilkCollectionDetail()

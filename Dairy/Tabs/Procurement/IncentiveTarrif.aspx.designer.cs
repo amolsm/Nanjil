@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class AddSupplierRDInfo {
+    public partial class IncentiveTarrif {
         
         /// <summary>
         /// lblHeaderTab control.
@@ -103,157 +103,67 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel upMain;
         
         /// <summary>
-        /// dpRoute control.
+        /// txtQCat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
+        protected global::System.Web.UI.WebControls.TextBox txtQCat;
         
         /// <summary>
-        /// dpSupplier control.
+        /// txtQLow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpSupplier;
+        protected global::System.Web.UI.WebControls.TextBox txtQLow;
         
         /// <summary>
-        /// txtRDStartDate control.
+        /// txtQHigh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDStartDate;
+        protected global::System.Web.UI.WebControls.TextBox txtQHigh;
         
         /// <summary>
-        /// txtRDMaturityDate control.
+        /// txtQIncentive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDMaturityDate;
+        protected global::System.Web.UI.WebControls.TextBox txtQIncentive;
         
         /// <summary>
-        /// txtRDAmount control.
+        /// dpStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDAmount;
+        protected global::System.Web.UI.WebControls.DropDownList dpStatus;
         
         /// <summary>
-        /// txtRDAmountDate control.
+        /// btnAddTariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDAmountDate;
+        protected global::System.Web.UI.WebControls.Button btnAddTariff;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// btnupdateTariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// divinvisible control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divinvisible;
-        
-        /// <summary>
-        /// txtRDPaymentDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDPaymentDate;
-        
-        /// <summary>
-        /// dpBankName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpBankName;
-        
-        /// <summary>
-        /// txtAccountName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAccountName;
-        
-        /// <summary>
-        /// txtAccountNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAccountNo;
-        
-        /// <summary>
-        /// dpIfscCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpIfscCode;
-        
-        /// <summary>
-        /// txtBranchName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBranchName;
-        
-        /// <summary>
-        /// btnAddRDInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddRDInfo;
-        
-        /// <summary>
-        /// btnupdateRDInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnupdateRDInfo;
-        
-        /// <summary>
-        /// btnAddNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNew;
+        protected global::System.Web.UI.WebControls.Button btnupdateTariff;
         
         /// <summary>
         /// uprouteList control.
@@ -265,22 +175,22 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel uprouteList;
         
         /// <summary>
-        /// rpRDInfo control.
+        /// rpIncentiveTariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpRDInfo;
+        protected global::System.Web.UI.WebControls.Repeater rpIncentiveTariff;
         
         /// <summary>
-        /// hfRDID control.
+        /// hftariff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfRDID;
+        protected global::System.Web.UI.WebControls.HiddenField hftariff;
         
         /// <summary>
         /// UpdateProgress2 control.

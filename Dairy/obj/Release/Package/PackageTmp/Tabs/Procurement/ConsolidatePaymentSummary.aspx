@@ -97,8 +97,22 @@
                       <div class="input-group-addon">
                     Collection Center
                       </div>
-                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center"> 
+                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center" OnSelectedIndexChanged="dpCenter_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>                              
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
+
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                    Route
+                      </div>
+                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
+                       </asp:DropDownList>                               
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
