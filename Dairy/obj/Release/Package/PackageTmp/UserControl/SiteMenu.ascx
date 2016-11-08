@@ -351,21 +351,21 @@
           <li class="treeview">
               <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Dispatch Details</span>
+                <span style="width:220px">Dispatch Details</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+              <ul class="treeview-menu" style="width:220px">
                 <li><a href="/Tabs/Despatch/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Place Booth Order</a></li>
                    <%--<li><a href="/Tabs/Administration/GenerateBillForBooth.aspx"><i class="fa fa-circle-o"></i>  Gnerate Bill</a></li>--%>
                   <li><a href="/Tabs/Despatch/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>
-                   <li><a href="/Tabs/Despatch/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i> View Dispatch UserShiftwise</a></li>
-                <li><a href="/Tabs/Administration/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
-                  <li><a href="/Tabs/Administration/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Shiftwise</a></li>
+                   <li><a href="/Tabs/Despatch/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i>Shiftwise Item Summary</a></li>
+                <li><a href="/Tabs/Despatch/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
+                  <li><a href="/Tabs/Despatch/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Routewise</a></li>
                    
                   <li><a href="/Tabs/Despatch/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
-                 <li><a href="/Tabs/Despatch/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
+                
                   <li><a href="/Tabs/Despatch/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
-
+                   <li><a href="/Tabs/Despatch/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
                  <li><a href="/Tabs/Despatch/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary</a></li> 
                  <li><a href="/Tabs/Reports/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Bill Wise Sales Summary</a></li> 
                   <li><a href="/Tabs/Reports/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis-Itemwise</a></li>

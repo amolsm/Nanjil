@@ -1,5 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchUserShiftwise.aspx.cs" Inherits="Dairy.Tabs.Despatch.ViewDispatchUserShiftwise" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchSummaryUsers.aspx.cs" Inherits="Dairy.Tabs.Despatch.ViewDispatchSummaryUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+  <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <script type="text/javascript">
@@ -22,7 +26,7 @@
    
     <section class="content-header">
           <h1>
-             Shiftwise Item Summary
+             View Dispatch Summary Routewise
           </h1>
 
           <ol class="breadcrumb">
@@ -157,13 +161,6 @@
                   
         </div><!-- /.box-body -->
       </div>
-                         <asp:UpdatePanel runat="server" ID="upDispatchSummary" UpdateMode="Conditional">
-                    <ContentTemplate>
-                    <asp:Panel runat="server" ID="pnlDispatchSummary">
-                        <asp:Literal runat="server" ID="DispatchSummary"></asp:Literal>
-              </asp:Panel>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -181,7 +178,105 @@
 
          
                        
-              </div><!-- /.box -->
+                <div class="box-body" id="datalist">
+
+                <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
+                    <ContentTemplate>
+
+                <table id="example1" class="table table-bordered table-striped">
+                   
+
+                 
+
+                <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
+                
+               <HeaderTemplate>
+                  <thead>
+                      <tr>
+                          <th>Dispatch ID</th>
+                          <th>Dispatch Date</th>
+                          <th>Route </th>
+                          <th>Brand </th>
+                          <th>View</th>
+                                                     
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                   
+               </HeaderTemplate>
+               <ItemTemplate>
+                    <tr style="text-align:left">
+                        <td>DS<%# Eval("DI_Id")%></td>
+                        <td><%# Eval("DispatchDate")%></td>
+                        <td><%# Eval("RouteCode")%> <%# Eval("RouteName")%> </td>
+                        <td><%# Eval("CategoryName")%></td>
+                        <td>
+
+                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
+                                                                    ToolTip="View" runat="server" CommandArgument='<%#Eval("DI_Id") %>'
+                                                                    CommandName="View" ><i class="fa fa-edit"></i></asp:LinkButton>
+
+                         </td>
+                         
+                    </tr>
+               </ItemTemplate>
+                    <FooterTemplate>
+
+                         </tbody>
+
+                    <tfoot>
+                      <tr>
+                           <th>Dispatch ID</th>
+                          <th>Dispatch Date</th>
+                          <th>Route </th>
+                          <th>Brand</th>
+                          <th>View</th>
+                      </tr>
+                    </tfoot>
+
+                    </FooterTemplate>
+                                             
+           </asp:Repeater>
+                    <asp:HiddenField id="hfRow" runat="server" />
+             
+                
+                  
+                     
+                   
+                  </table>
+               
+                
+                        </ContentTemplate>
+                </asp:UpdatePanel>
+
+            
+                    </div><!-- /.box-body -->  
+
+                
+            
+            <asp:UpdatePanel runat="server" ID="upGatePass" UpdateMode="Conditional">
+                    <ContentTemplate>
+                    <asp:Panel runat="server" ID="pnlGatePass">
+                        <asp:Literal runat="server" ID="GatePass"></asp:Literal>
+              </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+ 
+                   <asp:UpdatePanel runat="server" ID="upDispatchSummary" UpdateMode="Conditional">
+                    <ContentTemplate>
+                    <asp:Panel runat="server" ID="pnlDispatchSummary">
+                        <asp:Literal runat="server" ID="DispatchSummary"></asp:Literal>
+              </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+               
+                             
+
+                   
+          </div><!-- /.box -->
         </section>
     
     <script type="text/javascript">

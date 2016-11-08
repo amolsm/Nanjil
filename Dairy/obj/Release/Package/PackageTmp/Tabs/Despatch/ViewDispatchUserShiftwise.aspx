@@ -22,7 +22,7 @@
    
     <section class="content-header">
           <h1>
-             View Dispatch Summary Shiftwise
+             Shiftwise Item Summary
           </h1>
 
           <ol class="breadcrumb">
