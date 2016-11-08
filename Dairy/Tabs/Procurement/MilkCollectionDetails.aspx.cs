@@ -373,13 +373,13 @@ namespace Dairy.Tabs.Procurement
             p.Session = dpSession1.SelectedItem.Text.ToString();
             DataSet DS1 = new DataSet();
             DS1 = pd.ViewMilkCollectionDetails(p);
-            if (!Comman.Comman.IsDataSetEmpty(DS1))
-            {
+            //if (!Comman.Comman.IsDataSetEmpty(DS1))
+            //{
                
                 rpMilkCollectionList.DataSource = DS1;
                 rpMilkCollectionList.DataBind();
                 uprouteList.Update();
-            }
+            //}
         
         
         }

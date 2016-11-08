@@ -461,6 +461,7 @@
                           <th>Supplier</th>
                         <th>Route</th>
                         <th>MilkInKG </th>
+                            <th>MilkInLtr </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
     
@@ -478,6 +479,7 @@
                          <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
                       <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
                       <td><%# Eval("MilkInKG")%></td>
+                         <td><%# Eval("MilkInLtr")%></td>
                       <td><%# Eval("FATPercentage")%></td>
                      
                       <td><%# Eval("FATInKG")%></td>
@@ -504,6 +506,7 @@
                            <th>Supplier</th>
                         <th>Route</th>
                         <th>MilkInKG </th>
+                           <th>MilkInLtr </th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
                           

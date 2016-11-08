@@ -202,8 +202,8 @@
                     <ContentTemplate>
                        <asp:Panel runat="server" ID="pnlBill">
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" Font-Names="Arial"
-    Font-Size="11pt" AlternatingRowStyle-BackColor="#C2D69B" HeaderStyle-BackColor="#33cccc"
-    AllowPaging="false">
+    Font-Size="11pt"
+    AllowPaging="false" class="table table-bordered table-striped">
                      <Columns>
         <asp:BoundField ItemStyle-Width="150px" DataField="_Date" HeaderText="Date" DataFormatString="{0:d}" />
         <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
