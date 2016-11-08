@@ -1,9 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrder.aspx.cs" Inherits="Dairy.Tabs.Reception.EditOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
       <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
       <section class="content-header">
           <h1>
              Edit Orders
@@ -308,23 +312,8 @@
                   </ContentTemplate>
              </asp:UpdatePanel> 
          </section>
-   <%--  <script type = "text/javascript">
-         function Confirm() {
-             var confirm_value = document.createElement("INPUT");
-             confirm_value.type = "hidden";
-             confirm_value.name = "confirm_value";
-             if (confirm("Do you want to save data?")) {
-                 confirm_value.value = "Yes";
-                 document.forms[0].appendChild(confirm_value);
-
-             } else {
-                 confirm_value.value = "No";
-                 document.forms[1].appendChild(confirm_value);
-             }
-
-
-
-         }
+     <script type = "text/javascript">
+        
 
 
          //-->
@@ -336,7 +325,7 @@
 
              });
          });
-    </script>--%>
+    </script>
   
   
 </asp:Content>

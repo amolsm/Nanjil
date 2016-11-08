@@ -1002,8 +1002,11 @@
     <Content Include="Theme\plugins\ionslider\ion.rangeSlider.min.js" />
     <Content Include="Theme\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
     <Content Include="Theme\plugins\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Theme\plugins\jQueryUI\jquery-ui.css" />
     <Content Include="Theme\plugins\jQueryUI\jquery-ui.js" />
     <Content Include="Theme\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Theme\plugins\jQuery\jquery-1.10.2.js" />
+    <Content Include="Theme\plugins\jQuery\jquery-1.10.2.min.js" />
     <Content Include="Theme\plugins\jQuery\jQuery-2.1.4.min.js" />
     <Content Include="Theme\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
     <Content Include="Theme\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />

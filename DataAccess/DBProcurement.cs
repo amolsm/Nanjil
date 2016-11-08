@@ -786,9 +786,9 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertSupplierSchemeInfo", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.ToString();
 
             }
             return result;

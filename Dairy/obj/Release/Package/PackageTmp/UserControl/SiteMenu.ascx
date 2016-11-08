@@ -7,10 +7,10 @@
             <div class="pull-left image">
               <img src="/Theme/img/logo.png" class="img-circle" alt="User Image">
             </div>
-            <div class="pull-left info">
+           <%-- <div class="pull-left info">
               <p>  </p>
               <a href="#"/> 
-            </div>
+            </div>--%>
           </div>
           
 
@@ -301,10 +301,10 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-tag"></i>
-                <span>Reception (Order & Billing)</span>
+                <span style="width:220px">Reception (Order & Billing)</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+              <ul class="treeview-menu" style="width:220px">
                 <li><a href="/Tabs/Reception/PlaceOrderRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Agency Order</a></li>
                 <li><a href="/Tabs/Reception/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Employee Order</a></li>
                 <li><a href="/Tabs/Reception/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Order</a></li>
