@@ -158,9 +158,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                    RD Amount Date
+                    RD RepaymetAmount 
                       </div>
-                       <asp:TextBox ID="txtRDAmountDate" class="form-control" placeholder="RD Amount Date" runat="server"  ToolTip="RD Amount Date" type="date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDRepaymentAmount" class="form-control" placeholder="RD RePaymentAmount" runat="server"  ToolTip="RD RepaymentAmount" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -191,14 +191,14 @@
                        
                           
                       </div>
-            <div id="divinvisible" runat="server" visible="false">
+            
    <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                 RD Payment Date
+                 RD RePayment Date
                       </div>
-                       <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD Payment Date" type="date" runat="server"  ToolTip="RD Payment Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD RePayment Date" type="date" runat="server"  ToolTip="RD RePayment Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -207,6 +207,7 @@
                        
                           
                       </div> 
+            <div id="divinvisible" runat="server" visible="false">
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -347,7 +348,7 @@
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>
-                          <th>RD Amount Date</th>
+                          <th>RD RePaymentDate</th>
                             <th>RD STatus</th>
                            <th>Edit</th>
                           <th>Delete</th>
@@ -364,7 +365,7 @@
                       <td><%# Eval("RDMaturityDate")%></td>
                       <td><%# string.Format("{0:n2}",Eval("RDAmount"))%></td>
                      
-                      <td><%# Eval("RDAmountDate")%></td>
+                      <td><%# Eval("RDPaymentDateTime")%></td>
                    <td><%# Eval("RDStatus")%></td>
                          <td>
 
@@ -389,7 +390,7 @@
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>
-                          <th>RD Amount Date</th>
+                          <th>RD RePaymentDate</th>
                             <th>RD STatus</th>
                        
                        

@@ -94,7 +94,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                      <span style="color:red">&nbsp;*</span>
+                    Vehicle Type
                       </div>        
                      <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Type" runat="server" selected> 
                        </asp:DropDownList>
@@ -110,7 +110,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     Vehicle No.
                       </div>
                        <asp:TextBox ID="txtVehicleNo" class="form-control" placeholder="Vehicle No" runat="server" required ToolTip="Vehicle No"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -125,7 +125,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                      Vehicle Owner Name
                       </div>
                        <asp:TextBox ID="txtOwnerName" class="form-control" placeholder="Vehicle Owner Name" runat="server" required ToolTip="Vehicle Owner Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -139,7 +139,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                    Owner Email Id
                       </div>
                        <asp:TextBox ID="txtOwnerEmail" class="form-control" placeholder="Owner Email" runat="server" required ToolTip="Owner Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -149,7 +149,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                        Owner Mobile no.
                       </div>
                        <asp:TextBox ID="txtOwnerMobileNo" class="form-control" placeholder="Owner Mobile No" runat="server" required ToolTip="Owner Mobile No"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -172,7 +172,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                     Driver Name
                       </div>
                        <asp:TextBox ID="txtDriverName" class="form-control" placeholder="Driver Name" runat="server" required ToolTip="Driver Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -182,9 +182,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                       Driver Mobile number
                       </div>
-                       <asp:TextBox ID="txtDriverMobile" class="form-control" placeholder="Driver Mobile No" runat="server" required ToolTip="Driver Mobile No"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDriverMobile" class="form-control" placeholder="Driver Mobile No" runat="server" required ToolTip="Driver Mobile No" type="number" step="10-11"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -193,7 +193,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bank"></i><span style="color:red">&nbsp;*</span>
+                      Bank Name
                       </div>
                     <asp:DropDownList  ID="dpBankName" ToolTip="Select Bank Name" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList> </div><!-- /.input group -->
@@ -211,7 +211,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                        IFSC Code
                       </div>
                      <asp:DropDownList  ID="dpIfscCode" ToolTip="Select IFSC Code" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
@@ -225,7 +225,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                    Branch Name
                       </div>
                        <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server" required ToolTip="Branch Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -235,7 +235,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                       A/C No.
                       </div>
                        <asp:TextBox ID="txtAccNo" class="form-control" placeholder="Account No" runat="server" required ToolTip="Account No"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -245,12 +245,49 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                      Tax Percentage
                       </div>
-                       <asp:TextBox ID="txtTax" class="form-control" placeholder="Tax In Percentage" runat="server" required ToolTip="Tax In Percentage"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTax" class="form-control" placeholder="Tax In Percentage" runat="server" required ToolTip="Tax In Percentage" Type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
+                   <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       Transport Type
+                      </div>
+                      <asp:DropDownList ID="dpTransportType" class="form-control" runat="server" selected>
+
+                           <asp:ListItem Value="0">---Select Transport Type---</asp:ListItem>
+                           <asp:ListItem Value="1">Collection</asp:ListItem>
+                           <asp:ListItem Value="2">Sales</asp:ListItem>
+                       
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>   
+            
+             <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <span style="color:red">&nbsp;*</span>
+                      </div>
+                     <asp:TextBox ID="txtTDSPercent" class="form-control" placeholder="TDS In Percentage" runat="server" required ToolTip="TDS In Percentage" type="number" step="any"></asp:TextBox>                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>     
              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -271,7 +308,9 @@
                      
                        
                           
-                      </div>     
+                      </div>   
+            
+        
                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">

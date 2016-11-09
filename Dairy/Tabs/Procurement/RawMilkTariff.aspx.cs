@@ -29,16 +29,16 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddRaw_Click(object sender, EventArgs e)
         {
-            decimal tsl = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
-            decimal tsh = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
+            decimal tsl = Convert.ToDecimal(txtTSL.Text);
+            decimal tsh = Convert.ToDecimal(txtTSH.Text);
             if (tsl < tsh)
             {
                 Model.Procurement p = new Model.Procurement();
                 ProcurementData pd = new ProcurementData();
                 p.RawMilkTarrifID = 0;
                 p.Category = Convert.ToInt32(Category.SelectedItem.Value);
-                p.TSL = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
-                p.TSH = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
+                p.TSL = Convert.ToDecimal(txtTSL.Text);
+                p.TSH = Convert.ToDecimal(txtTSH.Text);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
                 p.TS_INCR = 0;
                 p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToInt32(txtIncentive.Text);
@@ -113,8 +113,8 @@ namespace Dairy.Tabs.Procurement
             txtIN_FAT.Text = string.Empty;
             txtBonus.Text = string.Empty;
             Category.ClearSelection();
-            DropDownList1.ClearSelection();
-            DropDownList2.ClearSelection();
+            txtTSL.Text = string.Empty;
+            txtTSH.Text = string.Empty;
         }
         public void BindRawMilkTerrifList()
         {
@@ -183,22 +183,17 @@ namespace Dairy.Tabs.Procurement
                 {
                     Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()).Selected = true;
                 }
-                DropDownList1.ClearSelection();
-                decimal tsl = Convert.ToDecimal(DS.Tables[0].Rows[0]["TSL"].ToString());
+               
+                //decimal tsl = Convert.ToDecimal(DS.Tables[0].Rows[0]["TSL"].ToString());
 
-                string str = tsl.ToString("G29");
-                if (DropDownList1.Items.FindByValue(str) != null)
-                {
-                    DropDownList1.Items.FindByValue(str).Selected = true;
-                }
-                DropDownList2.ClearSelection();
-                decimal tsh = Convert.ToDecimal(DS.Tables[0].Rows[0]["TSH"].ToString());
+                //string str = tsl.ToString("G29");
+                //txtTSL.Text = str;
+                txtTSL.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSL"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSL"].ToString();
+                //decimal tsh = Convert.ToDecimal(DS.Tables[0].Rows[0]["TSH"].ToString());
 
-                string str1 = tsh.ToString("G29");
-                if (DropDownList2.Items.FindByValue(str1) != null)
-                {
-                    DropDownList2.Items.FindByValue(str1).Selected = true;
-                }
+                //string str1 = tsh.ToString("G29");
+                txtTSH.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSH"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSH"].ToString();
+             
                 txtBonus.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Bonus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Bonus"].ToString();
                 txtIN_FAT.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IN_FAT"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IN_FAT"].ToString();
                 txtIN_SNF.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IN_SNF"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IN_SNF"].ToString();
@@ -259,16 +254,16 @@ namespace Dairy.Tabs.Procurement
         //}
         protected void btnupdateRaw_Click(object sender, EventArgs e)
         {
-            decimal tsl = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
-            decimal tsh = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
+            decimal tsl = Convert.ToDecimal(txtTSL.Text);
+            decimal tsh = Convert.ToDecimal(txtTSH.Text);
             if (tsl < tsh)
             {
                 Model.Procurement p = new Model.Procurement();
                 ProcurementData pd = new ProcurementData();
                 p.RawMilkTarrifID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
                 p.Category = Convert.ToInt32(Category.SelectedItem.Value);
-                p.TSL = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
-                p.TSH = Convert.ToDecimal(DropDownList2.SelectedItem.Value);
+                p.TSL = Convert.ToDecimal(txtTSL.Text);
+                p.TSH = Convert.ToDecimal(txtTSH.Text);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
                 p.TS_INCR = 0;
                 p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToInt32(txtIncentive.Text);

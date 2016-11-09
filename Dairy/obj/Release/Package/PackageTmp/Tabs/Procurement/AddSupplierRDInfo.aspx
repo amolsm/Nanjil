@@ -5,16 +5,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtRDStartDate").datepicker({ format: 'dd-MM-yyyy' });
-            $("#MainContent_txtRDMaturityDate").datepicker({ format: 'dd-MM-yyyy' });
-            $("#MainContent_txtRDAmountDate").datepicker({ format: 'dd-MM-yyyy' });
-            $("#MainContent_txtRDPaymentDate").datepicker({ format: 'dd-MM-yyyy' });
-
-        })
-    </script>
+   
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -90,11 +81,28 @@
           <h3 class="box-title">Supplier Advance Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <div class="col-lg-4">
+
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Route
+                      </div>
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" AutoPostBack="true" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged"> 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       Supplier
                       </div>
                        <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
                        </asp:DropDownList>                               
@@ -104,13 +112,13 @@
                           
                       </div> 
            
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       RD Start Date
                       </div>
-                       <asp:TextBox ID="txtRDStartDate" class="form-control" placeholder="RD Start Date" runat="server" required ToolTip="RD Start Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDStartDate" class="form-control" placeholder="RD Start Date" runat="server"  ToolTip="RD Start Date" type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -119,13 +127,13 @@
                        
                           
                       </div> 
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                       RD Maturity Date
                       </div>
-                       <asp:TextBox ID="txtRDMaturityDate" class="form-control" placeholder="RD Maturity Date" type="text" runat="server" required ToolTip="RD Maturity Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDMaturityDate" class="form-control" placeholder="RD Maturity Date"  runat="server"  ToolTip="RD Maturity Date" type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -134,25 +142,25 @@
                        
                           
                       </div>  
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     RD Amount
                       </div>
-                       <asp:TextBox ID="txtRDAmount" class="form-control" placeholder="RD Amount" runat="server" required ToolTip="RD AMount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDAmount" class="form-control" placeholder="RD Amount" runat="server"  ToolTip="RD AMount"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
        
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                    RD RepaymetAmount 
                       </div>
-                       <asp:TextBox ID="txtRDAmountDate" class="form-control" placeholder="RD Amount Date" runat="server" required ToolTip="RD Amount Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDRepaymentAmount" class="form-control" placeholder="RD RePaymentAmount" runat="server"  ToolTip="RD RepaymentAmount" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -166,13 +174,13 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
+                 RD Status
                       </div>
                       <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
 
                            <asp:ListItem>---Select RD Status---</asp:ListItem>
-                           <asp:ListItem>Complete</asp:ListItem>
-                           <asp:ListItem>Incomplete</asp:ListItem>
+                           <asp:ListItem>Active</asp:ListItem>
+                           <asp:ListItem>InActive</asp:ListItem>
                        
                        </asp:DropDownList>
                          
@@ -182,14 +190,15 @@
                      
                        
                           
-                      </div>   
-   <div class="col-lg-4">
+                      </div>
+            
+   <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                 RD RePayment Date
                       </div>
-                       <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD Payment Date" type="text" runat="server" required ToolTip="RD Payment Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD RePayment Date" type="date" runat="server"  ToolTip="RD RePayment Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -198,11 +207,12 @@
                        
                           
                       </div> 
-            <div class="col-lg-4">
+            <div id="divinvisible" runat="server" visible="false">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bank"></i><span style="color:red">&nbsp;*</span>
+                     Bank Name
                       </div>
                     <asp:DropDownList  ID="dpBankName" ToolTip="Select Bank Name" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList> </div><!-- /.input group -->
@@ -213,13 +223,13 @@
                        
                           
                       </div>    
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                     Account Name
                       </div>
-                       <asp:TextBox ID="txtAccountName" class="form-control" placeholder="Account Name" ToolTip="Account Name" runat="server" required type="text"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAccountName" class="form-control" placeholder="Account Name" ToolTip="Account Name" runat="server"  type="text"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -229,13 +239,13 @@
                           
                       </div> 
 
-              <div class="col-lg-4">
+              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                      Account no.
                       </div>
-                       <asp:TextBox ID="txtAccountNo" class="form-control" placeholder="Account No" ToolTip="Account No" runat="server" required type="text"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAccountNo" class="form-control" placeholder="Account No" ToolTip="Account No" runat="server"  type="text"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -244,14 +254,14 @@
                        
                           
                       </div> 
-             <div class="col-lg-4">
+             <div class="col-lg-3">
 
              
 
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                      IFSC Code
                       </div>
                      <asp:DropDownList  ID="dpIfscCode" ToolTip="Select IFSC Code" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
@@ -262,13 +272,13 @@
                        
                       </div>
             
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                   Branch Name
                       </div>
-                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server" required ToolTip="Branch Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server"  ToolTip="Branch Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -277,7 +287,8 @@
                        
                           
                       </div>  
-            <div class="col-lg-4 pull-right">
+                </div>   
+            <div class="col-lg-3 pull-right">
                   <div class="form-group">
                     <div class="input-group">
                       
@@ -285,6 +296,7 @@
                       
                               <asp:Button ID="btnAddRDInfo" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddRDInfo_Click"  Text="Add" ValidationGroup="Save" />     
                         <asp:Button ID="btnupdateRDInfo" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnupdateRDInfo_Click" Text="Update" ValidationGroup="Save" />           
+                       &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                      
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -322,7 +334,7 @@
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
 
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-borde table-striped">
                    
 
                  
@@ -336,7 +348,7 @@
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>
-                          <th>RD Amount Date</th>
+                          <th>RD RePaymentDate</th>
                             <th>RD STatus</th>
                            <th>Edit</th>
                           <th>Delete</th>
@@ -353,7 +365,7 @@
                       <td><%# Eval("RDMaturityDate")%></td>
                       <td><%# string.Format("{0:n2}",Eval("RDAmount"))%></td>
                      
-                      <td><%# Eval("RDAmountDate")%></td>
+                      <td><%# Eval("RDPaymentDateTime")%></td>
                    <td><%# Eval("RDStatus")%></td>
                          <td>
 
@@ -378,7 +390,7 @@
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>
-                          <th>RD Amount Date</th>
+                          <th>RD RePaymentDate</th>
                             <th>RD STatus</th>
                        
                        

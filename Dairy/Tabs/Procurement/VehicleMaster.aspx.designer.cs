@@ -211,6 +211,24 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtTax;
         
         /// <summary>
+        /// dpTransportType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpTransportType;
+        
+        /// <summary>
+        /// txtTDSPercent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTDSPercent;
+        
+        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>

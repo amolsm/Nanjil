@@ -703,7 +703,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@RDStartDate", p.RDStartDate));
                 paramCollection.Add(new DBParameter("@RDMaturityDate", p.RDMaturityDate));
                 paramCollection.Add(new DBParameter("@RDAmount", p.RDAmount));
-                paramCollection.Add(new DBParameter("@RDAmountDate", p.RDAmountDate));
+                paramCollection.Add(new DBParameter("@RDRepaymentAmount", p.RepaymentAmt));
                 paramCollection.Add(new DBParameter("@RDStatus", p.RDStatus));
                 paramCollection.Add(new DBParameter("@RDPaymentDateTime", p.RDPaymentDateTime));
                 paramCollection.Add(new DBParameter("@BankName", p.BankName));
@@ -926,6 +926,8 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@BranchName", p.BranchName));
                 paramCollection.Add(new DBParameter("@AccountNo", p.AccountNo));
                 paramCollection.Add(new DBParameter("@Tax", p.Tax));
+                paramCollection.Add(new DBParameter("@tdspercentage", p.tdspercentage));
+                paramCollection.Add(new DBParameter("@TransportType", p.TransportType));
                 paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));

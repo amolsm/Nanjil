@@ -373,6 +373,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
+                          <th>Supplier</th>
                           <th>Loan Type</th>
                         <th>Loan AccountNo</th>
                         <th>Loan Amount</th> 
@@ -388,6 +389,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
+                          <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
                          <td><%# Eval("LoanType")%></td>
                       <td><%# Eval("LoanAccountNo")%></td>
                       <td><%# string.Format("{0:n2}",Eval("LoanAmount"))%></td>
@@ -413,7 +415,7 @@
                          </tbody>
 
                     <tfoot>
-                      <tr>
+                      <tr> <th>Supplier</th>
                            <th>Loan Type</th>
                         <th>Loan AccountNo</th>
                         

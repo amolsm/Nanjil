@@ -82,9 +82,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                     Quality Category
+                     Quantity Category
                       </div>
-                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quality Category" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server" required ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -94,9 +94,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        Quality Low
+                        Quantity Low
                       </div>
-                         <asp:TextBox ID="txtQLow" class="form-control" placeholder="Quality Low" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                         <asp:TextBox ID="txtQLow" class="form-control" placeholder="Quantity Low" runat="server" required type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -109,9 +109,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Quality High
+                      Quantity High
                       </div>
-                       <asp:TextBox ID="txtQHigh" class="form-control" placeholder="Quality High" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                       <asp:TextBox ID="txtQHigh" class="form-control" placeholder="Quantity High" runat="server" required type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -119,9 +119,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        Quality Incentive
+                        Quantity Incentive
                       </div>
-                       <asp:TextBox ID="txtQIncentive" class="form-control" placeholder="Quality Incentive" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                       <asp:TextBox ID="txtQIncentive" class="form-control" placeholder="Quantity Incentive" runat="server" required type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -196,10 +196,10 @@
                   <thead>
                       <tr>
                           <th>ID</th>
-                        <th>Quality Category</th>
-                        <th>Quality Low</th>
-                        <th>Quality High</th>
-                        <th>Quality Incentive</th>
+                        <th>Quantity Category</th>
+                        <th>Quantity Low</th>
+                        <th>Quantity High</th>
+                        <th>Quantity Incentive</th>
                          <th>IsActive</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -238,10 +238,10 @@
                     <tfoot>
                       <tr>
                           <th>ID</th>
-                        <th>Quality Category</th>
-                        <th>Quality Low</th>
-                        <th>Quality High</th>
-                        <th>Quality Incentive</th>
+                        <th>Quantity Category</th>
+                        <th>Quantity Low</th>
+                        <th>Quantity High</th>
+                        <th>Quantity Incentive</th>
                          <th>IsActive</th>
                         <th>Edit</th>
                         <th>Delete</th>

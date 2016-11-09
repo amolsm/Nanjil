@@ -56,7 +56,7 @@ namespace Dairy.Tabs.Procurement
             p.VehicleOwnerName = txtOwnerName.Text;
             p.OwnerEmail = txtOwnerEmail.Text;
             p.OwnerMobileNo = txtOwnerMobileNo.Text;
-            //p.VehicleSrNo = txtVehicleSrNo.Text;
+            p.TransportType = dpTransportType.SelectedItem.Text;
             p.VehicleType = Convert.ToInt32(dpVehicleType.SelectedItem.Value);
             p.DriverName = txtDriverName.Text;
             p.DriverMobileNo = txtDriverMobile.Text;
@@ -65,6 +65,7 @@ namespace Dairy.Tabs.Procurement
             p.BranchName = txtBranchName.Text;
             p.AccountNo = txtAccNo.Text;
             p.Tax = Convert.ToDouble( txtTax.Text);
+            p.tdspercentage = Convert.ToDouble(txtTDSPercent.Text);
             p.CreatedBy = App_code.GlobalInfo.Userid;
             if (DropDownList1.SelectedValue == "1")
             {
@@ -117,11 +118,13 @@ namespace Dairy.Tabs.Procurement
             //txtVehicleName.Text = string.Empty;
             txtVehicleNo.Text = string.Empty;
             //txtVehicleSrNo.Text = string.Empty;
+            dpTransportType.ClearSelection();
             dpIfscCode.ClearSelection();
             dpBankName.ClearSelection();
             dpVehicleType.ClearSelection();
             DropDownList1.ClearSelection();
             txtTax.Text = string.Empty;
+            txtTDSPercent.Text = string.Empty;
         }
         public void BindVehicleList()
         {
@@ -194,16 +197,31 @@ namespace Dairy.Tabs.Procurement
                 txtDriverName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["DriverName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["DriverName"].ToString();
                 txtDriverMobile.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["DriverMobileNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["DriverMobileNo"].ToString();
                 txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
-                dpIfscCode.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCCode"].ToString();
+                dpIfscCode.ClearSelection();
+                if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
+                {
+                    dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true;
+                 }
+            
                 txtAccNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountNo"].ToString();
                 txtTax.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Tax"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Tax"].ToString();
+                txtTDSPercent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TDS"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TDS"].ToString();
                 dpVehicleType.ClearSelection();
                 if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()) != null)
                 {
                     dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()).Selected = true;
                 }
+                dpTransportType.ClearSelection();
+                if (dpTransportType.Items.FindByText(DS.Tables[0].Rows[0]["TransportType"].ToString()) != null)
+                {
+                    dpTransportType.Items.FindByText(DS.Tables[0].Rows[0]["TransportType"].ToString()).Selected = true;
+                }
                 dpBankName.ClearSelection();
-                dpBankName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OwnerBankName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["OwnerBankName"].ToString();
+                if (dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["OwnerBankName"].ToString()) != null)
+                {
+                    dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["OwnerBankName"].ToString()).Selected = true;
+                }
+                
 
                 if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "1")
                 {
@@ -229,6 +247,7 @@ namespace Dairy.Tabs.Procurement
             p.OwnerEmail = string.Empty;
             p.OwnerMobileNo = string.Empty;
             //p.VehicleSrNo = string.Empty;
+            p.tdspercentage = 0;
             p.VehicleType = 0;
             p.DriverName = string.Empty;
             p.DriverMobileNo = string.Empty;
@@ -238,7 +257,7 @@ namespace Dairy.Tabs.Procurement
             p.AccountNo = string.Empty;
             p.Tax = 0;
             p.IsActive = false;
-
+            p.TransportType = dpTransportType.SelectedItem.Text;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -281,6 +300,7 @@ namespace Dairy.Tabs.Procurement
             p.VehicleOwnerName = txtOwnerName.Text;
             p.OwnerEmail = txtOwnerEmail.Text;
             p.OwnerMobileNo = txtOwnerMobileNo.Text;
+            p.TransportType = dpTransportType.SelectedItem.Text;
             //p.VehicleSrNo = txtVehicleSrNo.Text;
             p.VehicleType = Convert.ToInt16(dpVehicleType.SelectedItem.Value);
             p.DriverName = txtDriverName.Text;
@@ -298,6 +318,7 @@ namespace Dairy.Tabs.Procurement
             {
                 p.IsActive = false;
             }
+            p.tdspercentage = Convert.ToDouble(txtTDSPercent.Text);
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;

@@ -120,6 +120,6 @@ namespace Model
  
         }
 
-
+        public int QIncentiveId { get; set; }
     }
 }

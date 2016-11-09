@@ -63,7 +63,7 @@ namespace Dairy.Tabs.Procurement
             dpSupplier.ClearSelection();
             DropDownList1.ClearSelection();
             txtRDAmount.Text = string.Empty;
-            txtRDAmountDate.Text = string.Empty;
+            txtRDRepaymentAmount.Text = string.Empty;
             txtRDMaturityDate.Text = string.Empty;
             txtRDPaymentDate.Text = string.Empty;
             txtRDStartDate.Text = string.Empty;
@@ -144,7 +144,7 @@ namespace Dairy.Tabs.Procurement
                     dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()).Selected = true;
                 }
                 txtRDAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDAmount"].ToString();
-                txtRDAmountDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDAmountDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDAmountDate"].ToString();
+                txtRDRepaymentAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDRepayment"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDRepayment"].ToString();
                 //txtRDID.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDID"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDID"].ToString();
                 txtRDMaturityDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDMaturityDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDMaturityDate"].ToString();
                 txtRDPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString();
@@ -230,7 +230,7 @@ namespace Dairy.Tabs.Procurement
             p.RDStartDate = txtRDStartDate.Text;
             p.RDMaturityDate = txtRDMaturityDate.Text;
             p.RDAmount = Convert.ToDouble(txtRDAmount.Text);
-            p.RDAmountDate = txtRDAmountDate.Text;
+            p.RepaymentAmt = Convert.ToDouble(txtRDRepaymentAmount.Text);
             p.RDStatus = DropDownList1.SelectedItem.Text;
             p.RDPaymentDateTime = txtRDPaymentDate.Text;
             p.AccounNumber = txtAccountNo.Text;
@@ -280,7 +280,7 @@ namespace Dairy.Tabs.Procurement
             p.RDStartDate = txtRDStartDate.Text;
             p.RDMaturityDate = txtRDMaturityDate.Text;
             p.RDAmount = Convert.ToDouble(txtRDAmount.Text);
-            p.RDAmountDate = txtRDAmountDate.Text;
+            p.RepaymentAmt = Convert.ToDouble(txtRDRepaymentAmount.Text);
             p.RDStatus = DropDownList1.SelectedItem.Text;
             p.RDPaymentDateTime = txtRDPaymentDate.Text;
             p.AccounNumber = txtAccountNo.Text;

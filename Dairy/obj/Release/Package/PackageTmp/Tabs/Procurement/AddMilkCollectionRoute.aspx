@@ -78,7 +78,7 @@
           <h3 class="box-title">Milk Collection Route Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -90,7 +90,7 @@
                   </div><!-- /.form group --> 
                           
                       </div> 
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -105,7 +105,7 @@
                        
                           
                       </div> 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -125,7 +125,7 @@
                        
                           
                       </div> 
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -138,7 +138,7 @@
                   
 
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -157,7 +157,7 @@
                       </div> 
                             
                             </div>
-             <div class="col-lg-4">
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -167,8 +167,8 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
-            <div class="col-md-12">
-            <div class="col-lg-4">
+          
+            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -198,7 +198,27 @@
                           
                       </div>  
 
-             <div class="col-lg-4">
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <span style="color:red">&nbsp;*</span>
+                      </div>
+                        <asp:DropDownList ID="dpIncentiveTariff" class="form-control" DataTextField="Name" DataValueField="ID" runat="server" selected ToolTip="Select Incentive Tariff"> 
+                       </asp:DropDownList>  
+                         
+                    </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator4" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpIncentiveTariff"
+                            Text="Please Select Incentive Tariff" ErrorMessage="Please Select Tariff" ForeColor="Red"></asp:RequiredFieldValidator>
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -222,7 +242,7 @@
                        
                           
                       </div>     
-                   <div class="col-lg-4">
+                   <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       
@@ -238,7 +258,7 @@
                        
                           
                       </div>            
-            </div>
+           
         </div><!-- /.box-body -->
 
       </div>

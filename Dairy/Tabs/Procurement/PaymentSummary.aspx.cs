@@ -13,10 +13,10 @@ namespace Dairy.Tabs.Procurement
     public partial class PaymentSummary : System.Web.UI.Page
     {
         DataSet DS = new DataSet();
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 BindDropDown();
             }
@@ -39,7 +39,7 @@ namespace Dairy.Tabs.Procurement
         {
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
-          
+
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
@@ -99,15 +99,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append(" <td colspan='2' style='text-align:left'>");
                 sb.Append("Date : " + DateTime.Now.ToString());
                 sb.Append("</td>");
-             
+
                 sb.Append("<td colspan='3'>");
                 sb.Append(dpRoute.SelectedItem.Text.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
-                sb.Append("Date : "+Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("Date : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
-                sb.Append("To : "+Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("To : " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
@@ -149,51 +149,57 @@ namespace Dairy.Tabs.Procurement
                 double amt = 0.00;
                 foreach (DataRow row in DS1.Tables[0].Rows)
                 {
+                    foreach (DataRow rows in DS1.Tables[1].Rows)
+                    {
+                        if (row["Category"].ToString() == rows["Category"].ToString())
+                        {
+                            sb.Append("<td>");
+                            sb.Append(row["SupplierCode"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["SupplierName"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            milkinlter = Convert.ToDouble(row["MilkInLtr"]);
+                            sb.Append(Convert.ToDecimal(milkinlter).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            amt = Convert.ToDouble(row["Amount"]);
+                            sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
 
-                    sb.Append("<td>");
-                    sb.Append(row["SupplierCode"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["SupplierName"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    milkinlter = Convert.ToDouble(row["MilkInLtr"]);
-                    sb.Append(Convert.ToDecimal(milkinlter).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    amt = Convert.ToDouble(row["Amount"]);
-                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                  
-                    scheme= Convert.ToDouble(row["Scheme"]);
-                    supplierscheme = scheme * milkinlter;
-                    sb.Append(Convert.ToDecimal(supplierscheme).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    rd = Convert.ToDouble(row["RDAmt"]);
-                    sb.Append(Convert.ToDecimal(rd).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    can=Convert.ToDouble(row["Can"]);
-                    sb.Append(Convert.ToDecimal(can).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    loan = Convert.ToDouble(row["LoanPaid"]);
-                    sb.Append(Convert.ToDecimal(loan).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    netamt = (amt - (supplierscheme + rd + can + loan));
-                    sb.Append(Convert.ToDecimal(netamt).ToString("0.00"));
-                    sb.Append("</td>");
+                            scheme = Convert.ToDouble(rows["Scheme"]);
+                            supplierscheme = scheme * milkinlter;
+                            sb.Append(Convert.ToDecimal(supplierscheme).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            rd = Convert.ToDouble(row["RDAmt"]);
+                            sb.Append(Convert.ToDecimal(rd).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            can = Convert.ToDouble(row["Can"]);
+                            sb.Append(Convert.ToDecimal(can).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            loan = Convert.ToDouble(row["LoanPaid"]);
+                            sb.Append(Convert.ToDecimal(loan).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            netamt = (amt - (supplierscheme + rd + can + loan));
+                            sb.Append(Convert.ToDecimal(netamt).ToString("0.00"));
+                            sb.Append("</td>");
 
-                    sb.Append("</tr>");
+                            sb.Append("</tr>");
+                        }
+                    
+                    }
                 }
+
                 result = sb.ToString();
                 Payment.Text = result;
 
                 Session["ctrl"] = pnlPayment;
-
             }
             else
             {
@@ -201,8 +207,12 @@ namespace Dairy.Tabs.Procurement
                 Payment.Text = result;
 
             }
-            uprouteList.Update();
+                uprouteList.Update();
 
+            }
+
+                
+                     
         }
     }
-    }
+

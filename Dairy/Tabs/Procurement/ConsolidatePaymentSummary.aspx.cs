@@ -53,7 +53,8 @@ namespace Dairy.Tabs.Procurement
             string result = string.Empty;
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                StringBuilder sb = new StringBuilder();
+               
+                 StringBuilder sb = new StringBuilder();
 
 
                 sb.Append("<style type='text / css'>");
@@ -154,45 +155,51 @@ namespace Dairy.Tabs.Procurement
                 double amt = 0.00;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
+                    foreach (DataRow rows in DS.Tables[1].Rows)
+                    {
+                        if (row["Category"].ToString() == rows["Category"].ToString())
+                        {
 
-                    sb.Append("<td>");
-                    sb.Append(row["SupplierCode"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["SupplierName"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    milkinlter = Convert.ToDouble(row["MilkInLtr"]);
-                    sb.Append(Convert.ToDecimal(milkinlter).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    amt = Convert.ToDouble(row["Amount"]);
-                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
+                            sb.Append("<td>");
+                            sb.Append(row["SupplierCode"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["SupplierName"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            milkinlter = Convert.ToDouble(row["MilkInLtr"]);
+                            sb.Append(Convert.ToDecimal(milkinlter).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            amt = Convert.ToDouble(row["Amount"]);
+                            sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
 
-                    scheme = Convert.ToDouble(row["Scheme"]);
-                    supplierscheme = scheme * milkinlter;
-                    sb.Append(Convert.ToDecimal(supplierscheme).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    rd = Convert.ToDouble(row["RDAmt"]);
-                    sb.Append(Convert.ToDecimal(rd).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    can = Convert.ToDouble(row["Can"]);
-                    sb.Append(Convert.ToDecimal(can).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    loan = Convert.ToDouble(row["LoanPaid"]);
-                    sb.Append(Convert.ToDecimal(loan).ToString("0.00"));
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    netamt = (amt - (supplierscheme + rd + can + loan));
-                    sb.Append(Convert.ToDecimal(netamt).ToString("0.00"));
-                    sb.Append("</td>");
+                            scheme = Convert.ToDouble(rows["Scheme"]);
+                            supplierscheme = scheme * milkinlter;
+                            sb.Append(Convert.ToDecimal(supplierscheme).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            rd = Convert.ToDouble(row["RDAmt"]);
+                            sb.Append(Convert.ToDecimal(rd).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            can = Convert.ToDouble(row["Can"]);
+                            sb.Append(Convert.ToDecimal(can).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            loan = Convert.ToDouble(row["LoanPaid"]);
+                            sb.Append(Convert.ToDecimal(loan).ToString("0.00"));
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            netamt = (amt - (supplierscheme + rd + can + loan));
+                            sb.Append(Convert.ToDecimal(netamt).ToString("0.00"));
+                            sb.Append("</td>");
 
-                    sb.Append("</tr>");
+                            sb.Append("</tr>");
+                        }
+                    }
                 }
                 result = sb.ToString();
                 Payment.Text = result;

@@ -120,19 +120,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" selected>
-
-                           <asp:ListItem Value="0">---Select TSL---</asp:ListItem>
-                           <asp:ListItem Value="10">10</asp:ListItem>
-                           <asp:ListItem Value="10.5">10.5</asp:ListItem>
-                           <asp:ListItem Value="11">11</asp:ListItem>
-                          <asp:ListItem Value="11.5">11.5</asp:ListItem>
-                          <asp:ListItem Value="12">12</asp:ListItem>
-                          <asp:ListItem Value="13">13</asp:ListItem>
-                         
-                         
-                       
-                       </asp:DropDownList>
+                  <asp:TextBox ID="txtTSL" class="form-control" placeholder="TSL" runat="server" type="number" step="any" ></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -141,28 +129,14 @@
                        
                           
                       </div>   
-              <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="DropDownList1"
-        ErrorMessage="TSL is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
-        ValueToCompare="0" Display="None"></asp:CompareValidator>    
+               
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="DropDownList2" class="form-control" runat="server" selected>
-
-                           <asp:ListItem Value="0">---Select TSH---</asp:ListItem>
-                           <asp:ListItem Value="10.4">10.4</asp:ListItem>
-                           <asp:ListItem Value="10.9">10.9</asp:ListItem>
-                          <asp:ListItem Value="11.4">11.4</asp:ListItem>
-                          <asp:ListItem Value="11.9">11.9</asp:ListItem>
-                          <asp:ListItem Value="12.4">12.4</asp:ListItem>
-                          <asp:ListItem Value="12.9">12.9</asp:ListItem>
-                          <asp:ListItem Value="20">20</asp:ListItem>
-                          
-                       
-                       </asp:DropDownList>
+                    <asp:TextBox ID="txtTSH" class="form-control" placeholder="TSH" runat="server" type="number" step="any" ></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -171,9 +145,7 @@
                        
                           
                       </div>  
-            <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="DropDownList2"
-        ErrorMessage="TSH is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
-        ValueToCompare="0" Display="None"></asp:CompareValidator>  
+          
              
             <div class="col-lg-4">
                   <div class="form-group">

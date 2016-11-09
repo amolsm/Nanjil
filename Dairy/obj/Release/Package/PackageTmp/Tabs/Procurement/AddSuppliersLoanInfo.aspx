@@ -13,14 +13,14 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <script type="text/javascript">
+ <%--    <script type="text/javascript">
 
          $(function () {
              $("#MainContent_txtLoanTakenDate").datepicker({ format: 'dd-MM-yyyy' });
          })
 
          
-    </script>
+    </script>--%>
     <script type="text/javascript">
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
         function InIEvent() {
@@ -182,7 +182,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtLoanTakenDate" class="form-control" placeholder="Loan Taken Date" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanTakenDate" class="form-control" placeholder="Loan Taken Date" type="date" runat="server" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -373,6 +373,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
+                          <th>Supplier</th>
                           <th>Loan Type</th>
                         <th>Loan AccountNo</th>
                         <th>Loan Amount</th> 
@@ -388,6 +389,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
+                          <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
                          <td><%# Eval("LoanType")%></td>
                       <td><%# Eval("LoanAccountNo")%></td>
                       <td><%# string.Format("{0:n2}",Eval("LoanAmount"))%></td>
@@ -413,7 +415,7 @@
                          </tbody>
 
                     <tfoot>
-                      <tr>
+                      <tr> <th>Supplier</th>
                            <th>Loan Type</th>
                         <th>Loan AccountNo</th>
                         

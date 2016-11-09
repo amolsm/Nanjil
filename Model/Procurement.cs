@@ -1493,5 +1493,8 @@ namespace Model
         public decimal QLow { get; set; }
         public decimal QHigh { get; set; }
         public decimal QIncentive { get; set; }
+        public double RepaymentAmt { get; set; }
+        public string TransportType { get; set; }
+        public double tdspercentage { get; set; }
     }
 }

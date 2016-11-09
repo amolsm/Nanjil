@@ -148,13 +148,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtRDAmount;
         
         /// <summary>
-        /// txtRDAmountDate control.
+        /// txtRDRepaymentAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRDAmountDate;
+        protected global::System.Web.UI.WebControls.TextBox txtRDRepaymentAmount;
         
         /// <summary>
         /// DropDownList1 control.
@@ -166,15 +166,6 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// divinvisible control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divinvisible;
-        
-        /// <summary>
         /// txtRDPaymentDate control.
         /// </summary>
         /// <remarks>
@@ -182,6 +173,15 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRDPaymentDate;
+        
+        /// <summary>
+        /// divinvisible control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divinvisible;
         
         /// <summary>
         /// dpBankName control.

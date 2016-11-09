@@ -88,6 +88,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@ASOName", route.ASOID));
                 paramCollection.Add(new DBParameter("@Discription", route.Discription));
                 paramCollection.Add(new DBParameter("@Category", route.Category));
+                paramCollection.Add(new DBParameter("@QIncentiveId", route.QIncentiveId));
                 paramCollection.Add(new DBParameter("@IsArchive", route.IsActive));
                 paramCollection.Add(new DBParameter("@ModifiedBy", route.ModifiedBy));
                 paramCollection.Add(new DBParameter("@ModifiedDate", route.ModifiedDate));

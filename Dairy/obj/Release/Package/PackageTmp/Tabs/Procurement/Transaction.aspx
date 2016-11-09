@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IncentiveTarrif.aspx.cs" Inherits="Dairy.Tabs.Procurement.IncentiveTarrif" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transaction.aspx.cs" Inherits="Dairy.Tabs.Procurement.Transaction" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -18,15 +18,14 @@
                 });
             });
         }
-    </script>
-     <section class="content-header">
+    </script>   <section class="content-header">
           <h1>
-             Incentive Tariff
+            Transaction
             <small>Procurement</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Incentive Tariff</a></li>
-            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Vehicle Tariff"></asp:Label> </li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Procurement</a></li>
+            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Add  Transaction"></asp:Label> </li>
           </ol>
     </section>
 
@@ -61,7 +60,7 @@
           <!-- Default box -->
               <div class="box <%--collapsed-box--%>">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Incentive Tariff"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Add  Transaction"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -75,29 +74,22 @@
 
         <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title"> Incentive Tariff</h3>
+          <h3 class="box-title"> Transaction List</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+           
+
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                     Quantity Category
+                        Route
                       </div>
-                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server" required ></asp:TextBox>                        
+                     <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true"> 
+                       </asp:DropDownList>
+                 
                     </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div> 
-             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        Quantity Low
-                      </div>
-                         <asp:TextBox ID="txtQLow" class="form-control" placeholder="Quantity Low" runat="server" required type="number" step="any" ></asp:TextBox>                                             
-                    </div><!-- /.input group -->
+                 
 
                   </div><!-- /.form group -->
 
@@ -109,54 +101,44 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Quantity High
+                   Payment Date
                       </div>
-                       <asp:TextBox ID="txtQHigh" class="form-control" placeholder="Quantity High" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                      <asp:TextBox ID="txtpaymentdate" runat="server" class="form-control"  placeholder="Payment Date" ToolTip="Payment Date" type="date"></asp:TextBox>      
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
+                  
+
+
+                        <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     From Date
+                      </div>        
+                      <asp:TextBox ID="txtfromdate" runat="server" class="form-control"  placeholder="From Date" ToolTip="From Date" type="date"></asp:TextBox>      
+
+                  </div><!-- /.form group -->
+                     </div> 
+                        </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     To Date
+                      </div>        
+                      <asp:TextBox ID="txttodate" runat="server" class="form-control"  placeholder="To Date" ToolTip="To Date" type="date"></asp:TextBox>      
+
+                  </div><!-- /.form group -->
+                     </div> 
+                        </div>
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                      <div class="input-group-addon">
-                        Quantity Incentive
+                           <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnShow_Click"   Text="Show" ValidationGroup="Save" /> 
+                        </div>
                       </div>
-                       <asp:TextBox ID="txtQIncentive" class="form-control" placeholder="Quantity Incentive" runat="server" required type="number" step="any" ></asp:TextBox>                                             
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->                   
-                  </div>  
-
-               <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                 Status
-                      </div>
-                        <asp:DropDownList ID="dpStatus" class="form-control" runat="server" ToolTip="Select Status">
-
-                           <asp:ListItem Value="0">---Select Status---</asp:ListItem>
-                           <asp:ListItem Value="1">Active</asp:ListItem>
-                           <asp:ListItem Value="2">Deactive</asp:ListItem>
-                       
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div><!-- /.form group -->
-                    <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                          <asp:Button ID="btnAddTariff" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddTariff_Click" />     
-                        <asp:Button ID="btnupdateTariff" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateTariff_Click" />           
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>            
-            
+                  </div>
         </div><!-- /.box-body -->
 
       </div>
@@ -169,9 +151,9 @@
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
 
-                   <div class="box ">
+        <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title">Incentive Tariff</h3>
+              <h3 class="box-title"> Transaction List</h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
@@ -190,19 +172,24 @@
 
                  
 
-                <asp:Repeater ID="rpIncentiveTariff" runat="server" OnItemCommand="rpIncentiveTariff_ItemCommand">
+                <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
                 
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>ID</th>
-                        <th>Quantity Category</th>
-                        <th>Quantity Low</th>
-                        <th>Quantity High</th>
-                        <th>Quantity Incentive</th>
-                         <th>IsActive</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                         
+                        <th>SupplierID</th>
+                        <th>PaymentDate</th>
+                        <th>FromDate</th>
+                        <th>ToDate</th>
+                        <th>Amount</th>
+                        <th>Bonus</th>
+                        <th>Scheme</th>
+                        <th>RD</th>
+                        <th>Loan</th>
+                        <th>NetAmount</th>
+                        <th>Save</th>
+                       
                       </tr>
                     </thead>
                     <tbody>
@@ -211,24 +198,27 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("ID")%></td>
-                      <td><%# Eval("QCat")%></td>
-                      <td><%# Eval("QLow")%></td>
-                      <td><%# Eval("QHigh")%></td>
-                        <td><%# Eval("QIncentive") %></td>
-                       
-                      <td><%# Eval("IsActive") %></td>
+                            <td><%# Eval("SupplierID")%></td>
+                            <td><%# txtpaymentdate.Text%></td>
+                            <td><%# txtfromdate.Text%></td>
+                            <td><%# txttodate.Text%></td>
+                          
+                             <td><asp:TextBox runat="server" ID="txtAmt" ToolTip="Amount" class="txt" Text='<%#Eval("Amount")%>'/></td>
+                             <td><asp:TextBox runat="server" ID="txtBonus" ToolTip="Bonus" class="txt" Text='<%#Eval("Bonus")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtScheme" ToolTip="Scheme" class="txt" Text='<%#Eval("Scheme")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtRD" ToolTip="RD" class="txt" Text='<%#Eval("RDAmount")%>'/></td>
+                         <td><asp:TextBox runat="server" ID="txtloan" ToolTip="Can Loan" class="txt" Text='<%#Eval("LoanAmount")%>'/></td>
+                   
+                           <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount"  Text=""/></td>
+
                          <td>
 
-                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#Eval("ID") %>'
-                                                                    CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
+                             <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
+                                                                    ToolTip="Save" runat="server" CommandArgument='<%#Eval("SupplierID") %>'
+                                                                    CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
-                                                                    ToolTip="Delete" runat="server" CommandArgument='<%#Eval("ID") %>'
-                                                                    CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+                       
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -237,21 +227,26 @@
 
                     <tfoot>
                       <tr>
-                          <th>ID</th>
-                        <th>Quantity Category</th>
-                        <th>Quantity Low</th>
-                        <th>Quantity High</th>
-                        <th>Quantity Incentive</th>
-                         <th>IsActive</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        
+                        <th>SupplierID</th>
+                        <th>PaymentDate</th>
+                        <th>FromDate</th>
+                        <th>ToDate</th>
+                        <th>Amount</th>
+                        <th>Bonus</th>
+                        <th>Scheme</th>
+                        <th>RD</th>
+                        <th>Loan</th>
+                         <th>NetAmount</th>
+                        <th>Save</th>
+                       
                       </tr>
                     </tfoot>
 
                     </FooterTemplate>
                                              
            </asp:Repeater>
-                    <asp:HiddenField id="hftariff" runat="server" />
+                    <asp:HiddenField id="hfrouteID" runat="server" />
              
                 
                   
@@ -276,5 +271,32 @@
             </ProgressTemplate>
             </asp:UpdateProgress>           
           </div><!-- /.box -->
-        </section> 
+        </section>
+    <script>
+        $(document).ready(function(){
+            $(".txt").each(function() {
+
+                $(this).keyup(function(){
+                    calculateSum();
+                });
+            });
+
+        });
+        function calculateSum() {
+            var sum = 0;
+            var netamt = 0;
+            //iterate through each textboxes and add the values
+            $(".txt").each(function () {
+
+                //add only if the value is number
+                if (!isNaN(this.value) && this.value.length != 0) {
+                    sum += parseFloat(this.value);
+                }
+
+            });
+            //.toFixed() method will roundoff the final sum to 2 decimal places
+            $("#txtNetAmt.Text").html(sum.toFixed(2));
+        }
+           </script>
 </asp:Content>
+
