@@ -156,6 +156,7 @@ namespace Dairy.Tabs.Despatch
             bool result = invicedata.CheckTempInvoiceItam(invocie, flag);
             if (!result)
             {
+                txtagentOrderqty.Text = string.Empty;
                 invicedata.InsertTempInvoiceItam(invocie);
                 BindAgntTempItam(invocie);
             }

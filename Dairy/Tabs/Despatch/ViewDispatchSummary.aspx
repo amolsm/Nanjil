@@ -1,5 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchUserShiftwise.aspx.cs" Inherits="Dairy.Tabs.Despatch.ViewDispatchUserShiftwise" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchSummary.aspx.cs" Inherits="Dairy.Tabs.Despatch.ViewDispatchSummary" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <script type="text/javascript">
@@ -22,7 +26,7 @@
    
     <section class="content-header">
           <h1>
-             Shiftwise Item Summary
+             View Dispatch Summary
           </h1>
 
           <ol class="breadcrumb">
@@ -105,9 +109,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpCategory" ValidationGroup="search" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server" AutoPostBack="true" OnSelectedIndexChanged="dpCategory_SelectedIndexChanged" > 
+                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
@@ -118,16 +122,14 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpUsers" class="form-control" DataTextField="Name" DataValueField="UserID" runat="server"  > 
+                      <asp:DropDownList ID="dpCategory" ValidationGroup="search" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server"  > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
-            
  
           
              <div class="col-lg-3">
@@ -157,13 +159,6 @@
                   
         </div><!-- /.box-body -->
       </div>
-                         <asp:UpdatePanel runat="server" ID="upDispatchSummary" UpdateMode="Conditional">
-                    <ContentTemplate>
-                    <asp:Panel runat="server" ID="pnlDispatchSummary">
-                        <asp:Literal runat="server" ID="DispatchSummary"></asp:Literal>
-              </asp:Panel>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -181,9 +176,109 @@
 
          
                        
-              </div><!-- /.box -->
+                <div class="box-body" id="datalist">
+
+                <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
+                    <ContentTemplate>
+
+                <table id="example1" class="table table-bordered table-striped">
+                   
+
+                 
+
+                <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
+                
+               <HeaderTemplate>
+                  <thead>
+                      <tr>
+                          <th>Dispatch ID</th>
+                          <th>Dispatch Date</th>
+                          <th>Brand </th>
+                          <th>View</th>
+                                                     
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                   
+               </HeaderTemplate>
+               <ItemTemplate>
+                    <tr style="text-align:left">
+                        <td>DS<%# Eval("DI_Id")%></td>
+                        <td><%# Eval("DispatchDate")%></td>
+                        <td><%# Eval("CategoryName")%></td>
+                        
+                        <td>
+
+                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
+                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#Eval("DI_Id") %>'
+                                                                    CommandName="View" ><i class="fa fa-edit"></i></asp:LinkButton>
+
+                         </td>
+                         
+                    </tr>
+               </ItemTemplate>
+                    <FooterTemplate>
+
+                         </tbody>
+
+                    <tfoot>
+                      <tr>
+                           <th>Dispatch ID</th>
+                          <th>Dispatch Date</th>
+                          <th>Brand</th>
+                          <th>View</th>
+                      </tr>
+                    </tfoot>
+
+                    </FooterTemplate>
+                                             
+           </asp:Repeater>
+                    <asp:HiddenField id="hfRow" runat="server" />
+             
+                
+                  
+                     
+                   
+                  </table>
+               
+                
+                        </ContentTemplate>
+                </asp:UpdatePanel>
+  
+                <asp:UpdatePanel runat="server" ID="upDispatchSummary" UpdateMode="Conditional">
+                    <ContentTemplate>
+                    <asp:Panel runat="server" ID="pnlDispatchSummary">
+                        <asp:Literal runat="server" ID="DispatchSummary"></asp:Literal>
+              </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+            
+            <asp:UpdatePanel runat="server" ID="upGatePass" UpdateMode="Conditional">
+                    <ContentTemplate>
+                    <asp:Panel runat="server" ID="pnlGatePass">
+                        <asp:Literal runat="server" ID="GatePass"></asp:Literal>
+              </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+ 
+
+
+            </div><!-- /.box-body -->     
+                       <asp:UpdateProgress ID="UpdateProgress3" runat="server" AssociatedUpdatePanelID="uprouteList">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>       
+          </div><!-- /.box -->
         </section>
     
+     
     <script type="text/javascript">
 
         $(function () {

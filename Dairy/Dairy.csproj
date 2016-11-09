@@ -119,6 +119,8 @@
     <Content Include="Tabs\Despatch\ReturnScheme.aspx" />
     <Content Include="Tabs\Despatch\RoutewiseSalesSummary.aspx" />
     <Content Include="Tabs\Despatch\ViewDispatchOrders.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchSummary.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx" />
     <Content Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx" />
     <Content Include="Tabs\Dispatch\DoNotDelete.xml" />
     <Content Include="Tabs\Marketing\AgencyCloserScreen.aspx" />
@@ -1364,6 +1366,20 @@
     </Compile>
     <Compile Include="Tabs\Despatch\ViewDispatchOrders.aspx.designer.cs">
       <DependentUpon>ViewDispatchOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummary.aspx.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummary.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx.cs">
       <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>

@@ -83,6 +83,7 @@
         <div class="box-body">
 
             <div class="col-lg-3">
+<<<<<<< HEAD
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -102,6 +103,27 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
+=======
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Route
+                      </div>
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" AutoPostBack="true" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged"> 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+>>>>>>> origin/master
                        Supplier
                       </div>
                        <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
@@ -158,9 +180,15 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
+<<<<<<< HEAD
                     RD RepaymetAmount 
                       </div>
                        <asp:TextBox ID="txtRDRepaymentAmount" class="form-control" placeholder="RD RePaymentAmount" runat="server"  ToolTip="RD RepaymentAmount" ></asp:TextBox>                        
+=======
+                    RD Amount Date
+                      </div>
+                       <asp:TextBox ID="txtRDAmountDate" class="form-control" placeholder="RD Amount Date" runat="server"  ToolTip="RD Amount Date" type="date"></asp:TextBox>                        
+>>>>>>> origin/master
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -191,14 +219,24 @@
                        
                           
                       </div>
+<<<<<<< HEAD
             
+=======
+            <div id="divinvisible" runat="server" visible="false">
+>>>>>>> origin/master
    <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
+<<<<<<< HEAD
                  RD RePayment Date
                       </div>
                        <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD RePayment Date" type="date" runat="server"  ToolTip="RD RePayment Date"></asp:TextBox>                        
+=======
+                 RD Payment Date
+                      </div>
+                       <asp:TextBox ID="txtRDPaymentDate" class="form-control" placeholder="RD Payment Date" type="date" runat="server"  ToolTip="RD Payment Date"></asp:TextBox>                        
+>>>>>>> origin/master
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -207,7 +245,10 @@
                        
                           
                       </div> 
+<<<<<<< HEAD
             <div id="divinvisible" runat="server" visible="false">
+=======
+>>>>>>> origin/master
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
