@@ -29,10 +29,10 @@ namespace Dairy.Tabs.Procurement
 
         public void BindDropDownList()
         {
-            DS = BindCommanData.BindCommanDropDwon("VahicleID", "Vehicle as VehicleName", "Proc_VehicleTeriff", "VahicleID is not null");
+            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null");
             dpVehicleType.DataSource = DS;
             dpVehicleType.DataBind();
-            dpVehicleType.Items.Insert(0, new ListItem("--Select VehicleType--", "0"));
+            dpVehicleType.Items.Insert(0, new ListItem("--Select Vehicle Model--", "0"));
         }
         protected void btnAddVeh_Click(object sender, EventArgs e)
         {
@@ -156,9 +156,9 @@ namespace Dairy.Tabs.Procurement
             {
                 txtSrNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SrNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SrNo"].ToString();
                 dpVehicleType.ClearSelection();
-                if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()) != null)
+                if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["Vehicle"].ToString()) != null)
                 {
-                    dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()).Selected = true;
+                    dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["Vehicle"].ToString()).Selected = true;
                 }
                 txtBata.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Bata"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Bata"].ToString();
                 txtLess100.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["KMLessThan100"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["KMLessThan100"].ToString();
@@ -166,7 +166,7 @@ namespace Dairy.Tabs.Procurement
                 txt201To250.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["201To250"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["201To250"].ToString();
                 txt251To300.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["251To300"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["251To300"].ToString();
                 txtKMGreater300.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["KMGreaterThan300"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["KMGreaterThan300"].ToString();
-                txtDesc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Description"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Description"].ToString();
+                txtDesc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Discription"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Discription"].ToString();
             }
         }
         //public void DeleteRoutebyrouteID(int routeID)

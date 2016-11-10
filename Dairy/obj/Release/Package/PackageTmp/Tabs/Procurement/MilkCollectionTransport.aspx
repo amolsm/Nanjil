@@ -5,13 +5,13 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
 
         $(function () {
             $("#MainContent_txtDate").datepicker({ format: 'dd-MM-yyyy' });
 
         })
-    </script>
+    </script>--%>
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -95,9 +95,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Collection Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" type="date" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -107,9 +107,10 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                       Vehicle No.
                       </div>
-                       <asp:TextBox ID="txtVehicalNo" class="form-control" placeholder="Vehical No" type="text" runat="server" required></asp:TextBox>                        
+                        <asp:DropDownList ID="dpVehicleNo" class="form-control" DataTextField="VehicleNo" DataValueField="VehicleMasterID" ToolTip="Select Vehicle No." runat="server" selected> 
+                       </asp:DropDownList>                     
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -122,7 +123,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                     Route
                       </div>
                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"> 
                        </asp:DropDownList>
@@ -139,9 +140,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                    Morning KM
                       </div>
-                       <asp:TextBox ID="txtMorningKM" class="form-control" placeholder="Morning KM" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMorningKM" class="form-control" placeholder="Morning KM" runat="server" type="number" step="any" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -153,9 +154,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Evening KM
                       </div>
-                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" required ToolTip="Evening KM"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any" required ToolTip="Evening KM"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -163,9 +164,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Amount
                       </div>
-                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" type="number" step="any" runat="server" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -176,9 +177,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                    Bata
                       </div>
-                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" required ToolTip="Bata"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" type="number" step="any" required ToolTip="Bata"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -262,7 +263,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("Date")%></td>
+                         <td><%# Convert.ToDateTime(Eval("Date")).ToString("dd-MM-yyyy")%></td>
                       <td><%# Eval("VehicalNo")%></td>
                       <td><%# Eval("MorningKM")%></td>
                      

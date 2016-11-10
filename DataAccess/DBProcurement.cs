@@ -841,7 +841,7 @@ namespace DataAccess
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@VehicleID", p.VehicleID));
                 paramCollection.Add(new DBParameter("@SrNo", p.SrNo));
-                paramCollection.Add(new DBParameter("@Vehicle", p.Vehicle));
+                paramCollection.Add(new DBParameter("@Vehicle", p.VehicleType));
                 paramCollection.Add(new DBParameter("@Bata", p.Bata));
                 paramCollection.Add(new DBParameter("@KMLessThan100", p.KMLessThan100));
                 paramCollection.Add(new DBParameter("@V101To200", p.V101To200));
@@ -857,9 +857,9 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertVehicleMaster", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.ToString();
 
             }
             return result;

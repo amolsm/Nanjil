@@ -148,7 +148,7 @@
                       <div class="input-group-addon">
                      RD Amount
                       </div>
-                       <asp:TextBox ID="txtRDAmount" class="form-control" placeholder="RD Amount" runat="server"  ToolTip="RD AMount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDAmount" class="form-control" placeholder="RD Amount" runat="server"  ToolTip="RD AMount" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -160,7 +160,7 @@
                       <div class="input-group-addon">
                     RD RepaymetAmount 
                       </div>
-                       <asp:TextBox ID="txtRDRepaymentAmount" class="form-control" placeholder="RD RePaymentAmount" runat="server"  ToolTip="RD RepaymentAmount" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtRDRepaymentAmount" class="form-control" placeholder="RD RePaymentAmount" runat="server"  ToolTip="RD RepaymentAmount" Type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -344,7 +344,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>SupplierID</th>
+                          <th>Supplier</th>
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>
@@ -360,7 +360,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("SupplierID")%></td>
+                         <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
                       <td><%# Eval("RDStartDate")%></td>
                       <td><%# Eval("RDMaturityDate")%></td>
                       <td><%# string.Format("{0:n2}",Eval("RDAmount"))%></td>
@@ -386,7 +386,7 @@
 
                     <tfoot>
                       <tr>
-                             <th>SupplierID</th>
+                             <th>Supplier</th>
                         <th>RD Start Date</th>
                         <th>RD Maturity Date</th> 
                         <th> RD Amount</th>

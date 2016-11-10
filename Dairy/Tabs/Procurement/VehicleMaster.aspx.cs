@@ -27,10 +27,10 @@ namespace Dairy.Tabs.Procurement
 
         public void BindDropDwon()
         {
-            DS = BindCommanData.BindCommanDropDwon("VahicleID", "Vehicle as VehicleName", "Proc_VehicleTeriff", "VahicleID is not null");
+            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null");
             dpVehicleType.DataSource = DS;
             dpVehicleType.DataBind();
-            dpVehicleType.Items.Insert(0, new ListItem("--Select VehicleType--", "0"));
+            dpVehicleType.Items.Insert(0, new ListItem("--Select Vehicle Model--", "0"));
 
             DS = new DataSet();
             DS = BindCommanData.BindCommanDropDwonDistinct("ID", "BankName as Name", "BankDetails", "ID is not null");
@@ -221,13 +221,14 @@ namespace Dairy.Tabs.Procurement
                 {
                     dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["OwnerBankName"].ToString()).Selected = true;
                 }
+                DropDownList1.ClearSelection();
                 
-
-                if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "1")
+             
+                if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "True")
                 {
                     DropDownList1.Items.FindByValue("1").Selected = true;
                 }
-                else if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "0")
+                else if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "False")
                 {
                     DropDownList1.Items.FindByValue("2").Selected = true;
                 }

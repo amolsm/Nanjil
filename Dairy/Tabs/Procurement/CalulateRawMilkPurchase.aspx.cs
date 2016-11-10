@@ -177,13 +177,13 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>MilkInLtr</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>Fat Perc.</b>");
+                sb.Append("<b>Fat %</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>SNF Perc.</b>");
+                sb.Append("<b>SNF %</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>TS Perc.</b>");
+                sb.Append("<b>TS %</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("<b>RPL</b>");

@@ -101,7 +101,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      Route
                       </div>
                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>
@@ -117,7 +117,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Supplier
                       </div>
                        <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
                        </asp:DropDownList>                               
@@ -131,7 +131,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
+                      Loan Type
                       </div>
                       <asp:DropDownList ID="ddLoanType" class="form-control" runat="server">
 
@@ -153,9 +153,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                     Loan A/C No.
                       </div>
-                       <asp:TextBox ID="txtLoanAccountNo" class="form-control" placeholder="Loan Account No" ToolTip="Loan Account No" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanAccountNo" class="form-control" placeholder="Loan Account No" ToolTip="Loan Account No" runat="server" Type="number"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -168,9 +168,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                        Loan Amount
                       </div>
-                       <asp:TextBox ID="txtLoanAmt" class="form-control" placeholder="Loan Amount" runat="server" required ToolTip="Loan Amount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanAmt" class="form-control" placeholder="Loan Amount" runat="server"  ToolTip="Loan Amount" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -180,9 +180,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
+                     Loan Taken Date
                       </div>
-                       <asp:TextBox ID="txtLoanTakenDate" class="form-control" placeholder="Loan Taken Date" type="date" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanTakenDate" class="form-control" placeholder="Loan Taken Date" type="date" runat="server" ToolTip="Loan Taken Date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -196,9 +196,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                        Loan Duration In Month
                       </div>
-                       <asp:TextBox ID="txtLoanDuration" class="form-control" placeholder="Loan Duration" ToolTip="Loan Duration" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanDuration" class="form-control" placeholder="Loan Duration In Months" ToolTip="Loan Duration In Months" runat="server" Type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -207,9 +207,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                      Installment Amount
                       </div>
-                       <asp:TextBox ID="txtLoadPaid" class="form-control" placeholder="Installment Amount" ToolTip="Installment Amount" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoadPaid" class="form-control" placeholder="Installment Amount" ToolTip="Installment Amount" Type="number" step="any" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -222,9 +222,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Interest
                       </div>
-                       <asp:TextBox ID="txtInterest" class="form-control" placeholder="Interest" runat="server" required ToolTip="Interest" onblur="LoanBalance()"></asp:TextBox>                        
+                       <asp:TextBox ID="txtInterest" class="form-control" placeholder="Interest" runat="server" Type="number" step="any" ToolTip="Interest" onblur="LoanBalance()"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -237,9 +237,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Loan Balance
                       </div>
-                       <asp:TextBox ID="txtLoanBalance" class="form-control" placeholder="Loan Balance" runat="server" required ToolTip="Loan Balance"></asp:TextBox>                        
+                       <asp:TextBox ID="txtLoanBalance" class="form-control" placeholder="Loan Balance" runat="server" Type="number" step="any" ToolTip="Loan Balance"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -250,7 +250,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
+                      Loan Status
                       </div>
                       <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
 
@@ -271,7 +271,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bank"></i><span style="color:red">&nbsp;*</span>
+                     Bank Name
                       </div>
                     <asp:DropDownList  ID="dpBankName" ToolTip="Select Bank Name" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList> </div><!-- /.input group -->
@@ -289,7 +289,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
+                     IFSC Code
                       </div>
                      <asp:DropDownList  ID="dpIfscCode" ToolTip="Select IFSC Code" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
@@ -303,9 +303,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                        Branch Name
                       </div>
-                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server" required ToolTip="Branch Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server"  ToolTip="Branch Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -324,6 +324,8 @@
                       
                               <asp:Button ID="btnLoanadd" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnLoanadd"   Text="Add" ValidationGroup="Save" />     &nbsp;&nbsp;
                         <asp:Button ID="btnLoanUpdate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnLoanUpdate"   Text="Update" ValidationGroup="Save" />           
+                    &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                
+
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

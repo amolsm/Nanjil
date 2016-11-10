@@ -48,7 +48,7 @@ namespace Dairy.Tabs.Procurement
                 divDanger.Visible = false;
                 divwarning.Visible = false;
                 divSusccess.Visible = true;
-                lblSuccess.Text = "Vehicle Type Added  Successfully";
+                lblSuccess.Text = "Vehicle Model Added  Successfully";
                 GetVehicleType();
           
                upMain.Update();
@@ -93,7 +93,7 @@ namespace Dairy.Tabs.Procurement
                 divDanger.Visible = false;
                 divwarning.Visible = false;
                 divSusccess.Visible = true;
-                lblSuccess.Text = "Vehicle Type Updated  Successfully";
+                lblSuccess.Text = "Vehicle Model Updated  Successfully";
                 GetVehicleType();
 
                 upMain.Update();
@@ -176,7 +176,7 @@ namespace Dairy.Tabs.Procurement
                 divDanger.Visible = false;
                 divwarning.Visible = false;
                 divSusccess.Visible = true;
-                lblSuccess.Text = "Vehicle Deleted  Successfully";
+                lblSuccess.Text = "Vehicle Model Deleted  Successfully";
                 GetVehicleType();
 
                 upMain.Update();

@@ -150,6 +150,7 @@ namespace Dairy.Tabs.Procurement
                 txtRDPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString();
                 txtRDStartDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDStartDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDStartDate"].ToString();
                 DropDownList1.ClearSelection();
+             
                 if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()) != null)
                 {
                     DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()).Selected = true;
@@ -174,49 +175,55 @@ namespace Dairy.Tabs.Procurement
         }
         public void DeleteRDInfoByRDID(int RDID)
         {
-            //Model.Procurement p = new Model.Procurement();
-            //ProcurementData pd = new ProcurementData();
-            //p.RDID = string.IsNullOrEmpty(hfRDID.Value) ? 0 : Convert.ToInt32(hfRDID.Value);
-            //p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
-            //p.RDStartDate = string.Empty;
-            //p.RDMaturityDate = string.Empty;
-            //p.RDAmount = 0.0;
-            //p.RDAmountDate = string.Empty;
-            //p.RDStatus = DropDownList1.SelectedItem.Text;
-            //p.RDPaymentDateTime = string.Empty;
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+            p.RDID = string.IsNullOrEmpty(hfRDID.Value) ? 0 : Convert.ToInt32(hfRDID.Value);
+            p.RouteID = 0;
+            p.SupplierID = 0;
+            p.RDStartDate = txtRDStartDate.Text;
+            p.RDMaturityDate = txtRDMaturityDate.Text;
+            p.RDAmount = 0;
+            p.RepaymentAmt = 0;
+            p.RDStatus = DropDownList1.SelectedItem.Text;
+            p.RDPaymentDateTime = txtRDPaymentDate.Text;
+            p.AccounNumber = txtAccountNo.Text;
+            p.BankName = dpBankName.SelectedItem.Text;
+            p.IFSCCode = dpIfscCode.SelectedItem.Text;
+            p.BranchName = txtBranchName.Text;
+            p.AccountName = txtAccountName.Text;
+            p.CreatedBy = App_code.GlobalInfo.Userid;
+            p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+            p.ModifiedBy = App_code.GlobalInfo.Userid;
+            p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
 
-            //p.CreatedBy = App_code.GlobalInfo.Userid;
-            //p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
-            //p.ModifiedBy = App_code.GlobalInfo.Userid;
-            //p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
 
-            //p.flag = "Delete";
-            //int Result = 0;
-            //Result = pd.InsertSupplierRDInfo(p);
-            //if (Result > 0)
-            //{
-            //    //lbltital.Text = "Add Route";
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = false;
-            //    divSusccess.Visible = true;
-            //    lblSuccess.Text = "Supplier RD Info Deleted  Successfully";
-            //    ClearTextBox();
-            //    BindeSupplierRDInfo();
-            //    pnlError.Update();
-            //    btnAddRDInfo.Visible = true;
-            //    btnupdateRDInfo.Visible = false;
-            //    upMain.Update();
-            //    uprouteList.Update();
-            //}
-            //else
-            //{
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = true;
-            //    divSusccess.Visible = false;
-            //    lblwarning.Text = "Please Contact to Site Admin";
-            //    pnlError.Update();
+            p.flag = "Delete";
+            int Result = 0;
+            Result = pd.InsertSupplierRDInfo(p);
+            if (Result > 0)
+            {
+                //lbltital.Text = "Add Route";
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                lblSuccess.Text = "Supplier RD Info Deleted  Successfully";
+                ClearTextBox();
+                BindeSupplierRDInfo();
+                pnlError.Update();
+                btnAddRDInfo.Visible = true;
+                btnupdateRDInfo.Visible = false;
+                upMain.Update();
+                uprouteList.Update();
+            }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
 
-            //}
+            }
 
         }
 
@@ -335,12 +342,7 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
-            pnlError.Update();
-            ClearTextBox();
-            upMain.Update();
+            Response.Redirect("~/Tabs/Procurement/AddSupplierRDInfo.aspx");
         }
     }
 }

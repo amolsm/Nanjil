@@ -5,12 +5,12 @@
  
     <section class="content-header">
           <h1>
-           Vehicle Type
+           Vehicle Model
             <small>Administration</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">Add Vehicle Type</li>
+            <li class="active">Add Vehicle Model</li>
           </ol>
         </section>
     <section class="content">
@@ -42,7 +42,7 @@
           <!-- Default box -->
               <div class="box collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label runat="server" ID="lblHeaderTab" Text="Add VehicleType"></asp:Label></h3>
+              <h3 class="box-title"><asp:Label runat="server" ID="lblHeaderTab" Text="Add Vehicle Model"></asp:Label></h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -56,7 +56,7 @@
         
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title">Vehicle Type Information </h3>
+          <h3 class="box-title">Vehicle Model Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -67,7 +67,7 @@
                       <div class="input-group-addon">
                    VehicleType
                       </div>
-                       <asp:TextBox ID="txtVehicleType" class="form-control" ToolTip="Enter Vehicle Type"  placeholder="Vehicle Type" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtVehicleType" class="form-control" ToolTip="Enter Vehicle Model"  placeholder="Vehicle Model" runat="server" required></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -136,7 +136,7 @@
           </div><!-- /.box -->
                <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title"> Vehicle Type List </h3>
+              <h3 class="box-title"> Vehicle Model List </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
@@ -162,7 +162,7 @@
                       <tr>
                          <th>Id</th>
                          
-                          <th>Vehicle Type</th>
+                          <th>Vehicle Model</th>
                         <th>IsActive</th>
                            <th>Edit</th>
                          <%-- <th>Delete</th>--%>
@@ -198,7 +198,7 @@
                       <tr>
                           <th>Id</th>
                          
-                          <th>Vehicle Type</th>
+                          <th>Vehicle Model</th>
                         <th>IsActive</th>
                            <th>Edit</th>
                           <%--<th>Delete</th>--%>

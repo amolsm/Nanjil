@@ -75,7 +75,7 @@
 
         <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title">Vehicle Master </h3>
+          <h3 class="box-title">Vehicle Tariff </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
             <div class="col-lg-4">
@@ -96,7 +96,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                        <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Type" runat="server" selected> 
+                        <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Model" runat="server" selected> 
                        </asp:DropDownList>                       
                     </div><!-- /.input group -->
 
@@ -262,7 +262,7 @@
                   <thead>
                       <tr>
                           <th>Tariff ID</th>
-                        <th>Vehicle Type</th>
+                        <th>Vehicle Model</th>
                         <th>Bata</th>
                         <th>KM<100</th>
                         <th>101To200</th>
@@ -280,7 +280,7 @@
                <ItemTemplate>
                     <tr>
                          <td><%# Eval("SrNo")%></td>
-                      <td><%# Eval("Vehicle")%></td>
+                      <td><%# Eval("VehicleType")%></td>
                       <td><%# Eval("Bata")%></td>
                       <td><%# Eval("KMLessThan100")%></td>
                         <td><%# Eval("[101To200]") %></td>
@@ -307,7 +307,7 @@
                     <tfoot>
                       <tr>
                           <th>Tariff ID</th>
-                        <th>Vehicle Type</th>
+                          <th>Vehicle Model</th>
                         <th>Bata</th>
                         <th>KM<100</th>
                         <th>101To200</th>

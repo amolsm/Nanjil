@@ -94,9 +94,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                    Vehicle Type
+                    Vehicle Model
                       </div>        
-                     <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Type" runat="server" selected> 
+                     <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Model" runat="server" selected> 
                        </asp:DropDownList>
 
                   </div><!-- /.form group -->
@@ -366,12 +366,13 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>VehicleID</th>
+                          <th>Vehicle Model</th>
                         
                         <th>Vehicle No</th>
                         <th>Owner Name</th>
                     
                         <th>Driver Name</th>
+                           <th>IsActive</th>
                            <th>Edit</th>
                           <th>Delete</th>
                       </tr>
@@ -382,13 +383,14 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("VehicleID")%></td>
+                         <td><%# Eval("VehicleType")%></td>
                      
                       <td><%# Eval("VehicleNo")%></td>
                       <td><%# Eval("VehicleOwnerName")%></td>
                         
                      
                       <td><%# Eval("DriverName")%></td>
+                           <td><%# Eval("IsActive")%></td>
                          <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
@@ -408,12 +410,13 @@
 
                     <tfoot>
                       <tr>
-                           <th>VehicleID</th>
+                          <th>Vehicle Model</th>
                        
                         <th>Vehicle No</th>
                         <th>Owner Name</th>
                         
                         <th>Driver Name</th>
+                             <th>IsActive</th>
                            <th>Edit</th>
                           <th>Delete</th>
                       </tr>

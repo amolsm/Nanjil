@@ -209,9 +209,9 @@
         <asp:BoundField ItemStyle-Width="150px" DataField="_Session" HeaderText="Session" />
           <asp:BoundField ItemStyle-Width="150px" DataField="Supplier" HeaderText="Supplier" />
         <asp:BoundField ItemStyle-Width="150px" DataField="MilkInLtr" HeaderText="MilkInLtr" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FatPercentage" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="SNFPercentage" HeaderText="SNFPercentage" />
-        <asp:BoundField ItemStyle-Width="150px" DataField="TSPercentage" HeaderText="TSPercentage" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="FATPercentage" HeaderText="FAT%" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="SNFPercentage" HeaderText="SNF%" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="TSPercentage" HeaderText="TS%" />
         <asp:BoundField ItemStyle-Width="150px" DataField="RPL" HeaderText="RPL" />
         <asp:BoundField ItemStyle-Width="150px" DataField="Amount" HeaderText="Amount" />
     </Columns>

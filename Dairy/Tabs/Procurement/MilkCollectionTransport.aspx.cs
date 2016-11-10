@@ -35,6 +35,13 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.DataBind();
                 dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
             }
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleNo", "Proc_VehicleMaster", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpVehicleNo.DataSource = DS;
+                dpVehicleNo.DataBind();
+                dpVehicleNo.Items.Insert(0, new ListItem("--Select Vehicle No.  --", "0"));
+            }
 
         }
         public void BindMilkCollectionList()
@@ -97,7 +104,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             p.MilkCollectionTransportID = 0;
             p.Date = Convert.ToDateTime(txtDate.Text);
-            p.VehicleNo = txtVehicalNo.Text;
+            p.VehicleNo = dpVehicleNo.SelectedItem.Text;
             p.RouteID =Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.MorningKM = Convert.ToDouble(txtMorningKM.Text);
             p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
@@ -137,7 +144,7 @@ namespace Dairy.Tabs.Procurement
 
         public void ClearTextBox()
         {
-            txtVehicalNo.Text = string.Empty;
+            dpVehicleNo.ClearSelection();
             txtDate.Text = string.Empty;
             txtEveningKM.Text = string.Empty;
             txtMorningKM.Text = string.Empty;
@@ -153,8 +160,13 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetMilkCollectionTransportDetailsbyID(milkcollectionid);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                txtVehicalNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["VehicalNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["VehicalNo"].ToString();
-                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Date"].ToString();
+                dpVehicleNo.ClearSelection();
+                if (dpVehicleNo.Items.FindByText(DS.Tables[0].Rows[0]["VehicalNo"].ToString()) != null)
+                {
+                    dpVehicleNo.Items.FindByText(DS.Tables[0].Rows[0]["VehicalNo"].ToString()).Selected = true;
+                }
+                //dpVehicleNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["VehicalNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["VehicalNo"].ToString();
+                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["Date"]).ToString("yyyy-MM-dd");
                 txtEveningKM.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningKM"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningKM"].ToString();
                 txtMorningKM.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningKM"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningKM"].ToString();
                 txtAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Amount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Amount"].ToString();
@@ -222,7 +234,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             p.MilkCollectionTransportID = string.IsNullOrEmpty(hfMilkCollectionID.Value) ? 0 : Convert.ToInt32(hfMilkCollectionID.Value); ;
             p.Date = Convert.ToDateTime(txtDate.Text);
-            p.VehicleNo = txtVehicalNo.Text;
+            p.VehicleNo = dpVehicleNo.SelectedItem.Text;
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.MorningKM = Convert.ToDouble(txtMorningKM.Text);
             p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
