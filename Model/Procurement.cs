@@ -1496,5 +1496,12 @@ namespace Model
         public double RepaymentAmt { get; set; }
         public string TransportType { get; set; }
         public double tdspercentage { get; set; }
+        public string MorningInTime { get; set; }
+        public string MorningOutTime { get; set; }
+        public string EveningOutTime { get; set; }
+        public string EveningInTime { get; set; }
+        public string MorningInCan { get; set; }
+        public string MorningOutCan { get; set; }
+        public string Remarks { get; set; }
     }
 }

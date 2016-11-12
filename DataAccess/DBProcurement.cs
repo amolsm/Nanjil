@@ -1301,6 +1301,14 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@EveningKM", p.EveningKM));
                 paramCollection.Add(new DBParameter("@Amount", p.InstallmentAmount));
                 paramCollection.Add(new DBParameter("@Bata", p.Bata));
+                paramCollection.Add(new DBParameter("@MorningInTime", p.MorningInTime));
+                paramCollection.Add(new DBParameter("@MorningOutTime", p.MorningOutTime));
+                paramCollection.Add(new DBParameter("@MorningInCan", p.MorningInCan));
+                paramCollection.Add(new DBParameter("@MorningOutCan", p.MorningOutCan));
+                paramCollection.Add(new DBParameter("@EveningInTime", p.EveningInTime));
+                paramCollection.Add(new DBParameter("@EveningOutTime", p.EveningOutTime));
+                paramCollection.Add(new DBParameter("@DriverName", p.DriverName));
+                paramCollection.Add(new DBParameter("@Remarks", p.Remarks));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));

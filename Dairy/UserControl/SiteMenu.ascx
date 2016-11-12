@@ -269,11 +269,11 @@
                   <li><a href="/Tabs/Procurement/VehicleType.aspx"><i class="fa fa-circle-o"></i>Vehicle Model</a></li>
                     <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>VehicleMaster</a></li>
                   <li><a href="/Tabs/Procurement/ReceiveDisposalheadmaster.aspx"><i class="fa fa-circle-o"></i>Receive & Dispose Master</a></li>
-                  <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Add Milk Collection Center</a></li>
-                  <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Add Milk Collection Route</a></li> 
+                  <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Milk Collection Center Profile</a></li>
+                  <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Milk Collection Route Profile</a></li> 
                 
                 
-                <li><a href="/Tabs/Procurement/AddMilkSuppliersProfile.aspx"><i class="fa fa-circle-o"></i>Create Supplier Profile</a></li> 
+                <li><a href="/Tabs/Procurement/AddMilkSuppliersProfile.aspx"><i class="fa fa-circle-o"></i>Milk Supplier Profile</a></li> 
                 <li><a href="/Tabs/Procurement/AddSuppliersLoanInfo.aspx"><i class="fa fa-circle-o"></i> Supplier Loan Info</a></li> 
                   <%--   <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>--%>
                     <li><a href="/Tabs/Procurement/MilkCollectionDetails.aspx"><i class="fa fa-circle-o"></i>Milk Collection Details</a></li>

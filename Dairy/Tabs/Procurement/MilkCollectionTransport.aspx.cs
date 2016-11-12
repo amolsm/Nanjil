@@ -110,6 +110,14 @@ namespace Dairy.Tabs.Procurement
             p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
             p.Bata = Convert.ToDouble(txtBata.Text);
             p.InstallmentAmount = Convert.ToDouble(txtAmount.Text);
+            p.MorningInTime = txtMorningInTime.Text;
+            p.MorningOutTime = txtMorningOutTime.Text;
+            p.EveningInTime = txtEveningInTime.Text;
+            p.EveningOutTime = txtEveningOutTime.Text;
+            p.MorningInCan = txtMCanIn.Text;
+            p.MorningOutCan = txtMCanOut.Text;
+            p.DriverName = txtDriverName.Text;
+            p.Remarks = txtRemarks.Text;
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
@@ -151,6 +159,16 @@ namespace Dairy.Tabs.Procurement
             txtAmount.Text = string.Empty;
             txtBata.Text = string.Empty;
             dpRoute.ClearSelection();
+            txtRemarks.Text = string.Empty;
+            txtTotalKM.Text = string.Empty;
+            txtMorningInTime.Text = string.Empty;
+            txtMorningOutTime.Text = string.Empty;
+            txtMCanIn.Text = string.Empty;
+            txtMCanOut.Text = string.Empty;
+            txtEveningInTime.Text = string.Empty;
+            txtEveningOutTime.Text = string.Empty;
+            txtDriverName.Text = string.Empty;
+
         }
 
         public void GetMilkCollectionTransportDetailsbyID(int milkcollectionid)
@@ -171,6 +189,16 @@ namespace Dairy.Tabs.Procurement
                 txtMorningKM.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningKM"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningKM"].ToString();
                 txtAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Amount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Amount"].ToString();
                 txtBata.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Bata"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Bata"].ToString();
+                txtMorningInTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningInTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningInTime"].ToString();
+                txtMorningOutTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningOutTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningOutTime"].ToString();
+                txtMCanIn.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningInCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningInCan"].ToString();
+                txtMCanOut.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningOutCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningOutCan"].ToString();
+
+                txtEveningInTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningInTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningInTime"].ToString();
+                txtEveningOutTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningOutTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningOutTime"].ToString();
+                txtDriverName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["DriverName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["DriverName"].ToString();
+                txtRemarks.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Remarks"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Remarks"].ToString();
+                txtTotalKM.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TotalKM"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TotalKM"].ToString();
                 dpRoute.ClearSelection();
                 if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()) != null)
                 {
@@ -240,6 +268,14 @@ namespace Dairy.Tabs.Procurement
             p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
             p.Bata = Convert.ToDouble(txtBata.Text);
             p.InstallmentAmount = Convert.ToDouble(txtAmount.Text);
+            p.MorningInTime = txtMorningInTime.Text;
+            p.MorningOutTime = txtMorningOutTime.Text;
+            p.EveningInTime = txtEveningInTime.Text;
+            p.EveningOutTime = txtEveningOutTime.Text;
+            p.MorningInCan = txtMCanIn.Text;
+            p.MorningOutCan = txtMCanOut.Text;
+            p.DriverName = txtDriverName.Text;
+            p.Remarks = txtRemarks.Text;
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
@@ -271,6 +307,15 @@ namespace Dairy.Tabs.Procurement
                 pnlError.Update();
 
             }
+        }
+
+        protected void txtEveningKM_TextChanged(object sender, EventArgs e)
+        {
+            int MorningKM;
+            int EveningKM;
+            MorningKM= string.IsNullOrEmpty(txtMorningKM.Text) ? 0 : Convert.ToInt32(txtMorningKM.Text);
+            EveningKM= string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
+            txtTotalKM.Text = Convert.ToString(MorningKM + EveningKM);
         }
     }
 }

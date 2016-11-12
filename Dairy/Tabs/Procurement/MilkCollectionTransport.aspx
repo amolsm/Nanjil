@@ -149,6 +149,56 @@
                           
                       </div>
 
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Morning In Time
+                      </div>
+                       <asp:TextBox ID="txtMorningInTime" class="form-control" placeholder="Morning In Time" runat="server" type="time" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Morning In Can 
+                      </div>
+                       <asp:TextBox ID="txtMCanIn" class="form-control" placeholder="Morning In Can" runat="server" type="number" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Morning Out Time
+                      </div>
+                       <asp:TextBox ID="txtMorningOutTime" class="form-control" placeholder="Morning Out Time" runat="server" type="time" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Morning Out Can
+                      </div>
+                       <asp:TextBox ID="txtMCanOut" class="form-control" placeholder="Morning Out Can" runat="server" type="number" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
               
              <div class="col-lg-3">
                   <div class="form-group">
@@ -156,10 +206,61 @@
                       <div class="input-group-addon">
                        Evening KM
                       </div>
-                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any" required ToolTip="Evening KM"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any" required ToolTip="Evening KM" OnTextChanged="txtEveningKM_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
+
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Evening In Time
+                      </div>
+                       <asp:TextBox ID="txtEveningInTime" class="form-control" placeholder="Evening In Time" runat="server" type="time" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+             <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Evening Out Time
+                      </div>
+                       <asp:TextBox ID="txtEveningOutTime" class="form-control" placeholder="Evening Out Time" runat="server" type="time" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                   Driver Name
+                      </div>
+                       <asp:TextBox ID="txtDriverName" class="form-control" placeholder="DriverName"  runat="server" required></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
+
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Total KM
+                      </div>
+                       <asp:TextBox ID="txtTotalKM" class="form-control" placeholder="Total KM" type="number" step="any" runat="server" readonly></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -172,6 +273,8 @@
                   </div><!-- /.form group --> 
                           
                       </div> 
+
+             
              
              <div class="col-lg-3">
                   <div class="form-group">
@@ -184,7 +287,18 @@
                   </div><!-- /.form group -->                   
                   </div>  
              
-             
+             <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                 Remarks
+                      </div>
+                       <asp:TextBox ID="txtRemarks" class="form-control" placeholder="Remarks" TextMode="MultiLine"  runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
            
             
               <div class="col-lg-3">
