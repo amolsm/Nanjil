@@ -239,5 +239,25 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/VehicleType.aspx");
         }
+
+        protected void txtVehicleType_TextChanged(object sender, EventArgs e)
+        {
+            pd = new ProcurementData();
+            DataSet DS = new DataSet();
+            DS = pd.GetVehicleType();
+
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach(DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["VehicleType"].ToString() == txtVehicleType.Text.ToString())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Vehicle Model Already exists')", true);
+                        txtVehicleType.Text = string.Empty;
+                    }
+                   
+                }
+            }
+        }
     }
 }

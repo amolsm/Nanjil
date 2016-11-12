@@ -78,27 +78,30 @@
           <h3 class="box-title">Milk Collection Center Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtCenterCode" class="form-control" placeholder="Center Code" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtCenterCode" class="form-control" placeholder="Center Code" runat="server"  ReadOnly="true" ToolTip="CenterCode" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
                       </div> 
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtCenterName" class="form-control" placeholder="Center Name" runat="server" required ToolTip="Center Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtCenterName" class="form-control" placeholder="Center Name" runat="server"  ToolTip="Center Name" OnTextChanged="txtCenterName_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator  ID="FieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtCenterName" ForeColor="Red"
+    ErrorMessage="Please Enter Center Name "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -129,7 +132,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server"  ToolTip="Address"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -138,14 +141,15 @@
                      
                        
                           
-                      </div>                        
+                      </div>  
+                </div>                      
                  <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress2" class="form-control" placeholder="Address 2" runat="server"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress2" class="form-control" placeholder="Address 2" runat="server" ToolTip="Address 2"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -160,7 +164,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress3" class="form-control" placeholder="Address 3" runat="server"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress3" class="form-control" placeholder="Address 3" runat="server" ToolTip="Address 3"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -173,25 +177,29 @@
  
 
               <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-envelope-o"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" runat="server" required AutoCompleteType="Email"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" runat="server"  AutoCompleteType="Email" ToolTip="Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RegularExpressionValidator ID="valRegExEmail" runat="server" ControlToValidate="txtEmail"
+                           ForeColor="Red"  ErrorMessage="Please give a valid email address" ValidationGroup="Save" ValidationExpression="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z\.][a-zA-Z]{1,3}$"></asp:RegularExpressionValidator> 
                   </div><!-- /.form group --> 
                    </div> 
+            <div class="row">
                         <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMobile" class="form-control" placeholder="Mobile No" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMobile" class="form-control" placeholder="Mobile No" runat="server"  type="number" min="0" ToolTip="Mobile No."></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+      ControlToValidate="txtMobile" ErrorMessage="Please enter 10 digit mobile no." ForeColor="Red"
+    ValidationExpression="[0-9]{10}" ></asp:RegularExpressionValidator>
                   </div><!-- /.form group -->
 
                      
@@ -199,14 +207,16 @@
                           
                       </div>                        
                  <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-phone"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTelephone" class="form-control" placeholder="Telephone No" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTelephone" class="form-control" placeholder="Telephone No" runat="server"  type="number" min="0" ToolTip="Telephone No."></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+      ControlToValidate="txtTelephone" ErrorMessage="Please enter telephone no." ForeColor="Red"
+    ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$" ></asp:RegularExpressionValidator>
                   </div><!-- /.form group -->
 
                      
@@ -215,30 +225,35 @@
                       </div>  
 
 
-                        <div class="col-lg-3">
-                  <div class="form-group">
+                        <div class="col-lg-4">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-globe"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:DropDownList  ID="dpCity" ToolTip="Select City" class="form-control" DataTextField="Name"  runat="server" > 
+                       <asp:DropDownList  ID="dpCity" ToolTip="Select City" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
-
+                       <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpCity"
+        ErrorMessage="City is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div> 
+                </div>
                                <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-globe"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList  ID="dpDistrict" ToolTip="Select District" class="form-control" DataTextField="Name"  runat="server"  > 
+                      <asp:DropDownList  ID="dpDistrict" ToolTip="Select District" class="form-control" DataTextField="Name"  runat="server" > 
                        </asp:DropDownList></div><!-- /.input group -->
-
+                      <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="dpDistrict"
+        ErrorMessage="District is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -248,7 +263,7 @@
                       
                       
                   <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -257,6 +272,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="dpState"
+        ErrorMessage="State is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -265,16 +283,19 @@
                       </div>  
             
                 <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
                   
-                          <asp:DropDownList  ID="dpCountry" ToolTip="Select Country" class="form-control" DataTextField="Name"  runat="server"  > 
+                          <asp:DropDownList  ID="dpCountry" ToolTip="Select Country" class="form-control" DataTextField="Name"  runat="server"   > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="dpCountry"
+        ErrorMessage="Country is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -282,15 +303,17 @@
                           
                       </div> 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:DropDownList  ID="dpContactPerson"  class="form-control" DataTextField="Name" DataValueField="EmployeeID"  runat="server"  > 
+                       <asp:DropDownList  ID="dpContactPerson"  class="form-control" DataTextField="Name" DataValueField="EmployeeID"  runat="server" ToolTip="Select Contact Person"  > 
                        </asp:DropDownList>
                     </div><!-- /.input group -->
-
+                           <asp:CompareValidator ID="CompareValidator4" runat="server" ControlToValidate="dpContactPerson"
+        ErrorMessage="ContactPerson is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group --> 
                           
                       </div>            
@@ -326,7 +349,7 @@
                       <div class="input-group-addon">
                         </i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtQuantity" class="form-control" placeholder="Freezer Quantity" runat="server" ToolTip="Freezer Quantity"></asp:TextBox>                        
+                       <asp:TextBox ID="txtQuantity" class="form-control" placeholder="Freezer Quantity" runat="server" ToolTip="Freezer Quantity" type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -339,7 +362,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtBMC" class="form-control" placeholder="BMC" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBMC" class="form-control" placeholder="BMC" runat="server"  type="number" min="0" ToolTip="BMC"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -354,7 +377,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="Milk Can" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="Milk Can" runat="server"  type="number" min="0" ToolTip="Milk Can"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -369,7 +392,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSilo" class="form-control" placeholder="Silo" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtSilo" class="form-control" placeholder="Silo" runat="server"  type="number" min="0" ToolTip="Silo"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -428,12 +451,12 @@
                           
                       </div> 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group"  style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
+                      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" ToolTip="Status">
 
                            <asp:ListItem Value="0">---Select Status---</asp:ListItem>
                            <asp:ListItem Value="1">Active</asp:ListItem>
@@ -442,6 +465,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                  <asp:CompareValidator ID="CompareValidator5" runat="server" ControlToValidate="DropDownList1"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -456,6 +482,8 @@
                       
                               <asp:Button ID="btnAddCollection" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnAddCollection"   Text="Add" ValidationGroup="Save" />     
                         <asp:Button ID="btnupdateCollection" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnupdateCollection"   Text="Update" ValidationGroup="Save" />           
+                     &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                      
+
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

@@ -43,8 +43,15 @@ namespace Dairy.Tabs.Procurement
             dpIfscCode.DataSource = DS;
             dpIfscCode.DataBind();
             dpIfscCode.Items.Insert(0, new ListItem("--Select Ifsc Code--", "0"));
-        }
 
+            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpRoute.DataSource = DS;
+                dpRoute.DataBind();
+                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+            }
+        }
         protected void btnAddVehicle_Click(object sender, EventArgs e)
         {
             Model.Procurement p = new Model.Procurement();
@@ -64,7 +71,7 @@ namespace Dairy.Tabs.Procurement
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.BranchName = txtBranchName.Text;
             p.AccountNo = txtAccNo.Text;
-            p.Tax = Convert.ToDouble( txtTax.Text);
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.tdspercentage = Convert.ToDouble(txtTDSPercent.Text);
             p.CreatedBy = App_code.GlobalInfo.Userid;
             if (DropDownList1.SelectedValue == "1")
@@ -123,7 +130,7 @@ namespace Dairy.Tabs.Procurement
             dpBankName.ClearSelection();
             dpVehicleType.ClearSelection();
             DropDownList1.ClearSelection();
-            txtTax.Text = string.Empty;
+            dpRoute.ClearSelection();
             txtTDSPercent.Text = string.Empty;
         }
         public void BindVehicleList()
@@ -204,7 +211,12 @@ namespace Dairy.Tabs.Procurement
                  }
             
                 txtAccNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountNo"].ToString();
-                txtTax.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Tax"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Tax"].ToString();
+                dpRoute.ClearSelection();
+                if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()) != null)
+                {
+                    dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()).Selected = true;
+                }
+               // txtTax.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Tax"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Tax"].ToString();
                 txtTDSPercent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TDS"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TDS"].ToString();
                 dpVehicleType.ClearSelection();
                 if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()) != null)
@@ -256,7 +268,7 @@ namespace Dairy.Tabs.Procurement
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.BranchName = string.Empty;
             p.AccountNo = string.Empty;
-            p.Tax = 0;
+            p.RouteID = 0;
             p.IsActive = false;
             p.TransportType = dpTransportType.SelectedItem.Text;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -310,7 +322,7 @@ namespace Dairy.Tabs.Procurement
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.BranchName = txtBranchName.Text;
             p.AccountNo = txtAccNo.Text;
-            p.Tax = Convert.ToDouble(txtTax.Text);
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             if (DropDownList1.SelectedValue == "1")
             {
                 p.IsActive = true;
@@ -351,6 +363,31 @@ namespace Dairy.Tabs.Procurement
                 pnlError.Update();
 
             }
+        }
+
+        protected void txtVehicleNo_TextChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            DataSet DS = new DataSet();
+         
+            DS = pd.GetAllVehicleDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["VehicleNo"].ToString().Trim() == txtVehicleNo.Text.ToString().Trim())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Vehicle No. Already exists')", true);
+                        txtVehicleNo.Text = string.Empty;
+                    }
+
+                }
+            }
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/Tabs/Procurement/VehicleMaster.aspx");
         }
     }
 }

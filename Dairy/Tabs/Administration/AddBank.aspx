@@ -75,16 +75,18 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-
+            <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-bank"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtBankName" class="form-control" placeholder="Bank Name" runat="server" required ToolTip="Enter Bank Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBankName" class="form-control" placeholder="Bank Name" runat="server"  ToolTip="Enter Bank Name" OnTextChanged="txtBankName_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator  ID="FieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtBankName" ForeColor="Red"
+    ErrorMessage="Please Enter Bank Name "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -92,15 +94,17 @@
                           
                       </div>  
 
-             <div class="col-lg-4">
-                  <div class="form-group">
+             <div class="col-lg-4" >
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtbranchname" class="form-control" placeholder="Branch Name"  runat="server"  required ToolTip="Enter Branch Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtbranchname" class="form-control" placeholder="Branch Name"  runat="server"   ToolTip="Enter Branch Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator  ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtbranchname" ForeColor="Red"
+    ErrorMessage="Please Enter Branch Name "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -112,33 +116,40 @@
 
             
               <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtBranchAddress" class="form-control" placeholder="Branch Address"  runat="server"  required ToolTip="Enter Branch Address" TextMode="MultiLine"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBranchAddress" class="form-control" placeholder="Branch Address"  runat="server"   ToolTip="Enter Branch Address" TextMode="MultiLine"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator  ID="RequiredFieldValidator2" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtBranchAddress" ForeColor="Red"
+    ErrorMessage="Please Enter Branch Address "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div>  
-        
+        </div>
+              <div class="row">
                <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-key"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIfsc" class="form-control" placeholder="IFSC code"  runat="server" required ToolTip="Enter IFSC code"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIfsc" class="form-control" placeholder="IFSC code"  runat="server"  ToolTip="Enter IFSC code"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator  ID="FieldValidator3" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtIfsc" ForeColor="Red"
+    ErrorMessage="Please Enter IFSC Code "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
               </div>
+                  
              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -147,7 +158,7 @@
                       
                         <asp:Button ID="btnAddBankInfo" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddBankInfo_click" /> &nbsp;    
                         <asp:Button ID="btnupdatebankdetail" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdatebankdetail_click" />           
-                    </div><!-- /.input group -->
+                      &nbsp;&nbsp; &nbsp;   <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="AddNew"  OnClick="btnAddNew_Click" />   </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
 
@@ -156,7 +167,7 @@
                           
                       </div> 
 
-
+            </div>
               
         </div><!-- /.box-body -->
       </div>
@@ -177,7 +188,7 @@
             </asp:UpdateProgress>
                          
           </div>
-        <section>
+      
     
           
 
@@ -213,6 +224,8 @@
                                         
                                         <th>BranchAddress</th>
                                         <th>IFSC Code</th>
+                           <th>Edit</th>
+                           <th>Delete</th>
                                         
                           
                       </tr>
@@ -295,4 +308,5 @@
             </ProgressTemplate>
             </asp:UpdateProgress>
         </div>
+          </section>
 </asp:Content>

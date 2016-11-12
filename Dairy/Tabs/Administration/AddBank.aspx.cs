@@ -236,5 +236,29 @@ namespace Dairy.Tabs.Administration
             }
             return Result;
         }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Administration/AddBank.aspx");
+        }
+
+        protected void txtBankName_TextChanged(object sender, EventArgs e)
+        {
+            productdata = new ProductData();
+            DataSet DS = new DataSet();
+            DS = productdata.GetBankDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["BankName"].ToString().Trim() == txtBankName.Text.ToString().Trim())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bank Name Already exists')", true);
+                        txtBankName.Text = string.Empty;
+                    }
+
+                }
+            }
+        }
     }
 }

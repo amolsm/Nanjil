@@ -76,7 +76,7 @@ namespace Dairy.Tabs.Procurement
                 divDanger.Visible = false;
                 divwarning.Visible = true;
                 divSusccess.Visible = false;
-                lblwarning.Text = "   Please Contact to Site Admin";
+                lblwarning.Text = "This Record Already exists.";
 
                 pnlError.Update();
 

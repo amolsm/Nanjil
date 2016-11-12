@@ -54,6 +54,9 @@ namespace Dairy.Tabs.Procurement
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
+            if(dpSession.SelectedItem.Value=="0")
+            { p.Session = null; }
+            else { p.Session = dpSession.SelectedItem.Text.ToString(); }
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString();
             int Result = 0;
@@ -92,6 +95,10 @@ namespace Dairy.Tabs.Procurement
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
+            if (dpSession.SelectedItem.Value == "0")
+            { p.Session = null; }
+            else { p.Session = dpSession.SelectedItem.Text.ToString(); }
+           
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString();
 

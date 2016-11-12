@@ -207,51 +207,56 @@ namespace Dairy.Tabs.Procurement
 
             }
         }
-        //public void DeleteRoutebyrouteID(int rawid)
-        //{
+        public void DeleteRoutebyrouteID(int rawid)
+        {
 
-        //    Route route = new Route();
-        //    RouteData routeDate = new RouteData();
-        //    route.RouteID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
-        //    route.RouteCode = string.Empty;
-        //    route.RouteName = string.Empty;
-        //    route.ASOID = Convert.ToInt32(dpASOID.SelectedItem.Value);
-        //    route.Category = Convert.ToInt32(Category.SelectedItem.Value);
-        //    route.RouteDesc = string.Empty;
-        //    route.CreatedBy = App_code.GlobalInfo.Userid;
-        //    route.Discription = txtDesc.Text;
-        //    route.IsActive = false;
-        //    route.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
-        //    route.ModifiedBy = App_code.GlobalInfo.Userid;
-        //    route.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-        //    route.flag = "Delete";
-        //    int Result = 0;
-        //    Result = routeDate.InsertMilkCollectionRoute(route);
-        //    if (Result > 0)
-        //    {
+            //Model.Procurement p = new Model.Procurement();
+            //ProcurementData pd = new ProcurementData();
+            //p.RawMilkTarrifID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
+            //p.Category = Convert.ToInt32(Category.SelectedItem.Value);
+            //p.TSL = Convert.ToDecimal(txtTSL.Text);
+            //p.TSH = Convert.ToDecimal(txtTSH.Text);
+            //p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
+            //p.TS_INCR = 0;
+            //p.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToInt32(txtIncentive.Text);
+            //p.IN_FAT = string.IsNullOrEmpty(txtIN_FAT.Text) ? 0 : Convert.ToInt32(txtIN_FAT.Text);
+            //p.IN_SNF = string.IsNullOrEmpty(txtIN_SNF.Text) ? 0 : Convert.ToInt32(txtIN_SNF.Text);
+            //p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
+            //p.Bonus1 = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDecimal(txtBonus.Text);
+            //p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
+            //p.WEF_DATE = Convert.ToDateTime(txtWEF_DATE.Text);
+            //p.CreatedBy = App_code.GlobalInfo.Userid;
+            //p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+            //p.ModifiedBy = App_code.GlobalInfo.Userid;
+            //p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+            //p.flag = "Delete";
+            //int Result = 0;
+            //Result = pd.InsertRawMilkTarrif(p);
+            //if (Result > 0)
+            //{
+            //    //lbltital.Text = "Add Route";
+            //    divDanger.Visible = false;
+            //    divwarning.Visible = false;
+            //    divSusccess.Visible = true;
+            //    lblSuccess.Text = "Raw Milk Tarrif Record Deleted Succefully  Successfully";
+            //    ClearTextBox();
+            //    BindRawMilkTerrifList();
+            //    pnlError.Update();
+            //    btnAddRaw.Visible = true;
+            //    btnupdateRaw.Visible = false;
+            //    upMain.Update();
+            //    uprouteList.Update();
+            //}
+            //else
+            //{
+            //    divDanger.Visible = false;
+            //    divwarning.Visible = true;
+            //    divSusccess.Visible = false;
+            //    lblwarning.Text = "Please Contact to Site Admin";
+            //    pnlError.Update();
 
-        //        divDanger.Visible = false;
-        //        divwarning.Visible = false;
-        //        divSusccess.Visible = true;
-        //        lblSuccess.Text = "Delete Updated  Successfully";
-        //        ClearTextBox();
-        //        BindRouteList();
-        //        pnlError.Update();
-        //        btnAddRout.Visible = true;
-        //        btnupdateroute.Visible = false;
-        //        upMain.Update();
-        //        uprouteList.Update();
-        //    }
-        //    else
-        //    {
-        //        divDanger.Visible = false;
-        //        divwarning.Visible = true;
-        //        divSusccess.Visible = false;
-        //        lblwarning.Text = "Please Contact to Site Admin";
-        //        pnlError.Update();
-
-        //    }
-        //}
+            //}
+        }
         protected void btnupdateRaw_Click(object sender, EventArgs e)
         {
             decimal tsl = Convert.ToDecimal(txtTSL.Text);

@@ -547,5 +547,28 @@ namespace Dairy.Tabs.Procurement
            
             
         }
+
+        protected void txtCenterName_TextChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            DataSet DS = new DataSet();
+            DS = pd.GetAllCenterDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["CenterName"].ToString().Trim() == txtCenterName.Text.ToString().Trim())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Center Name Already exists')", true);
+                        txtCenterName.Text = string.Empty;
+                    }
+                }
+            }
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Procurement/AddMilkCollectionCenter.aspx");
+        }
     }
 }

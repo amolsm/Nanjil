@@ -925,7 +925,8 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@IFSCCode", p.IFSCCode));
                 paramCollection.Add(new DBParameter("@BranchName", p.BranchName));
                 paramCollection.Add(new DBParameter("@AccountNo", p.AccountNo));
-                paramCollection.Add(new DBParameter("@Tax", p.Tax));
+                //paramCollection.Add(new DBParameter("@Tax", p.Tax));
+                paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
                 paramCollection.Add(new DBParameter("@tdspercentage", p.tdspercentage));
                 paramCollection.Add(new DBParameter("@TransportType", p.TransportType));
                 paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
@@ -1164,6 +1165,7 @@ namespace DataAccess
                 //paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@FromDate", p.FomDate));
                 paramCollection.Add(new DBParameter("@ToDate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Session", p.Session));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));
                 paramCollection.Add(new DBParameter("@ModifiedDate", p.ModifiedDate));
                 DS = _DBHelper.ExecuteDataSet("Proc_SP_CalculateBill", paramCollection, CommandType.StoredProcedure);

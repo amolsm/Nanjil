@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VehicleMaster.aspx.cs" Inherits="Dairy.Tabs.Procurement.VehicleMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+  
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -19,6 +21,7 @@
              });
          }
     </script>
+    
     <section class="content-header">
           <h1>
              Vehicle Information
@@ -78,20 +81,10 @@
           <h3 class="box-title">Add Vehicle Info </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <%--<div class="col-lg-4">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtVehicleName" class="form-control" placeholder="Vehicle Name" runat="server" required ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div>--%> 
+          
+            <div class="row">
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                     Vehicle Model
@@ -102,19 +95,23 @@
                   </div><!-- /.form group -->
 
                      
-                       
+                         <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpVehicleType"
+        ErrorMessage="Vehicle Model is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                           
                       </div> 
                             </div>
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group"  style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                      Vehicle No.
                       </div>
-                       <asp:TextBox ID="txtVehicleNo" class="form-control" placeholder="Vehicle No" runat="server" required ToolTip="Vehicle No"></asp:TextBox>                        
+                       <asp:TextBox ID="txtVehicleNo" class="form-control" placeholder="Vehicle No" runat="server"  ToolTip="Vehicle No" OnTextChanged="txtVehicleNo_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtVehicleNo" ForeColor="Red"
+    ErrorMessage="Please Enter Vehicle Number "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -122,37 +119,42 @@
                           
                       </div> 
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                       Vehicle Owner Name
                       </div>
-                       <asp:TextBox ID="txtOwnerName" class="form-control" placeholder="Vehicle Owner Name" runat="server" required ToolTip="Vehicle Owner Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtOwnerName" class="form-control" placeholder="Vehicle Owner Name" runat="server"  ToolTip="Vehicle Owner Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
                   
+</div>
 
-
-                        
+           <div class="row">             
              <div class="col-lg-4">
-                  <div class="form-group">
-                    <div class="input-group">
+                  <div class="form-group" style="margin-bottom:1px">
+                    <div class="input-group" >
                       <div class="input-group-addon">
                     Owner Email Id
                       </div>
-                       <asp:TextBox ID="txtOwnerEmail" class="form-control" placeholder="Owner Email" runat="server" required ToolTip="Owner Email"></asp:TextBox>                        
+                       <asp:TextBox ID="txtOwnerEmail" class="form-control" placeholder="Owner Email" runat="server" ToolTip="Owner Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
-                  </div><!-- /.form group -->                   
+                       <asp:RegularExpressionValidator ID="valRegExEmail" runat="server" ControlToValidate="txtOwnerEmail"
+                           ForeColor="Red"  ErrorMessage="Please give a valid email address" ValidationGroup="Save" ValidationExpression="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z\.][a-zA-Z]{1,3}$"></asp:RegularExpressionValidator> 
+                                       </div><!-- /.form group -->                   
                   </div>  
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         Owner Mobile no.
                       </div>
-                       <asp:TextBox ID="txtOwnerMobileNo" class="form-control" placeholder="Owner Mobile No" runat="server" required ToolTip="Owner Mobile No"></asp:TextBox>                        
+                       <asp:TextBox ID="txtOwnerMobileNo" class="form-control" placeholder="Owner Mobile No"  runat="server" type="number" ToolTip="Owner Mobile No"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                       <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+      ControlToValidate="txtOwnerMobileNo" ErrorMessage="Please enter 10 digit mobile no." ForeColor="Red"
+    ValidationExpression="[0-9]{10}" ></asp:RegularExpressionValidator>
                   </div><!-- /.form group -->                   
                   </div>  
 
@@ -169,23 +171,28 @@
 
            
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                      Driver Name
                       </div>
-                       <asp:TextBox ID="txtDriverName" class="form-control" placeholder="Driver Name" runat="server" required ToolTip="Driver Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDriverName" class="form-control" placeholder="Driver Name" runat="server"  ToolTip="Driver Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
+               </div>
+            <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        Driver Mobile number
                       </div>
-                       <asp:TextBox ID="txtDriverMobile" class="form-control" placeholder="Driver Mobile No" runat="server" required ToolTip="Driver Mobile No" type="number" step="10-11"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDriverMobile" class="form-control" placeholder="Driver Mobile No" runat="server"  ToolTip="Driver Mobile No" type="number" step="10-11"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+      ControlToValidate="txtDriverMobile" ErrorMessage="Please enter 10 digit mobile no." ForeColor="Red"
+    ValidationExpression="[0-9]{10}" ></asp:RegularExpressionValidator>
                   </div><!-- /.form group -->                   
                   </div>  
 
@@ -221,13 +228,15 @@
                      
                        
                       </div> 
+                </div>
+            <div class="row">
                 <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                     Branch Name
                       </div>
-                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server" required ToolTip="Branch Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBranchName" class="form-control" placeholder="Branch Name" runat="server"  ToolTip="Branch Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -237,11 +246,11 @@
                       <div class="input-group-addon">
                        A/C No.
                       </div>
-                       <asp:TextBox ID="txtAccNo" class="form-control" placeholder="Account No" runat="server" required ToolTip="Account No"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAccNo" class="form-control" placeholder="Account No" runat="server" Type="number"  ToolTip="Account No"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
-             <div class="col-lg-4">
+         <%--    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -250,7 +259,23 @@
                        <asp:TextBox ID="txtTax" class="form-control" placeholder="Tax In Percentage" runat="server" required ToolTip="Tax In Percentage" Type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
-                  </div>  
+                  </div>  --%>
+
+                 <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Route
+                      </div>
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"> 
+                       </asp:DropDownList>           
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
+                </div>
+                <div class="row">
                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -279,7 +304,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                     <asp:TextBox ID="txtTDSPercent" class="form-control" placeholder="TDS In Percentage" runat="server" required ToolTip="TDS In Percentage" type="number" step="any"></asp:TextBox>                        
+                     <asp:TextBox ID="txtTDSPercent" class="form-control" placeholder="TDS In Percentage" runat="server"  ToolTip="TDS In Percentage" type="number" step="any"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -310,8 +335,10 @@
                           
                       </div>   
             
-        
-                   <div class="col-lg-4">
+        </div>
+            <div class="row">
+             
+                   <div class="col-lg-3 pull-right">
                   <div class="form-group">
                     <div class="input-group">
                       
@@ -319,6 +346,8 @@
                       
                               <asp:Button ID="btnAddVehicle" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddVehicle_Click" />     
                         <asp:Button ID="btnupdateVehicle" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateVehicle_Click" />           
+                   &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                      
+
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -327,7 +356,7 @@
                        
                           
                       </div>            
-            
+            </div>
         </div><!-- /.box-body -->
 
       </div>
@@ -451,4 +480,6 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
+     
+   
 </asp:Content>
