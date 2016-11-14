@@ -242,7 +242,11 @@ namespace Dairy.Tabs.Administration
             Response.Redirect("~/Tabs/Administration/AddBank.aspx");
         }
 
-        protected void txtBankName_TextChanged(object sender, EventArgs e)
+       
+        
+         
+
+        protected void txtIfsc_TextChanged(object sender, EventArgs e)
         {
             productdata = new ProductData();
             DataSet DS = new DataSet();
@@ -251,14 +255,14 @@ namespace Dairy.Tabs.Administration
             {
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
-                    if (row["BankName"].ToString().Trim() == txtBankName.Text.ToString().Trim())
+                    if (row["IFSCcode"].ToString().Trim() == txtIfsc.Text.ToString().Trim())
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bank Name Already exists')", true);
-                        txtBankName.Text = string.Empty;
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('IFSC Code Already exists')", true);
+                        txtIfsc.Text = string.Empty;
                     }
 
                 }
             }
-        }
+            }
     }
 }

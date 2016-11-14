@@ -275,7 +275,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtWEF_DATE" class="form-control" placeholder="WEF_DATE" runat="server" type="date" required ToolTip="WEF_DATE"></asp:TextBox>                        
+                      <asp:TextBox ID="txtWEF_DATE" class="form-control" placeholder="WEF_DATE" runat="server" type="date"  ToolTip="WEF_DATE"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->

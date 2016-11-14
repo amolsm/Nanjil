@@ -78,23 +78,23 @@
           <h3 class="box-title">Vehicle Tariff </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <div class="col-lg-4">
+          <%--  <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSrNo" class="form-control" placeholder="TariffID" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtSrNo" class="form-control" placeholder="TariffID" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
-                      </div> 
+                      </div> --%>
              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Vehicle Model
                       </div>
                         <asp:DropDownList ID="dpVehicleType" class="form-control" DataTextField="VehicleName" DataValueField="VahicleID" ToolTip="Select Vehicle Model" runat="server" selected> 
                        </asp:DropDownList>                       
@@ -106,26 +106,16 @@
                        
                           
                       </div> 
-             <div class="col-lg-4">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" required ToolTip="Bata"></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->                   
-                  </div>  
-                  
+           
 
 
                         <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                      <span style="color:red">&nbsp;*</span>
+                 KM Low
                       </div>        
-                     <asp:TextBox ID="txtLess100" class="form-control" placeholder="KM<100" runat="server" required ToolTip="KM<100"></asp:TextBox>                        
+                     <asp:TextBox ID="txtKMLow" class="form-control" placeholder="Low KM" runat="server"  ToolTip="Low KM"></asp:TextBox>                        
 
                   </div><!-- /.form group -->
 
@@ -138,9 +128,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
+                    KM High
                       </div>
-                       <asp:TextBox ID="txt100To200" class="form-control" placeholder="100To200" runat="server" required ToolTip="100To200"></asp:TextBox>                        
+                       <asp:TextBox ID="txtKMHigh" class="form-control" placeholder="High KM" runat="server"  ToolTip="High KM"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -150,9 +140,36 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
+                     Amount
+                      </div>
+                      <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" runat="server"  ToolTip="Amount"></asp:TextBox>                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+            
+              <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                  Bata
+                      </div>
+                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server"  ToolTip="Bata"></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->                   
+                  </div>  
+                     
+      <%--      <div class="col-lg-4">B
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txt201To250" class="form-control" placeholder="201To250" runat="server" required ToolTip="201To250"></asp:TextBox>                        
+                      <asp:TextBox ID="txt251To300" class="form-control" placeholder="251To300" runat="server"  ToolTip="251To300"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -167,7 +184,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txt251To300" class="form-control" placeholder="251To300" runat="server" required ToolTip="251To300"></asp:TextBox>                        
+                      <asp:TextBox ID="txtKMGreater300" class="form-control" placeholder="KM>300" runat="server"  ToolTip="KM>300"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -175,27 +192,12 @@
                      
                        
                           
-                      </div>     
+                      </div>--%>
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:TextBox ID="txtKMGreater300" class="form-control" placeholder="KM>300" runat="server" required ToolTip="KM>300"></asp:TextBox>                        
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>
-            <div class="col-lg-4">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
+                    Description
                       </div>
                       <asp:TextBox ID="txtDesc" class="form-control" placeholder="Description" runat="server" ToolTip="Description" TextMode="MultiLine"></asp:TextBox>                        
                          
@@ -214,6 +216,8 @@
                       
                               <asp:Button ID="btnAddVeh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddVeh_Click" />     
                         <asp:Button ID="btnupdateVeh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateVeh_Click" />           
+                     &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                
+
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -261,14 +265,14 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Tariff ID</th>
+                         
                         <th>Vehicle Model</th>
+                    
+                        <th>KMLow</th>
+                        <th>KMHigh</th>
                         <th>Bata</th>
-                        <th>KM<100</th>
-                        <th>101To200</th>
-                        <th>201To250</th>
-                          <th>251To300</th>
-                          <th>KM>300</th>
+                          <th>Amount</th>
+                          <th>Discription</th>
                            <th>Edit</th>
                           <th>Delete</th>
                       </tr>
@@ -279,14 +283,16 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("SrNo")%></td>
+                      <%--   <td><%# Eval("SrNo")%></td>--%>
                       <td><%# Eval("VehicleType")%></td>
+                          <td><%# Eval("KMLow")%></td>
+                        <td><%# Eval("KMHigh") %></td>
                       <td><%# Eval("Bata")%></td>
-                      <td><%# Eval("KMLessThan100")%></td>
-                        <td><%# Eval("[101To200]") %></td>
-                        <td><%# Eval("[201To250]") %></td>
-                        <td><%# Eval("[251To300]") %></td>
-                      <td><%# Eval("KMGreaterThan300") %></td>
+                          <td><%# Eval("Amount")%></td>
+                    
+                        <td><%# Eval("Discription") %></td>
+                      <%--  <td><%# Eval("[251To300]") %></td>
+                      <td><%# Eval("KMGreaterThan300") %></td>--%>
                          <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
@@ -306,14 +312,14 @@
 
                     <tfoot>
                       <tr>
-                          <th>Tariff ID</th>
-                          <th>Vehicle Model</th>
+                         
+                         <th>Vehicle Model</th>
+                       
+                        <th>KMLow</th>
+                        <th>KMHigh</th>
                         <th>Bata</th>
-                        <th>KM<100</th>
-                        <th>101To200</th>
-                        <th>201To250</th>
-                          <th>251To300</th>
-                          <th>KM>300</th>
+                          <th>Amount</th>
+                          <th>Discription</th>
                            <th>Edit</th>
                           <th>Delete</th>
                       </tr>

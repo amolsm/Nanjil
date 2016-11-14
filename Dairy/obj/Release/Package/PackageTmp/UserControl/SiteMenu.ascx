@@ -46,7 +46,7 @@
                    <li><a href="/Tabs/Procurement/ConsolidatePaymentSummary.aspx"><i class="fa fa-circle-o"></i>Consolidate Payment Summary</a></li>
              
                     <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Milk Collection Center Profile</a></li>
-
+   <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Incentive Tarrif</a></li>
               </ul>
             </li>
               <li class="treeview">
@@ -290,7 +290,7 @@
                 
                    <li><a href="/Tabs/Procurement/PaymentSummary.aspx"><i class="fa fa-circle-o"></i>Payment Summary</a></li>
                   <li><a href="/Tabs/Procurement/MilkCollectionTransport.aspx"><i class="fa fa-circle-o"></i>Vehicle IN-Out Entry</a></li>
-                 <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Incentive Tarrif</a></li>
+              
                   <li><a href="/Tabs/Procurement/RawMilkStockRegister.aspx"><i class="fa fa-circle-o"></i>MilkReceiving/Disposing Details</a></li>
               </ul>
             </li>

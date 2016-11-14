@@ -80,9 +80,9 @@ namespace Model
         private string _SrNo;
         private string _Vehicle;
         private double _Bata;
-        private double _KMLessThan100;
-        private double _101To200;
-        private double _201To250;
+        private double _KMLow;
+        private double _KMHigh;
+        private double _Amount;
         private double _251To300;
         private double _KMGreaterThan300;
         private DateTime _FomDate;
@@ -668,40 +668,40 @@ namespace Model
                 _Vehicle = value;
             }
         }
-        public double KMLessThan100
+        public double KMLow
         {
             get
             {
-                return _KMLessThan100;
+                return _KMLow;
             }
             set
             {
-                _KMLessThan100 = value;
+                _KMLow = value;
             }
         }
-        public double V101To200
+        public double KMHigh
         {
             get
             {
-                return _101To200;
+                return _KMHigh;
             }
             set
             {
-                _101To200 = value;
+                _KMHigh = value;
             }
         }
         public double V201To250
         {
             get
             {
-                return _201To250;
+                return _Amount;
             }
             set
             {
-                _201To250 = value;
+                _Amount = value;
             }
         }
-        public double V251To300
+        public double Amount
         {
             get
             {
