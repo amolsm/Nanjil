@@ -2703,6 +2703,12 @@
     <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Tabs\Sales\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tabs\Despatch\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bussiness\Bussiness.csproj">

@@ -54,3 +54,5 @@ D:\NanjilCode\Dairy\obj\Release\RdlCompile.cache
 D:\NanjilCode\Dairy\obj\Release\RdlCompile.compiled
 D:\NanjilCode\Dairy\obj\Release\Dairy.dll
 D:\NanjilCode\Dairy\obj\Release\Dairy.pdb
+D:\NanjilCode\Nanjil\Dairy\obj\Release\RdlCompile.cache
+D:\NanjilCode\Nanjil\Dairy\obj\Release\RdlCompile.compiled

@@ -52,5 +52,7 @@ D:\NanjilCode\Nanjil\Dairy\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
 D:\NanjilCode\Nanjil\Dairy\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
 D:\NanjilCode\Nanjil\Dairy\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
 D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Nanjil\Dairy\obj\Debug\RdlCompile.cache
+D:\NanjilCode\Nanjil\Dairy\obj\Debug\RdlCompile.compiled
 D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.dll
 D:\NanjilCode\Nanjil\Dairy\obj\Debug\Dairy.pdb
