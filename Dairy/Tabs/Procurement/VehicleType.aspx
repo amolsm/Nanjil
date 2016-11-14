@@ -67,12 +67,14 @@
                       <div class="input-group-addon">
                    VehicleType
                       </div>
-                       <asp:TextBox ID="txtVehicleType" class="form-control" ToolTip="Enter Vehicle Model"  placeholder="Vehicle Model" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtVehicleType" class="form-control" ToolTip="Enter Vehicle Model"  placeholder="Vehicle Model" runat="server"  OnTextChanged="txtVehicleType_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                         <asp:RequiredFieldValidator  ID="RequiredFieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtVehicleType" ForeColor="Red"
+    ErrorMessage="Please Enter Vehicle Model "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
-                     
+                    
                        
                           
                       </div> 
@@ -93,7 +95,11 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpStatus"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
+                
                          </div><!-- /.form group -->
 
              <div class="col-lg-3">

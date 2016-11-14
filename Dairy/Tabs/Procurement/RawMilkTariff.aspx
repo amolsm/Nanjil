@@ -88,8 +88,10 @@
           <h3 class="box-title">Raw Milk Tarrif </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+             <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+               
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -108,6 +110,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                          <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="Category"
+        ErrorMessage="Category is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0" Display="None"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -120,7 +125,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                  <asp:TextBox ID="txtTSL" class="form-control" placeholder="TSL" runat="server" type="number" step="any" ></asp:TextBox>                        
+                  <asp:TextBox ID="txtTSL" class="form-control" placeholder="TSL" runat="server" type="number" step="any" ToolTip="TSL"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -136,7 +141,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:TextBox ID="txtTSH" class="form-control" placeholder="TSH" runat="server" type="number" step="any" ></asp:TextBox>                        
+                    <asp:TextBox ID="txtTSH" class="form-control" placeholder="TSH" runat="server" type="number" step="any" ToolTip="TSH" ></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -145,7 +150,7 @@
                        
                           
                       </div>  
-          
+          </div>
              
             <div class="col-lg-4">
                   <div class="form-group">
@@ -153,7 +158,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server" type="number" step="any" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtTSRate" class="form-control" placeholder="TS Rate" runat="server" type="number" step="any" ToolTip="TS Rate" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 

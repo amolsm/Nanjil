@@ -349,7 +349,7 @@
                       
                               <asp:Button ID="btnAddMilkCollection" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddMilkCollection_Click"   Text="Add" ValidationGroup="Save" />     
                         <asp:Button ID="btnupdateMilkCollection" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnupdateMilkCollection_Click"  Text="Update" ValidationGroup="Save" />     
-                         &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New" ValidationGroup="Save" OnClick="btnAddNew_Click" />                      
+                         &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                      
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

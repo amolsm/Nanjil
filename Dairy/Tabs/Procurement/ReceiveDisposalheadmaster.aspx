@@ -66,9 +66,11 @@
                       <div class="input-group-addon">
                  Particulars
                       </div>
-                       <asp:TextBox ID="txtParticular" class="form-control" ToolTip="Enter Particular"  placeholder="Particular" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtParticular" class="form-control" ToolTip="Enter Particular"  placeholder="Particular" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="FieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtParticular" ForeColor="Red"
+    ErrorMessage="Please Enter Particular "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -92,6 +94,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                         <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpStatus"
+        ErrorMessage="Purpose is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
                          </div><!-- /.form group -->
 
@@ -110,6 +115,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="dpIsActive"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
                          </div><!-- /.form group -->
 
@@ -181,8 +189,9 @@
                          
                           <th>Particular</th>
                         <th>Purpose</th>
+                               <th>IsActive</th>
                            <th>Edit</th>
-                       <%--   <th>Delete</th>--%>
+                     
                       </tr>
                     </thead>
                     <tbody>
@@ -193,6 +202,7 @@
                         
                          <td><%# Eval("Particular")%></td>
                          <td><%# Eval("Purpose")%></td>
+                           <td><%# Eval("IsActive")%></td>
                      
                          <td>
 
@@ -217,6 +227,7 @@
                          
                           <th>Particular</th>
                         <th>Purpose</th>
+                           <th>IsActive</th>
                            <th>Edit</th>
                         <%--  <th>Delete</th>--%>
                       </tr>
