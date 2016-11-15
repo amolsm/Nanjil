@@ -82,7 +82,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-bank"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtBankName" class="form-control" placeholder="Bank Name" runat="server"  ToolTip="Enter Bank Name" OnTextChanged="txtBankName_TextChanged" AutoPostBack="true"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBankName" class="form-control" placeholder="Bank Name" runat="server"  ToolTip="Enter Bank Name" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                         <asp:RequiredFieldValidator  ID="FieldValidator4" Display="Dynamic" 
     ValidationGroup="Save" runat="server" ControlToValidate="txtBankName" ForeColor="Red"
@@ -141,7 +141,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-key"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIfsc" class="form-control" placeholder="IFSC code"  runat="server"  ToolTip="Enter IFSC code"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIfsc" class="form-control" placeholder="IFSC code"  runat="server"  ToolTip="Enter IFSC code" OnTextChanged="txtIfsc_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                         <asp:RequiredFieldValidator  ID="FieldValidator3" Display="Dynamic" 
     ValidationGroup="Save" runat="server" ControlToValidate="txtIfsc" ForeColor="Red"

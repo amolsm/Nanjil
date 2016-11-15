@@ -840,14 +840,14 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@VehicleID", p.VehicleID));
-                paramCollection.Add(new DBParameter("@SrNo", p.SrNo));
+                //paramCollection.Add(new DBParameter("@SrNo", p.SrNo));
                 paramCollection.Add(new DBParameter("@Vehicle", p.VehicleType));
                 paramCollection.Add(new DBParameter("@Bata", p.Bata));
-                paramCollection.Add(new DBParameter("@KMLessThan100", p.KMLessThan100));
-                paramCollection.Add(new DBParameter("@V101To200", p.V101To200));
-                paramCollection.Add(new DBParameter("@V201To250", p.V201To250));
-                paramCollection.Add(new DBParameter("@V251To300", p.V251To300));
-                paramCollection.Add(new DBParameter("@KMGreaterThan300", p.KMGreaterThan300));
+                paramCollection.Add(new DBParameter("@KMLow", p.KMLow));
+                paramCollection.Add(new DBParameter("@KMHigh", p.KMHigh));
+                paramCollection.Add(new DBParameter("@Amount", p.Amount));
+                //paramCollection.Add(new DBParameter("@V251To300", p.V251To300));
+                //paramCollection.Add(new DBParameter("@KMGreaterThan300", p.KMGreaterThan300));
                 paramCollection.Add(new DBParameter("@Description", p.Discription));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));

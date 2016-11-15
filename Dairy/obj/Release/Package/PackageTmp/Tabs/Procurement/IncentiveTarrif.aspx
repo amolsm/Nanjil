@@ -78,56 +78,69 @@
           <h3 class="box-title"> Incentive Tariff</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <div class="col-lg-3">
-                  <div class="form-group">
+            <div class="row">
+            <div class="col-lg-4" >
+                  <div class="form-group"style="margin-bottom:10px">
                     <div class="input-group">
                       <div class="input-group-addon">
                      Quantity Category
                       </div>
-                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator4" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtQCat" ForeColor="Red"
+    ErrorMessage="Please Enter Quantity Category  "></asp:RequiredFieldValidator>
                   </div><!-- /.form group --> 
                           
                       </div> 
-             <div class="col-lg-3">
-                  <div class="form-group">
+             <div class="col-lg-4">
+                  <div class="form-group" style="margin-bottom:10px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         Quantity Low
                       </div>
-                         <asp:TextBox ID="txtQLow" class="form-control" placeholder="Quantity Low" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                         <asp:TextBox ID="txtQLow" class="form-control" placeholder="Quantity Low" runat="server"  type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator  ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtQLow" ForeColor="Red"
+    ErrorMessage="Please Enter Quantity Low   "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div> 
-             <div class="col-lg-3">
-                  <div class="form-group">
+             <div class="col-lg-4">
+                  <div class="form-group" style="margin-bottom:10px">
                     <div class="input-group">
                       <div class="input-group-addon">
                       Quantity High
                       </div>
-                       <asp:TextBox ID="txtQHigh" class="form-control" placeholder="Quantity High" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                       <asp:TextBox ID="txtQHigh" class="form-control" placeholder="Quantity High" runat="server"  type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator  ID="RequiredFieldValidator2" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtQHigh" ForeColor="Red"
+    ErrorMessage="Please Enter Quantity High   "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
-              <div class="col-lg-3">
-                  <div class="form-group">
+                </div>
+             <div class="row">
+              <div class="col-lg-4">
+                  <div class="form-group" style="margin-bottom:10px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         Quantity Incentive
                       </div>
-                       <asp:TextBox ID="txtQIncentive" class="form-control" placeholder="Quantity Incentive" runat="server" required type="number" step="any" ></asp:TextBox>                                             
+                       <asp:TextBox ID="txtQIncentive" class="form-control" placeholder="Quantity Incentive" runat="server"  type="number" step="any" ></asp:TextBox>                                             
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator3" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtQIncentive" ForeColor="Red"
+    ErrorMessage="Please Enter Quantity Incentive Amount   "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
 
-               <div class="col-lg-3">
-                  <div class="form-group">
+               <div class="col-lg-4">
+                  <div class="form-group" style="margin-bottom:10px">
                     <div class="input-group">
                       <div class="input-group-addon">
                  Status
@@ -141,13 +154,18 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpStatus"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
                          </div><!-- /.form group -->
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                           <asp:Button ID="btnAddTariff" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddTariff_Click" />     
                         <asp:Button ID="btnupdateTariff" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateTariff_Click" />           
+                    &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                      
+
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -156,7 +174,7 @@
                        
                           
                       </div>            
-            
+            </div>
         </div><!-- /.box-body -->
 
       </div>
