@@ -24,16 +24,19 @@ namespace Dairy.Tabs.PurchaseM
                 DS = purchaseData.GetIndentList(flag);
                 rpIndentList.DataSource = DS;
                 rpIndentList.DataBind();
-                lblBoxHeader.Text = "New Indent List";
+                //.Text = DateTime.Now.ToString();
                 upMain.Update();
             }
+            //lblBoxHeader.Text = "xx";
         }
 
         protected void TimerCount_Tick(object sender, EventArgs e)
         {
-            int cnt = Convert.ToInt32(lblNewIndentCount.Text);
-            cnt++;
-            lblNewIndentCount.Text = cnt.ToString();
+            DS = new DataSet();
+            DS = BindCommanData.BindCommanDropDwon("count(*) as id", "count(*) as Name", "Prchs_Indent", "Delivered = 0");
+            //int cnt = Convert.ToInt32(lblNewIndentCount.Text);
+            //cnt++;
+            lblNewIndentCount.Text = DS.Tables[0].Rows[0]["Name"].ToString();
            
         }
 

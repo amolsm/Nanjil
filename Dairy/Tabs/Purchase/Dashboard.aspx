@@ -7,7 +7,7 @@
         <section class="content-header">
           <h1>
             Purchase
-            <small>Dashboard</small>
+            <small>Dashboard</small> <asp:Label ID="lblabc" runat="server"></asp:Label>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Purchase</a></li>
@@ -19,12 +19,12 @@
          
  <!-- Small boxes (Stat box) -->
 
-          <asp:Timer ID="TimerCount" runat="server" Interval="125000" OnTick="TimerCount_Tick">
+          <asp:Timer ID="TimerCount" runat="server" Interval="5000" OnTick="TimerCount_Tick">
           </asp:Timer>
     
-          <asp:UpdatePanel ID="upCountRow" runat="server" UpdateMode="Conditional" 
-            ViewStateMode="Enabled">
-            <ContentTemplate>
+          <asp:UpdatePanel ID="upCountRow" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true" ViewStateMode="Enabled">
+             
+              <ContentTemplate>
 
           <div class="row">
 
@@ -85,15 +85,16 @@
               </div>
             </div><!-- ./col -->
           </div><!-- /.row -->
-              
-                <Triggers>
+                  <triggers>
                 <asp:AsyncPostBackTrigger controlid="TimerCount" eventname="Tick" />
-            </Triggers>
-            </ContentTemplate>
+            </triggers>
+             </ContentTemplate>
+
+              
           </asp:UpdatePanel>      
                       
           <div class="box ">
-               <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional">
+               <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional" >
                       <ContentTemplate>
             <div class="box-header with-border">
                <h4> <asp:Label ID="lblBoxHeader" runat="server"></asp:Label></h4>
@@ -101,7 +102,7 @@
             <div class="box-body">
                 
                            <asp:Panel runat="server" ID="pnlIndentList" Visible="true">
-
+                               
                                 <div class="col-md-12" runat="server" id="divTable">
                           <table id="example1" class="table table-bordered table-striped">
           <asp:Repeater ID="rpIndentList" runat="server" OnItemCommand="rpIndentList_ItemCommand">

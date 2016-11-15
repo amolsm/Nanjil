@@ -13,6 +13,15 @@ namespace Dairy.Tabs.Purchase {
     public partial class Dashboard {
         
         /// <summary>
+        /// lblabc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblabc;
+        
+        /// <summary>
         /// TimerCount control.
         /// </summary>
         /// <remarks>
