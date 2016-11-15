@@ -292,6 +292,7 @@
                   <li><a href="/Tabs/Procurement/MilkCollectionTransport.aspx"><i class="fa fa-circle-o"></i>Vehicle IN-Out Entry</a></li>
               
                   <li><a href="/Tabs/Procurement/RawMilkStockRegister.aspx"><i class="fa fa-circle-o"></i>MilkReceiving/Disposing Details</a></li>
+                   <li><a href="/Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx"><i class="fa fa-circle-o"></i>Supplier Wise Raw Milk Qty and Qlty. Report</a></li>
               </ul>
             </li>
             

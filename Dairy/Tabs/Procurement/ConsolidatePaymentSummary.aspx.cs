@@ -29,14 +29,7 @@ namespace Dairy.Tabs.Procurement
                 dpCenter.DataBind();
                 dpCenter.Items.Insert(0, new ListItem("--All Center  --", "0"));
             }
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpRoute.DataSource = DS;
-                dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
-
-            }
+           
         }
 
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -47,7 +40,7 @@ namespace Dairy.Tabs.Procurement
             p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
-            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+          //  p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             DataSet DS = new DataSet();
             DS = pd.ConsolidatePayementSummary(p);
             string result = string.Empty;
@@ -55,17 +48,22 @@ namespace Dairy.Tabs.Procurement
             {
                 try
                 {
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["SupplierID"] };
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["RouteID"] };
                 }
                 catch (Exception) { }
                 try
                 {
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["SupplierID"] };
+                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["RouteID"] };
                 }
                 catch (Exception) { }
                 try
                 {
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["SupplierID"] };
+                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["RouteID"] };
+                }
+                catch (Exception) { }
+                try
+                {
+                    DS.Tables[4].PrimaryKey = new[] { DS.Tables[4].Columns["RouteID"] };
                 }
                 catch (Exception) { }
                 try
@@ -76,6 +74,11 @@ namespace Dairy.Tabs.Procurement
                 try
                 {
                     DS.Tables[0].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
+                }
+                catch (Exception) { }
+                try
+                {
+                    DS.Tables[0].Merge(DS.Tables[4], false, MissingSchemaAction.Add);
                 }
                 catch (Exception) { }
                 try
@@ -106,7 +109,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</th>");
 
                     sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
-                    sb.Append("<u>Payment Summary</u> <br/>");
+                    sb.Append("<u>Consolidate Payment Summary</u> <br/>");
                     sb.Append("</th>");
 
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -135,7 +138,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(dpCenter.SelectedItem.Text.ToString());
                     sb.Append("</td>");
                     sb.Append("<td colspan='2' >");
-                    sb.Append(dpRoute.SelectedItem.Text.ToString());
+                    sb.Append("");
                     sb.Append("</td>");
                     
                     sb.Append("<td colspan='2' style='text-align:left'>");
@@ -147,7 +150,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td colspan='2' style='text-align:center'>");
-                    sb.Append("<b>Supplier</b>");
+                    sb.Append("<b>Route</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     sb.Append("<b>MilkInLtr</b>");
@@ -198,10 +201,10 @@ namespace Dairy.Tabs.Procurement
                             if (row["Category"].ToString() == rows["Category"].ToString())
                             {
                                 sb.Append("<td>");
-                                sb.Append(row["SupplierCode"].ToString());
+                                sb.Append(row["RouteCode"].ToString());
                                 sb.Append("</td>");
                                 sb.Append("<td>");
-                                sb.Append(row["SupplierName"].ToString());
+                                sb.Append(row["RouteName"].ToString());
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
                                 try
@@ -241,29 +244,26 @@ namespace Dairy.Tabs.Procurement
                                 totalrd += rd;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
-                                if (row["LoanType"].ToString() == "Can")
-                                {
+                              
                                     try
                                     {
-                                        canloan = Convert.ToDouble(row["LoanPaid"]);
+                                        canloan = Convert.ToDouble(row["CanLoanPaid"]);
                                     }
                                     catch { canloan = 0.00; }
                                     sb.Append(Convert.ToDecimal(canloan).ToString("0.00"));
-                                }
-                                else { canloan = 0.00; sb.Append(Convert.ToDecimal(canloan).ToString("0.00")); }
+                               
+                                
                                 totalcanloan += canloan;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
-                                if (row["LoanType"].ToString() == "Cash")
-                                {
+                               
                                     try
                                     {
-                                        casloan = Convert.ToDouble(row["LoanPaid"]);
+                                        casloan = Convert.ToDouble(row["CashLoanPaid"]);
                                     }
                                     catch { casloan = 0.00; }
                                     sb.Append(Convert.ToDecimal(casloan).ToString("0.00"));
-                                }
-                                else { casloan = 0.00; sb.Append(Convert.ToDecimal(casloan).ToString("0.00")); }
+                               
                                 totalcasloan += casloan;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
@@ -335,12 +335,12 @@ namespace Dairy.Tabs.Procurement
 
 protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dpRoute.ClearSelection();
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 and CenterID=" + dpCenter.SelectedItem.Value);
+            //dpRoute.ClearSelection();
+            //DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 and CenterID=" + dpCenter.SelectedItem.Value);
 
-            dpRoute.DataSource = DS;
-            dpRoute.DataBind();
-            dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+            //dpRoute.DataSource = DS;
+            //dpRoute.DataBind();
+            //dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
         }
     }
     }

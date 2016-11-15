@@ -97,7 +97,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
                 paramCollection.Add(new DBParameter("@todate", p.ToDate));
                 paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
-                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
+                //paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
                 DS = _DBHelper.ExecuteDataSet("Proc_sp_ConsolidatePayementSummary", paramCollection, CommandType.StoredProcedure);
             }
             catch { }
