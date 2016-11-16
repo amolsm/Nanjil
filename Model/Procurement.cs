@@ -1503,5 +1503,9 @@ namespace Model
         public string MorningInCan { get; set; }
         public string MorningOutCan { get; set; }
         public string Remarks { get; set; }
+        public double canloan { get; set; }
+        public double casloan { get; set; }
+        public double bankloan { get; set; }
+        public double netamt { get; set; }
     }
 }

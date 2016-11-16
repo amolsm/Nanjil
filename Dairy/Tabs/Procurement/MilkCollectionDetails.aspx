@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MilkCollectionDetails.aspx.cs" Inherits="Dairy.Tabs.Procurement.MilkCollectionDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MilkCollectionDetails.aspx.cs" Inherits="Dairy.Tabs.Procurement.MilkCollectionDetails"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
 </asp:Content>
@@ -557,6 +557,14 @@
                 // do something after content has been 
                 
             });
-        });
+          });
+
+          $(document).ready(function () {
+              $('#example1').dataTable({
+                  "bPaginate": false,
+                  "paging": false
+
+              });
+          });
     </script>
 </asp:Content>

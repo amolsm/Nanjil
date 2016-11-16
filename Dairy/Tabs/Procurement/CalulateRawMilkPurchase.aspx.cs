@@ -261,45 +261,45 @@ namespace Dairy.Tabs.Procurement
                     try { milkinltr = Convert.ToDouble(row["MilkInLtr"]); } catch { milkinltr = 0.00; }
 
                     totalmilkinltr += milkinltr;
-                    sb.Append(Convert.ToDecimal(row["MilkInLtr"]).ToString("0.0"));
+                    sb.Append(Convert.ToDecimal(milkinltr).ToString("0.0"));
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
                     try { clr = Convert.ToInt32(row["CLRReading"]); } catch { clr = 0; }
 
                     totalclr += clr;
-                    sb.Append(Convert.ToDecimal(row["CLRReading"]).ToString("0.0"));
+                    sb.Append(Convert.ToDecimal(clr).ToString("0.0"));
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
                     try { fatinper = Convert.ToDouble(row["FATPercentage"]); } catch { fatinper = 0.00; }
 
                     totalfatinper += fatinper;
-                    sb.Append(Convert.ToDecimal(row["FATPercentage"]).ToString("0.0"));
+                    sb.Append(Convert.ToDecimal(fatinper).ToString("0.0"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { snf = Convert.ToDouble(row["SNFPercentage"]); } catch { snf = 0.00; }
 
                     totalsnf += snf;
-                    sb.Append(Convert.ToDecimal(row["SNFPercentage"]).ToString("0.0"));
+                    sb.Append(Convert.ToDecimal(snf).ToString("0.0"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { ts = Convert.ToDouble(row["TSPercentage"]); } catch { ts = 0.00; }
 
                     totalts += ts;
-                    sb.Append(Convert.ToDecimal(row["TSPercentage"]).ToString("0.0"));
+                    sb.Append(Convert.ToDecimal(ts).ToString("0.0"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { rpl = Convert.ToDouble(row["RPL"]); } catch { rpl = 0.00; }
 
                     totalrpl += rpl;
-                    sb.Append(Convert.ToDecimal(row["RPL"]).ToString("0.00"));
+                    sb.Append(Convert.ToDecimal(rpl).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { amt = Convert.ToDouble(row["Amount"]); } catch { amt = 0.00; }
 
                     totalamt += amt;
-                    sb.Append(Convert.ToDecimal(row["Amount"]).ToString("0.00"));
+                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("</tr>");
                 }

@@ -148,6 +148,24 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.Button btnShow;
         
         /// <summary>
+        /// btnAddTransaction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddTransaction;
+        
+        /// <summary>
+        /// btnAddNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddNew;
+        
+        /// <summary>
         /// uprouteList control.
         /// </summary>
         /// <remarks>
@@ -166,13 +184,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.Repeater rpRouteList;
         
         /// <summary>
-        /// hfrouteID control.
+        /// hfSupplierID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfrouteID;
+        protected global::System.Web.UI.WebControls.HiddenField hfSupplierID;
         
         /// <summary>
         /// UpdateProgress2 control.
