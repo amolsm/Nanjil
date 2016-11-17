@@ -97,7 +97,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
                 paramCollection.Add(new DBParameter("@todate", p.ToDate));
                 paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
-                paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
+                //paramCollection.Add(new DBParameter("@RouteId", p.RouteID));
                 DS = _DBHelper.ExecuteDataSet("Proc_sp_ConsolidatePayementSummary", paramCollection, CommandType.StoredProcedure);
             }
             catch { }
@@ -224,6 +224,33 @@ namespace DataAccess
                 string msg = ex.ToString();
 
             }
+            return result;
+        }
+
+        public int AddTransaction(Model.Procurement p)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
+                paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
+                paramCollection.Add(new DBParameter("@PaymentDateTime", p.PaymentDateTime));
+                paramCollection.Add(new DBParameter("@FomDate", p.FomDate));
+                paramCollection.Add(new DBParameter("@ToDate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Amount", p.Amount));
+                paramCollection.Add(new DBParameter("@Bonus", p.Bonus));
+                paramCollection.Add(new DBParameter("@Scheme", p.Scheme));
+                paramCollection.Add(new DBParameter("@RDAmount", p.RDAmount));
+                paramCollection.Add(new DBParameter("@canloan", p.canloan));
+                paramCollection.Add(new DBParameter("@casloan", p.casloan));
+                paramCollection.Add(new DBParameter("@bankloan", p.bankloan));
+                paramCollection.Add(new DBParameter("@netamt", p.netamt));
+                result = _DBHelper.ExecuteNonQuery("Proc_SP_AddTransaction", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch { }
             return result;
         }
 

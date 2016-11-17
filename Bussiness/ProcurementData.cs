@@ -324,5 +324,10 @@ namespace Bussiness
         {
             return pdb.GetBatchWiseMilkCollection(milkcollectionid, flag);
         }
+
+        public int AddTransaction(Model.Procurement p)
+        {
+            return pdb.AddTransaction(p);
+        }
     }
 }

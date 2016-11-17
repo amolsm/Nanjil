@@ -136,6 +136,8 @@
                   <div class="form-group">
                     <div class="input-group">
                            <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnShow_Click"   Text="Show" ValidationGroup="Save" /> 
+                          &nbsp;  &nbsp; <asp:Button ID="btnAddTransaction" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Save All" ValidationGroup="Save" OnClick="btnAddTransaction_Click" />     
+                         &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />     
                         </div>
                       </div>
                   </div>
@@ -179,14 +181,16 @@
                       <tr>
                          
                         <th>SupplierID</th>
-                        <th>PaymentDate</th>
+                      <%--  <th>PaymentDate</th>
                         <th>FromDate</th>
-                        <th>ToDate</th>
+                        <th>ToDate</th>--%>
                         <th>Amount</th>
                         <th>Bonus</th>
                         <th>Scheme</th>
                         <th>RD</th>
-                        <th>Loan</th>
+                        <th>Can Loan</th>
+                        <th>Cash Loan</th>
+                        <th>Bank Loan</th>
                         <th>NetAmount</th>
                         <th>Save</th>
                        
@@ -199,17 +203,19 @@
                <ItemTemplate>
                     <tr>
                             <td><%# Eval("SupplierID")%></td>
-                            <td><%# txtpaymentdate.Text%></td>
+                          <%--  <td><%# txtpaymentdate.Text%></td>
                             <td><%# txtfromdate.Text%></td>
-                            <td><%# txttodate.Text%></td>
+                            <td><%# txttodate.Text%></td>--%>
                           
-                             <td><asp:TextBox runat="server" ID="txtAmt" ToolTip="Amount" class="txt" Text='<%#Eval("Amount")%>'/></td>
-                             <td><asp:TextBox runat="server" ID="txtBonus" ToolTip="Bonus" class="txt" Text='<%#Eval("Bonus")%>'/></td>
-                            <td><asp:TextBox runat="server" ID="txtScheme" ToolTip="Scheme" class="txt" Text='<%#Eval("Scheme")%>'/></td>
-                            <td><asp:TextBox runat="server" ID="txtRD" ToolTip="RD" class="txt" Text='<%#Eval("RDAmount")%>'/></td>
-                         <td><asp:TextBox runat="server" ID="txtloan" ToolTip="Can Loan" class="txt" Text='<%#Eval("LoanAmount")%>'/></td>
+                             <td><asp:TextBox runat="server" ID="txtAmt" style="width: 100px" ToolTip="Amount" class="txt" Text='<%#Eval("Amount")%>'/></td>
+                             <td><asp:TextBox runat="server" ID="txtBonus" ToolTip="Bonus" style="width: 100px" class="txt" Text='<%#Eval("Bonus")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtScheme" ToolTip="Scheme" style="width: 100px" class="txt" Text='<%#Eval("Scheme")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtRD" ToolTip="RD" style="width: 100px" class="txt" Text='<%#Eval("RDAmount")%>'/></td>
+                         <td><asp:TextBox runat="server" ID="txtcanloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CanLoan")%>'/></td>
+                         <td><asp:TextBox runat="server" ID="txtcashloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CashLoan")%>'/></td>
+                         <td><asp:TextBox runat="server" ID="txtbankloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("BankLoan")%>'/></td>
                    
-                           <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount"  Text=""/></td>
+                           <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount" style="width: 100px" Text=""/></td>
 
                          <td>
 
@@ -228,25 +234,26 @@
                     <tfoot>
                       <tr>
                         
-                        <th>SupplierID</th>
-                        <th>PaymentDate</th>
+                      <th>SupplierID</th>
+                     <%--   <th>PaymentDate</th>
                         <th>FromDate</th>
-                        <th>ToDate</th>
+                        <th>ToDate</th>--%>
                         <th>Amount</th>
                         <th>Bonus</th>
                         <th>Scheme</th>
                         <th>RD</th>
-                        <th>Loan</th>
-                         <th>NetAmount</th>
+                        <th>Can Loan</th>
+                        <th>Cash Loan</th>
+                        <th>Bank Loan</th>
+                        <th>NetAmount</th>
                         <th>Save</th>
-                       
                       </tr>
                     </tfoot>
 
                     </FooterTemplate>
                                              
            </asp:Repeater>
-                    <asp:HiddenField id="hfrouteID" runat="server" />
+                    <asp:HiddenField id="hfSupplierID" runat="server" />
              
                 
                   

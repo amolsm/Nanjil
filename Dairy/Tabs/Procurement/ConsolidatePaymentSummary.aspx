@@ -105,19 +105,7 @@
                           
                       </div> 
 
-               <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                    Route
-                      </div>
-                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
-                       </asp:DropDownList>                               
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group --> 
-                          
-                      </div> 
+             
          
             
                <div class="col-lg-3 pull-right">
@@ -127,7 +115,7 @@
                     
                       
                               <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick=""   Text="Print" ValidationGroup="Save" />           
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

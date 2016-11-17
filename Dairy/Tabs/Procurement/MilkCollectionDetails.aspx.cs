@@ -55,15 +55,15 @@ namespace Dairy.Tabs.Procurement
 
         protected void txtMilkInKG_TextChanged(object sender, EventArgs e)
         {
-            double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.031),2);
+            double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.03),2);
             txtMilkInLtr.Text = milkInLtr.ToString();
             string num = milkInLtr.ToString();
            string outnum= BreakUpSingleDecimalPlace(num);
            txtActualMilkInLtr.Text = outnum;
-           // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
-           //MidpointRounding.ToEven).ToString(); // Rounds to even
-           
-           
+            // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
+            //MidpointRounding.ToEven).ToString(); // Rounds to even
+            txtCLRReading.Focus();
+
         }
 
         public string BreakUpSingleDecimalPlace(string num)
@@ -91,6 +91,8 @@ namespace Dairy.Tabs.Procurement
             string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
             txtTSPercentage.Text = outtspercent;
             txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)),2).ToString();
+            txtFATInKG.Focus();
+           
         }
 
       

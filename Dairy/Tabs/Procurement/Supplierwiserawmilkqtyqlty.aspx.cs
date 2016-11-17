@@ -153,7 +153,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(row["TSPercentage"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("");
+                    sb.Append(row["Rate"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append(row["Amount"].ToString());

@@ -23,6 +23,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/Bussiness.dll">
 <<<<<<< HEAD
+      <publishTime>11/15/2016 16:30:52</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/12/2016 12:11:42</publishTime>
 =======
@@ -31,11 +34,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>11/14/2016 16:29:18</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
+<<<<<<< HEAD
+      <publishTime>11/15/2016 16:30:55</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>11/15/2016 16:30:52</publishTime>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/12/2016 12:11:47</publishTime>
@@ -53,6 +63,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>11/14/2016 16:29:18</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
@@ -325,6 +336,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Despatch/AddReturnedItems.aspx">
 <<<<<<< HEAD
+      <publishTime>11/09/2016 16:39:55</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
@@ -362,37 +376,42 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>09/11/2016 16:39:55</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Despatch/BoothPlaceOrder.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ItemwiseSalesSummary.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ReturnedTrays.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ReturnScheme.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/RoutewiseSalesSummary.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchOrders.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchSummary.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchSummaryUsers.aspx">
-      <publishTime>09/11/2016 16:39:55</publishTime>
+      <publishTime>11/09/2016 16:39:55</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchUserShiftwise.aspx">
+<<<<<<< HEAD
+      <publishTime>11/09/2016 16:39:55</publishTime>
+=======
 <<<<<<< HEAD
       <publishTime>11/09/2016 16:39:55</publishTime>
 >>>>>>> origin/master
 =======
       <publishTime>09/11/2016 16:39:55</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Tabs/Dispatch/DoNotDelete.xml">
@@ -494,9 +513,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Tabs/Procurement/AddMilkCollectionRoute.aspx">
 <<<<<<< HEAD
       <publishTime>11/09/2016 16:39:52</publishTime>
+=======
+<<<<<<< HEAD
+      <publishTime>11/09/2016 16:39:52</publishTime>
 >>>>>>> origin/master
 =======
       <publishTime>09/11/2016 16:39:52</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddMilkSuppliersProfile.aspx">
@@ -513,6 +536,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Procurement/AddSupplierRDInfo.aspx">
 <<<<<<< HEAD
+      <publishTime>11/10/2016 15:28:06</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
 =======
@@ -521,11 +547,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>10/11/2016 15:28:06</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddSupplierSchemeBonus.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSuppliersLoanInfo.aspx">
+<<<<<<< HEAD
+      <publishTime>11/10/2016 14:51:10</publishTime>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -540,11 +570,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>10/11/2016 14:51:10</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
-      <publishTime>11/12/2016 15:53:49</publishTime>
+      <publishTime>11/15/2016 13:03:06</publishTime>
     </File>
     <File Include="Tabs/Procurement/CheckList.aspx">
+<<<<<<< HEAD
+      <publishTime>11/02/2016 16:07:21</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
+      <publishTime>11/15/2016 13:05:16</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/IncentiveTarrif.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+=======
 <<<<<<< HEAD
       <publishTime>11/02/2016 16:07:21</publishTime>
 >>>>>>> origin/master
@@ -565,6 +605,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>11/14/2016 16:12:00</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/InsertBatchWiseMilk.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -580,6 +621,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/12/2016 11:08:38</publishTime>
     </File>
     <File Include="Tabs/Procurement/PaymentSummary.aspx">
+<<<<<<< HEAD
+      <publishTime>11/04/2016 11:02:27</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
+      <publishTime>11/02/2016 14:46:10</publishTime>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -597,6 +644,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
       <publishTime>02/11/2016 14:46:10</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/RawMilkStockRegister.aspx">
@@ -624,6 +672,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx">
 <<<<<<< HEAD
+      <publishTime>11/02/2016 13:27:15</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
@@ -643,9 +694,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>02/11/2016 13:27:15</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/Transaction.aspx">
-      <publishTime>07/11/2016 13:24:50</publishTime>
+      <publishTime>11/07/2016 13:24:50</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleMaster.aspx">
       <publishTime>11/14/2016 15:01:45</publishTime>
@@ -707,6 +759,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Reception/DuplicateBillForAgent.aspx">
 <<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
@@ -720,16 +775,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>08/11/2016 09:29:15</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/EditOrder.aspx">
-      <publishTime>08/11/2016 09:29:15</publishTime>
+      <publishTime>11/08/2016 09:29:15</publishTime>
     </File>
     <File Include="Tabs/Reception/GenrateBill.aspx">
+<<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
 <<<<<<< HEAD
       <publishTime>11/08/2016 09:29:15</publishTime>
 >>>>>>> origin/master
 =======
       <publishTime>08/11/2016 09:29:15</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/GenrateBillThermal.aspx">
@@ -737,6 +797,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Reception/ItemwiseOrderSummary.aspx">
 <<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
@@ -759,25 +822,30 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>08/11/2016 09:29:15</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/OrderQuantity.aspx">
-      <publishTime>08/11/2016 09:29:15</publishTime>
+      <publishTime>11/08/2016 09:29:15</publishTime>
     </File>
     <File Include="Tabs/Reception/PlaceOrder.aspx">
-      <publishTime>08/11/2016 09:29:15</publishTime>
+      <publishTime>11/08/2016 09:29:15</publishTime>
     </File>
     <File Include="Tabs/Reception/PlaceOrderEmpRoutewise.aspx">
-      <publishTime>08/11/2016 09:29:15</publishTime>
+      <publishTime>11/08/2016 09:29:15</publishTime>
     </File>
     <File Include="Tabs/Reception/PlaceOrderRoutewise.aspx">
-      <publishTime>08/11/2016 09:29:15</publishTime>
+      <publishTime>11/08/2016 09:29:15</publishTime>
     </File>
     <File Include="Tabs/Reception/RatewiseOrderSummary.aspx">
+<<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
 <<<<<<< HEAD
       <publishTime>11/08/2016 09:29:15</publishTime>
 >>>>>>> origin/master
 =======
       <publishTime>08/11/2016 09:29:15</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/Web.config">
@@ -3443,6 +3511,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/jQuery/jquery-1.10.2.js">
 <<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+    </File>
+    <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
@@ -3459,6 +3533,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
       <publishTime>08/11/2016 09:29:15</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Theme/plugins/jQuery/jQuery-2.1.4.min.js">
@@ -3466,6 +3541,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Theme/plugins/jQueryUI/jquery-ui.css">
 <<<<<<< HEAD
+      <publishTime>11/08/2016 09:29:15</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/11/2016 10:53:02</publishTime>
 =======
@@ -3473,6 +3551,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 >>>>>>> origin/master
 =======
       <publishTime>08/11/2016 09:29:15</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="Theme/plugins/jQueryUI/jquery-ui.js">
@@ -3681,6 +3760,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="UserControl/SiteMenu.ascx">
 <<<<<<< HEAD
+      <publishTime>11/15/2016 16:26:11</publishTime>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/12/2016 11:08:38</publishTime>
 =======
@@ -3689,11 +3771,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 =======
       <publishTime>11/14/2016 15:55:12</publishTime>
 >>>>>>> origin/master
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Web.config">
+<<<<<<< HEAD
+      <publishTime>11/09/2016 16:39:52</publishTime>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <publishTime>11/12/2016 12:11:51</publishTime>
@@ -3702,6 +3788,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 >>>>>>> origin/master
 =======
       <publishTime>09/11/2016 16:39:52</publishTime>
+>>>>>>> origin/master
 >>>>>>> origin/master
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
