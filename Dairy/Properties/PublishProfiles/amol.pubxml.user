@@ -10,61 +10,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Code/Global.cs">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Authentication/ForgotPassword.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Authentication/LoginT.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Authentication/LogOut.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-<<<<<<< HEAD
-      <publishTime>11/15/2016 16:30:52</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/12/2016 12:11:42</publishTime>
-=======
-      <publishTime>11/12/2016 16:47:04</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 16:29:18</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:42:33</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-<<<<<<< HEAD
-      <publishTime>11/15/2016 16:30:55</publishTime>
+      <publishTime>11/17/2016 12:13:09</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>11/15/2016 16:30:52</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/12/2016 12:11:47</publishTime>
-    </File>
-    <File Include="bin/DataAccess.dll">
-      <publishTime>11/12/2016 12:11:41</publishTime>
-=======
-      <publishTime>11/12/2016 16:47:07</publishTime>
-    </File>
-    <File Include="bin/DataAccess.dll">
-      <publishTime>11/12/2016 16:47:04</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 16:29:21</publishTime>
-    </File>
-    <File Include="bin/DataAccess.dll">
-      <publishTime>11/14/2016 16:29:18</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:42:32</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>11/11/2016 10:53:03</publishTime>
@@ -91,15 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:03</publishTime>
     </File>
     <File Include="bin/Model.dll">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/12/2016 11:08:38</publishTime>
-=======
-      <publishTime>11/11/2016 15:11:29</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 16:29:18</publishTime>
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:42:31</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>11/11/2016 10:53:03</publishTime>
@@ -114,28 +73,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:03</publishTime>
     </File>
     <File Include="DairyerpDataSet.xsc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="DairyerpDataSet.xss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="DairyerpDataSetnew.xsc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="DairyerpDataSetnew.xss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="DataSet1.xsc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="DataSet1.xss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>11/11/2016 10:53:03</publishTime>
@@ -168,179 +127,166 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:03</publishTime>
     </File>
     <File Include="Print.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/AgentSchemeReport.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/BillsReports.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/PartyWiseScheme.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/ProductWIseSealsReports.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/ReportDataSet/PartywiseScheme.xsc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/ReportDataSet/PartywiseScheme.xss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/ReportDataSet/StaffACCSaleSummary.xsc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/ReportDataSet/StaffACCSaleSummary.xss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Reports/StaffACCSaleSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/17/2016 12:35:19</publishTime>
     </File>
     <File Include="Tabs/Administration/AddAgent.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddBank.aspx">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>01/01/0001 00:00:00</publishTime>
-=======
-      <publishTime>11/12/2016 16:32:33</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 14:06:57</publishTime>
->>>>>>> origin/master
+      <publishTime>11/15/2016 12:00:08</publishTime>
     </File>
     <File Include="Tabs/Administration/AddBrand.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddCommodity.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddDesignation.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddLocation.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddProduct.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddReturnedItems.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddRoute.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddSlab.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/AddTypeInfo.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/BillSequence.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/BindSlab.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/BoothLog.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/BoothPlaceOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/CashierBoothSettlement.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/CashierSettlement.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/CreateUser.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/DamageRateSetup.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/Department.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/DuplicateBillForAgent.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/EditOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/EmployeeInfo.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/GenerateBillForBooth.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/GenrateBill.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/GenrateBillThermal.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/IncentiveSetup.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/OrderQuantity.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/PlaceOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/PlaceOrderEmpRoutewise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/PlaceOrderRoutewise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ReturnedTrays.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ReturnScheme.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/UnitMaster.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/UserLog.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewBoothStock.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewBoothUserSales.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewDispatchOrders.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewDispatchSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewDispatchSummaryUsers.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewDispatchUserShiftwise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Despatch/AddReturnedItems.aspx">
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:55</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/17/2016 11:49:28</publishTime>
     </File>
     <File Include="Tabs/Despatch/BoothPlaceOrder.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -352,13 +298,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Despatch/ReturnScheme.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/17/2016 12:01:28</publishTime>
     </File>
     <File Include="Tabs/Despatch/RoutewiseSalesSummary.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchOrders.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/17/2016 11:38:57</publishTime>
     </File>
     <File Include="Tabs/Despatch/ViewDispatchSummary.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -370,399 +316,225 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Despatch/Web.config">
-      <publishTime>11/12/2016 11:55:28</publishTime>
-=======
-      <publishTime>11/09/2016 16:39:55</publishTime>
-=======
-      <publishTime>09/11/2016 16:39:55</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Despatch/BoothPlaceOrder.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ItemwiseSalesSummary.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ReturnedTrays.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ReturnScheme.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/RoutewiseSalesSummary.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ViewDispatchOrders.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ViewDispatchSummary.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ViewDispatchSummaryUsers.aspx">
-      <publishTime>11/09/2016 16:39:55</publishTime>
-    </File>
-    <File Include="Tabs/Despatch/ViewDispatchUserShiftwise.aspx">
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:55</publishTime>
-=======
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:55</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>09/11/2016 16:39:55</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/14/2016 13:50:18</publishTime>
     </File>
     <File Include="Tabs/Dispatch/DoNotDelete.xml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgencyCloserScreen.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgencyIcentivePayment.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentListNotPlacedOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSlabReportList.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/AmountwiseIceCreamReport.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/BillwiseStaffSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/DamageReplacementRateSetup.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/DeactivateAgentList.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/DespatchComparisonReport.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/DispatchReturnComparison.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/IncentiveSetupScreen.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwisePurchaseAgentList.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwiseStaffSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/NewAgentList.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/PartywiseDamageReplacementSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/PartywiseIncentiveSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/ProductIncentive.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/RefundSchemeSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/ReturnComparisonReport.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/SalesComparison.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/SchemeRefund.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/SpotDamageComparisonReport.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Marketing/StaffAccountSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionCenter.aspx">
-<<<<<<< HEAD
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/14/2016 13:50:24</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionRoute.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/12/2016 16:38:05</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/AddMilkCollectionRoute.aspx">
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:52</publishTime>
-=======
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:52</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>09/11/2016 16:39:52</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddMilkSuppliersProfile.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierAdvanceDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierBankDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierLoanDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierRDInfo.aspx">
-<<<<<<< HEAD
-      <publishTime>11/10/2016 15:28:06</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/10/2016 15:28:06</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>10/11/2016 15:28:06</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddSupplierSchemeBonus.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSuppliersLoanInfo.aspx">
-<<<<<<< HEAD
-      <publishTime>11/10/2016 14:51:10</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/CheckList.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/10/2016 14:51:10</publishTime>
-=======
-      <publishTime>10/11/2016 14:51:10</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
-      <publishTime>11/15/2016 13:03:06</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/CheckList.aspx">
-<<<<<<< HEAD
-      <publishTime>11/02/2016 16:07:21</publishTime>
     </File>
     <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
-      <publishTime>11/15/2016 13:05:16</publishTime>
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/IncentiveTarrif.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
-=======
-<<<<<<< HEAD
-      <publishTime>11/02/2016 16:07:21</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>02/11/2016 16:07:21</publishTime>
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
-      <publishTime>11/12/2016 11:08:38</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/IncentiveTarrif.aspx">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/09/2016 16:39:52</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 16:12:00</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/15/2016 12:00:08</publishTime>
     </File>
     <File Include="Tabs/Procurement/InsertBatchWiseMilk.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
-<<<<<<< HEAD
-      <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/12/2016 16:29:04</publishTime>
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>11/12/2016 11:08:38</publishTime>
     </File>
     <File Include="Tabs/Procurement/PaymentSummary.aspx">
-<<<<<<< HEAD
-      <publishTime>11/04/2016 11:02:27</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
-      <publishTime>11/02/2016 14:46:10</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/04/2016 11:02:27</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
-      <publishTime>11/02/2016 14:46:10</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>04/11/2016 11:02:27</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
-      <publishTime>02/11/2016 14:46:10</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkStockRegister.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkTariff.aspx">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/15/2016 12:00:08</publishTime>
     </File>
     <File Include="Tabs/Procurement/ReceiveDisposalheadmaster.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
-=======
-      <publishTime>11/12/2016 16:41:14</publishTime>
-=======
-      <publishTime>11/14/2016 14:21:50</publishTime>
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Procurement/ReceiveDisposalheadmaster.aspx">
-      <publishTime>11/12/2016 13:12:38</publishTime>
->>>>>>> origin/master
+      <publishTime>11/14/2016 13:50:24</publishTime>
     </File>
     <File Include="Tabs/Procurement/SupplierAdvanceInfo.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx">
-<<<<<<< HEAD
-      <publishTime>11/02/2016 13:27:15</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/Transaction.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleMaster.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/15/2016 12:00:08</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleTariff.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>11/15/2016 12:00:08</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleType.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/02/2016 13:27:15</publishTime>
-=======
-      <publishTime>02/11/2016 13:27:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Procurement/Transaction.aspx">
-      <publishTime>11/07/2016 13:24:50</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/VehicleMaster.aspx">
-      <publishTime>11/14/2016 15:01:45</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/VehicleTariff.aspx">
-      <publishTime>11/14/2016 13:44:04</publishTime>
-    </File>
-    <File Include="Tabs/Procurement/VehicleType.aspx">
-      <publishTime>11/12/2016 10:59:33</publishTime>
->>>>>>> origin/master
+      <publishTime>11/14/2016 13:50:24</publishTime>
     </File>
     <File Include="Tabs/Purchase/ApprovedRequestItems.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/Categories.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/ComparativeStatement.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/Dashboard.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/14/2016 13:50:18</publishTime>
     </File>
     <File Include="Tabs/Purchase/IndentMaterial.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/ItemRates.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/Items.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/MaterialReceived.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/PurchaseOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/PurchaseRequests.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/RackSections.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/VendorRegistration.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/ViewPurchaseOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/PurchaseM/Dashboard.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/PurchaseM/ViewPrchsRequest.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/CancelOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/DuplicateBillForAgent.aspx">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/EditOrder.aspx">
@@ -770,37 +542,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Reception/GenrateBill.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Reception/EditOrder.aspx">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Tabs/Reception/GenrateBill.aspx">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/GenrateBillThermal.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/ItemwiseOrderSummary.aspx">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/OrderQuantity.aspx">
@@ -817,186 +563,156 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Reception/RatewiseOrderSummary.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
-=======
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
-    </File>
-    <File Include="Tabs/Reception/OrderQuantity.aspx">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Tabs/Reception/PlaceOrder.aspx">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Tabs/Reception/PlaceOrderEmpRoutewise.aspx">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Tabs/Reception/PlaceOrderRoutewise.aspx">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Tabs/Reception/RatewiseOrderSummary.aspx">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Tabs/Reception/Web.config">
-      <publishTime>11/12/2016 11:21:03</publishTime>
+      <publishTime>11/14/2016 13:50:18</publishTime>
     </File>
     <File Include="Tabs/Reports/BillwiseSaleSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothBillWiseSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/Boothitemwisesalessummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothroutewiseSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothSalesAnalysis.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothSalesAnalysisItemwise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothSalesAnalysisUsers.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/ItemwiseOrderSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/ItemwiseSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/RatewiseOrderSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/RoutewiseSalesSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/SalesAnalysisItemwise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/AgentBilling.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/AgentSale.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/BoothPlaceOrder.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/BoothReturnReplace.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/BoothStockLanding.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/EmployeeBilling.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/LocalBilling.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Sales/Web.config">
-      <publishTime>11/12/2016 11:51:35</publishTime>
+      <publishTime>11/14/2016 13:50:18</publishTime>
     </File>
     <File Include="Tabs/TransportModule/Configure.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/FuelDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/FuelPumpMaster.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/InsuranceMaintenance.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/JOBCard.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/ProductSupplyOutOperation.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/PUCMaintenance.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/RouteWiseScheduleTime.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TranportModelMaster.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportBrandMaster.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/FuelDaywiseUses.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/FuelListDateWise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/InternalReportofVehicleSection.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/MilkSupplyVehicleReportRoutewise.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/VehicleRouteOperationSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/TransportReports/VehicleWiseSummary.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/VehicleInOperation.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/VehicleMaintenance.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/VehicleOperations.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/VehicleRouteMap.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/TransportModule/VehicleTarifDetails.aspx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="test.aspx">
       <publishTime>11/11/2016 10:53:03</publishTime>
     </File>
     <File Include="Test.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="testwithMaster.aspx">
       <publishTime>11/11/2016 10:53:03</publishTime>
     </File>
     <File Include="Theme/bootstrap/css/bootstrap-select.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Theme/bootstrap/css/bootstrap.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Theme/bootstrap/css/bootstrap.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Theme/bootstrap/css/bootstrap.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Theme/bootstrap/fonts/glyphicons-halflings-regular.eot">
       <publishTime>11/11/2016 10:53:01</publishTime>
@@ -1275,7 +991,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:01</publishTime>
     </File>
     <File Include="Theme/Custom/Custom.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Theme/dist/css/AdminLTE.css">
       <publishTime>11/11/2016 10:53:01</publishTime>
@@ -3510,49 +3226,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Theme/plugins/jQuery/jquery-1.10.2.js">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
       <publishTime>11/11/2016 10:53:02</publishTime>
-=======
-      <publishTime>11/08/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
-      <publishTime>11/08/2016 09:29:15</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
-    </File>
-    <File Include="Theme/plugins/jQuery/jquery-1.10.2.min.js">
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Theme/plugins/jQuery/jQuery-2.1.4.min.js">
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Theme/plugins/jQueryUI/jquery-ui.css">
-<<<<<<< HEAD
-      <publishTime>11/08/2016 09:29:15</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:02</publishTime>
-=======
-      <publishTime>11/08/2016 09:29:15</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>08/11/2016 09:29:15</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
     </File>
     <File Include="Theme/plugins/jQueryUI/jquery-ui.js">
       <publishTime>11/11/2016 10:53:02</publishTime>
@@ -3759,37 +3442,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-<<<<<<< HEAD
-      <publishTime>11/15/2016 16:26:11</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/12/2016 11:08:38</publishTime>
-=======
-      <publishTime>11/12/2016 16:39:34</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>11/14/2016 15:55:12</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/17/2016 11:18:30</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Web.config">
-<<<<<<< HEAD
-      <publishTime>11/09/2016 16:39:52</publishTime>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <publishTime>11/12/2016 12:11:51</publishTime>
-=======
-      <publishTime>11/09/2016 16:39:52</publishTime>
->>>>>>> origin/master
-=======
-      <publishTime>09/11/2016 16:39:52</publishTime>
->>>>>>> origin/master
->>>>>>> origin/master
+      <publishTime>11/17/2016 12:13:12</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>11/11/2016 10:53:02</publishTime>

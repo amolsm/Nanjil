@@ -56,7 +56,7 @@ namespace Dairy.Tabs.Despatch
                             
 
                 uprouteList.Update();
-
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "av", "$('#example1').DataTable();", true);
             }
             else
             {

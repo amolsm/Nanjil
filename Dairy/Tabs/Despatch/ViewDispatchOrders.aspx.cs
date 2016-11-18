@@ -320,7 +320,7 @@ namespace Dairy.Tabs.Despatch
                 //txtOrderDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["OrderDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["OrderDate"].ToString();
                 txtQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["Qty"].ToString();
                 txtCommodityName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["CommodityName"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["CommodityName"].ToString();
-                //txtAgentName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentName"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["AgentName"].ToString();
+                txtAgentName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentName"].ToString()) ? DS.Tables[0].Rows[Row]["EmployeeName"].ToString() : DS.Tables[0].Rows[Row]["AgentName"].ToString();
 
             }
         }

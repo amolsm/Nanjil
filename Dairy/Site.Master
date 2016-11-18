@@ -7,8 +7,8 @@
 <%@ Register TagPrefix="uc" TagName="ucThemesSetting" Src="~/UserControl/ThemesSetting.ascx" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
  <head>
-     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+   <%-- <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>--%>
      <uc:ucHead ID="ucihead" runat="server" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>

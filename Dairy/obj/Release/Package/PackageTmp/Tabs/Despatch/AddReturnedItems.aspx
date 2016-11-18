@@ -24,7 +24,7 @@
           });
       }
     </script>
-   
+   <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
     <section class="content-header">
           <h1>
              Manage Returned Items
