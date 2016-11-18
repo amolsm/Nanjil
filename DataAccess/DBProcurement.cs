@@ -114,12 +114,15 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
                 paramCollection.Add(new DBParameter("@todate", p.ToDate));
                 paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                paramCollection.Add(new DBParameter("@BankName", p.BankName));
+                paramCollection.Add(new DBParameter("@IFSCCode", p.IFSCCode));
                 DS = _DBHelper.ExecuteDataSet("Proc_sp_RawMilkPaymentListViaBank", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
+                string msg = ex.ToString();
 
             }
             return DS;
@@ -244,7 +247,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Scheme", p.Scheme));
                 paramCollection.Add(new DBParameter("@RDAmount", p.RDAmount));
                 paramCollection.Add(new DBParameter("@canloan", p.canloan));
-                paramCollection.Add(new DBParameter("@casloan", p.casloan));
+                paramCollection.Add(new DBParameter("@cashloan", p.casloan));
                 paramCollection.Add(new DBParameter("@bankloan", p.bankloan));
                 paramCollection.Add(new DBParameter("@netamt", p.netamt));
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_AddTransaction", paramCollection, CommandType.StoredProcedure);

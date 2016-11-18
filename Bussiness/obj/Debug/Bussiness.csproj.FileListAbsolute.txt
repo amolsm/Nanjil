@@ -20,3 +20,4 @@ D:\NanjilCode\Nanjil\Bussiness\bin\Model.pdb
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.dll
 D:\NanjilCode\Nanjil\Bussiness\obj\Debug\Bussiness.pdb
+D:\NanjilCode\Nanjil\Bussiness\bin\Bussiness.dll.config
